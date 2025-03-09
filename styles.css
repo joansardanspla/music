@@ -13,14 +13,28 @@ body {
     padding: 0;
     background-color: var(--main-bg-color);
     color: var(--text-color);
+    scroll-behavior: smooth; /* Desplaçament suau per a les seccions */
 }
 
+/* HEADER */
 header {
     background-color: var(--header-bg-color);
     padding: 20px;
     font-size: 24px;
     font-weight: 600;
     transition: background-color 0.3s ease;
+    animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .header-content {
@@ -35,6 +49,7 @@ header:hover {
     background-color: #333;
 }
 
+/* MENÚ DE NAVEGACIÓ */
 nav ul {
     list-style: none;
     padding: 0;
@@ -49,30 +64,81 @@ nav ul li a {
     color: var(--text-color);
     text-decoration: none;
     font-weight: 300;
+    position: relative;
+    transition: color 0.3s ease-in-out;
 }
 
-nav ul li a:hover {
-    color: var(--accent-color);
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
 }
 
+nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+/* EFECTE DE BOTÓ PULSANT EN MÒBIL */
+@media (max-width: 768px) {
+    nav ul li a {
+        animation: pulse 1.5s infinite;
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* CONTENIDOR PRINCIPAL */
 .container {
     max-width: 800px;
     margin: auto;
     padding: 20px;
 }
 
+/* PERFIL */
 .profile img {
     width: 250px;
     height: 250px; /* Fa la foto quadrada */
-    border-radius: 0; /* Elimina el marge arrodonit */
-    border: none; /* Elimina el marge */
+    border-radius: 12px; /* Fa la imatge lleugerament arrodonida */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Ombra suau */
+    animation: zoomIn 1s ease-in-out;
 }
 
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.profile img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* ÀUDIO */
 audio {
     width: 100%;
     margin: 10px 0;
+    border-radius: 8px;
+    background-color: var(--header-bg-color);
+    padding: 5px;
 }
 
+/* FOOTER */
 footer {
     background-color: var(--header-bg-color);
     padding: 10px;
@@ -81,4 +147,21 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+/* ANIMACIÓ SUAU QUAN ES FA DESPLAÇAMENT ENTRE SECCIONS */
+html {
+    scroll-behavior: smooth;
+}
+
+/* EFECTE D'APARICIÓ SUAU QUAN ES FA DESPLAÇAMENT */
+section, article {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.show, article.show {
+    opacity: 1;
+    transform: translateY(0);
 }
