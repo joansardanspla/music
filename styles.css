@@ -104,12 +104,13 @@ nav ul li a:hover::after {
     padding: 20px;
 }
 
-/* PERFIL */
+/* PERFIL - IMATGE QUADRADA SENSE DEFORMAR */
 .profile img {
     width: 250px;
-    height: 250px; /* Fa la foto quadrada */
-    border-radius: 12px; /* Fa la imatge lleugerament arrodonida */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Ombra suau */
+    height: 250px; /* Manté la forma quadrada */
+    object-fit: cover; /* Evita deformacions */
+    border-radius: 12px; /* Ligerament arrodonida (opcional) */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     animation: zoomIn 1s ease-in-out;
 }
 
