@@ -106,13 +106,16 @@ nav ul li a:hover::after {
 
 /* PERFIL - IMATGE QUADRADA SENSE DEFORMAR */
 .profile img {
-    width: 250px;
-    height: 250px; /* Manté la forma quadrada */
-    object-fit: cover; /* Evita deformacions */
+    width: 250px;  /* Amplada fixa */
+    height: auto;  /* Manté la proporció original */
+    object-fit: contain; /* Evita que es talli res */
+    display: block;  /* Evita espais extra al voltant */
+    margin: 0 auto;  /* Centra la imatge */
     border-radius: 12px; /* Ligerament arrodonida (opcional) */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     animation: zoomIn 1s ease-in-out;
 }
+
 
 @keyframes zoomIn {
     from {
