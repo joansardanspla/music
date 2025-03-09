@@ -1,0 +1,31 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: white;
+}
+header {
+    background-color: #222;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: 600;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+.profile img {
+    width: 250px;
+    border-radius: 0;
+    border: 0px solid white;
+}
+.audio-section {
+    margin: 20px 0;
+}
+audio {
+    width: 100%;
+    margin: 10px 0;
+}
