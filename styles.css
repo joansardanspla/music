@@ -1,17 +1,9 @@
 :root {
     --main-bg-color: #1a1a1a;
     --header-bg-color: #222;
-    --text-color: #f0f0f0;
+    --text-color: white;
     --font-family: 'Poppins', sans-serif;
-    --link-hover-color: #ff8000;
-    --container-max-width: 800px;
-    --transition-speed: 0.3s;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    --accent-color: #f39c12;
 }
 
 body {
@@ -28,34 +20,51 @@ header {
     padding: 20px;
     font-size: 24px;
     font-weight: 600;
-    transition: background-color var(--transition-speed) ease;
+    transition: background-color 0.3s ease;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
 }
 
 header:hover {
     background-color: #333;
 }
 
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 300;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    max-width: var(--container-max-width);
+    max-width: 800px;
     margin: auto;
     padding: 20px;
 }
 
-.audio-section {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    width: 100%;
-}
-
 .profile img {
     width: 250px;
-    border-radius: 0;
-    border: 0px solid white;
+    border-radius: 50%;
+    border: 5px solid var(--accent-color);
 }
 
 audio {
@@ -63,20 +72,40 @@ audio {
     margin: 10px 0;
 }
 
-a {
-    transition: color var(--transition-speed) ease;
+.contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
 }
 
-a:hover {
-    color: var(--link-hover-color);
+.contact form input,
+.contact form textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
 }
 
-@media (max-width: 600px) {
-    .container {
-        padding: 10px;
-    }
+.contact form button {
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
-    header {
-        font-size: 20px;
-    }
+.contact form button:hover {
+    background-color: #e67e22;
+}
+
+footer {
+    background-color: var(--header-bg-color);
+    padding: 10px;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
 }
