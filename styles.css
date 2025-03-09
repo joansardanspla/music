@@ -1,5 +1,6 @@
 body {
     font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 400;  /* Default font weight */
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
@@ -21,7 +22,7 @@ body {
 
 header h1 {
     margin: 0;
-    margin-right: 2rem;  /* Adds some space between title and nav */
+    margin-right: 1rem;  /* Adjusted for better spacing */
 }
 
 nav ul {
@@ -32,7 +33,7 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 2rem;
+    margin-left: 1.5rem;  /* Slightly smaller margin */
 }
 
 nav ul li a {
@@ -56,17 +57,29 @@ nav ul li a:hover {
     height: auto;
     border-radius: 50%;
     margin-bottom: 1rem;
+    object-fit: cover;  /* Prevents image distortion */
 }
 
 .audio-section audio {
     display: block;
     margin: 1rem auto;
-    width: 80%;
+    width: 60%;  /* Default width for large screens */
 }
 
 @media (max-width: 600px) {
+    .header-content {
+        flex-direction: column;  /* Stack vertically */
+        align-items: center;     /* Center content */
+    }
+    
+    nav ul {
+        display: block;  /* Stack navigation items */
+        text-align: center;
+    }
+
     nav ul li {
-        margin-left: 0.5rem; /* Reduce space on small screens */
+        margin-left: 0;   /* No space between items */
+        margin-bottom: 1rem; /* Add space between items */
     }
 
     .audio-section audio {
@@ -79,13 +92,17 @@ footer {
     padding: 2rem;
     background-color: #333;
     color: #fff;
-    font-size: 0.875rem;
+    font-size: 0.875rem; /* Slightly smaller font */
+}
+
+footer p {
+    margin: 0;
 }
 
 h2 {
-    color: #444;
+    color: #333;  /* Darker color for headings */
 }
 
 p {
-    color: #666;
+    color: #555;  /* Slightly darker paragraph text */
 }
