@@ -116,7 +116,6 @@ nav ul li a:hover::after {
     animation: zoomIn 1s ease-in-out;
 }
 
-
 @keyframes zoomIn {
     from {
         opacity: 0;
