@@ -1,170 +1,52 @@
-:root {
-    --main-bg-color: #1a1a1a;
-    --header-bg-color: #222;
-    --text-color: white;
-    --font-family: 'Poppins', sans-serif;
-    --accent-color: #f39c12;
-}
-
-body {
-    font-family: var(--font-family);
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    background-color: var(--main-bg-color);
-    color: var(--text-color);
-    scroll-behavior: smooth; /* Desplaçament suau per a les seccions */
-}
-
-/* HEADER */
-header {
-    background-color: var(--header-bg-color);
-    padding: 20px;
-    font-size: 24px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-    animation: fadeInDown 1s ease-out;
-}
-
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: auto;
-}
-
-header:hover {
-    background-color: #333;
-}
-
-/* MENÚ DE NAVEGACIÓ */
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 300;
-    position: relative;
-    transition: color 0.3s ease-in-out;
-}
-
-nav ul li a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 100%;
-    height: 2px;
-    background-color: var(--accent-color);
-    transform: scaleX(0);
-    transition: transform 0.3s ease-in-out;
-}
-
-nav ul li a:hover::after {
-    transform: scaleX(1);
-}
-
-/* EFECTE DE BOTÓ PULSANT EN MÒBIL */
-@media (max-width: 768px) {
-    nav ul li a {
-        animation: pulse 1.5s infinite;
-    }
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-/* CONTENIDOR PRINCIPAL */
-.container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-}
-
-/* PERFIL - IMATGE QUADRADA SENSE DEFORMAR */
-.profile img {
-    width: 250px;  /* Amplada fixa */
-    height: auto;  /* Manté la proporció original */
-    object-fit: contain; /* Evita que es talli res */
-    display: block;  /* Evita espais extra al voltant */
-    margin: 0 auto;  /* Centra la imatge */
-    border-radius: 12px; /* Ligerament arrodonida (opcional) */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    animation: zoomIn 1s ease-in-out;
-}
-
-@keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.profile img:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
-}
-
-/* ÀUDIO */
-audio {
-    width: 100%;
-    margin: 10px 0;
-    border-radius: 8px;
-    background-color: var(--header-bg-color);
-    padding: 5px;
-}
-
-/* FOOTER */
-footer {
-    background-color: var(--header-bg-color);
-    padding: 10px;
-    font-size: 14px;
-}
-
-footer p {
-    margin: 0;
-}
-
-/* ANIMACIÓ SUAU QUAN ES FA DESPLAÇAMENT ENTRE SECCIONS */
-html {
-    scroll-behavior: smooth;
-}
-
-/* EFECTE D'APARICIÓ SUAU QUAN ES FA DESPLAÇAMENT */
-section, article {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-section.show, article.show {
-    opacity: 1;
-    transform: translateY(0);
-}
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pàgina oficial de Joan Sardans Pla, músic apassionat per la música i l'art. Descobreix la seva música i connecta amb ell.">
+    <meta name="keywords" content="Joan Sardans Pla, músic, música, art, àudio, cançons, música independent, artista">
+    <meta name="author" content="joan sardans pla">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Pàgina Oficial del Músic Joan Sardans Pla">
+    <meta property="og:description" content="Descobreix la música de Joan Sardans Pla.">
+    <meta property="og:image" content="link_to_image">
+    <meta property="og:url" content="https://yoursite.com">
+    <title>Pàgina Oficial del Músic Joan Sardans Pla</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header aria-label="Header">
+        <div class="header-content">
+            <h1>Joan Sardans Pla</h1>
+            <nav>
+                <ul>
+                    <li><a href="#profile">Perfil</a></li>
+                    <li><a href="#music">Música</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <article class="profile" id="profile">
+            <img src="perfil.jpg" alt="Foto del músic Joan Sardans Pla">
+            <p>Sóc un músic apassionat per la música i l'art.</p>
+        </article>
+        <h2 id="music">Escolta la meva música</h2>
+        <section class="audio-section">
+            <audio controls aria-label="Audio 1">
+                <source src="canco1.mp3" type="audio/mpeg">
+                El teu navegador no suporta l'àudio.
+            </audio>
+            <audio controls aria-label="Audio 2">
+                <source src="canco2.mp3" type="audio/mpeg">
+                El teu navegador no suporta l'àudio.
+            </audio>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Joan Sardans Pla. Tots els drets reservats.</p>
+    </footer>
+    <script src="scripts.js" defer></script>
+</body>
+</html>
