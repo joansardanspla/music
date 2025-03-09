@@ -3,6 +3,9 @@
     --header-bg-color: #222;
     --text-color: #f0f0f0;
     --font-family: 'Poppins', sans-serif;
+    --link-hover-color: #ff8000;
+    --container-max-width: 800px;
+    --transition-speed: 0.3s;
 }
 
 * {
@@ -25,7 +28,7 @@ header {
     padding: 20px;
     font-size: 24px;
     font-weight: 600;
-    transition: background-color 0.3s ease;
+    transition: background-color var(--transition-speed) ease;
 }
 
 header:hover {
@@ -37,7 +40,7 @@ header:hover {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    max-width: 800px;
+    max-width: var(--container-max-width);
     margin: auto;
     padding: 20px;
 }
@@ -46,6 +49,7 @@ header:hover {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
+    width: 100%;
 }
 
 .profile img {
@@ -60,11 +64,11 @@ audio {
 }
 
 a {
-    transition: color 0.3s ease;
+    transition: color var(--transition-speed) ease;
 }
 
 a:hover {
-    color: #ff8000;
+    color: var(--link-hover-color);
 }
 
 @media (max-width: 600px) {
