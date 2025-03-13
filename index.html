@@ -5,31 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Pàgina oficial de Joan Sardans Pla, músic apassionat per la música i l'art. Descobreix la seva música i connecta amb ell.">
     <meta name="keywords" content="Joan Sardans Pla, músic, música, art, àudio, cançons, música independent, artista">
-    <meta name="author" content="joan sardans pla" >
+    <meta name="author" content="Joan Sardans Pla">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Pàgina Oficial del Músic Joan Sardans Pla">
     <meta property="og:description" content="Descobreix la música de Joan Sardans Pla.">
     <meta property="og:image" content="link_to_image">
     <meta property="og:url" content="https://yoursite.com">
+    
     <title>Pàgina Oficial del Músic Joan Sardans Pla</title>
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- CSS Personalitzat -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+
+    <header class="animate__animated animate__fadeInDown">
         <div class="header-content">
             <h1>Joan Sardans Pla</h1>
         </div>
     </header>
+
     <main class="container">
-        <section class="intro">
-            <p>La música és l'art dels sons. És l'organització de sons i silencis d'una manera que expressa emocions, idees i sensacions. A través del ritme, la melodia i l'harmonia, la música pot transmetre sentiments profunds i connectar les persones sense necessitat de paraules.</p>
+        <section id="intro" class="intro animate__animated">
+            <p>La música és l'art dels sons. És l'organització de sons i silencis d'una manera que expressa emocions, idees i sensacions...</p>
         </section>
-        <section class="profile">
+
+        <section id="profile" class="profile animate__animated">
             <img src="perfil.jpg" alt="Foto del músic Joan Sardans Pla" class="profile-img">
             <p>Sóc un músic apassionat per la música i l'art.</p>
         </section>
-        <section class="audio-section">
+
+        <section id="audio" class="audio-section animate__animated">
             <h2>Escolta la meva música</h2>
             <div class="audio-card">
                 <h3>Cançó 1</h3>
@@ -47,9 +59,27 @@
             </div>
         </section>
     </main>
-    <footer>
-       
+
+    <footer class="animate__animated">
+    
     </footer>
-    <script src="scripts.js" defer></script>
+
+    <!-- JavaScript per activar animacions en scroll -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.animate__animated');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate__fadeIn');
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+
 </body>
 </html>
