@@ -81,6 +81,15 @@
 
             elements.forEach(el => observer.observe(el));
         });
+
+        function mostrarContacte() {
+            var contacte = document.getElementById("contacte");
+            if (contacte.style.display === "none") {
+                contacte.style.display = "block";
+            } else {
+                contacte.style.display = "none";
+            }
+        }
     </script>
 
 </body>
