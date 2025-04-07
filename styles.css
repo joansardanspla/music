@@ -44,8 +44,13 @@ header h1 {
 
 .profile-img:hover {
     transform: scale(1.05);
+    
 }
 
+.thumbnail {
+    width: 100px; /* Ajusta aquesta mida segons les teves necessitats */
+    cursor: pointer;
+}
 footer {
     text-align: center;
     padding: 2rem;
