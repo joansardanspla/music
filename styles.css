@@ -77,3 +77,8 @@ footer {
 .social-icons img:hover {
     transform: scale(1.2);
 }
+/* Estableix una mida més gran per a totes les imatges PNG */
+img[src$=".png"] {
+    width: 1500px; /* Ajusta la mida segons les teves necessitats */
+    height: auto; /* Manté la proporció de les imatges */
+}
