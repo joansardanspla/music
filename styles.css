@@ -48,7 +48,7 @@ header h1 {
 }
 
 .thumbnail {
-    width: 100px; /* Ajusta aquesta mida segons les teves necessitats */
+    width: 120px; /* Ajusta aquesta mida segons les teves necessitats */
     cursor: pointer;
 }
 footer {
