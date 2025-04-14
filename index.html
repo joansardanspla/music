@@ -140,6 +140,57 @@
 
             document.body.appendChild(imatgeGran);
         }
+        function mostrarImatgeGran(src) {
+    const overlay = document.createElement("div");
+    overlay.style.position = "fixed";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.backgroundColor = "rgba(0,0,0,0.85)";
+    overlay.style.zIndex = "999";
+    overlay.style.display = "flex";
+    overlay.style.alignItems = "center";
+    overlay.style.justifyContent = "center";
+
+    const imatgeGran = document.createElement("img");
+    imatgeGran.src = src;
+    imatgeGran.style.maxWidth = "90%";
+    imatgeGran.style.maxHeight = "90%";
+    imatgeGran.style.borderRadius = "10px";
+    imatgeGran.style.boxShadow = "0 0 20px rgba(255, 255, 255, 0.5)";
+
+    const tancarBtn = document.createElement("span");
+    tancarBtn.textContent = "✖";
+    tancarBtn.style.position = "fixed";
+    tancarBtn.style.top = "20px";
+    tancarBtn.style.right = "30px";
+    tancarBtn.style.fontSize = "2rem";
+    tancarBtn.style.color = "#fff";
+    tancarBtn.style.cursor = "pointer";
+    tancarBtn.style.zIndex = "1001";
+
+    function tancarImatge() {
+        document.body.removeChild(overlay);
+        document.removeEventListener("keydown", escListener);
+    }
+
+    tancarBtn.onclick = tancarImatge;
+    overlay.onclick = tancarImatge;
+
+    function escListener(e) {
+        if (e.key === "Escape") {
+            tancarImatge();
+        }
+    }
+
+    document.addEventListener("keydown", escListener);
+
+    overlay.appendChild(imatgeGran);
+    overlay.appendChild(tancarBtn);
+    document.body.appendChild(overlay);
+}
+
     </script>
 
 </body>
