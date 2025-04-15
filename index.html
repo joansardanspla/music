@@ -21,6 +21,43 @@
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
+    <style>
+        /* Estil per a la imatge de perfil */
+        .profile-img {
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        /* Estil per a les miniatures */
+        .thumbnail {
+            width: 130px;  /* Mida ajustada per a miniatures */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        /* Efecte al passar el cursor per sobre de la miniatura */
+        .thumbnail:hover {
+            transform: scale(1.05);
+        }
+
+        /* Disposició en grid per a les imatges */
+        .imatge-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 16px;
+        }
+
+        /* Ajustar la mida de les imatges en dispositius mòbils */
+        @media (max-width: 600px) {
+            .thumbnail {
+                width: 100px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -34,7 +71,6 @@
 
         <section id="profile" class="profile animate__animated animate__fadeIn" style="animation-delay: 0.3s; animation-duration: 1s;">
             <img src="perfil.jpg" alt="Foto del músic Joan Sardans Pla" class="profile-img">
-        
         </section>
 
         <section id="audio" class="audio-section animate__animated">
@@ -61,20 +97,15 @@
             <div class="imatge-card">
                 <img src="larumba.png" alt="Imatge petita" class="thumbnail" onclick="mostrarImatgeGran('larumba.png')">
             </div>
-            <!-- Afegeix una altra imatge a la nova secció per la imatge -->
             <div class="imatge-card">
                 <img src="mitjanit.png" alt="Nova imatge petita" class="thumbnail" onclick="mostrarImatgeGran('mitjanit.png')">
             </div>
-            <!-- Afegeix una altra imatge a la nova secció per la imatge -->
-             <div class="imatge-card">
+            <div class="imatge-card">
                 <img src="grans.png" alt="Nova imatge petita" class="thumbnail" onclick="mostrarImatgeGran('grans.png')">
             </div>
-             <!-- Afegeix una altra imatge a la nova secció per la imatge -->
-             <div class="imatge-card">
+            <div class="imatge-card">
                 <img src="vida.png" alt="Nova imatge petita" class="thumbnail" onclick="mostrarImatgeGran('vida.png')">
             </div>
-
-            
         </section>
 
         <button onclick="mostrarContacte()" style="margin-top: 20px;">Contacta'm</button>
@@ -82,7 +113,6 @@
     </main>
 
     <footer class="animate__animated">
-    
     </footer>
 
     <!-- JavaScript per activar animacions en scroll -->
@@ -110,65 +140,62 @@
             }
         }
 
-       function mostrarImatgeGran(src) {
-    // Crear la capa de fons
-    const overlay = document.createElement("div");
-    overlay.style.position = "fixed";
-    overlay.style.top = "0";
-    overlay.style.left = "0";
-    overlay.style.width = "100%";
-    overlay.style.height = "100%";
-    overlay.style.backgroundColor = "rgba(0,0,0,0.85)";
-    overlay.style.zIndex = "999";
-    overlay.style.display = "flex";
-    overlay.style.alignItems = "center";
-    overlay.style.justifyContent = "center";
+        function mostrarImatgeGran(src) {
+            // Crear la capa de fons
+            const overlay = document.createElement("div");
+            overlay.style.position = "fixed";
+            overlay.style.top = "0";
+            overlay.style.left = "0";
+            overlay.style.width = "100%";
+            overlay.style.height = "100%";
+            overlay.style.backgroundColor = "rgba(0,0,0,0.85)";
+            overlay.style.zIndex = "999";
+            overlay.style.display = "flex";
+            overlay.style.alignItems = "center";
+            overlay.style.justifyContent = "center";
 
-    // Crear la imatge gran
-    const imatgeGran = document.createElement("img");
-    imatgeGran.src = src;
-    imatgeGran.style.maxWidth = "90%";
-    imatgeGran.style.maxHeight = "90%";
-    imatgeGran.style.borderRadius = "10px";
+            // Crear la imatge gran
+            const imatgeGran = document.createElement("img");
+            imatgeGran.src = src;
+            imatgeGran.style.maxWidth = "90%";
+            imatgeGran.style.maxHeight = "90%";
+            imatgeGran.style.borderRadius = "10px";
 
-    // Crear el botó de tancar (✖)
-    const tancarBtn = document.createElement("span");
-    tancarBtn.textContent = "✖";
-    tancarBtn.style.position = "fixed";
-    tancarBtn.style.top = "20px";
-    tancarBtn.style.right = "30px";
-    tancarBtn.style.fontSize = "2rem";
-    tancarBtn.style.color = "#fff";
-    tancarBtn.style.cursor = "pointer";
-    tancarBtn.style.zIndex = "1001";
+            // Crear el botó de tancar (✖)
+            const tancarBtn = document.createElement("span");
+            tancarBtn.textContent = "✖";
+            tancarBtn.style.position = "fixed";
+            tancarBtn.style.top = "20px";
+            tancarBtn.style.right = "30px";
+            tancarBtn.style.fontSize = "2rem";
+            tancarBtn.style.color = "#fff";
+            tancarBtn.style.cursor = "pointer";
+            tancarBtn.style.zIndex = "1001";
 
-    // Funció per tancar la imatge
-    function tancarImatge() {
-        document.body.removeChild(overlay);
-        document.removeEventListener("keydown", escListener);
-    }
+            // Funció per tancar la imatge
+            function tancarImatge() {
+                document.body.removeChild(overlay);
+                document.removeEventListener("keydown", escListener);
+            }
 
-    // Afegir l'escolta de l'esdeveniment de tancar
-    tancarBtn.onclick = tancarImatge;
-    overlay.onclick = tancarImatge;
+            // Afegir l'escolta de l'esdeveniment de tancar
+            tancarBtn.onclick = tancarImatge;
+            overlay.onclick = tancarImatge;
 
-    // Afegir el listener per la tecla "Escape"
-    function escListener(e) {
-        if (e.key === "Escape") {
-            tancarImatge();
+            // Afegir el listener per la tecla "Escape"
+            function escListener(e) {
+                if (e.key === "Escape") {
+                    tancarImatge();
+                }
+            }
+
+            document.addEventListener("keydown", escListener);
+
+            // Afegir elements al cos del document
+            overlay.appendChild(imatgeGran);
+            overlay.appendChild(tancarBtn);
+            document.body.appendChild(overlay);
         }
-    }
-
-    document.addEventListener("keydown", escListener);
-
-    // Afegir elements al cos del document
-    overlay.appendChild(imatgeGran);
-    overlay.appendChild(tancarBtn);
-    document.body.appendChild(overlay);
-}
-
-
-
     </script>
 
 </body>
