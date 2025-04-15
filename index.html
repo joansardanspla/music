@@ -122,27 +122,8 @@
             }
         }
 
-        function mostrarImatgeGran(src) {
-            var imatgeGran = document.createElement("img");
-            imatgeGran.src = src;
-            imatgeGran.style.position = "fixed";
-            imatgeGran.style.top = "50%";
-            imatgeGran.style.left = "50%";
-            imatgeGran.style.transform = "translate(-50%, -50%)";
-            imatgeGran.style.maxWidth = "90%";
-            imatgeGran.style.maxHeight = "90%";
-            imatgeGran.style.zIndex = "1000";
-            imatgeGran.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-            imatgeGran.style.padding = "10px";
-            imatgeGran.style.borderRadius = "10px";
-
-            imatgeGran.onclick = function() {
-                document.body.removeChild(imatgeGran);
-            }
-
-            document.body.appendChild(imatgeGran);
-        }
-   function mostrarImatgeGran(src) {
+       function mostrarImatgeGran(src) {
+    // Crear la capa de fons
     const overlay = document.createElement("div");
     overlay.style.position = "fixed";
     overlay.style.top = "0";
@@ -155,14 +136,14 @@
     overlay.style.alignItems = "center";
     overlay.style.justifyContent = "center";
 
+    // Crear la imatge gran
     const imatgeGran = document.createElement("img");
     imatgeGran.src = src;
     imatgeGran.style.maxWidth = "90%";
     imatgeGran.style.maxHeight = "90%";
     imatgeGran.style.borderRadius = "10px";
-    // S'ha eliminat l'efecte d'ombra aquí
-    // imatgeGran.style.boxShadow = "0 0 20px rgba(255, 255, 255, 0.5)";
 
+    // Crear el botó de tancar (✖)
     const tancarBtn = document.createElement("span");
     tancarBtn.textContent = "✖";
     tancarBtn.style.position = "fixed";
@@ -173,14 +154,17 @@
     tancarBtn.style.cursor = "pointer";
     tancarBtn.style.zIndex = "1001";
 
+    // Funció per tancar la imatge
     function tancarImatge() {
         document.body.removeChild(overlay);
         document.removeEventListener("keydown", escListener);
     }
 
+    // Afegir l'escolta de l'esdeveniment de tancar
     tancarBtn.onclick = tancarImatge;
     overlay.onclick = tancarImatge;
 
+    // Afegir el listener per la tecla "Escape"
     function escListener(e) {
         if (e.key === "Escape") {
             tancarImatge();
@@ -189,10 +173,12 @@
 
     document.addEventListener("keydown", escListener);
 
+    // Afegir elements al cos del document
     overlay.appendChild(imatgeGran);
     overlay.appendChild(tancarBtn);
     document.body.appendChild(overlay);
 }
+
 
 
     </script>
