@@ -1,1 +1,1 @@
-Pàgina personal del músic Joan Sardans Pla
+Pàgina del músic Joan Sardans Pla
