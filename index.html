@@ -21,43 +21,8 @@
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
-    <style>
-        /* Estil per a la imatge de perfil */
-        .profile-img {
-            width: 150px;
-            height: auto;
-            border-radius: 50%;
-        }
-
-        /* Estil per a les miniatures */
-        .thumbnail {
-            width: 130px;  /* Mida ajustada per a miniatures */
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        /* Efecte al passar el cursor per sobre de la miniatura */
-        .thumbnail:hover {
-            transform: scale(1.05);
-        }
-
-        /* Disposició en grid per a les imatges */
-        .imatge-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            gap: 16px;
-        }
-
-        /* Ajustar la mida de les imatges en dispositius mòbils */
-        @media (max-width: 600px) {
-            .thumbnail {
-                width: 100px;
-            }
-        }
-    </style>
+    <!-- CSS Personalitzat -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -91,7 +56,6 @@
             </div>
         </section>
 
-        <!-- Nova secció per la imatge -->
         <section id="imatge" class="imatge-section animate__animated">
             <h2>Partitures</h2>
             <div class="imatge-card">
@@ -115,11 +79,9 @@
     <footer class="animate__animated">
     </footer>
 
-    <!-- JavaScript per activar animacions en scroll -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const elements = document.querySelectorAll('.animate__animated');
-
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -127,7 +89,6 @@
                     }
                 });
             }, { threshold: 0.2 });
-
             elements.forEach(el => observer.observe(el));
         });
 
@@ -141,7 +102,6 @@
         }
 
         function mostrarImatgeGran(src) {
-            // Crear la capa de fons
             const overlay = document.createElement("div");
             overlay.style.position = "fixed";
             overlay.style.top = "0";
@@ -154,14 +114,12 @@
             overlay.style.alignItems = "center";
             overlay.style.justifyContent = "center";
 
-            // Crear la imatge gran
             const imatgeGran = document.createElement("img");
             imatgeGran.src = src;
             imatgeGran.style.maxWidth = "90%";
             imatgeGran.style.maxHeight = "90%";
             imatgeGran.style.borderRadius = "10px";
 
-            // Crear el botó de tancar (✖)
             const tancarBtn = document.createElement("span");
             tancarBtn.textContent = "✖";
             tancarBtn.style.position = "fixed";
@@ -172,17 +130,14 @@
             tancarBtn.style.cursor = "pointer";
             tancarBtn.style.zIndex = "1001";
 
-            // Funció per tancar la imatge
             function tancarImatge() {
                 document.body.removeChild(overlay);
                 document.removeEventListener("keydown", escListener);
             }
 
-            // Afegir l'escolta de l'esdeveniment de tancar
             tancarBtn.onclick = tancarImatge;
             overlay.onclick = tancarImatge;
 
-            // Afegir el listener per la tecla "Escape"
             function escListener(e) {
                 if (e.key === "Escape") {
                     tancarImatge();
@@ -191,7 +146,6 @@
 
             document.addEventListener("keydown", escListener);
 
-            // Afegir elements al cos del document
             overlay.appendChild(imatgeGran);
             overlay.appendChild(tancarBtn);
             document.body.appendChild(overlay);
