@@ -94,7 +94,7 @@ button {
 }
 
 button i {
-    font-size: 5rem; /* Augmenta la mida de la icona */
+    font-size: 10rem; /* Augmenta la mida de la icona */
     margin-right: 8px; /* Espai entre la icona i el text */
 }
 
