@@ -36,7 +36,8 @@
         </section>
 
         <section id="audio" class="audio-section">
-             <div class="audio-card">
+            <h2>Escolta la meva música</h2>
+            <div class="audio-card">
                 <h3></h3>
                 <audio controls>
                     <source src="canco1.mp3" type="audio/mpeg">
@@ -52,7 +53,8 @@
             </div>
         </section>
 
-        <section id="imatge" class="imatge-section">   
+        <section id="imatge" class="imatge-section">
+            <h2>Partitures</h2>
             <div class="imatge-card">
                 <img src="larumba.png" alt="Imatge petita" class="thumbnail" onclick="mostrarImatgeGran('larumba.png')">
             </div>
@@ -72,18 +74,17 @@
     </main>
 
     <footer>
+        <!-- Peu de pàgina -->
     </footer>
 
     <script>
+        // Mostrar/ocultar informació de contacte
         function mostrarContacte() {
-            var contacte = document.getElementById("contacte");
-            if (contacte.style.display === "none") {
-                contacte.style.display = "block";
-            } else {
-                contacte.style.display = "none";
-            }
+            const contacte = document.getElementById("contacte");
+            contacte.style.display = contacte.style.display === "none" ? "block" : "none";
         }
 
+        // Mostrar una imatge gran en fer clic sobre una miniatura
         function mostrarImatgeGran(src) {
             const overlay = document.createElement("div");
             overlay.style.position = "fixed";
