@@ -18,15 +18,12 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
     <!-- CSS Personalitzat -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header class="animate__animated animate__fadeInDown">
+    <header>
         <div class="header-content">
             <h1>Joan Sardans Pla</h1>
         </div>
@@ -34,13 +31,12 @@
 
     <main class="container">
 
-        <section id="profile" class="profile animate__animated animate__fadeIn" style="animation-delay: 0.3s; animation-duration: 1s;">
+        <section id="profile" class="profile">
             <img src="perfil.jpg" alt="Foto del músic Joan Sardans Pla" class="profile-img">
         </section>
 
-        <section id="audio" class="audio-section animate__animated">
-            <h2>Escolta la meva música</h2>
-            <div class="audio-card">
+        <section id="audio" class="audio-section">
+             <div class="audio-card">
                 <h3></h3>
                 <audio controls>
                     <source src="canco1.mp3" type="audio/mpeg">
@@ -56,8 +52,7 @@
             </div>
         </section>
 
-        <section id="imatge" class="imatge-section animate__animated">
-            <h2>Partitures</h2>
+        <section id="imatge" class="imatge-section">   
             <div class="imatge-card">
                 <img src="larumba.png" alt="Imatge petita" class="thumbnail" onclick="mostrarImatgeGran('larumba.png')">
             </div>
@@ -76,22 +71,10 @@
         <p id="contacte" style="display:none; margin-top: 20px;">Barri El Guix de Manresa</p>
     </main>
 
-    <footer class="animate__animated">
+    <footer>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const elements = document.querySelectorAll('.animate__animated');
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate__fadeIn');
-                    }
-                });
-            }, { threshold: 0.2 });
-            elements.forEach(el => observer.observe(el));
-        });
-
         function mostrarContacte() {
             var contacte = document.getElementById("contacte");
             if (contacte.style.display === "none") {
