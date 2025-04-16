@@ -1,6 +1,7 @@
 /* Cos general */
 body {
-    font-family: 'Poppins', Arial, sans-serif;
+    body {
+    font-family: Arial, sans-serif;
     font-weight: 400;
     margin: 0;
     padding: 0;
