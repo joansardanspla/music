@@ -98,6 +98,10 @@ footer {
   outline: 2px solid #4CAF50; /* Verd per a la visibilitat del focus */
 }
 
+#contacte {
+    display: none; /* Per amagar el paràgraf per defecte */
+    margin-top: 20px;
+}
 
 
 /* Responsive */
