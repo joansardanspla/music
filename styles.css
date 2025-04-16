@@ -78,10 +78,6 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Ícones socials */
-.social-icons img:hover {
-    transform: scale(1.2);
-}
 
 /* Botons */
 button {
@@ -90,14 +86,23 @@ button {
     color: #fff;
     border: none;
     border-radius: 6px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center; /* Centra l'icona verticalment */
+    justify-content: center;
+}
+
+button i {
+    font-size: 1.5rem; /* Augmenta la mida de la icona */
+    margin-right: 8px; /* Espai entre la icona i el text */
 }
 
 button:hover {
     background-color: #555;
 }
+
 
 /* Responsive */
 @media (max-width: 600px) {
