@@ -12,8 +12,12 @@ body {
     min-height: 100vh;
     justify-content: center; /* Centrat vertical */
     align-items: center; /* Centrat horitzontal */
+    opacity: 0;
+    transition: opacity 1s ease;
 }
-
+body.loaded {
+    opacity: 1;
+}
 
 
 /* Contingut principal */
