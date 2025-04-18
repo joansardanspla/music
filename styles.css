@@ -14,25 +14,7 @@ body {
     align-items: center; /* Centrat horitzontal */
 }
 
-/* Capçalera */
-header {
-    width: 100%;
-    background-color: #222;
-}
 
-.header-content {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1.5rem;
-    color: #fff;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2rem;
-}
 
 /* Contingut principal */
 .container {
@@ -74,15 +56,6 @@ header h1 {
     transform: scale(1.1);
 }
 
-/* Peu de pàgina */
-footer {
-    width: 100%;
-    text-align: center;
-    padding: 1.5rem;
-    background-color: #222;
-    color: #fff;
-    font-size: 0.9rem;
-}
 
 
 /* Botons */
@@ -105,9 +78,6 @@ footer {
   transform: scale(1.1); /* Augmenta la mida de la imatge al passar el ratolí */
 }
 
-.contact-button:focus {
-  outline: none; /* Verd per a la visibilitat del focus */
-}
 
 #contacte {
     display: none; /* Per amagar el paràgraf per defecte */
