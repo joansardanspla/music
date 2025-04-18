@@ -59,3 +59,7 @@ function mostrarImatgeGran(src) {
     overlay.appendChild(tancarBtn);
     document.body.appendChild(overlay);
 }
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+});
+
