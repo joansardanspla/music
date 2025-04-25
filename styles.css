@@ -49,20 +49,24 @@ body.loaded {
     transform: scale(1.1);
 }
 
-/* CSS per col·locar les dues imatges una al costat de l'altra */
 .doble-pagina {
-    display: flex; /* Utilitza flexbox per col·locar les imatges en fila */
-    gap: 10px; /* Espai entre les imatges */
-    justify-content: center; /* Centrar les imatges dins del contenidor */
-    align-items: center; /* Alinear verticalment si cal */
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
 .doble-pagina img {
-    width: auto; /* Manté la proporció de les imatges */
-    max-width: 45%; /* Ajusta l'amplada màxima de cada imatge */
-    height: auto; /* Manté l'alçada proporcionada */
-    border: 1px solid #ccc; /* Opcional: afegeix un marge o estil a les imatges */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Opcional: afegeix una ombra */
+    width: 140px; /* Mateixa mida que les .thumbnail */
+    height: auto; /* Manté la proporció */
+    border-radius: 8px; /* Com les miniatures */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Igual que .thumbnail */
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.doble-pagina img:hover {
+    transform: scale(1.1);
 }
 
 
