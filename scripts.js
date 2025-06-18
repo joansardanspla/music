@@ -16,6 +16,10 @@ function mostrarImatgeGran(src) {
     imatgeGran.style.maxWidth = "90%";
     imatgeGran.style.maxHeight = "90%";
     imatgeGran.style.borderRadius = "10px";
+    imatgeGran.onclick = (e) => {
+    e.stopPropagation();
+};
+
 
     const tancarBtn = document.createElement("span");
     tancarBtn.textContent = "✖";
