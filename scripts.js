@@ -1,15 +1,3 @@
-// Mostrar/ocultar informació de contacte
-function mostrarContacte() {
-    var contacte = document.getElementById("contacte");
-    var style = window.getComputedStyle(contacte); // Obtenim els estils calculats
-    if (style.display === "none") {
-        contacte.style.display = "block"; // Mostra el paràgraf
-    } else {
-        contacte.style.display = "none"; // Amaga el paràgraf
-    }
-}
-
-// Mostrar una imatge gran en fer clic sobre una miniatura
 function mostrarImatgeGran(src) {
     const overlay = document.createElement("div");
     overlay.style.position = "fixed";
