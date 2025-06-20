@@ -1,57 +1,45 @@
 function mostrarImatgeGran(src) {
+    if (document.querySelector(".imatge-overlay")) return;
+
     const overlay = document.createElement("div");
-    overlay.style.position = "fixed";
-    overlay.style.top = "0";
-    overlay.style.left = "0";
-    overlay.style.width = "100%";
-    overlay.style.height = "100%";
-    overlay.style.backgroundColor = "rgba(0,0,0,0.85)";
-    overlay.style.zIndex = "999";
-    overlay.style.display = "flex";
-    overlay.style.alignItems = "center";
-    overlay.style.justifyContent = "center";
+    overlay.classList.add("imatge-overlay");
+    Object.assign(overlay.style, {
+        position: "fixed",
+        top: "0", left: "0",
+        width: "100%", height: "100%",
+        backgroundColor: "rgba(0,0,0,0.85)",
+        zIndex: "999",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
+    });
+
+    overlay.setAttribute("role", "dialog");
+    overlay.setAttribute("aria-modal", "true");
 
     const imatgeGran = document.createElement("img");
     imatgeGran.src = src;
-    imatgeGran.style.maxWidth = "90%";
-    imatgeGran.style.maxHeight = "90%";
-    imatgeGran.style.borderRadius = "10px";
-    imatgeGran.onclick = (e) => {
-    e.stopPropagation();
-};
-
+    Object.assign(imatgeGran.style, {
+        maxWidth: "90%", maxHeight: "90%",
+        borderRadius: "10px"
+    });
 
     const tancarBtn = document.createElement("span");
     tancarBtn.textContent = "✖";
-    tancarBtn.style.position = "fixed";
-    tancarBtn.style.top = "20px";
-    tancarBtn.style.right = "30px";
-    tancarBtn.style.fontSize = "2rem";
-    tancarBtn.style.color = "#fff";
-    tancarBtn.style.cursor = "pointer";
-    tancarBtn.style.zIndex = "1001";
+    Object.assign(tancarBtn.style, {
+        position: "fixed", top: "20px", right: "30px",
+        fontSize: "2rem", color: "#fff",
+        cursor: "pointer", zIndex: "1001"
+    });
 
     function tancarImatge() {
         document.body.removeChild(overlay);
-        document.removeEventListener("keydown", escListener);
     }
 
+    // Només la "X" pot tancar l'overlay
     tancarBtn.onclick = tancarImatge;
-    overlay.onclick = tancarImatge;
-
-    function escListener(e) {
-        if (e.key === "Escape") {
-            tancarImatge();
-        }
-    }
-
-    document.addEventListener("keydown", escListener);
 
     overlay.appendChild(imatgeGran);
     overlay.appendChild(tancarBtn);
     document.body.appendChild(overlay);
 }
-window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
-});
-
