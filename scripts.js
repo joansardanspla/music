@@ -1,52 +1,48 @@
 function mostrarImatgeGran(src) {
+    // Comprovem si ja hi ha un overlay
     if (document.querySelector(".imatge-overlay")) return;
 
-    // Crear l'overlay
+    // Crear overlay
     const overlay = document.createElement("div");
-    overlay.classList.add("imatge-overlay");
-    Object.assign(overlay.style, {
-        position: "fixed",
-        top: "0",
-        left: "0",
-        width: "100%",
-        height: "100%",
-        backgroundColor: "rgba(0, 0, 0, 0.85)",
-        zIndex: "9999",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center"
-    });
+    overlay.className = "imatge-overlay";
+    overlay.style.position = "fixed";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.backgroundColor = "rgba(0, 0, 0, 0.85)";
+    overlay.style.zIndex = "9999";
+    overlay.style.display = "flex";
+    overlay.style.justifyContent = "center";
+    overlay.style.alignItems = "center";
 
-    // Crear la imatge gran
+    // Crear imatge
     const imatgeGran = document.createElement("img");
     imatgeGran.src = src;
-    Object.assign(imatgeGran.style, {
-        maxWidth: "90%",
-        maxHeight: "90%",
-        borderRadius: "10px",
-        boxShadow: "0 0 20px rgba(0,0,0,0.5)"
-    });
+    imatgeGran.alt = "Imatge gran";
+    imatgeGran.style.maxWidth = "90%";
+    imatgeGran.style.maxHeight = "90%";
+    imatgeGran.style.borderRadius = "10px";
+    imatgeGran.style.boxShadow = "0 0 20px rgba(0,0,0,0.5)";
 
-    // Crear el botó de tancar (X)
+    // Botó tancar
     const tancarBtn = document.createElement("span");
-    tancarBtn.textContent = "✖";
-    Object.assign(tancarBtn.style, {
-        position: "absolute",
-        top: "20px",
-        right: "30px",
-        fontSize: "2.5rem",
-        color: "#fff",
-        cursor: "pointer",
-        zIndex: "10000",
-        fontFamily: "sans-serif"
-    });
+    tancarBtn.innerText = "✖";
+    tancarBtn.style.position = "absolute";
+    tancarBtn.style.top = "20px";
+    tancarBtn.style.right = "30px";
+    tancarBtn.style.fontSize = "2.5rem";
+    tancarBtn.style.color = "#fff";
+    tancarBtn.style.cursor = "pointer";
+    tancarBtn.style.zIndex = "10000";
+    tancarBtn.style.fontFamily = "sans-serif";
 
-    // Acció de tancar (només amb la X)
+    // Només la X tanca
     tancarBtn.onclick = () => {
         document.body.removeChild(overlay);
     };
 
-    // Afegir elements
+    // Afegir al DOM
     overlay.appendChild(imatgeGran);
     overlay.appendChild(tancarBtn);
     document.body.appendChild(overlay);
