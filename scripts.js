@@ -1,56 +1,59 @@
 function mostrarImatgeGran(src) {
-    const overlay = document.createElement("div");
-    overlay.style.position = "fixed";
-    overlay.style.top = "0";
-    overlay.style.left = "0";
-    overlay.style.width = "100%";
-    overlay.style.height = "100%";
-    overlay.style.backgroundColor = "rgba(0,0,0,0.85)";
-    overlay.style.zIndex = "999";
-    overlay.style.display = "flex";
-    overlay.style.alignItems = "center";
-    overlay.style.justifyContent = "center";
+    // Elimina qualsevol overlay anterior
+    if (document.querySelector(".imatge-overlay")) return;
 
+    // Crear overlay
+    const overlay = document.createElement("div");
+    overlay.className = "imatge-overlay";
+    Object.assign(overlay.style, {
+        position: "fixed",
+        top: "0",
+        left: "0",
+        width: "100%",
+        height: "100%",
+        backgroundColor: "rgba(0, 0, 0, 0.85)",
+        zIndex: "9999",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
+    });
+
+    // Crear imatge gran
     const imatgeGran = document.createElement("img");
     imatgeGran.src = src;
-    imatgeGran.style.maxWidth = "90%";
-    imatgeGran.style.maxHeight = "90%";
-    imatgeGran.style.borderRadius = "10px";
-    imatgeGran.onclick = (e) => {
-    e.stopPropagation();
-};
+    Object.assign(imatgeGran.style, {
+        maxWidth: "90%",
+        maxHeight: "90%",
+        borderRadius: "10px",
+        boxShadow: "0 0 20px rgba(0,0,0,0.5)"
+    });
 
-
+    // Crear botó de tancar
     const tancarBtn = document.createElement("span");
     tancarBtn.textContent = "✖";
-    tancarBtn.style.position = "fixed";
-    tancarBtn.style.top = "20px";
-    tancarBtn.style.right = "30px";
-    tancarBtn.style.fontSize = "2rem";
-    tancarBtn.style.color = "#fff";
-    tancarBtn.style.cursor = "pointer";
-    tancarBtn.style.zIndex = "1001";
+    Object.assign(tancarBtn.style, {
+        position: "fixed",
+        top: "20px",
+        right: "30px",
+        fontSize: "2.5rem",
+        color: "#fff",
+        cursor: "pointer",
+        zIndex: "10000",
+        fontFamily: "sans-serif"
+    });
 
-    function tancarImatge() {
+    // Només el botó "X" pot tancar l'overlay
+    tancarBtn.onclick = () => {
         document.body.removeChild(overlay);
-        document.removeEventListener("keydown", escListener);
-    }
+    };
 
-    tancarBtn.onclick = tancarImatge;
-    overlay.onclick = tancarImatge;
-
-    function escListener(e) {
-        if (e.key === "Escape") {
-            tancarImatge();
-        }
-    }
-
-    document.addEventListener("keydown", escListener);
-
+    // Afegir al DOM
     overlay.appendChild(imatgeGran);
     overlay.appendChild(tancarBtn);
     document.body.appendChild(overlay);
 }
+
+// Per fer aparèixer la pàgina suaument
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
