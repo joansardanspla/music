@@ -44,6 +44,14 @@ body.loaded {
     transform: scale(1.1);
 }
 
+.audio-section audio {
+  display: block;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px; 
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
 @media (max-width: 600px) {
