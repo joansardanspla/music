@@ -57,7 +57,19 @@ function mostrarImatgeGran(src) {
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
-// Toggle del menú hamburger
-document.getElementById('menu-toggle').addEventListener('click', () => {
-  document.getElementById('nav-links').classList.toggle('show');
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+
+  toggleBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+
+  // Opcional: tancar el menú quan fas clic a un enllaç
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("show");
+    });
+  });
 });
+
