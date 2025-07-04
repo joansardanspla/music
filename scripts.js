@@ -57,3 +57,7 @@ function mostrarImatgeGran(src) {
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
+// Toggle del menú hamburger
+document.getElementById('menu-toggle').addEventListener('click', () => {
+  document.getElementById('nav-links').classList.toggle('show');
+});
