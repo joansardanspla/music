@@ -1,130 +1,153 @@
-/* Efecte d'aparició suau al carregar */
-body {
+/* Importa una font moderna de Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+:root {
+  --accent: #4F8FF9;
+  --bg: #f7f8fa;
+  --text: #222;
+  --card: #fff;
+  --shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+/* Reset bàsic */
+* {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9f9;
-  color: #222;
-  opacity: 0;
-  transition: opacity 0.8s ease-in-out;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body.loaded {
-  opacity: 1;
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 18px;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  min-height: 100vh;
 }
 
-/* Títols */
+h1, h2 {
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
 .titol-seccio {
   text-align: center;
-  margin-top: 2rem;
-  font-size: 2rem;
-  color: #222;
+  margin: 2.5rem 0 1.5rem 0;
+  letter-spacing: 1px;
 }
 
-/* Navegació */
 nav {
-  background-color: #000;
-  padding: 1rem;
-  text-align: center;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  padding: 1rem 0;
+  margin-bottom: 2.5rem;
+  width: 100%;
 }
 
 nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
   list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav li {
-  display: inline-block;
-  margin: 0 1rem;
 }
 
 nav a {
-  color: #fff;
+  color: var(--accent);
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: color 0.2s;
 }
 
 nav a:hover {
-  color: #ffd700;
+  color: #2566d8;
+  text-decoration: underline;
 }
 
-/* Contenidor principal */
 .container {
   max-width: 900px;
-  margin: auto;
-  padding: 1rem;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
 }
 
-/* Secció d'àudio */
 .audio-section {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: center;
-  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
 audio {
-  width: 300px;
-  max-width: 90%;
+  width: 260px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  background: #f0f4fa;
+  outline: none;
 }
 
-/* Miniatures de partitures */
-.imatge-section {
+#imatge.imatge-section {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
   justify-content: center;
   margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .imatge-card {
-  flex: 0 1 200px;
-  text-align: center;
-}
-
-.thumbnail {
-  width: 100%;
-  max-width: 200px;
+  background: var(--bg);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  transition: transform 0.2s;
   cursor: pointer;
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.thumbnail:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Overlay de la imatge gran */
-.imatge-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.85);
-  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.imatge-overlay img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+.imatge-card:hover {
+  transform: scale(1.06);
+  box-shadow: 0 6px 24px rgba(79,143,249,0.12);
 }
 
-.imatge-overlay span {
-  position: fixed;
-  top: 20px;
-  right: 30px;
-  font-size: 2.5rem;
-  color: #fff;
+.thumbnail {
+  width: 180px;
+  height: auto;
+  border-radius: 8px;
+  transition: box-shadow 0.2s;
+  box-shadow: 0 1px 8px rgba(79,143,249,0.08);
   cursor: pointer;
-  z-index: 10000;
-  font-family: sans-serif;
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 1rem;
+  }
+  .audio-section, #imatge.imatge-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  nav ul {
+    gap: 1rem;
+  }
+  .thumbnail {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #e3e7ef;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 8px;
 }
