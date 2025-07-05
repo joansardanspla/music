@@ -25,12 +25,10 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   background-image: url('ruta-de-la-teva-imatge.jpg');
-  background-size: cover;       /* L'imatge cobreix tota la pantalla */
-  background-position: center;  /* Centra l'imatge */
-  background-repeat: no-repeat; /* No repeteix la imatge */
-  background-attachment: fixed; /* Manté l'imatge fixa quan fas scroll */
-}
-
+  background-size: cover;       
+  background-position: center;  
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
 }
 
 h1, h2 {
@@ -46,32 +44,67 @@ h1, h2 {
 }
 
 nav {
-  background: var(--title-color);
-  box-shadow: var(--shadow);
-  padding: 1rem 0;
-  margin-bottom: 2.5rem;
   width: 100%;
+  position: relative;
+  z-index: 1000;
 }
 
-nav ul {
-  display: none; /* Amaguem menú per defecte */
+/* Contenidor menú */
+.menu-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: flex-end; /* Botó a la dreta */
+  align-items: center;
+  position: relative;
+}
+
+/* Botó hamburguesa sempre visible */
+.menu-toggle {
+  display: block;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--accent);
+  user-select: none;
+  z-index: 1100;
+  background: var(--card);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.menu-toggle:hover {
+  background-color: rgba(79, 143, 249, 0.15);
+}
+
+/* Menú amagat per defecte */
+.nav-links {
+  display: none;
   flex-direction: column;
-  position: absolute;
-  top: 60px;
+  position: fixed;
+  top: 3.7rem; /* sota el botó hamburguesa */
   right: 1rem;
   background: var(--card);
   padding: 1rem 1.5rem;
   box-shadow: var(--shadow);
   border-radius: 10px;
-  z-index: 999;
+  z-index: 1090;
   gap: 1rem;
+  max-width: 250px;
+  user-select: none;
 }
 
-nav ul.show {
-  display: flex; /* Mostrar menú quan té la classe show */
+.nav-links.show {
+  display: flex;
 }
 
-nav a {
+/* Enllaços del menú */
+.nav-links a {
   color: var(--accent);
   text-decoration: none;
   font-size: 1.1em;
@@ -79,11 +112,12 @@ nav a {
   transition: color 0.2s;
 }
 
-nav a:hover {
+.nav-links a:hover {
   color: #2566d8;
   text-decoration: underline;
 }
 
+/* Galeria */
 .galeria-section {
   display: flex;
   flex-wrap: wrap;
@@ -103,6 +137,7 @@ nav a:hover {
   transform: scale(1.05);
 }
 
+/* Contenidor principal */
 .container {
   max-width: 900px;
   margin: 0 auto;
@@ -112,6 +147,7 @@ nav a:hover {
   box-shadow: var(--shadow);
 }
 
+/* Secció àudio */
 .audio-section {
   display: flex;
   flex-wrap: wrap;
@@ -128,6 +164,7 @@ audio {
   outline: none;
 }
 
+/* Secció imatge */
 #imatge.imatge-section {
   display: flex;
   flex-wrap: wrap;
@@ -163,76 +200,7 @@ audio {
   cursor: pointer;
 }
 
-@media (max-width: 700px) {
-  .container {
-    padding: 1rem;
-  }
-  .audio-section, #imatge.imatge-section {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-  nav ul {
-    top: 50px;
-    right: 1rem;
-  }
-  .thumbnail {
-    width: 100%;
-    max-width: 300px;
-  }
-}
-
+/* Scrollbar personalitzat */
 ::-webkit-scrollbar {
   width: 8px;
-  background: #e3e7ef;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 8px;
-}
-
-.menu-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-
-.logo {
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: var(--accent);
-}
-
-.menu-toggle {
-  display: block; /* Sempre visible */
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: var(--accent);
-}
-
-.nav-links {
-  display: none; /* Amagat per defecte */
-  flex-direction: column;
-  position: absolute;
-  top: 60px;
-  right: 1rem;
-  background: var(--card);
-  padding: 1rem 1.5rem;
-  box-shadow: var(--shadow);
-  border-radius: 10px;
-  z-index: 999;
-  gap: 1rem;
-}
-
-.nav-links.show {
-  display: flex; /* Mostra el menú quan té la classe show */
-}
-
-/* Si vols que a escriptori es mostri diferent, pots ajustar aquí */
-@media (min-width: 701px) {
-  /* Manté el menú amagat per defecte fins que es cliqui el botó */
-}
+  backgro
