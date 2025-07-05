@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 :root {
   --accent: #4F8FF9;
   --bg: #f7f8fa;
   --text: #222;
-  --card: #fff;
-  --shadow: 0 2px 12px rgba(0,0,0,0.06);
-  --title-color: #333333;
+  --card: #ffffff;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --title-color: #333;
 }
 
 * {
@@ -16,89 +16,56 @@
 }
 
 body {
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   color: var(--text);
   background: var(--bg);
-  line-height: 1.6;
   min-height: 100vh;
-  background-image: url('ruta-de-la-teva-imatge.jpg');
+  line-height: 1.6;
+
+  background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('fons.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-h1, h2 {
+/* Encapçalament */
+h1 {
+  text-align: center;
   color: var(--title-color);
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin: 2.5rem 1rem 1.5rem;
 }
 
-.titol-seccio {
-  text-align: center;
-  margin: 2.5rem 0 1.5rem 0;
-  letter-spacing: 1px;
-}
-
+/* Biografia */
 .bio {
   max-width: 900px;
-  margin: 0 auto 2rem auto;
-  padding: 0 1.5rem;
-  background: rgba(255, 255, 255, 0.8);
+  margin: 0 auto 2rem;
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.85);
   border-radius: 14px;
   box-shadow: var(--shadow);
-  font-size: 1rem;
 }
 
+/* Menú de navegació */
 nav {
   background: var(--title-color);
-  box-shadow: var(--shadow);
   padding: 1rem 0;
-  margin-bottom: 2.5rem;
-  width: 100%;
-}
-
-.menu-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-
-.menu-toggle {
-  display: block;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: var(--accent);
-}
-
-.nav-links {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 60px;
-  right: 1rem;
-  background: var(--card);
-  padding: 1rem 1.5rem;
   box-shadow: var(--shadow);
-  border-radius: 10px;
-  z-index: 999;
-  gap: 1rem;
+  margin-bottom: 2.5rem;
 }
 
-.nav-links.show {
+nav .menu-container {
   display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
 nav a {
   color: var(--accent);
   text-decoration: none;
-  font-size: 1.1em;
   font-weight: 600;
+  font-size: 1.1rem;
   transition: color 0.2s;
 }
 
@@ -107,38 +74,14 @@ nav a:hover {
   text-decoration: underline;
 }
 
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem;
-  background: var(--card);
-  border-radius: 14px;
-  box-shadow: var(--shadow);
-}
-
-.audio-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-bottom: 2.5rem;
-}
-
-audio {
-  width: 260px;
-  border-radius: 8px;
-  box-shadow: var(--shadow);
-  background: #f0f4fa;
-  outline: none;
-}
-
+/* Galeria i miniatures */
 .galeria-section,
 #imatge.imatge-section {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
   justify-content: center;
-  margin: 1.5rem auto 2rem auto;
+  gap: 1rem;
+  margin: 2rem auto;
   max-width: 960px;
 }
 
@@ -156,18 +99,13 @@ audio {
 
 .imatge-card:hover {
   transform: scale(1.06);
-  box-shadow: 0 6px 24px rgba(79,143,249,0.12);
 }
 
-/* Miniatures MÉS PETITES */
 .thumbnail,
-.imatge-card img.thumbnail,
 .partitura-img {
   width: 140px;
-  height: auto;
   border-radius: 8px;
   box-shadow: 0 1px 8px rgba(79,143,249,0.08);
-  cursor: pointer;
   transition: transform 0.3s ease;
 }
 
@@ -175,35 +113,40 @@ audio {
   transform: scale(1.05);
 }
 
-/* Scrollbar suau */
+/* Àudios */
+.audio-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+audio {
+  width: 260px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  background: #f0f4fa;
+}
+
+/* Scroll personalitzat */
 ::-webkit-scrollbar {
   width: 8px;
-  background: #e3e7ef;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--accent);
   border-radius: 8px;
 }
 
-/* RESPONSIVE */
+/* Responsive */
 @media (max-width: 700px) {
-  .container {
+  .bio {
     padding: 1rem;
   }
-  .audio-section,
+
   .galeria-section,
-  #imatge.imatge-section {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-  .thumbnail,
-  .partitura-img {
-    max-width: 180px;
-    width: 100%;
-  }
-  .nav-links {
-    top: 50px;
-    right: 1rem;
-  }
-}
+  #imatge.imatge-section,
+  .audio-section {
+    flex-direc
+
+    
