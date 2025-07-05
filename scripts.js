@@ -1,5 +1,5 @@
+// Mostrar imatge gran en fer clic
 function mostrarImatgeGran(src) {
-    // Evita múltiples overlays oberts
     if (document.querySelector(".imatge-overlay")) return;
 
     const overlay = document.createElement("div");
@@ -49,22 +49,7 @@ function mostrarImatgeGran(src) {
     document.body.appendChild(overlay);
 }
 
+// Per afegir animacions CSS o classes post-càrrega (opcional)
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleBtn = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
-
-  toggleBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-  });
-
-  // Tancar menú quan fas clic a un enllaç
-  navLinks.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("show");
-    });
-  });
 });
