@@ -77,6 +77,25 @@ nav a:hover {
   text-decoration: underline;
 }
 
+.galeria-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.imatge-card img.thumbnail {
+  max-width: 300px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.imatge-card img.thumbnail:hover {
+  transform: scale(1.05);
+}
+
 .container {
   max-width: 900px;
   margin: 0 auto;
