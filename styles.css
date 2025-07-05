@@ -1,4 +1,4 @@
-/* Importa una font moderna de Google Fonts */
+/* Importa font */
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
 
 :root {
@@ -7,7 +7,7 @@
   --text: #222;
   --card: #fff;
   --shadow: 0 2px 12px rgba(0,0,0,0.06);
-  --title-color: #333333; /* Gris fosc pels títols */
+  --title-color: #333333;
 }
 
 /* Reset bàsic */
@@ -24,11 +24,13 @@ body {
   background: var(--bg);
   line-height: 1.6;
   min-height: 100vh;
-  background-image: url('ruta-de-la-teva-imatge.jpg');
-  background-size: cover;       
-  background-position: center;  
-  background-repeat: no-repeat; 
-  background-attachment: fixed; 
+
+  /* Canvia la ruta aquí per la teva imatge de fons */
+  background-image: url('fons.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 h1, h2 {
@@ -43,67 +45,66 @@ h1, h2 {
   letter-spacing: 1px;
 }
 
+.bio {
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+  padding: 0 1rem;
+  font-size: 1rem;
+  color: var(--title-color);
+  line-height: 1.5;
+  text-align: justify;
+}
+
 nav {
+  background: var(--title-color);
+  box-shadow: var(--shadow);
+  padding: 1rem 0;
+  margin-bottom: 2.5rem;
   width: 100%;
   position: relative;
   z-index: 1000;
 }
 
-/* Contenidor menú */
 .menu-container {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 1rem;
   display: flex;
-  justify-content: flex-end; /* Botó a la dreta */
+  justify-content: space-between;
   align-items: center;
   position: relative;
 }
 
-/* Botó hamburguesa sempre visible */
 .menu-toggle {
-  display: block;
+  display: block; /* Sempre visible */
   font-size: 1.8rem;
   cursor: pointer;
   color: var(--accent);
   user-select: none;
-  z-index: 1100;
-  background: var(--card);
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  box-shadow: var(--shadow);
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  transition: background-color 0.3s ease;
 }
 
-.menu-toggle:hover {
-  background-color: rgba(79, 143, 249, 0.15);
-}
-
-/* Menú amagat per defecte */
 .nav-links {
-  display: none;
+  display: none; /* Amagat per defecte */
   flex-direction: column;
-  position: fixed;
-  top: 3.7rem; /* sota el botó hamburguesa */
+  position: absolute;
+  top: 60px;
   right: 1rem;
   background: var(--card);
   padding: 1rem 1.5rem;
   box-shadow: var(--shadow);
   border-radius: 10px;
-  z-index: 1090;
+  z-index: 999;
   gap: 1rem;
-  max-width: 250px;
-  user-select: none;
 }
 
 .nav-links.show {
-  display: flex;
+  display: flex; /* Mostra el menú quan té la classe show */
 }
 
-/* Enllaços del menú */
+.nav-links li {
+  list-style: none;
+}
+
 .nav-links a {
   color: var(--accent);
   text-decoration: none;
@@ -117,90 +118,29 @@ nav {
   text-decoration: underline;
 }
 
-/* Galeria */
-.galeria-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
-.imatge-card img.thumbnail {
-  max-width: 300px;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.imatge-card img.thumbnail:hover {
-  transform: scale(1.05);
-}
-
-/* Contenidor principal */
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem;
-  background: var(--card);
-  border-radius: 14px;
-  box-shadow: var(--shadow);
-}
-
-/* Secció àudio */
-.audio-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-bottom: 2.5rem;
-}
-
-audio {
-  width: 260px;
-  border-radius: 8px;
-  box-shadow: var(--shadow);
-  background: #f0f4fa;
-  outline: none;
-}
-
-/* Secció imatge */
-#imatge.imatge-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.imatge-card {
-  background: var(--bg);
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-  padding: 1rem;
-  transition: transform 0.2s;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.imatge-card:hover {
-  transform: scale(1.06);
-  box-shadow: 0 6px 24px rgba(79,143,249,0.12);
-}
-
-.thumbnail {
-  width: 180px;
-  height: auto;
-  border-radius: 8px;
-  transition: box-shadow 0.2s;
-  box-shadow: 0 1px 8px rgba(79,143,249,0.08);
-  cursor: pointer;
+@media (min-width: 701px) {
+  .nav-links {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+    gap: 2rem;
+  }
+  .menu-toggle {
+    display: none; /* Amaga botó hamburguesa a desktop */
+  }
 }
 
 /* Scrollbar personalitzat */
 ::-webkit-scrollbar {
   width: 8px;
-  backgro
+  background: #e3e7ef;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 8px;
+}
+
