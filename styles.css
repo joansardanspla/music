@@ -112,7 +112,7 @@ audio {
 }
 
 .imatge-card img {
-  width: 190px;
+  width: 220px;
   height: auto;
   border-radius: 8px;
 }
@@ -133,6 +133,32 @@ audio {
   background: var(--accent);
   border-radius: 8px;
 }
+.llista-obres {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.llista-obres li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  background: #f0f4fa;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  box-shadow: var(--shadow);
+}
+
+.llista-obres .titol {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.llista-obres .ritme {
+  font-style: italic;
+  color: var(--accent);
+}
+
 
 /* Responsive */
 @media (max-width: 700px) {
