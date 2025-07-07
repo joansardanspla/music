@@ -133,17 +133,11 @@ audio {
   background: var(--accent);
   border-radius: 8px;
 }
-.llista-obres {
-  list-style: none;
-  padding: 0;
-  margin-top: 1rem;
-}
-
 .llista-obres li {
   display: flex;
   justify-content: space-between;
   padding: 0.6rem 1rem;
-  background: #f0f4fa;
+  background: #eaeaea;         /* fons gris clar */
   border-radius: 8px;
   margin-bottom: 0.5rem;
   box-shadow: var(--shadow);
@@ -156,8 +150,9 @@ audio {
 
 .llista-obres .ritme {
   font-style: italic;
-  color: var(--accent);
+  color: #555;                 /* gris fosc */
 }
+
 
 
 /* Responsive */
