@@ -126,10 +126,6 @@ audio:focus {
   align-items: center;
   background: transparent;
   border-radius: 12px;
-  transition: transform 0.12s;
-}
-.imatge-card:hover {
-  transform: translateY(-4px) scale(1.03);
 }
 
 .imatge-card figure {
@@ -144,12 +140,6 @@ audio:focus {
   height: auto;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(79,143,249,0.07);
-  transition: filter 0.18s;
-}
-
-.imatge-card img:hover, .imatge-card img:focus {
-  filter: brightness(1.1) saturate(1.2);
-  outline: 2px solid var(--accent);
 }
 
 .imatge-card figcaption {
