@@ -120,6 +120,15 @@ audio:focus {
   box-shadow: 0 0 0 2px var(--accent);
 }
 
+.imatge-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem; /* pots provar amb 4rem o 5rem si vols més separació */
+  justify-content: center;
+  margin-bottom: 2.7rem;
+}
+
+
 .imatge-card {
   display: flex;
   justify-content: center;
