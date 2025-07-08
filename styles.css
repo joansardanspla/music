@@ -123,7 +123,7 @@ audio:focus {
 .imatge-section {
   display: flex;
   flex-wrap: wrap;
-  gap: 3rem; /* pots provar amb 4rem o 5rem si vols més separació */
+  gap: 5rem; /* pots provar amb 4rem o 5rem si vols més separació */
   justify-content: center;
   margin-bottom: 2.7rem;
 }
