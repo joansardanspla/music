@@ -123,10 +123,12 @@ audio:focus {
 .imatge-section {
   display: flex;
   flex-wrap: wrap;
-  gap: 9rem; /* pots provar amb 4rem o 5rem si vols més separació */
+  row-gap: 6rem;        /* molt més espai vertical entre files */
+  column-gap: 2rem;     /* mantens l’espai horitzontal */
   justify-content: center;
-  margin-bottom: 2.7rem;
+  margin-bottom: 3rem;
 }
+
 
 
 .imatge-card {
@@ -138,7 +140,6 @@ audio:focus {
   margin-bottom: 4rem; /* s'acumula amb el row-gap, si en tens */
 }
 
-}
 
 .imatge-card figure {
   display: flex;
