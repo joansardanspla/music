@@ -123,13 +123,11 @@ audio:focus {
 .imatge-section {
   display: flex;
   flex-wrap: wrap;
-  row-gap: 6rem;        /* molt més espai vertical entre files */
-  column-gap: 2rem;     /* mantens l’espai horitzontal */
+  row-gap: 6rem;
+  column-gap: 2rem;
   justify-content: center;
   margin-bottom: 3rem;
 }
-
-
 
 .imatge-card {
   display: flex;
@@ -137,9 +135,8 @@ audio:focus {
   align-items: center;
   background: transparent;
   border-radius: 12px;
-  margin-bottom: 4rem; /* s'acumula amb el row-gap, si en tens */
+  margin-bottom: 4rem;
 }
-
 
 .imatge-card figure {
   display: flex;
@@ -150,6 +147,7 @@ audio:focus {
 
 .imatge-card img {
   width: 350px;
+  max-width: 100%;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(79,143,249,0.07);
@@ -198,6 +196,9 @@ audio:focus {
 }
 
 @media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
   .container {
     padding: 0.5rem;
     border-radius: 6px;
@@ -216,6 +217,9 @@ audio:focus {
   .nav-links {
     flex-direction: column;
     gap: 0.7rem;
+  }
+  nav a {
+    font-size: 0.9em;
   }
   .imatge-card img {
     width: 300px;
