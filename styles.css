@@ -179,7 +179,7 @@ audio:focus {
     gap: 1.1rem;
   }
   .imatge-card img {
-    width: 220px;
+    width: 320px;
     border-radius: 8px;
   }
 }
@@ -205,6 +205,6 @@ audio:focus {
     gap: 0.7rem;
   }
   .imatge-card img {
-    width: 180px;
+    width: 3000px;
   }
 }
