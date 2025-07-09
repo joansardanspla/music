@@ -121,6 +121,20 @@ audio:focus {
   box-shadow: var(--shadow); /* només manté l'ombra original */
 }
 
+.audio-section figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.audio-section figcaption {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
 
 .imatge-section {
   display: flex;
