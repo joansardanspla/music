@@ -116,9 +116,11 @@ audio {
   transition: box-shadow 0.2s;
 }
 
+audio:hover,
 audio:focus {
-  box-shadow: 0 0 0 2px var(--accent);
+  box-shadow: var(--shadow); /* només manté l'ombra original */
 }
+
 
 .imatge-section {
   display: flex;
