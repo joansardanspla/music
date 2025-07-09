@@ -240,7 +240,7 @@ audio:focus {
     border-radius: 8px;
   }
    .track-card {
-  margin-bottom: 1.8rem;
+  margin-bottom: 2.5rem;
 }
 
 }
@@ -274,14 +274,14 @@ audio:focus {
   }
 
   nav a {
-    font-size: 0.9em;
+    font-size: 1em;
   }
 
   .imatge-card img {
     width: 300px;
   }
    .track-card {
-  margin-bottom: 1.7rem;
+  margin-bottom: 2.5rem;
 }
 
 }
