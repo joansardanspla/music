@@ -1,3 +1,6 @@
+/* ===============================
+   Tipografia i colors globals
+   =============================== */
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
 
 :root {
@@ -12,6 +15,9 @@
   --nav-shadow: 0 4px 16px 0 rgba(0,0,0,0.04);
 }
 
+/* ===============================
+   Estils bàsics
+   =============================== */
 * {
   margin: 0;
   padding: 0;
@@ -32,6 +38,9 @@ body {
   min-height: 100vh;
 }
 
+/* ===============================
+   Encapçalaments i seccions
+   =============================== */
 h1, h2 {
   color: var(--title-color);
   font-weight: 700;
@@ -46,6 +55,9 @@ h1, h2 {
   font-size: 2rem;
 }
 
+/* ===============================
+   Navegació
+   =============================== */
 nav {
   background: var(--nav-bg);
   box-shadow: var(--nav-shadow);
@@ -80,13 +92,17 @@ nav a {
   border-radius: 6px;
 }
 
-nav a:hover, nav a:focus {
+nav a:hover,
+nav a:focus {
   color: var(--accent);
   background: var(--accent-light);
   outline: none;
   text-decoration: underline;
 }
 
+/* ===============================
+   Contingut principal
+   =============================== */
 .container {
   max-width: 960px;
   margin: 0 auto;
@@ -97,14 +113,31 @@ nav a:hover, nav a:focus {
   transition: box-shadow 0.2s;
 }
 
-.audio-section,
-.galeria-section,
-.imatge-section {
+/* ===============================
+   Enregistraments d'àudio
+   =============================== */
+.audio-section {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
   margin-bottom: 2.7rem;
+}
+
+/* Nova classe per cada àudio */
+.track-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.track-card figcaption {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+  letter-spacing: 0.01em;
 }
 
 audio {
@@ -118,24 +151,12 @@ audio {
 
 audio:hover,
 audio:focus {
-  box-shadow: var(--shadow); /* només manté l'ombra original */
+  box-shadow: var(--shadow);
 }
 
-.audio-section figure {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.audio-section figcaption {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: var(--text);
-  letter-spacing: 0.01em;
-}
-
+/* ===============================
+   Secció d’imatges (si s'utilitza)
+   =============================== */
 .imatge-section {
   display: flex;
   flex-wrap: wrap;
@@ -177,34 +198,43 @@ audio:focus {
   letter-spacing: 0.01em;
 }
 
-/* Scrollbar suau i accessible */
+/* ===============================
+   Scroll personalitzat
+   =============================== */
 ::-webkit-scrollbar {
   width: 10px;
   background: #e3e7ef;
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--accent);
   border-radius: 10px;
   border: 2px solid var(--bg);
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #2466d9;
 }
 
-/* Responsive */
+/* ===============================
+   Responsivitat
+   =============================== */
 @media (max-width: 800px) {
   .container {
     padding: 1.2rem;
     border-radius: 10px;
   }
+
   .menu-container {
     padding: 0 0.5rem;
   }
+
   .audio-section,
   .galeria-section,
   .imatge-section {
     gap: 1.1rem;
   }
+
   .imatge-card img {
     width: 320px;
     border-radius: 8px;
@@ -215,14 +245,17 @@ audio:focus {
   body {
     font-size: 16px;
   }
+
   .container {
     padding: 0.5rem;
     border-radius: 6px;
   }
+
   .titol-seccio {
     font-size: 1.2rem;
     margin: 1.3rem 0 1rem;
   }
+
   .audio-section,
   .galeria-section,
   .imatge-section {
@@ -230,13 +263,16 @@ audio:focus {
     align-items: center;
     gap: 0.7rem;
   }
+
   .nav-links {
     flex-direction: column;
     gap: 0.7rem;
   }
+
   nav a {
     font-size: 0.9em;
   }
+
   .imatge-card img {
     width: 300px;
   }
