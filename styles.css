@@ -62,7 +62,7 @@ nav {
   background: var(--nav-bg);
   box-shadow: var(--nav-shadow);
   padding: 1.1rem 0;
-  margin-bottom: 2.5rem;
+  margin-bottom: 4rem;
   position: sticky;
   top: 0;
   z-index: 10;
