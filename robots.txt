@@ -1,4 +1,3 @@
 User-agent: *
-Disallow:
-
-Sitemap: https://joansardanspla.github.io/music/sitemap.xml
+Allow: /
+Sitemap: https://joansardanspla.github.io/sitemap.xml
