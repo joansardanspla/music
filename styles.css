@@ -106,7 +106,7 @@ nav a:focus {
 .container {
   max-width: 960px;
   margin: 0 auto;
-  padding: 2.2rem 1.3rem;
+  padding: 1.2rem 0.8rem;
   background: var(--card);
   border-radius: 18px;
   box-shadow: var(--shadow);
