@@ -104,14 +104,15 @@ nav a:focus {
    Contingut principal
    =============================== */
 .container {
-  max-width: 960px;
+  max-width: 720px; /* abans: 960px */
   margin: 0 auto;
-  padding: 1.2rem 0.8rem;
+  padding: 0.8rem 0.6rem;
   background: var(--card);
-  border-radius: 18px;
+  border-radius: 14px;
   box-shadow: var(--shadow);
   transition: box-shadow 0.2s;
 }
+
 
 /* ===============================
    Enregistraments d'àudio
@@ -119,7 +120,7 @@ nav a:focus {
 .audio-section {
   display: flex;
   flex-wrap: wrap;
-  gap: 5rem;
+  gap: 4rem;
   justify-content: center;
   margin-bottom: 2.7rem;
 }
