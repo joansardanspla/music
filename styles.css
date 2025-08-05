@@ -172,10 +172,7 @@ audio:focus {
   border-radius: 10px;
   transition: transform 0.3s ease;
   text-align: center;
-}
 
-.imatge-card:hover {
-  transform: scale(1.02);
 }
 
 .imatge-card figure {
@@ -194,9 +191,6 @@ audio:focus {
   transition: transform 0.3s ease;
 }
 
-.imatge-card img:hover {
-  transform: scale(1.03);
-}
 
 .imatge-card figcaption {
   margin-top: 0.5rem;
