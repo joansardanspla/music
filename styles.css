@@ -111,6 +111,7 @@ nav a:focus {
   border-radius: 12px;
   box-shadow: var(--shadow);
   transition: box-shadow 0.2s;
+  margin-bottom: 3rem;
 }
 
 /* ===============================
