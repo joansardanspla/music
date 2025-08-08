@@ -126,8 +126,12 @@ nav a:focus {
 }
 
 .track-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;    /* Centra horitzontalment */
+  text-align: center;     /* Centra el text */
   width: 100%;
-  max-width: 600px;         /* O la mida que prefereixis */
+  max-width: 600px;
   background: var(--card);
   border-radius: 10px;
   padding: 1rem;
@@ -139,27 +143,28 @@ nav a:focus {
   transform: translateY(-3px);
 }
 
-
 .track-card figcaption {
   font-size: 0.9rem;
-  line-height: 1.5;                /* una mica més d’aire entre línies */
-  text-align: center;
+  line-height: 1.5;
+  color: #000;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.6rem;
   word-break: break-word;
-  color: #000;                     /* negre pur */
-  font-weight: 600;                /* lleugerament marcat */
-  letter-spacing: 0.01em;          /* separació subtil de lletres */
-  margin-bottom: 0.5rem;           /* separació respecte al reproductor */
 }
 
 
+
 audio {
-  width: 260px;
+  width: 260px;       /* Amplada fixa */
+  max-width: 100%;    /* Que no passi del contenidor */
   border-radius: 10px;
   box-shadow: var(--shadow);
   background: #f0f4fa;
   outline: none;
   transition: box-shadow 0.2s;
 }
+
 
 audio:hover,
 audio:focus {
