@@ -135,9 +135,13 @@ nav a:focus {
 
 .track-card figcaption {
   font-size: 0.9rem;
-  line-height: 1.4;
+  line-height: 1.5;                /* una mica més d’aire entre línies */
   text-align: center;
   word-break: break-word;
+  color: #000;                     /* negre pur */
+  font-weight: 500;                /* lleugerament marcat */
+  letter-spacing: 0.01em;          /* separació subtil de lletres */
+  margin-bottom: 0.5rem;           /* separació respecte al reproductor */
 }
 
 
