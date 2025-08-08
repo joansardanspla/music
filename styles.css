@@ -119,17 +119,17 @@ nav a:focus {
    =============================== */
 .audio-section {
   display: flex;
-  flex-direction: column;    /* Posa les pistes una sota l’altra */
-  align-items: center;       /* Centrat horitzontalment */
-  gap: 1.5rem;               /* Espai entre pistes */
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
   margin-bottom: 2rem;
 }
 
 .track-card {
   display: flex;
   flex-direction: column;
-  align-items: center;    /* Centra horitzontalment */
-  text-align: center;     /* Centra el text */
+  align-items: center;
+  text-align: center;
   width: 100%;
   max-width: 600px;
   background: var(--card);
@@ -153,18 +153,15 @@ nav a:focus {
   word-break: break-word;
 }
 
-
-
 audio {
-  width: 260px;       /* Amplada fixa */
-  max-width: 100%;    /* Que no passi del contenidor */
+  width: 100%;
+  max-width: 260px;
   border-radius: 10px;
   box-shadow: var(--shadow);
   background: #f0f4fa;
   outline: none;
   transition: box-shadow 0.2s;
 }
-
 
 audio:hover,
 audio:focus {
@@ -174,16 +171,14 @@ audio:focus {
 /* ===============================
    Secció d’imatges
    =============================== */
-
 .imatge-section {
   display: flex;
-  flex-direction: column;      /* Columna vertical */
-  align-items: center;         /* Centrat horitzontalment */
-  justify-content: center;     /* Centrat verticalment */
-  gap: 2rem;                   /* Espai entre partitures */
-  min-height: 100vh;           /* Ocupa tota l’alçada de la pantalla */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  min-height: 100vh;
 }
-
 
 .imatge-card {
   background: var(--card);
@@ -214,11 +209,9 @@ audio:focus {
   background: var(--accent-light);
   font-size: 1rem;
   font-weight: 600;
-  color: 000;
+  color: #000;
   letter-spacing: 0.02em;
 }
-
-
 
 /* ===============================
    Scroll personalitzat
@@ -269,7 +262,9 @@ audio:focus {
   }
 
   .imatge-card img {
-    width: 260px;
+    width: 100%;
+    max-width: 260px;
+    height: auto;
   }
 
   .titol-seccio {
@@ -292,10 +287,13 @@ audio:focus {
   }
 
   .imatge-card img {
-    width: 240px;
+    width: 100%;
+    max-width: 240px;
+    height: auto;
   }
 
   audio {
-    width: 230px;
+    width: 100%;
+    max-width: 230px;
   }
 }
