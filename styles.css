@@ -119,19 +119,26 @@ nav a:focus {
    =============================== */
 .audio-section {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2.5rem;
-  justify-content: center;
+  flex-direction: column;    /* Posa les pistes una sota l’altra */
+  align-items: center;       /* Centrat horitzontalment */
+  gap: 1.5rem;               /* Espai entre pistes */
   margin-bottom: 2rem;
 }
 
 .track-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 600px;         /* O la mida que prefereixis */
+  background: var(--card);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease;
 }
+
+.track-card:hover {
+  transform: translateY(-3px);
+}
+
 
 .track-card figcaption {
   font-size: 0.9rem;
@@ -139,7 +146,7 @@ nav a:focus {
   text-align: center;
   word-break: break-word;
   color: #000;                     /* negre pur */
-  font-weight: 500;                /* lleugerament marcat */
+  font-weight: 600;                /* lleugerament marcat */
   letter-spacing: 0.01em;          /* separació subtil de lletres */
   margin-bottom: 0.5rem;           /* separació respecte al reproductor */
 }
