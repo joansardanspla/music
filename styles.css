@@ -114,59 +114,6 @@ nav a:focus {
   margin-bottom: 3rem;
 }
 
-/* ===============================
-   Enregistraments d'àudio
-   =============================== */
-.audio-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.track-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  max-width: 600px;
-  background: var(--card);
-  border-radius: 10px;
-  padding: 1rem;
-  box-shadow: var(--shadow);
-  transition: transform 0.25s ease;
-}
-
-.track-card:hover {
-  transform: translateY(-3px);
-}
-
-.track-card figcaption {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: #000;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  margin-bottom: 0.6rem;
-  word-break: break-word;
-}
-
-audio {
-  width: 100%;
-  max-width: 260px;
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-  background: #f0f4fa;
-  outline: none;
-  transition: box-shadow 0.2s;
-}
-
-audio:hover,
-audio:focus {
-  box-shadow: var(--shadow);
-}
 
 /* ===============================
    Secció d’imatges
@@ -188,10 +135,6 @@ audio:focus {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.imatge-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(79,143,249,0.12), 0 4px 12px rgba(0,0,0,0.05);
-}
 
 .imatge-card img {
   width: 100%;
@@ -200,9 +143,6 @@ audio:focus {
   transition: transform 0.35s ease;
 }
 
-.imatge-card:hover img {
-  transform: scale(1.03);
-}
 
 .imatge-card figcaption {
   padding: 0.8rem 1rem;
