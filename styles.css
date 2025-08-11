@@ -114,7 +114,6 @@ nav a:focus {
   margin-bottom: 3rem;
 }
 
-
 /* ===============================
    Secció d’imatges
    =============================== */
@@ -132,17 +131,14 @@ nav a:focus {
   border-radius: 12px;
   box-shadow: var(--shadow);
   overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease;
 }
-
 
 .imatge-card img {
   width: 100%;
   height: auto;
   display: block;
-  transition: transform 0.35s ease;
 }
-
 
 .imatge-card figcaption {
   padding: 0.8rem 1rem;
@@ -184,7 +180,6 @@ nav a:focus {
     padding: 0 0.5rem;
   }
 
-  .audio-section,
   .imatge-section {
     gap: 1rem;
   }
@@ -211,10 +206,6 @@ nav a:focus {
     font-size: 1.2rem;
     margin: 1.3rem 0 1rem;
   }
-
-  .track-card {
-    margin-bottom: 1.5rem;
-  }
 }
 
 @media (max-width: 400px) {
@@ -230,10 +221,5 @@ nav a:focus {
     width: 100%;
     max-width: 240px;
     height: auto;
-  }
-
-  audio {
-    width: 100%;
-    max-width: 230px;
   }
 }
