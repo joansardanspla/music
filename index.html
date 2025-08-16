@@ -9,7 +9,7 @@
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#000000" />
 
-  <!-- Metadades Open Graph per compartir -->
+  <!-- Metadades Open Graph -->
   <meta property="og:title" content="Joan Sardans Pla – Inici" />
   <meta property="og:description" content="Benvinguts a la pàgina principal del músic Joan Sardans Pla." />
   <meta property="og:image" content="https://joansardanspla.github.io/grans.png" />
@@ -17,48 +17,102 @@
   <meta property="og:type" content="website" />
 
   <link rel="canonical" href="https://joansardanspla.github.io/index.html" />
-  <title>Joan Sardans Pla – Inici</title>
+  <title>Joan Sardans Pla – Web Oficial</title>
 
   <!-- Full d’estils -->
   <link rel="stylesheet" href="styles.css" />
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MusicGroup",
-  "name": "Joan Sardans Pla",
-  "genre": ["Flamenco", "Flamenc", "Jazz", "Classic"],
-  "description": "Joan Sardans Pla és un músic de Manresa que combina clàssic, jazz, flamenc, tradició i modernitat.",
-  "url": "https://joansardanspla.github.io",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Manresa",
-    "addressCountry": "ES"
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "Joan Sardans Pla",
+    "genre": ["Flamenco", "Flamenc", "Jazz", "Classic"],
+    "description": "Joan Sardans Pla és un músic de Manresa que combina clàssic, jazz, flamenc, tradició i modernitat.",
+    "url": "https://joansardanspla.github.io",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Manresa",
+      "addressCountry": "ES"
+    }
   }
-}
-</script>
-
-
-  
+  </script>
 </head>
 
 <body>
 
-  <!-- capcelera amb títol i navegació -->
+  <!-- Header únic -->
   <header>
     <h1 class="titol-seccio">Joan Sardans Pla – Músic</h1>
     <nav>
-      <div class="menu-container">   
-        <ul id="nav-links" class="nav-links">
-          <li><a href="index.html">Inici</a></li>
-          <li><a href="biografia.html">Biografia</a></li>
-          <li><a href="partitures.html">Partitures</a></li>
-          <li><a href="galeria.html">Galeria</a></li>
+      <div class="menu-container">
+        <ul class="nav-links">
+          <li><a href="#inici">Inici</a></li>
+          <li><a href="#biografia">Biografia</a></li>
+          <li><a href="#partitures">Partitures</a></li>
+          <li><a href="#galeria">Galeria</a></li>
         </ul>
       </div>
     </nav>
   </header>
 
+  <main class="container">
+    <!-- Secció Inici -->
+    <section id="inici">
+      <h2>Inici</h2>
+      <p>Benvinguts a la pàgina principal del músic Joan Sardans Pla.</p>
+    </section>
+
+    <!-- Secció Biografia -->
+    <section id="biografia">
+      <h2>Biografia</h2>
+      <p>
+        Vaig iniciar els estudis de música clàssica al Conservatori de Música de Manresa, 
+        vaig continuar estudiant violí al Conservatori de Música de Barcelona amb l’Eva Graubin, 
+        jazz i música moderna al Taller de Músics de Barcelona amb l’Horacio Fumero i al Conservatori 
+        de Música de Rotterdam amb el Michael Gustorf, i flamenc amb el César Moreno. He format part de diferents grups, 
+        orquestres i tablaos i he estat professor a diferents escoles.
+      </p>
+    </section>
+
+    <!-- Secció Partitures -->
+    <section id="partitures">
+      <h2>Partitures</h2>
+      <div class="imatge-section">
+        <article class="imatge-card">
+          <figure>
+            <img src="partitures/grans-graons.png" alt="Partitura Grans Graons – Joan Sardans Pla" />
+          </figure>
+        </article>
+
+        <article class="imatge-card">
+          <figure>
+            <img src="partitures/vida-de-luxe.png" alt="Partitura Vida de Luxe – Joan Sardans Pla" />
+          </figure>
+        </article>
+
+        <article class="imatge-card">
+          <figure>
+            <img src="partitures/buleries-1.png" alt="Partitura Buleries – Joan Sardans Pla (Pàgina 1)" />
+            <img src="partitures/buleries-2.png" alt="Partitura Buleries – Joan Sardans Pla (Pàgina 2)" />
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <!-- Secció Galeria -->
+    <section id="galeria">
+      <h2>Galeria</h2>
+      <div class="galeria-section">
+        <div class="imatge-card">
+          <img src="imatges/jo-verd.jpg" alt="Joan tocant" class="thumbnail" />
+        </div>
+        <div class="imatge-card">
+          <img src="imatges/jo-lila.jpg" alt="Joan en concert" class="thumbnail" />
+        </div>
+      </div>
+    </section>
+  </main>
 
 </body>
 </html>
