@@ -216,6 +216,13 @@
       z-index:100;
     }
 
+    <script>
+  const btnTop = document.getElementById('btn-top');
+  window.addEventListener('scroll', function() {
+    btnTop.style.display = (window.scrollY > 200) ? 'block' : 'none';
+  });
+</script>
+
     /* ===============================
        Footer
        =============================== */
@@ -322,7 +329,17 @@
   <a href="#inici" id="btn-top" class="btn-general" title="Torna a dalt">↑</a>
 
   <!-- Peu de pàgina -->
-  <footer>
-    <div class="footer-container">
-      <p>&copy; 2025
-```
+<footer>
+  <div class="footer-container">
+    <p>
+      © 2025 Joan Sardans Pla. Llicenciat sota 
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">
+        <img src="https://mirrors.creativecommons.org/presskit/cc.icons/cc.svg" alt="Creative Commons" style="height: 20px; vertical-align: middle;">
+        <img src="https://mirrors.creativecommons.org/presskit/cc.icons/by.svg" alt="Reconeixement" style="height: 20px; vertical-align: middle;">
+        <img src="https://mirrors.creativecommons.org/presskit/cc.icons/sa.svg" alt="CompartirIgual" style="height: 20px; vertical-align: middle;">
+        Reconeixement-CompartirIgual 4.0 Internacional
+      </a>
+    </p>
+  </div>
+</footer>
+
