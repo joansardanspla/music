@@ -277,52 +277,38 @@
     <article class="imatge-card"><img src="imatges/jo-lila.jpg" alt="Concert Joan Sardans Pla 2"></article>   
   </section>
 
-  <section id="banda" class="container">
-    <h2 class="titol-seccio">La Banda</h2>
-    <p>
-      La banda del Joan Sardans Pla està formada per músics professionals de jazz, flamenc i música clàssica. 
-      Cada concert és una experiència única combinant diferents estils musicals.
-    </p>
-  </section>
+<section id="banda" class="container">
+  <h2 class="titol-seccio">La Banda</h2>
+  <p style="margin:1rem 0; text-align:center;">
+    Descobreix **Rumbesia**, una iniciativa musical que combina ritmes de Rumba Catalana i poesia.
+  </p>
+  <div style="text-align:center; margin-top:1rem;">
+    <a href="https://rumbesia.cat" target="_blank" class="btn-general">Més sobre Rumbesia</a>
+  </div>
+</section>
+
 
   <section id="contacte" class="container">
     <h2 class="titol-seccio">Contacte</h2>
-    <p>Per contractacions, consultes o informació: <a href="mailto:joan@example.com">joan@example.com</a></p>
+    <p>Hola</p>
   </section>
 
   <a href="#inici" id="btn-top" class="btn-general">&#8679;</a>
 
-  <footer>
-    <div class="footer-container">
-      <p>&copy; 2025 Joan Sardans Pla. Tots els drets reservats.</p>
-      <p>
-        <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
-          <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC"> Creative Commons BY-SA 4.0
-        </a>
-      </p>
-    </div>
-  </footer>
+<footer>
+  <div class="footer-container" style="text-align:center;">
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" style="display:inline-flex; align-items:center; gap:2px;">
+      <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC" style="height:18px;">
+      <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="Reconeixement" style="height:18px;">
+      <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="CompartirIgual" style="height:18px;">
+      <span id="any" style="font-size:0.85em;"></span>
+    </a>
+  </div>
+</footer>
 
-  <script>
-    const btnTop = document.getElementById('btn-top');
+<script>
+  document.getElementById('any').textContent = new Date().getFullYear();
+</script>
 
-    window.addEventListener('scroll', () => {
-      if(window.scrollY > 300){
-        btnTop.style.display = 'block';
-        setTimeout(() => btnTop.classList.add('show'), 10);
-      } else {
-        btnTop.classList.remove('show');
-        setTimeout(() => btnTop.style.display = 'none', 300);
-      }
-    });
-
-    const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      });
-    });
-  </script>
 </body>
 </html>
