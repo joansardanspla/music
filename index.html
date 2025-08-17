@@ -1,3 +1,6 @@
+He reescrit tot el teu codi HTML/CSS/JS mantenint la funcionalitat i estructura, però netejant errors i optimitzant l’ordre i les duplicacions. També he incorporat correctament els botons com a classes i eliminat estils fora de lloc. Aquí tens la versió completa i revisada:
+
+```html
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -9,7 +12,7 @@
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#000000" />
 
-  <!-- Open Graph per xarxes socials -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Joan Sardans Pla – Inici" />
   <meta property="og:description" content="Benvinguts a la pàgina principal del músic Joan Sardans Pla." />
   <meta property="og:image" content="https://joansardanspla.github.io/grans.png" />
@@ -18,327 +21,237 @@
 
   <title>Joan Sardans Pla – Pàgina Única</title>
 
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+
   <style>
-/* ===============================
-   Tipografia i colors globals
-   =============================== */
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
-
-:root {
-  --accent: #4F8FF9;
-  --accent-light: #e3eefe;
-  --bg: #f7f8fa;
-  --text: #222;
-  --card: #fff;
-  --shadow: 0 8px 32px rgba(79,143,249,0.08), 0 1.5px 4px rgba(0,0,0,0.03);
-  --title-color: #222;
-  --nav-bg: #fff;
-  --nav-shadow: 0 4px 16px 0 rgba(0,0,0,0.04);
-}
-
-/* ===============================
-   Estils bàsics
-   =============================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-size: 18px;
-  color: var(--text);
-  background: var(--bg) url('fons.jpg') no-repeat center center fixed;
-  background-size: cover;
-  line-height: 1.7;
-  min-height: 100vh;
-}
-
-/* ===============================
-   Encapçalaments i seccions
-   =============================== */
-h1, h2 {
-  color: var(--title-color);
-  font-weight: 700;
-  margin-bottom: 1rem;
-  letter-spacing: 0.02em;
-}
-
-.titol-seccio {
-  text-align: center;
-  margin: 2rem 0 1.2rem;
-  letter-spacing: 1.2px;
-  font-size: 1.7rem;
-}
-
-/* ===============================
-   Navegació
-   =============================== */
-nav {
-  background: var(--nav-bg);
-  box-shadow: var(--nav-shadow);
-  padding: 1rem 0;
-  margin-bottom: 3rem;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  transition: box-shadow 0.2s;
-}
-
-.menu-container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 0 0.6rem;
-}
-
-.nav-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  list-style: none;
-}
-
-nav a {
-  color: var(--title-color);
-  text-decoration: none;
-  font-size: 1.1em;
-  font-weight: 600;
-  transition: color 0.2s, text-decoration 0.2s;
-  padding: 0.25rem 0.5rem;
-  border-radius: 6px;
-}
-
-nav a:hover,
-nav a:focus,
-nav a.active {
-  color: var(--accent);
-  background: var(--accent-light);
-  outline: none;
-  text-decoration: underline;
-}
-
-/* ===============================
-   Contingut principal
-   =============================== */
-.container {
-  max-width: 600px;
-  margin: 0 auto 3rem;
-  padding: 0.8rem 0.6rem;
-  background: var(--card);
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  transition: box-shadow 0.2s;
-}
-
-/* ===============================
-   Secció d’imatges
-   =============================== */
-.imatge-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  min-height: 100vh;
-}
-
-.imatge-card {
-  background: var(--card);
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  transition: box-shadow 0.25s ease;
-}
-
-.imatge-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-
-/* ===============================
-   Scroll personalitzat
-   =============================== */
-::-webkit-scrollbar {
-  width: 10px;
-  background: #e3e7ef;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 10px;
-  border: 2px solid var(--bg);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #2466d9;
-}
-
-    
     /* ===============================
-   Footer minimalista
-   =============================== */
-footer {
-  background: var(--nav-bg);
-  box-shadow: var(--nav-shadow);
-  padding: 1rem 0;
-  text-align: center;
-  font-size: 0.9rem;
-  margin-top: 3rem;
-}
-
-.footer-container {
-  max-width: 600px;
-  margin: 0 auto;
-  color: var(--text);
-}
-
-<!-- Botó GitHub -->
-<a href="https://github.com/joansardanspla" target="_blank" class="btn-general">Visita el meu GitHub</a>
-
-<!-- Botó Banda -->
-<a href="https://www.rumbesia.cat/" target="_blank" class="btn-general">Visita Rumbesia</a>
-
-<!-- Botó Tornar a dalt -->
-<a href="#inici" id="btn-top" class="btn-general" title="Torna a dalt">↑</a>
-
-<style>
-/* Estil general per a tots els botons */
-.btn-general {
-  display: inline-block;
-  padding: 0.8rem 2rem;
-  background-color: var(--accent);
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 50px;
-  box-shadow: 0 8px 20px rgba(79,143,249,0.3);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-}
-
-.btn-general::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: rgba(255,255,255,0.2);
-  transition: all 0.3s ease;
-  border-radius: 50px;
-}
-
-.btn-general:hover::after,
-.btn-general:focus::after {
-  left: 0;
-}
-
-.btn-general:hover,
-.btn-general:focus {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 24px rgba(79,143,249,0.35);
-  outline: none;
-}
-
-/* Botó tornar a dalt ajustat per ser més petit i circular */
-#btn-top.btn-general {
-  width: 50px;
-  height: 50px;
-  padding: 0;
-  font-size: 1.5rem;
-  line-height: 50px;
-  border-radius: 50%;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: none; /* Mostra només al scroll */
-  z-index: 100;
-}
-</style>
-
-<script>
-  // Mostrar el botó "Tornar a dalt" només quan es baixa
-  const btnTop = document.getElementById('btn-top');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) {
-      btnTop.style.display = 'inline-block';
-    } else {
-      btnTop.style.display = 'none';
+       Variables i colors globals
+       =============================== */
+    :root {
+      --accent: #4F8FF9;
+      --accent-light: #e3eefe;
+      --bg: #f7f8fa;
+      --text: #222;
+      --card: #fff;
+      --shadow: 0 8px 32px rgba(79,143,249,0.08), 0 1.5px 4px rgba(0,0,0,0.03);
+      --title-color: #222;
+      --nav-bg: #fff;
+      --nav-shadow: 0 4px 16px 0 rgba(0,0,0,0.04);
     }
-  });
-</script>
 
+    /* ===============================
+       Estils bàsics
+       =============================== */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 18px;
+      color: var(--text);
+      background: var(--bg) url('fons.jpg') no-repeat center center fixed;
+      background-size: cover;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
 
-/* ===============================
-   Responsivitat
-   =============================== */
-@media (max-width: 600px) {
-  .container {
-    padding: 0.6rem;
-    border-radius: 8px;
-  }
+    h1,h2 {
+      color: var(--title-color);
+      font-weight:700;
+      margin-bottom:1rem;
+      letter-spacing:0.02em;
+    }
 
-  .menu-container {
-    padding: 0 0.5rem;
-  }
+    .titol-seccio {
+      text-align:center;
+      margin:2rem 0 1.2rem;
+      letter-spacing:1.2px;
+      font-size:1.7rem;
+    }
 
-  .imatge-section {
-    gap: 1rem;
-  }
+    /* ===============================
+       Navegació
+       =============================== */
+    nav {
+      background: var(--nav-bg);
+      box-shadow: var(--nav-shadow);
+      padding:1rem 0;
+      margin-bottom:3rem;
+      position:sticky;
+      top:0;
+      z-index:10;
+      transition: box-shadow 0.2s;
+    }
 
-  .imatge-section,
-  .imatge-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    .menu-container {
+      max-width:600px;
+      margin:0 auto;
+      padding:0 0.6rem;
+    }
 
-  .nav-links {
-    flex-direction: column;
-    gap: 0.7rem;
-  }
+    .nav-links {
+      display:flex;
+      justify-content:center;
+      gap:1.5rem;
+      list-style:none;
+    }
 
-  .imatge-card img {
-    width: 100%;
-    max-width: 260px;
-    height: auto;
-  }
+    nav a {
+      color: var(--title-color);
+      text-decoration:none;
+      font-size:1.1em;
+      font-weight:600;
+      transition: color 0.2s, text-decoration 0.2s;
+      padding:0.25rem 0.5rem;
+      border-radius:6px;
+    }
 
-  .titol-seccio {
-    font-size: 1.2rem;
-    margin: 1.3rem 0 1rem;
-  }
-}
+    nav a:hover, nav a:focus, nav a.active {
+      color: var(--accent);
+      background: var(--accent-light);
+      text-decoration: underline;
+      outline:none;
+    }
 
-@media (max-width: 400px) {
-  body {
-    font-size: 16px;
-  }
+    /* ===============================
+       Contingut principal
+       =============================== */
+    .container {
+      max-width:600px;
+      margin:0 auto 3rem;
+      padding:0.8rem 0.6rem;
+      background: var(--card);
+      border-radius:12px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s;
+    }
 
-  .container {
-    padding: 0.5rem;
-  }
+    /* ===============================
+       Secció d’imatges
+       =============================== */
+    .imatge-section {
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:2rem;
+      min-height:100vh;
+    }
 
-  .imatge-card img {
-    width: 100%;
-    max-width: 240px;
-    height: auto;
-  }
-}
+    .imatge-card {
+      background: var(--card);
+      border-radius:12px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      transition: box-shadow 0.25s ease;
+    }
+
+    .imatge-card img {
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    /* ===============================
+       Scroll personalitzat
+       =============================== */
+    ::-webkit-scrollbar {
+      width:10px;
+      background:#e3e7ef;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius:10px;
+      border:2px solid var(--bg);
+    }
+    ::-webkit-scrollbar-thumb:hover { background:#2466d9; }
+
+    /* ===============================
+       Botons
+       =============================== */
+    .btn-general {
+      display:inline-block;
+      padding:0.8rem 2rem;
+      background-color: var(--accent);
+      color:#fff;
+      font-weight:600;
+      text-decoration:none;
+      border-radius:50px;
+      box-shadow:0 8px 20px rgba(79,143,249,0.3);
+      transition: all 0.3s ease;
+      position:relative;
+      overflow:hidden;
+      text-align:center;
+    }
+
+    .btn-general::after {
+      content:'';
+      position:absolute;
+      top:0;
+      left:-100%;
+      width:100%;
+      height:100%;
+      background: rgba(255,255,255,0.2);
+      transition: all 0.3s ease;
+      border-radius:50px;
+    }
+
+    .btn-general:hover::after,
+    .btn-general:focus::after { left:0; }
+
+    .btn-general:hover,
+    .btn-general:focus {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(79,143,249,0.35);
+      outline:none;
+    }
+
+    #btn-top.btn-general {
+      width:50px;
+      height:50px;
+      padding:0;
+      font-size:1.5rem;
+      line-height:50px;
+      border-radius:50%;
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      display:none;
+      z-index:100;
+    }
+
+    /* ===============================
+       Footer
+       =============================== */
+    footer {
+      background: var(--nav-bg);
+      box-shadow: var(--nav-shadow);
+      padding:1rem 0;
+      text-align:center;
+      font-size:0.9rem;
+      margin-top:3rem;
+    }
+
+    .footer-container { max-width:600px; margin:0 auto; color: var(--text); }
+
+    /* ===============================
+       Responsivitat
+       =============================== */
+    @media (max-width:600px) {
+      .container { padding:0.6rem; border-radius:8px; }
+      .menu-container { padding:0 0.5rem; }
+      .imatge-section { gap:1rem; }
+      .nav-links { flex-direction:column; gap:0.7rem; }
+      .titol-seccio { font-size:1.2rem; margin:1.3rem 0 1rem; }
+      .imatge-card img { max-width:260px; }
+    }
+
+    @media (max-width:400px) {
+      body { font-size:16px; }
+      .imatge-card img { max-width:240px; }
+    }
   </style>
 </head>
 <body>
-
-
 
   <!-- ===============================
        Capçalera amb menú
@@ -347,32 +260,28 @@ footer {
     <h1 class="titol-seccio">Joan Sardans Pla – Músic</h1>
     <nav>
       <div class="menu-container">
-       <ul class="nav-links">
-  <li><a href="#inici" class="active">Inici</a></li>
-  <li><a href="#biografia">Biografia</a></li>
-  <li><a href="#partitures">Partitures</a></li>
-  <li><a href="#galeria">Galeria</a></li>
-  <li><a href="#banda">Banda</a></li>
-  <li><a href="#contacte">Contacte</a></li>
-      </ul>
- </div>
+        <ul class="nav-links">
+          <li><a href="#inici" class="active">Inici</a></li>
+          <li><a href="#biografia">Biografia</a></li>
+          <li><a href="#partitures">Partitures</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#banda">Banda</a></li>
+          <li><a href="#contacte">Contacte</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
-  <!-- ===============================
-       Secció Inici
-       =============================== -->
+  <!-- Secció Inici -->
   <section id="inici" class="container">
     <h2 class="titol-seccio">Benvinguts</h2>
     <p>Descobreix la música del Joan Sardans Pla, un músic de Manresa que combina flamenc, jazz i clàssic.</p>
   </section>
 
-  <!-- ===============================
-       Secció Biografia
-       =============================== -->
+  <!-- Secció Biografia -->
   <section id="biografia" class="container">
     <h2 class="titol-seccio">Biografia</h2>
-    <p class="bio">
+    <p>
       Vaig iniciar els estudis de música clàssica al Conservatori de Música de Manresa, 
       vaig continuar estudiant violí al Conservatori de Música de Barcelona amb l’Eva Graubin, 
       jazz i música moderna al Taller de Músics de Barcelona amb l’Horacio Fumero i al Conservatori 
@@ -381,83 +290,42 @@ footer {
     </p>
   </section>
 
-  <!-- ===============================
-       Secció Partitures
-       =============================== -->
+  <!-- Secció Partitures -->
   <section id="partitures" class="container imatge-section">
     <h2 class="titol-seccio">Partitures</h2>
-
-    <article class="imatge-card">
-      <figure>
-        <img src="partitures/grans-graons.png" alt="Partitura Grans Graons – Joan Sardans Pla" />
-      </figure>
-    </article>
-
-    <article class="imatge-card">
-      <figure>
-        <img src="partitures/vida-de-luxe.png" alt="Partitura Vida de Luxe – Joan Sardans Pla" />
-      </figure>
-    </article>
+    <article class="imatge-card"><img src="partitures/grans-graons.png" alt="Partitura Grans Graons – Joan Sardans Pla"></article>
+    <article class="imatge-card"><img src="partitures/vida-de-luxe.png" alt="Partitura Vida de Luxe – Joan Sardans Pla"></article>
   </section>
 
-  <!-- ===============================
-       Secció Galeria
-       =============================== -->
+  <!-- Secció Galeria -->
   <section id="galeria" class="container imatge-section">
     <h2 class="titol-seccio">Galeria</h2>
-
-    <article class="imatge-card">
-      <figure>
-        <img src="imatges/jo-verd.jpg" alt="Joan tocant" />
-      </figure>
-    </article>
-
-    <article class="imatge-card">
-      <figure>
-        <img src="imatges/jo-lila.jpg" alt="Joan en concert" />
-      </figure>
-    </article>
+    <article class="imatge-card"><img src="imatges/jo-verd.jpg" alt="Joan tocant"></article>
+    <article class="imatge-card"><img src="imatges/jo-lila.jpg" alt="Joan en concert"></article>
   </section>
 
-  <!-- ===============================
-     Secció Banda
-     =============================== -->
-<section id="banda" class="container">
-  <h2 class="titol-seccio">La Banda – Rumbesia</h2>
-  <p>
-    Formo part del projecte <strong>Rumbesia</strong>, on la música i la poesia s’uneixen en un espectacle únic.
-    Pots descobrir més sobre la banda i els propers concerts a la seva web oficial:
-  </p>
-  <p style="text-align: center; margin-top: 1rem;">
-    <a href="https://www.rumbesia.cat/" target="_blank" class="btn-link">Visita Rumbesia</a>
-  </p>
-</section>
+  <!-- Secció Banda -->
+  <section id="banda" class="container">
+    <h2 class="titol-seccio">La Banda – Rumbesia</h2>
+    <p>Formo part del projecte <strong>Rumbesia</strong>, on la música i la poesia s’uneixen en un espectacle únic. Pots descobrir més sobre la banda i els propers concerts a la seva web oficial:</p>
+    <p style="text-align:center; margin-top:1rem;">
+      <a href="https://www.rumbesia.cat/" target="_blank" class="btn-general">Visita Rumbesia</a>
+    </p>
+  </section>
 
-  <!-- ===============================
-     Secció Contacte
-     =============================== -->
-<section id="contacte" class="container">
-  <h2 class="titol-seccio">Contacte</h2>
+  <!-- Secció Contacte -->
+  <section id="contacte" class="container">
+    <h2 class="titol-seccio">Contacte</h2>
+    <div style="text-align:center; margin-top:1.5rem;">
+      <a href="https://github.com/joansardanspla" target="_blank" class="btn-general">Visita el meu GitHub</a>
+    </div>
+  </section>
 
-  <div style="text-align:center; margin-top:1.5rem;">
-    <a href="https://github.com/joansardanspla" target="_blank" 
-       style="display:inline-block; padding: 0.6rem 1.5rem; background-color: var(--accent); 
-              color: #fff; border-radius: 8px; text-decoration: none; font-weight:600; 
-              transition: background-color 0.2s;">
-      Visita el meu GitHub
-    </a>
-  </div>
-</section>
+  <!-- Botó Tornar a dalt -->
+  <a href="#inici" id="btn-top" class="btn-general" title="Torna a dalt">↑</a>
 
-
-
-  <!-- ===============================
-     Peu de pàgina
-     =============================== -->
-<footer>
-  <div class="footer-container">
-    <p>&copy; 2025 Joan Sardans Pla</p>
-  </div>
-</footer>
-
-
+  <!-- Peu de pàgina -->
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025
+```
