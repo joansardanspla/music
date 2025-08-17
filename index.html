@@ -309,6 +309,20 @@
 <script>
   document.getElementById('any').textContent = new Date().getFullYear();
 </script>
+  
+  <script>
+  document.getElementById('any').textContent = new Date().getFullYear();
+  const btnTop = document.getElementById('btn-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      btnTop.classList.add('show');
+      btnTop.style.display = 'block';
+    } else {
+      btnTop.classList.remove('show');
+      btnTop.style.display = 'none';
+    }
+  });
+</script>
 
 </body>
 </html>
