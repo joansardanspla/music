@@ -199,6 +199,23 @@ footer {
   color: var(--text);
 }
 
+    /* Botó/enllaç destacat */
+.btn-link {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.btn-link:hover {
+  background: #2466d9;
+}
+
+
 
 /* ===============================
    Responsivitat
@@ -267,13 +284,15 @@ footer {
     <h1 class="titol-seccio">Joan Sardans Pla – Músic</h1>
     <nav>
       <div class="menu-container">
-        <ul class="nav-links">
-          <li><a href="#inici" class="active">Inici</a></li>
-          <li><a href="#biografia">Biografia</a></li>
-          <li><a href="#partitures">Partitures</a></li>
-          <li><a href="#galeria">Galeria</a></li>
-        </ul>
-      </div>
+       <ul class="nav-links">
+  <li><a href="#inici" class="active">Inici</a></li>
+  <li><a href="#biografia">Biografia</a></li>
+  <li><a href="#partitures">Partitures</a></li>
+  <li><a href="#galeria">Galeria</a></li>
+  <li><a href="#banda">Banda</a></li>
+  <li><a href="#contacte">Contacte</a></li>
+      </ul>
+ </div>
     </nav>
   </header>
 
@@ -336,6 +355,21 @@ footer {
       </figure>
     </article>
   </section>
+
+  <!-- ===============================
+     Secció Banda
+     =============================== -->
+<section id="banda" class="container">
+  <h2 class="titol-seccio">La Banda – Rumbesia</h2>
+  <p>
+    Formo part del projecte <strong>Rumbesia</strong>, on la música i la poesia s’uneixen en un espectacle únic.
+    Pots descobrir més sobre la banda i els propers concerts a la seva web oficial:
+  </p>
+  <p style="text-align: center; margin-top: 1rem;">
+    <a href="https://www.rumbesia.cat/" target="_blank" class="btn-link">Visita Rumbesia</a>
+  </p>
+</section>
+
 
   <!-- ===============================
      Peu de pàgina
