@@ -21,9 +21,6 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 
   <style>
-    /* ===============================
-       Variables i colors globals
-       =============================== */
     :root {
       --accent: #4F8FF9;
       --accent-light: #e3eefe;
@@ -36,9 +33,6 @@
       --nav-shadow: 0 4px 16px 0 rgba(0,0,0,0.04);
     }
 
-    /* ===============================
-       Estils bàsics
-       =============================== */
     * { margin:0; padding:0; box-sizing:border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -65,9 +59,6 @@
       font-size:1.7rem;
     }
 
-    /* ===============================
-       Navegació
-       =============================== */
     nav {
       background: var(--nav-bg);
       box-shadow: var(--nav-shadow);
@@ -79,11 +70,7 @@
       transition: box-shadow 0.2s;
     }
 
-    .menu-container {
-      max-width:600px;
-      margin:0 auto;
-      padding:0 0.6rem;
-    }
+    .menu-container { max-width:600px; margin:0 auto; padding:0 0.6rem; }
 
     .nav-links {
       display:flex;
@@ -109,9 +96,6 @@
       outline:none;
     }
 
-    /* ===============================
-       Contingut principal
-       =============================== */
     .container {
       max-width:600px;
       margin:0 auto 3rem;
@@ -122,9 +106,6 @@
       transition: box-shadow 0.2s;
     }
 
-    /* ===============================
-       Secció d’imatges
-       =============================== */
     .imatge-section {
       display:flex;
       flex-direction:column;
@@ -148,9 +129,6 @@
       display:block;
     }
 
-    /* ===============================
-       Scroll personalitzat
-       =============================== */
     ::-webkit-scrollbar {
       width:10px;
       background:#e3e7ef;
@@ -162,9 +140,6 @@
     }
     ::-webkit-scrollbar-thumb:hover { background:#2466d9; }
 
-    /* ===============================
-       Botons
-       =============================== */
     .btn-general {
       display:inline-block;
       padding:0.8rem 2rem;
@@ -214,18 +189,12 @@
       right:20px;
       display:none;
       z-index:100;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      opacity:0;
     }
 
-    <script>
-  const btnTop = document.getElementById('btn-top');
-  window.addEventListener('scroll', function() {
-    btnTop.style.display = (window.scrollY > 200) ? 'block' : 'none';
-  });
-</script>
+    #btn-top.show { opacity:1; }
 
-    /* ===============================
-       Footer
-       =============================== */
     footer {
       background: var(--nav-bg);
       box-shadow: var(--nav-shadow);
@@ -237,9 +206,16 @@
 
     .footer-container { max-width:600px; margin:0 auto; color: var(--text); }
 
-    /* ===============================
-       Responsivitat
-       =============================== */
+    footer a {
+      display:inline-flex;
+      align-items:center;
+      gap:0.2rem;
+      text-decoration:none;
+      color: inherit;
+    }
+
+    footer a img { height:20px; vertical-align: middle; }
+
     @media (max-width:600px) {
       .container { padding:0.6rem; border-radius:8px; }
       .menu-container { padding:0 0.5rem; }
@@ -257,10 +233,6 @@
 </head>
 <body>
 
-  <!-- ===============================
-       Capçalera amb menú
-       =============================== -->
-  
   <header>
     <h1 class="titol-seccio">Joan Sardans Pla – Músic</h1>
     <nav>
@@ -277,13 +249,11 @@
     </nav>
   </header>
 
-  <!-- Secció Inici -->
   <section id="inici" class="container">
     <h2 class="titol-seccio">Benvinguts</h2>
     <p>Descobreix la música del Joan Sardans Pla, un músic de Manresa que combina flamenc, jazz i clàssic.</p>
   </section>
 
-  <!-- Secció Biografia -->
   <section id="biografia" class="container">
     <h2 class="titol-seccio">Biografia</h2>
     <p>
@@ -295,52 +265,64 @@
     </p>
   </section>
 
-  <!-- Secció Partitures -->
   <section id="partitures" class="container imatge-section">
     <h2 class="titol-seccio">Partitures</h2>
     <article class="imatge-card"><img src="partitures/grans-graons.png" alt="Partitura Grans Graons – Joan Sardans Pla"></article>
     <article class="imatge-card"><img src="partitures/vida-de-luxe.png" alt="Partitura Vida de Luxe – Joan Sardans Pla"></article>
   </section>
 
-  <!-- Secció Galeria -->
   <section id="galeria" class="container imatge-section">
     <h2 class="titol-seccio">Galeria</h2>
-    <article class="imatge-card"><img src="imatges/jo-verd.jpg" alt="Joan tocant"></article>
-    <article class="imatge-card"><img src="imatges/jo-lila.jpg" alt="Joan en concert"></article>
+    <article class="imatge-card"><img src="imatges/jo-verd.jpg" alt="Concert Joan Sardans Pla 1"></article>
+    <article class="imatge-card"><img src="imatges/jo-lila.jpg" alt="Concert Joan Sardans Pla 2"></article>   
   </section>
 
-  <!-- Secció Banda -->
   <section id="banda" class="container">
-    <h2 class="titol-seccio">La Banda – Rumbesia</h2>
-    <p>Formo part del projecte <strong>Rumbesia</strong>, on la música i la poesia s’uneixen en un espectacle únic. Pots descobrir més sobre la banda i els propers concerts a la seva web oficial:</p>
-    <p style="text-align:center; margin-top:1rem;">
-      <a href="https://www.rumbesia.cat/" target="_blank" class="btn-general">Visita Rumbesia</a>
+    <h2 class="titol-seccio">La Banda</h2>
+    <p>
+      La banda del Joan Sardans Pla està formada per músics professionals de jazz, flamenc i música clàssica. 
+      Cada concert és una experiència única combinant diferents estils musicals.
     </p>
   </section>
 
-  <!-- Secció Contacte -->
   <section id="contacte" class="container">
     <h2 class="titol-seccio">Contacte</h2>
-    <div style="text-align:center; margin-top:1.5rem;">
-      <a href="https://github.com/joansardanspla" target="_blank" class="btn-general">Visita el meu GitHub</a>
-    </div>
+    <p>Per contractacions, consultes o informació: <a href="mailto:joan@example.com">joan@example.com</a></p>
   </section>
 
-  <!-- Botó Tornar a dalt -->
-  <a href="#inici" id="btn-top" class="btn-general" title="Torna a dalt">↑</a>
+  <a href="#inici" id="btn-top" class="btn-general">&#8679;</a>
 
-  <!-- Peu de pàgina -->
-<footer>
-  <div class="footer-container">
-    <p>
-      © 2025 Joan Sardans Pla. Llicenciat sota 
-      <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">
-        <img src="https://mirrors.creativecommons.org/presskit/cc.icons/cc.svg" alt="Creative Commons" style="height: 20px; vertical-align: middle;">
-        <img src="https://mirrors.creativecommons.org/presskit/cc.icons/by.svg" alt="Reconeixement" style="height: 20px; vertical-align: middle;">
-        <img src="https://mirrors.creativecommons.org/presskit/cc.icons/sa.svg" alt="CompartirIgual" style="height: 20px; vertical-align: middle;">
-        Reconeixement-CompartirIgual 4.0 Internacional
-      </a>
-    </p>
-  </div>
-</footer>
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 Joan Sardans Pla. Tots els drets reservats.</p>
+      <p>
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+          <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC"> Creative Commons BY-SA 4.0
+        </a>
+      </p>
+    </div>
+  </footer>
 
+  <script>
+    const btnTop = document.getElementById('btn-top');
+
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 300){
+        btnTop.style.display = 'block';
+        setTimeout(() => btnTop.classList.add('show'), 10);
+      } else {
+        btnTop.classList.remove('show');
+        setTimeout(() => btnTop.style.display = 'none', 300);
+      }
+    });
+
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
