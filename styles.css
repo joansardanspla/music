@@ -76,7 +76,7 @@
   }
 
   .nav-links.show {
-    display: flex;
+    display: none;
   }
 
   #menu-toggle {
@@ -87,7 +87,7 @@
 
 
     .nav-links {
-      display:flex;
+      display:none;
       justify-content:center;
       gap:1.5rem;
       list-style:none;
