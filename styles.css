@@ -172,6 +172,55 @@
 
     #btn-top.show { opacity:1; }
 
+.audio-player {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.play-btn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+}
+
+.play-btn:hover { transform: scale(1.05); }
+
+.progress-container {
+  flex: 1;
+  height: 8px;
+  background: var(--accent-light);
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+.time {
+  font-size: 0.9rem;
+  min-width: 45px;
+  text-align: right;
+  color: var(--text);
+}
+
+
     footer {
       background: var(--nav-bg);
       box-shadow: var(--nav-shadow);
