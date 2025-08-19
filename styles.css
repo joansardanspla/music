@@ -36,11 +36,6 @@ header .subtitol {
 }
 
 
-.imatge-section:first-of-type {
-  padding-top: 11rem; /* augmenta o disminueix segons necessitis */
-}
-
-
 h1,h2 {
   color: var(--title-color);
   font-weight:700;
