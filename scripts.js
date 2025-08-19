@@ -1,23 +1,23 @@
- const btnTop = document.getElementById('btn-top');
+const btnTop = document.getElementById('btn-top');
 
-  // Mostrar o amagar el botó quan fas scroll
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) {
-      btnTop.classList.add('show');
-      btnTop.style.display = 'block';
-    } else {
-      btnTop.classList.remove('show');
-      btnTop.style.display = 'none';
-    }
-  });
+// Mostrar o amagar el botó quan fas scroll
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) {
+    btnTop.classList.add('show');
+    btnTop.style.display = 'block';
+  } else {
+    btnTop.classList.remove('show');
+    btnTop.style.display = 'none';
+  }
+});
 
-  // Quan cliquis el botó, scroll suau cap a dalt de tot
-  btnTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+// Quan cliquis el botó, scroll suau cap a dalt
+btnTop.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
-
+// Reproductors d'àudio
 document.querySelectorAll('.audio-player').forEach(player => {
   const audio = new Audio(player.dataset.audio);
   const playBtn = player.querySelector('.play-btn');
@@ -64,27 +64,3 @@ document.querySelectorAll('.audio-player').forEach(player => {
     return `${m}:${s}`;
   }
 });
-
-document.addEventListener('DOMContentLoaded', () => {
-  const menuToggle = document.getElementById('menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-
-  if (menuToggle && navLinks) {
-    // Obrir/tancar menú en fer clic al botó ☰
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-      // Opcional: canviar icona ☰ ↔ ✖
-      menuToggle.textContent = navLinks.classList.contains('show') ? '✖' : '☰';
-    });
-
-    // Tancar menú automàticament quan es clica un enllaç
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('show');
-        menuToggle.textContent = '☰';
-      });
-    });
-  }
-});
-
-
