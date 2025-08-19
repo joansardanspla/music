@@ -64,3 +64,17 @@ document.querySelectorAll('.audio-player').forEach(player => {
     return `${m}:${s}`;
   }
 });
+
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});
+
+// Opcional: tancar menú quan es fa clic a un enllaç
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('show');
+  });
+});
