@@ -20,6 +20,15 @@ body {
   min-height: 100vh;
 }
 
+header .titol-seccio {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 3.5rem;
+  text-align: center; /* opcional, per centrar el títol */
+  margin-top: 2rem;   /* opcional, per donar aire */
+}
+
+
 .imatge-section:first-of-type {
   padding-top: 6rem; /* augmenta o disminueix segons necessitis */
 }
