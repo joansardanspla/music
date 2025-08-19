@@ -59,13 +59,20 @@
   color: var(--title-color);
 }
 
-@media (max-width: 900px) {
+/* Pantalles petites: menú ocult per defecte */
+@media (max-width: 600px) {
   .nav-links {
-    display: none;
+    display: none;      /* ocultar el menú */
     flex-direction: column;
-    gap: 1rem;
-    margin-top: 1rem;
-    text-align: center;
+    gap: 0.7rem;
+    background: var(--nav-bg);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    box-shadow: var(--nav-shadow);
+    z-index: 9;
   }
 
   .nav-links.show {
