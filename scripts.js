@@ -70,14 +70,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelector('.nav-links');
 
   if (menuToggle && navLinks) {
+    // Obrir/tancar menú en fer clic al botó ☰
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('show');
+      // Opcional: canviar icona ☰ ↔ ✖
+      menuToggle.textContent = navLinks.classList.contains('show') ? '✖' : '☰';
     });
 
-    // opcional: tanca el menú quan es clica un enllaç
+    // Tancar menú automàticament quan es clica un enllaç
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('show');
+        menuToggle.textContent = '☰';
       });
     });
   }
