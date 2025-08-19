@@ -6,8 +6,6 @@
   --card: #fff;
   --shadow: 0 8px 32px rgba(79,143,249,0.08), 0 1.5px 4px rgba(0,0,0,0.03);
   --title-color: #222;
-  --nav-bg: #fff;
-  --nav-shadow: 0 4px 16px 0 rgba(0,0,0,0.04);
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -34,79 +32,6 @@ h1,h2 {
   margin:2rem 0 1.2rem;
   letter-spacing:1.2px;
   font-size:1.7rem;
-}
-
-nav {
-  background: var(--nav-bg);
-  box-shadow: var(--nav-shadow);
-  padding:1rem 0;
-  margin-bottom:3rem;
-  position:sticky;
-  top:0;
-  z-index:10;
-  transition: box-shadow 0.2s;
-}
-
-.menu-container { max-width:600px; margin:0 auto; padding:0 0.6rem; }
-
-#menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 2rem;
-  font-weight: bold;
-  cursor: pointer;
-  color: var(--title-color);
-}
-
-/* Menú responsive */
-@media (max-width: 600px) {
-  .nav-links {
-    display: none; /* oculto por defecto */
-    flex-direction: column;
-    gap: 0.7rem;
-    background: var(--nav-bg);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    padding: 1rem 0;
-    box-shadow: var(--nav-shadow);
-    z-index: 9;
-  }
-
-  .nav-links.show {
-    display: flex; /* se muestra al activar */
-  }
-
-  #menu-toggle {
-    display: block;
-    margin: 0 auto;
-  }
-}
-
-.nav-links {
-  display:flex;
-  justify-content:center;
-  gap:1.5rem;
-  list-style:none;
-}
-
-nav a {
-  color: var(--title-color);
-  text-decoration:none;
-  font-size:1.1em;
-  font-weight:600;
-  transition: color 0.2s, text-decoration 0.2s;
-  padding:0.25rem 0.5rem;
-  border-radius:6px;
-}
-
-nav a:hover, nav a:focus, nav a.active {
-  color: var(--accent);
-  background: var(--accent-light);
-  text-decoration: underline;
-  outline:none;
 }
 
 .container {
@@ -260,8 +185,8 @@ nav a:hover, nav a:focus, nav a.active {
 }
 
 footer {
-  background: var(--nav-bg);
-  box-shadow: var(--nav-shadow);
+  background: var(--card);
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.04);
   padding:1rem 0;
   text-align:center;
   font-size:0.9rem;
@@ -282,9 +207,7 @@ footer a img { height:20px; vertical-align: middle; }
 
 @media (max-width:600px) {
   .container { padding:0.6rem; border-radius:8px; }
-  .menu-container { padding:0 0.5rem; }
   .imatge-section { gap:1rem; }
-  .nav-links { flex-direction:column; gap:0.7rem; }
   .titol-seccio { font-size:1.2rem; margin:1.3rem 0 1rem; }
   .imatge-card img { max-width:260px; }
 }
