@@ -76,7 +76,7 @@
   }
 
   .nav-links.show {
-    display: none;
+    display: flex;
   }
 
   #menu-toggle {
