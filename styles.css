@@ -21,24 +21,23 @@ body {
 }
 
 header .titol-seccio {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 3.5rem;
   font-weight: 800;
   text-align: center;
 }
 
 header .subtitol {
-  font-family: 'Montserrat', sans-serif; /* o també Playfair si vols */
+  font-family: 'Montserrat', sans-serif; 
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
-  margin-top: 0.3rem;
+  margin-top: 0.2rem;
 }
 
 
-
 .imatge-section:first-of-type {
-  padding-top: 8rem; /* augmenta o disminueix segons necessitis */
+  padding-top: 11rem; /* augmenta o disminueix segons necessitis */
 }
 
 
