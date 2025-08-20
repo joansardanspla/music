@@ -22,17 +22,9 @@ body {
 
 header .titol-seccio {
   font-family: 'Montserrat', sans-serif;
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 800;
   text-align: center;
-}
-
-header .subtitol {
-  font-family: 'Montserrat', sans-serif; 
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-align: center;
-  margin-top: 0.2rem;
 }
 
 
@@ -222,7 +214,13 @@ footer a {
 footer a img { height:20px; vertical-align: middle; }
 
 @media (max-width:600px) {
-  .container { padding:0.6rem; border-radius:8px; }
+  .container { 
+    padding:0.6rem; 
+    border-radius:8px;
+    max-width: 95%;   /* fa que no arribi a tocar del tot els marges */
+    margin: 0 auto;   /* centra el contenidor */
+  }
+
   .imatge-section { gap:1rem; }
   .titol-seccio { font-size:1.2rem; margin:1.3rem 0 1rem; }
   .imatge-card img { max-width:260px; }
@@ -230,6 +228,9 @@ footer a img { height:20px; vertical-align: middle; }
 
 @media (max-width:400px) {
   body { font-size:16px; }
+  .container {
+    max-width: 92%;   /* encara més estret en pantalles molt petites */
+  }
   .imatge-card img { max-width:240px; }
 }
 
