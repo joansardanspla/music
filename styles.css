@@ -1,31 +1,31 @@
 :root {
   --accent: #4F8FF9;
   --accent-light: #e3eefe;
-  --bg: #f7f8fa;
-  --text: #222;
+  --bg: #000;                 /* Fons negre */
+  --text: #222;               /* Es manté com estava */
   --card: #fff;
   --shadow: 0 8px 32px rgba(79,143,249,0.08), 0 1.5px 4px rgba(0,0,0,0.03);
   --title-color: #222;
 }
 
-* { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior: smooth; }
 body {
   font-family: 'Montserrat', Arial, sans-serif;
   font-size: 18px;
   color: var(--text);
-  background: var(--bg) url('fons.jpg') no-repeat center center scroll;
-  background-size: cover;
+  background: var(--bg);      /* Fons negre */
   line-height: 1.7;
   min-height: 100vh;
 }
 
+/* Només el títol de la capçalera en vermell */
 header .titol-seccio {
   font-family: 'Montserrat', sans-serif;
   font-size: 3rem;
   font-weight: 800;
   text-align: center;
+  color: red;
 }
+
 
 
 h1,h2 {
