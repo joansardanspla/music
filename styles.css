@@ -236,7 +236,7 @@ footer a {
   color: inherit;
   text-shadow: 0 0 12px rgba(65,105,225,0.4);
 }
-footer a img { height:29px; vertical-align: middle; }
+footer a img { height:35px; vertical-align: middle; }
 
 /* Responsive */
 @media (max-width:600px) {
