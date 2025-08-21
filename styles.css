@@ -205,34 +205,29 @@ h1,h2 {
   color: var(--text);
 }
 
-/* --- Peu de pàgina --- */
+/* --- Peu de pàgina mínim --- */
 footer {
-  background: var(--card);
-  box-shadow: 0 -20px 40px rgba(0,0,0,0.8);
-  padding:1rem 0;
-  text-align:center;
-  font-size:0.9rem;
-  margin-top:3rem;
-  position: relative;
-  z-index: 1;
+  text-align: center;
+  font-size: 0.9rem;
 }
 
 .footer-container {
-  text-align: center;
+  display: inline-block;
 }
 
 .cc-link {
   display: inline-flex;
   align-items: center;
-  gap: 4px; /* una mica més d'espai entre icones */
+  gap: 4px;
   text-decoration: none;
 }
 
 .cc-link img {
-  height: 10px;   /* mida uniforme de totes les icones */
-  width: auto;    /* mantenir proporció */
+  height: 14px;   /* mida uniforme de totes les icones */
+  width: auto;
   vertical-align: middle;
 }
+
 
 
 /* --- Responsive --- */
