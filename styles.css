@@ -96,7 +96,7 @@ h1,h2 {
   font-weight:600;
   text-decoration:none;
   border-radius:50px;
-  box-shadow:0 8px 20px rgba(79,143,249,0.3);
+  box-shadow:0 8px 20px rgba(65,105,225,0.3);
   transition: all 0.3s ease;
   position:relative;
   overflow:hidden;
@@ -121,7 +121,7 @@ h1,h2 {
 .btn-general:hover,
 .btn-general:focus {
   transform: translateY(-3px);
-  box-shadow: 0 12px 24px rgba(79,143,249,0.35);
+  box-shadow: 0 12px 24px rgba(65,105,225,0.35);
   outline:none;
 }
 
