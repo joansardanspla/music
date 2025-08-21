@@ -1,11 +1,12 @@
 :root {
-  --accent: #4F8FF9;
-  --accent-light: #1E3A8A1A; /* versió suau amb opacitat */
-  --bg: #0A0A0A;              /* fons fosc però no absolutament negre */
-  --text: #EEE;               /* text clar sobre fons fosc */
-  --card: #121212;            /* cards lleugerament més clars que el fons */
-  --shadow: 0 8px 32px rgba(79,143,249,0.2), 0 1.5px 4px rgba(0,0,0,0.15);
-  --title-color: #FFF;        /* títols visibles sobre fons fosc */
+  --accent: #4169E1;             /* Royal Blue */
+  --accent-light: #4169E11A;     /* Royal Blue amb 10% opacitat */
+  --bg: #0A0A0A;                 
+  --text: #EEE;                  
+  --card: #121212;               
+  --shadow: 0 8px 32px rgba(65,105,225,0.2), 
+            0 1.5px 4px rgba(0,0,0,0.15);
+  --title-color: #FFF;           
 }
 
 
@@ -82,10 +83,10 @@ h1,h2 {
 }
 ::-webkit-scrollbar-thumb {
   background: var(--accent);
-  border-radius:10px;
-  border:2px solid var(--bg);
+  border-radius: 10px;
+  border: 2px solid var(--bg);
 }
-::-webkit-scrollbar-thumb:hover { background:#2466d9; }
+::-webkit-scrollbar-thumb:hover { background: #3154B8; } /* Royal Blue més fosc */
 
 .btn-general {
   display:inline-block;
