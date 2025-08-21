@@ -1,6 +1,10 @@
 :root {
-  --accent: #4169E1;             /* Royal Blue */
+  --accent: #4169E1;             /* Royal Blue principal */
   --accent-light: #4169E11A;     /* Royal Blue amb 10% opacitat */
+  --accent-dark: #3154B8;        /* Royal Blue més fosc (hover) */
+  --accent-shadow: rgba(65,105,225,0.3);         /* Ombra suau */
+  --accent-shadow-strong: rgba(65,105,225,0.35); /* Ombra forta */
+  
   --bg: #0A0A0A;                 
   --text: #EEE;                  
   --card: #121212;               
@@ -9,12 +13,11 @@
   --title-color: #FFF;           
 }
 
-
 body {
   font-family: 'Montserrat', Arial, sans-serif;
   font-size: 18px;
   color: var(--text);
-  background: var(--bg);      /* Fons negre */
+  background: var(--bg);
   line-height: 1.7;
   min-height: 100vh;
 }
@@ -27,8 +30,6 @@ header .titol-seccio {
   text-align: center;
   color: crimson;
 }
-
-
 
 h1,h2 {
   color: var(--title-color);
@@ -77,6 +78,7 @@ h1,h2 {
   display:block;
 }
 
+/* Scrollbar */
 ::-webkit-scrollbar {
   width:10px;
   background:#e3e7ef;
@@ -86,8 +88,9 @@ h1,h2 {
   border-radius: 10px;
   border: 2px solid var(--bg);
 }
-::-webkit-scrollbar-thumb:hover { background: #3154B8; } /* Royal Blue més fosc */
+::-webkit-scrollbar-thumb:hover { background: var(--accent-dark); }
 
+/* Botons generals */
 .btn-general {
   display:inline-block;
   padding:0.8rem 2rem;
@@ -96,7 +99,7 @@ h1,h2 {
   font-weight:600;
   text-decoration:none;
   border-radius:50px;
-  box-shadow:0 8px 20px rgba(65,105,225,0.3);
+  box-shadow:0 8px 20px var(--accent-shadow);
   transition: all 0.3s ease;
   position:relative;
   overflow:hidden;
@@ -121,10 +124,11 @@ h1,h2 {
 .btn-general:hover,
 .btn-general:focus {
   transform: translateY(-3px);
-  box-shadow: 0 12px 24px rgba(65,105,225,0.35);
+  box-shadow: 0 12px 24px var(--accent-shadow-strong);
   outline:none;
 }
 
+/* Botó scroll-top */
 #btn-top.btn-general {
   width:50px;
   height:50px;
@@ -140,12 +144,12 @@ h1,h2 {
   transition: opacity 0.3s ease, transform 0.3s ease;
   opacity:0;
 }
-
 #btn-top.show {
   opacity:1;
   display:block;
 }
 
+/* Reproductor d'àudio */
 .audio-player {
   display: flex;
   align-items: center;
@@ -167,7 +171,6 @@ h1,h2 {
   box-shadow: var(--shadow);
   transition: transform 0.2s;
 }
-
 .play-btn:hover { transform: scale(1.05); }
 
 .progress-container {
@@ -179,14 +182,12 @@ h1,h2 {
   cursor: pointer;
   position: relative;
 }
-
 .progress {
   width: 0%;
   height: 100%;
   background: var(--accent);
   transition: width 0.1s linear;
 }
-
 .time {
   font-size: 0.9rem;
   min-width: 45px;
@@ -194,6 +195,7 @@ h1,h2 {
   color: var(--text);
 }
 
+/* Peu de pàgina */
 footer {
   background: var(--card);
   box-shadow: 0 -4px 16px rgba(0,0,0,0.04);
@@ -202,9 +204,7 @@ footer {
   font-size:0.9rem;
   margin-top:3rem;
 }
-
 .footer-container { max-width:600px; margin:0 auto; color: var(--text); }
-
 footer a {
   display:inline-flex;
   align-items:center;
@@ -212,33 +212,31 @@ footer a {
   text-decoration:none;
   color: inherit;
 }
+footer a img { height:26px; vertical-align: middle; }
 
-footer a img { height:20px; vertical-align: middle; }
-
+/* Responsive */
 @media (max-width:600px) {
   .container { 
     padding:0.6rem; 
     border-radius:8px;
-    max-width: 95%;   /* fa que no arribi a tocar del tot els marges */
-    margin: 0 auto;   /* centra el contenidor */
+    max-width: 95%;
+    margin: 0 auto;
   }
-
   .imatge-section { gap:1rem; }
   .titol-seccio { font-size:1.2rem; margin:1.3rem 0 1rem; }
   .imatge-card img { max-width:260px; }
 }
-
 @media (max-width:400px) {
   body { font-size:16px; }
   .container {
     max-width: 92%;
-      margin:0 auto 1.3rem;
+    margin:0 auto 1.3rem;
   }
   .imatge-card img { max-width:240px; }
 }
 
+/* Accessibilitat */
 a:focus-visible, .btn-general:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 4px;
 }
-
