@@ -240,25 +240,22 @@ footer {
 }
 
 .footer-container {
-  max-width:600px;
-  margin:0 auto;
-  color: var(--text);
+  text-align: center;
 }
 
-footer a {
-  display:inline-flex;
-  align-items:center;
-  gap:0.2rem;
-  text-decoration:none;
-  color: inherit;
-  text-shadow: 0 -3px 10px rgba(65,105,225,0.5);
+.cc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px; /* una mica més d'espai entre icones */
+  text-decoration: none;
 }
 
-footer a img {
-  height:35px;
-  width:auto;
+.cc-link img {
+  height: 18px;   /* mida uniforme de totes les icones */
+  width: auto;    /* mantenir proporció */
   vertical-align: middle;
 }
+
 
 /* --- Responsive --- */
 @media (max-width:600px) {
