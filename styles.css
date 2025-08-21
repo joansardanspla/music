@@ -11,7 +11,7 @@
   --title-color: #FFF;           
 }
 
-/* --- Cos principal amb focus teatral --- */
+/* --- Cos principal --- */
 body {
   font-family: 'Montserrat', Arial, sans-serif;
   font-size: 18px;
@@ -23,8 +23,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Focus teatral animat sobre tot el body */
-/* --- Focus teatral doble --- */
+/* Focus teatral fix sobre el body */
 body::before,
 body::after {
   content: "";
@@ -43,7 +42,7 @@ body::before {
               rgba(255,255,255,0.05) 0%,
               rgba(65,105,225,0.25) 20%,
               rgba(0,0,0,0.95) 70%);
-  animation: focusLeft 8s ease-in-out infinite alternate;
+  transform: translateX(0) translateY(0) rotate(-2deg) scale(1.05);
 }
 
 body::after {
@@ -53,21 +52,8 @@ body::after {
               rgba(255,255,255,0.05) 0%,
               rgba(255,69,0,0.25) 20%,
               rgba(0,0,0,0.95) 70%);
-  animation: focusRight 10s ease-in-out infinite alternate;
+  transform: translateX(0) translateY(0) rotate(1deg) scale(1.05);
 }
-
-@keyframes focusLeft {
-  0%   { transform: translateX(0) translateY(0) rotate(-2deg) scale(1.05); }
-  50%  { transform: translateX(3%) translateY(2%) rotate(2deg) scale(1.1); }
-  100% { transform: translateX(-3%) translateY(-2%) rotate(-1deg) scale(1.05); }
-}
-
-@keyframes focusRight {
-  0%   { transform: translateX(0) translateY(0) rotate(1deg) scale(1.05); }
-  50%  { transform: translateX(-3%) translateY(3%) rotate(-2deg) scale(1.08); }
-  100% { transform: translateX(2%) translateY(-3%) rotate(1deg) scale(1.05); }
-}
-
 
 /* --- Capçalera i títols --- */
 header .titol-seccio {
@@ -103,18 +89,10 @@ h1,h2 {
   padding:0.8rem 0.6rem;
   background: var(--card);
   border-radius:12px;
-  box-shadow:
-    0 -30px 60px rgba(65,105,225,0.6),
-    0 15px 30px rgba(0,0,0,0.8);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 -30px 60px rgba(65,105,225,0.6),
+              0 15px 30px rgba(0,0,0,0.8);
   position: relative;
   z-index: 1;
-}
-.container:hover {
-  transform: scale(1.01);
-  box-shadow:
-    0 -60px 100px rgba(65,105,225,0.7),
-    0 20px 50px rgba(0,0,0,0.9);
 }
 
 /* --- Secció d’imatges --- */
@@ -130,19 +108,11 @@ h1,h2 {
 .imatge-card {
   background: var(--card);
   border-radius:12px;
-  box-shadow:
-    0 -40px 70px rgba(65,105,225,0.5),
-    0 12px 28px rgba(0,0,0,0.8);
+  box-shadow: 0 -40px 70px rgba(65,105,225,0.5),
+              0 12px 28px rgba(0,0,0,0.8);
   overflow:hidden;
-  transition: box-shadow 0.35s ease, transform 0.25s ease;
   position: relative;
   z-index: 1;
-}
-.imatge-card:hover {
-  transform: scale(1.02);
-  box-shadow: 
-    0 -70px 120px rgba(65,105,225,0.65),
-    0 18px 40px rgba(0,0,0,0.9);
 }
 
 .imatge-card img {
@@ -176,7 +146,6 @@ h1,h2 {
   border-radius:50px;
   box-shadow: 0 -5px 20px rgba(65,105,225,0.6),
               0 5px 15px rgba(0,0,0,0.8);
-  transition: all 0.3s ease;
   position:relative;
   overflow:hidden;
   text-align:center;
@@ -187,23 +156,11 @@ h1,h2 {
   content:'';
   position:absolute;
   top:0;
-  left:-100%;
+  left:0;
   width:100%;
   height:100%;
   background: rgba(255,255,255,0.25);
-  transition: all 0.3s ease;
   border-radius:50px;
-}
-
-.btn-general:hover::after,
-.btn-general:focus::after { left:0; }
-
-.btn-general:hover,
-.btn-general:focus {
-  transform: translateY(-3px);
-  box-shadow: 0 -10px 30px rgba(65,105,225,0.8),
-              0 10px 25px rgba(0,0,0,0.9);
-  outline:none;
 }
 
 /* --- Botó scroll-top --- */
@@ -219,14 +176,9 @@ h1,h2 {
   right:20px;
   display:none;
   z-index:100;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  opacity:0;
+  opacity:1;
   box-shadow: 0 -10px 25px rgba(65,105,225,0.7),
               0 10px 20px rgba(0,0,0,0.8);
-}
-#btn-top.show {
-  opacity:1;
-  display:block;
 }
 
 /* --- Reproductor d'àudio --- */
@@ -250,10 +202,9 @@ h1,h2 {
   cursor: pointer;
   box-shadow: 0 -5px 20px rgba(65,105,225,0.6),
               0 5px 15px rgba(0,0,0,0.8);
-  transition: transform 0.2s;
 }
-.play-btn:hover { transform: scale(1.08); }
 
+/* --- Progress bar d’àudio --- */
 .progress-container {
   flex: 1;
   height: 8px;
@@ -268,7 +219,6 @@ h1,h2 {
   width: 0%;
   height: 100%;
   background: var(--accent);
-  transition: width 0.1s linear;
 }
 .time {
   font-size: 0.9rem;
@@ -324,10 +274,7 @@ footer a img {
 }
 @media (max-width:400px) {
   body { font-size:16px; }
-  .container {
-    max-width: 92%;
-    margin:0 auto 1.3rem;
-  }
+  .container { max-width: 92%; margin:0 auto 1.3rem; }
   .imatge-card img { max-width:240px; }
 }
 
