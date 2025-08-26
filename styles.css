@@ -64,25 +64,26 @@ h1,h2 {
 
 /* --- Secció d’imatges --- */
 .imatge-section {
-  display: inline-block;       /* el contenidor s’ajusta al contingut */
-  padding: 0;                  /* elimina padding extra si no és necessari */
-  margin: 0 auto;              /* centra el contenidor */
-  background: var(--card);     /* opcional, si vols fons */
-  border-radius: 12px;         /* opcional */
+  display: flex;                  /* utilitzem flex per centrar */
+  align-items: center;            /* centra vertical */
+  justify-content: center;        /* centra horitzontal */
+  padding: 0;                     /* opcional */
+  margin: 0 auto;
+  background: var(--card);        /* opcional */
+  border-radius: 12px;            /* opcional */
 }
 
 .imatge-card {
-  display: block;
+  display: block;                 /* ocupa només la mida de la imatge */
   overflow: hidden;
   border-radius: 12px;
 }
 
 .imatge-card img {
-  display: block;     /* treu espais en blanc sota la imatge */
-  width: 100%;        /* s’adapta a l’amplada del contenidor */
-  height: auto;       /* manté la proporció, s’adapta a l’altura */
+  display: block;
+  width: 100%;                     /* s’adapta a l’amplada del contenidor */
+  height: auto;                    /* manté la proporció */
 }
-
 
 /* --- Botons generals --- */
 .btn-general {
