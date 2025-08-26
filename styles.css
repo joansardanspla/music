@@ -18,27 +18,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Focus teatral fix sobre el body */
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  width: 120%;
-  height: 140%;
-  pointer-events: none;
-  mix-blend-mode: screen;
-  z-index: 0;
-}
-
-body::before {
-  top: -20%;
-  left: -30%;
-  background: radial-gradient(ellipse at center,
-              rgba(255,255,255,0.05) 0%,
-              var(--accent) 20%,
-              rgba(0,0,0,0.95) 70%);
-  transform: translateX(0) translateY(0) rotate(-2deg) scale(1.05);
-}
 
 body::after {
   top: -20%;
@@ -150,49 +129,7 @@ h1,h2 {
   opacity:1;
 }
 
-/* --- Reproductor d'àudio --- */
-.audio-player {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1rem 0;
-}
 
-.play-btn {
-  width: 50px;
-  height: 50px;
-  border: none;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* --- Progress bar d’àudio --- */
-.progress-container {
-  flex: 1;
-  height: 8px;
-  background: var(--accent);
-  border-radius: 4px;
-  overflow: hidden;
-  cursor: pointer;
-  position: relative;
-  box-shadow: inset 0 0 10px var(--accent);
-}
-.progress {
-  width: 0%;
-  height: 100%;
-  background: #fff;
-}
-.time {
-  font-size: 0.9rem;
-  min-width: 45px;
-  text-align: right;
-  color: var(--text);
-}
 
 /* --- Peu de pàgina mínim --- */
 footer {
