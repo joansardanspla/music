@@ -29,37 +29,21 @@ body::after {
   transform: translateX(0) translateY(0) rotate(1deg) scale(1.05);
 }
 
-/* --- Capçalera i títols --- */
-header .titol-seccio {
-  font-size: 3rem;
-  font-weight: 800;
-  text-align: center;
-  color: crimson;
-}
-
-h1,h2 {
-  color: var(--title-color);
-  font-weight:700;
-  margin-bottom:1rem;
-  letter-spacing:0.02em;
-}
-
-.titol-seccio {
-  text-align:center;
-  margin:2rem 0 1.2rem;
-  letter-spacing:1.2px;
-  font-size:1.7rem;
-}
 
 /* --- Contenidors --- */
 .container {
-  max-width:600px;
-  margin:0 auto 3rem;
-  padding:0.8rem 0.6rem;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0.8rem 0.6rem;
   background: var(--card);
-  border-radius:12px;
+  border-radius: 12px;
   position: relative;
   z-index: 1;
+}
+
+/* Separació responsiva entre contenidors */
+.container + .container {
+  margin-top: clamp(1rem, 4vw, 3rem);
 }
 
 /* --- Secció d’imatges --- */
@@ -124,7 +108,10 @@ h1,h2 {
 }
 
 /* --- Accessibilitat --- */
-a:focus-visible, .btn-general:focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: 4px;
+a:focus-visible {
+  outline: 3px solid var(--accent);  /* contorn destacat */
+  outline-offset: 4px;              /* espai entre text i contorn */
+  border-radius: 4px;               /* suau a les cantonades (opcional) */
+  transition: outline-offset 0.2s ease; /* animació suau */
 }
+
