@@ -28,20 +28,13 @@ body {
 }
 
 /* Imatges */
-.imatge-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--card);
-  border-radius: 12px;
-}
-
-.imatge-card img {
+.imatge-section img {
   display: block;
   width: 100%;
   height: auto;
   border-radius: 12px;
 }
+
 
 /* Vídeo */
 .video-player {
