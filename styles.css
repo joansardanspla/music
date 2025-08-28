@@ -1,10 +1,10 @@
 :root {
-  --bg: #F9F9F9;       /* Fons molt clar */
-  --text: #333;        /* Text gris fosc, bona llegibilitat */
-  --card: #FFFFFF;     /* Targetes en blanc pur */
+  --bg: #F9F9F9;
+  --text: #333;
+  --card: #FFFFFF;
 }
 
-/* --- Cos principal --- */
+/* Cos principal */
 body {
   font-family: 'Montserrat', Arial, sans-serif;
   font-size: 18px;
@@ -12,40 +12,27 @@ body {
   background: var(--bg);
   line-height: 1.7;
   min-height: 100vh;
-  position: relative;
-  overflow-x: hidden;
 }
 
-
-/* --- Contenidors --- */
+/* Contenidors */
 .container {
   max-width: 600px;
   margin: 0 auto;
   padding: 0.8rem 0.6rem;
   background: var(--card);
   border-radius: 12px;
- 
 }
 
-/* Separació responsiva entre contenidors */
 .container + .container {
   margin-top: clamp(1rem, 4vw, 3rem);
 }
 
-/* --- Secció d’imatges --- */
+/* Imatges */
 .imatge-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  margin: 0 auto;
   background: var(--card);
-  border-radius: 12px;
-}
-
-.imatge-card {
-  display: block;
-  overflow: hidden;
   border-radius: 12px;
 }
 
@@ -53,11 +40,11 @@ body {
   display: block;
   width: 100%;
   height: auto;
+  border-radius: 12px;
 }
 
-/* --- Vídeo --- */
+/* Vídeo */
 .video-player {
-  position: relative;
   width: 100%;
   max-width: 800px;
   margin: 0 auto 1.5rem;
@@ -65,23 +52,18 @@ body {
 }
 
 .video-player iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   border: 0;
   border-radius: 8px;
-
 }
 
-/* --- Responsive --- */
+/* Responsive */
 @media (max-width:600px) {
   .container { 
     padding:0.6rem; 
     border-radius:8px;
     max-width: 95%;
-    margin: 0 auto;
   }
   .imatge-section { gap:1rem; }
   .titol-seccio { font-size:1.2rem; margin:1.3rem 0 1rem; }
