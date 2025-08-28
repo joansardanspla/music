@@ -1,9 +1,7 @@
 :root {
-  --accent: #4169E1;   /* Royal Blue únic */
-  --bg: #0A0A0A;                 
-  --text: #EEE;                  
-  --card: #121212;               
-  --title-color: #FFF;           
+  --bg: #F9F9F9;       /* Fons molt clar */
+  --text: #333;        /* Text gris fosc, bona llegibilitat */
+  --card: #FFFFFF;     /* Targetes en blanc pur */
 }
 
 /* --- Cos principal --- */
@@ -18,17 +16,17 @@ body {
   overflow-x: hidden;
 }
 
-
 body::after {
   top: -20%;
   right: -30%;
-  background: radial-gradient(ellipse at center,
-              rgba(255,255,255,0.05) 0%,
-              var(--accent) 20%,
-              rgba(0,0,0,0.95) 70%);
+  background: radial-gradient(
+              ellipse at center,
+              rgba(65,105,225,0.05) 0%,    /* accent molt suau */
+              rgba(65,105,225,0.15) 25%,  /* degradat subtil */
+              rgba(255,255,255,0.95) 70%  /* fons clar */
+            );
   transform: translateX(0) translateY(0) rotate(1deg) scale(1.05);
 }
-
 
 /* --- Contenidors --- */
 .container {
@@ -39,6 +37,7 @@ body::after {
   border-radius: 12px;
   position: relative;
   z-index: 1;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* ombra suau */
 }
 
 /* Separació responsiva entre contenidors */
@@ -48,34 +47,35 @@ body::after {
 
 /* --- Secció d’imatges --- */
 .imatge-section {
-  display: flex;                  /* utilitzem flex per centrar */
-  align-items: center;            /* centra vertical */
-  justify-content: center;        /* centra horitzontal */
-  padding: 0;                     /* opcional */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   margin: 0 auto;
-  background: var(--card);        /* opcional */
-  border-radius: 12px;            /* opcional */
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
 }
 
 .imatge-card {
-  display: block;                 /* ocupa només la mida de la imatge */
+  display: block;
   overflow: hidden;
   border-radius: 12px;
 }
 
 .imatge-card img {
   display: block;
-  width: 100%;                     /* s’adapta a l’amplada del contenidor */
-  height: auto;                    /* manté la proporció */
+  width: 100%;
+  height: auto;
 }
 
-
+/* --- Vídeo --- */
 .video-player {
   position: relative;
   width: 100%;
-  max-width: 800px;   /* opcional, per limitar l’ample en pantalles grans */
+  max-width: 800px;
   margin: 0 auto 1.5rem;
-  aspect-ratio: 16 / 9; /* manté la proporció del vídeo */
+  aspect-ratio: 16 / 9;
 }
 
 .video-player iframe {
@@ -85,9 +85,9 @@ body::after {
   width: 100%;
   height: 100%;
   border: 0;
-  border-radius: 8px; /* opcional, per estètica */
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
 }
-
 
 /* --- Responsive --- */
 @media (max-width:600px) {
@@ -101,17 +101,9 @@ body::after {
   .titol-seccio { font-size:1.2rem; margin:1.3rem 0 1rem; }
   .imatge-card img { max-width:260px; }
 }
+
 @media (max-width:400px) {
   body { font-size:16px; }
   .container { max-width: 92%; margin:0 auto 1.3rem; }
   .imatge-card img { max-width:240px; }
 }
-
-/* --- Accessibilitat --- */
-a:focus-visible {
-  outline: 3px solid var(--accent);  /* contorn destacat */
-  outline-offset: 4px;              /* espai entre text i contorn */
-  border-radius: 4px;               /* suau a les cantonades (opcional) */
-  transition: outline-offset 0.2s ease; /* animació suau */
-}
-
