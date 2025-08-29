@@ -3,26 +3,13 @@
 
   <!-- Pàgina principal -->
   <url>
-    <loc>https://joansardanspla.github.io/index.html</loc>
+    <loc>https://joansardanspla.github.io/music</loc>
+    <lastmod>2025-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Recursos interns (imatges i partitures importants) -->
-  <url>
-    <loc>https://joansardanspla.github.io/partitures/grans-graons.png</loc>
-    <lastmod>2025-08-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://joansardanspla.github.io/partitures/vida-de-luxe.png</loc>
-    <lastmod>2025-08-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
+  <!-- Recursos interns -->
   <url>
     <loc>https://joansardanspla.github.io/imatges/jo-verd.jpg</loc>
     <lastmod>2025-08-16</lastmod>
@@ -30,18 +17,6 @@
     <priority>0.6</priority>
   </url>
 
-  <url>
-    <loc>https://joansardanspla.github.io/imatges/jo-lila.jpg</loc>
-    <lastmod>2025-08-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
 
-  <!-- Projecte relacionat -->
-  <url>
-    <loc>https://rumbesia.cat</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
 
 </urlset>
