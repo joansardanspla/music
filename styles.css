@@ -1,8 +1,9 @@
 :root {
-  --bg: #F9F9F9;
+  --bg: #E0E0E0; /* gris clar més fosc */
   --text: #333;
   --card: #FFFFFF;
 }
+
 
 /* Cos principal */
 body {
