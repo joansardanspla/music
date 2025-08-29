@@ -1,7 +1,7 @@
 :root {
-  --bg: #D6D6D6; /* gris mig */
-  --text: #333;
-  --card: #FFFFFF;
+  --bg: #808080; /* gris fosc clàssic */
+  --text: #F5F5F5; /* text clar perquè es llegeixi bé */
+  --card: #3C3C3C; /* targetes més clares que el fons */
 }
 
 
