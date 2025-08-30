@@ -1,16 +1,9 @@
-:root {
-  --bg: silver;
-  --text: black;
-}
-
-
-
 /* Cos principal */
 body {
   font-family: 'Montserrat', Arial, sans-serif;
   font-size: 18px;
-  color: var(--text);
-  background: var(--bg);
+  color: black;
+  background: silver;
   line-height: 1.7;
   min-height: 100vh;
 }
@@ -20,7 +13,7 @@ body {
   max-width: 600px;
   margin: 0 auto;
   padding: 0.8rem 0.6rem;
-  background: var(--card);
+  background: white;
   border-radius: 12px;
 }
 
@@ -35,7 +28,6 @@ body {
   height: auto;
   border-radius: 12px;
 }
-
 
 /* Vídeo */
 .video-player {
