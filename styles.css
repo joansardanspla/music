@@ -10,6 +10,7 @@ body {
 
 /* Contenidors */
 .container {
+  text-align: center;
   max-width: 600px;
   margin: 0 auto;
   padding: 0.8rem 0.6rem;
