@@ -59,6 +59,15 @@ body {
   border: 0;
   border-radius: 8px;
 }
+/* Partitures */
+.container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  margin-bottom: 0.6rem;
+}
 
 /* Responsive */
 @media (max-width:600px) {
