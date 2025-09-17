@@ -62,3 +62,48 @@ body {
   .container { max-width: 92%; margin:0 auto 1.3rem; }
   .imatge-card img { max-width:240px; }
 }
+
+/* Menú de navegació */
+nav {
+  background: #222;          /* Fons fosc */
+  padding: 0.5rem 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;   /* Centra els enllaços */
+  flex-wrap: wrap;           /* Si no hi caben, fan salt de línia */
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin: 0 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s, border-bottom 0.3s;
+  padding: 0.3rem 0;
+  display: inline-block;
+}
+
+nav a:hover {
+  color: gold;
+  border-bottom: 2px solid gold;
+}
+
+/* Responsive menú */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav li {
+    margin: 0.5rem 0;
+  }
+}
