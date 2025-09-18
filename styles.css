@@ -130,4 +130,11 @@ nav a:hover {
   nav li {
     margin: 0.5rem 0;
   }
+  
+  footer {
+  background: #222;   /* mateix color que el menú */
+  height: 50px;       /* alçada del peu (pots ajustar-la) */
+  margin-top: 2rem;   /* separació del contingut */
+}
+
 }
