@@ -91,6 +91,7 @@ body {
 nav {
   background: #222;          /* Fons fosc */
   padding: 0.5rem 0;
+  margin-bottom: 3rem; /* afegeix espai després del menú */
 }
 
 nav ul {
