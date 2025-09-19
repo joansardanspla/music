@@ -109,25 +109,17 @@ nav a:hover {
 }
 
 /* Responsive */
-@media (max-width:600px) {
-  .container { 
-    padding:0.6rem; 
-    border-radius:8px;
+@media (max-width: 600px) {
+  .container {
+    padding: 0.6rem;
+    border-radius: 8px;
     max-width: 95%;
   }
-  .imatge-section { gap:1rem; }
-  .titol-seccio { font-size:1.2rem; margin:1.3rem 0 1rem; }
-  .imatge-card img { max-width:260px; }
-}
+  .imatge-section { gap: 1rem; }
+  .titol-seccio { font-size: 1.2rem; margin: 1.3rem 0 1rem; }
+  .imatge-card img { max-width: 260px; }
 
-@media (max-width:400px) {
-  body { font-size:16px; }
-  .container { max-width: 92%; margin:0 auto 1.3rem; }
-  .imatge-card img { max-width:240px; }
-}
-
-
-@media (max-width: 600px) {
+  /* Regles de navegació afegides aquí */
   nav ul {
     flex-direction: column;
     align-items: center;
@@ -136,5 +128,6 @@ nav a:hover {
   nav li {
     margin: 0.5rem 0;
   }
+}
 
 }
