@@ -72,16 +72,16 @@ body {
 
 /* Menú de navegació */
 nav {
-  background: gray;          /* Fons fosc */
+  background: dimgray;   
   padding: 0.5rem 0;
-  margin-bottom: 3rem; /* afegeix espai després del menú */
+  margin-bottom: 3rem; 
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  justify-content: center;   /* Centra els enllaços */
-  flex-wrap: wrap;           /* Si no hi caben, fan salt de línia */
+  justify-content: center;   
+  flex-wrap: wrap;       
   margin: 0;
   padding: 0;
 }
@@ -102,10 +102,11 @@ nav a {
 nav a:hover {
   color: gold;
 }
-  footer {
-  background: gray;   /* mateix color que el menú */
-  height: 50px;       /* alçada del peu (pots ajustar-la) */
-  margin-top: 2rem;   /* separació del contingut */
+ 
+footer {
+  background: dimgray; 
+  height: 50px;      
+  margin-top: 2rem; 
 }
 
 /* Responsive */
