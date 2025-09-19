@@ -72,7 +72,7 @@ body {
 
 /* Menú de navegació */
 nav {
-  background: #222;          /* Fons fosc */
+  background: gray;          /* Fons fosc */
   padding: 0.5rem 0;
   margin-bottom: 3rem; /* afegeix espai després del menú */
 }
@@ -103,7 +103,7 @@ nav a:hover {
   color: gold;
 }
   footer {
-  background: #222;   /* mateix color que el menú */
+  background: gray;   /* mateix color que el menú */
   height: 50px;       /* alçada del peu (pots ajustar-la) */
   margin-top: 2rem;   /* separació del contingut */
 }
