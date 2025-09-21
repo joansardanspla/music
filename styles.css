@@ -39,7 +39,8 @@ body {
   background: dimgray;
   padding: 1rem;
   border-radius: 12px;
-  box-sizing: border-box; /* 🔑 solució */
+  box-sizing: border-box;
+  color: white;
  
 }
 
@@ -47,7 +48,7 @@ body {
   font-weight: bold;
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
-  color: black;
+  color: white;
 }
 
 .audio-player audio {
