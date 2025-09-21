@@ -39,6 +39,7 @@ body {
   background: dimgray;
   padding: 1rem;
   border-radius: 12px;
+  box-sizing: border-box; /* 🔑 solució */
  
 }
 
@@ -53,6 +54,7 @@ body {
   width: 100%;
   outline: none;
   border-radius: 8px;
+  display: block; /* evita espais laterals extra */
 }
 
 
