@@ -36,6 +36,17 @@ body {
   max-width: 600px;
   margin: 0 auto 1.5rem;
   text-align: center;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.audio-player figcaption {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #333;
 }
 
 .audio-player audio {
@@ -43,6 +54,7 @@ body {
   outline: none;
   border-radius: 8px;
 }
+
 
 
 /* Vídeo */
