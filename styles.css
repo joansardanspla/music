@@ -118,10 +118,14 @@ nav a:hover {
 }
  
 footer {
-  background: dimgray; 
-  height: 50px;      
-  margin-top: 2rem; 
+  background: dimgray;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
+
 
 /* Responsive */
 @media (max-width: 600px) {
