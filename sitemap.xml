@@ -5,7 +5,7 @@
   <!-- Pàgina principal -->
   <url>
     <loc>https://joansardanspla.github.io/music/</loc>
-    <lastmod>2025-09-24</lastmod>
+    <lastmod>2025-09-24T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -16,8 +16,8 @@
 
   <!-- Partitures -->
   <url>
-    <loc>https://joansardanspla.github.io/music/partitures</loc>
-    <lastmod>2025-09-18</lastmod>
+    <loc>https://joansardanspla.github.io/music/partitures.html</loc>
+    <lastmod>2025-09-24T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -28,16 +28,16 @@
 
   <!-- Àudio -->
   <url>
-    <loc>https://joansardanspla.github.io/music/audio</loc>
-    <lastmod>2025-09-15</lastmod>
+    <loc>https://joansardanspla.github.io/music/audio.html</loc>
+    <lastmod>2025-09-24T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Vídeo -->
   <url>
-    <loc>https://joansardanspla.github.io/music/video</loc>
-    <lastmod>2025-09-10</lastmod>
+    <loc>https://joansardanspla.github.io/music/video.html</loc>
+    <lastmod>2025-09-24T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -45,5 +45,15 @@
       <image:caption>Vídeo destacat</image:caption>
     </image:image>
   </url>
+
+        
+   <!-- Contacte -->   
+  <url>
+  <loc>https://joansardanspla.github.io/music/contacte.html</loc>
+  <lastmod>2025-09-24T12:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+
 
 </urlset>
