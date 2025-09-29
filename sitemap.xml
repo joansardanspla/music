@@ -9,7 +9,7 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://joansardanspla.github.io/music/imatges/jo-verd.jpg</image:loc>
+      <image:loc>https://joansardanspla.github.io/music/imatges/jo_verd.jpg</image:loc>
       <image:caption>Pàgina principal</image:caption>
     </image:image>
   </url>
@@ -23,6 +23,7 @@
     <image:image>
       <image:loc>https://joansardanspla.github.io/music/imatges/abril_74.png</image:loc>
       <image:caption>Abril 74</image:caption>
+      <image:title>Partitura Abril 74</image:title>
     </image:image>
   </url>
 
@@ -44,7 +45,7 @@
 
         
    <!-- Contacte -->   
-  <url>
+ <url>
   <loc>https://joansardanspla.github.io/music/contacte.html</loc>
   <lastmod>2025-09-24T12:00:00+00:00</lastmod>
   <changefreq>weekly</changefreq>
