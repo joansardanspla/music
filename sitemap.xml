@@ -18,11 +18,11 @@
   <url>
     <loc>https://joansardanspla.github.io/music/partitures.html</loc>
     <lastmod>2025-09-24T12:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://joansardanspla.github.io/music/imatges/partitura1.jpg</image:loc>
-      <image:caption>Partitura 1</image:caption>
+      <image:loc>https://joansardanspla.github.io/music/imatges/abril_74.png</image:loc>
+      <image:caption>Abril 74</image:caption>
     </image:image>
   </url>
 
@@ -30,7 +30,7 @@
   <url>
     <loc>https://joansardanspla.github.io/music/audio.html</loc>
     <lastmod>2025-09-24T12:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
@@ -38,12 +38,8 @@
   <url>
     <loc>https://joansardanspla.github.io/music/video.html</loc>
     <lastmod>2025-09-24T12:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://joansardanspla.github.io/music/imatges/video-miniatura.jpg</image:loc>
-      <image:caption>Vídeo destacat</image:caption>
-    </image:image>
   </url>
 
         
@@ -51,7 +47,7 @@
   <url>
   <loc>https://joansardanspla.github.io/music/contacte.html</loc>
   <lastmod>2025-09-24T12:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <changefreq>weekly</changefreq>
   <priority>0.6</priority>
 </url>
 
