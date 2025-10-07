@@ -64,7 +64,9 @@
 
       <div class="formulari-contacte">
         <h2>Envia'm un missatge</h2>
-        <form id="contacte-form" action="#" method="post">
+        
+        <!-- Formulari amb mailto -->
+        <form id="contacte-form" method="post" enctype="text/plain">
           <div class="form-group">
             <label for="nom">Nom complet *</label>
             <input type="text" id="nom" name="nom" required>
@@ -79,10 +81,10 @@
             <label for="assumpte">Assumpte *</label>
             <select id="assumpte" name="assumpte" required>
               <option value="">Selecciona un assumpte</option>
-              <option value="concert">Contractació per a concert</option>
-              <option value="classes">Classes de música</option>
-              <option value="colaboracio">Col·laboració musical</option>
-              <option value="altre">Altres consultes</option>
+              <option value="Contractació per a concert">Contractació per a concert</option>
+              <option value="Classes de música">Classes de música</option>
+              <option value="Col·laboració musical">Col·laboració musical</option>
+              <option value="Altres consultes">Altres consultes</option>
             </select>
           </div>
           
@@ -91,7 +93,7 @@
             <textarea id="missatge" name="missatge" rows="6" required placeholder="Explica'm en què puc ajudar-te..."></textarea>
           </div>
           
-          <button type="submit" class="boto-enviar">Enviar missatge</button>
+          <button type="submit" class="boto-enviar">Obrir client de correu</button>
         </form>
       </div>
     </section>
@@ -111,15 +113,26 @@
     // Actualitza l'any actual al footer
     document.getElementById('current-year').textContent = new Date().getFullYear();
     
-    // Validació bàsica del formulari
+    // Millora l'experiència amb mailto
     document.getElementById('contacte-form').addEventListener('submit', function(e) {
       e.preventDefault();
       
-      // Aquí aniria el codi per enviar el formulari
-      // Per ara, fem una simulació
       const nom = document.getElementById('nom').value;
-      alert(`Gràcies ${nom}! El teu missatge s'ha enviat correctament. Et respondré aviat.`);
-      this.reset();
+      const email = document.getElementById('email').value;
+      const assumpte = document.getElementById('assumpte').value;
+      const missatge = document.getElementById('missatge').value;
+      
+      // Prepara el cos del correu
+      const emailBody = `Hola Joan,\n\n${missatge}\n\nDades de contacte:\n- Nom: ${nom}\n- Email: ${email}\n\nAtentament,\n${nom}`;
+      
+      // Obre el client de correu
+      const mailtoLink = `mailto:joansardanspla@protonmail.com?subject=${encodeURIComponent(assumpte)}&body=${encodeURIComponent(emailBody)}`;
+      window.location.href = mailtoLink;
+      
+      // Mostra missatge informatiu
+      setTimeout(function() {
+        alert('S\'està obrint el teu client de correu. Si no s\'obre automàticament, envia manualment el missatge a joansardanspla@protonmail.com');
+      }, 500);
     });
   </script>
 </body>
