@@ -1,7 +1,7 @@
 /* Variables CSS per a consistència */
 :root {
-  --primary-color: #2c3e50;
-  --secondary-color: #34495e;
+  --primary-color: dimgray;
+  --secondary-color: dimgray;
   --accent-color: #e74c3c;
   --highlight-color: #f39c12;
   --text-color: #2c3e50;
