@@ -119,12 +119,69 @@ h3 {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Àudio */
+/* Estils específics per a la pàgina d'àudio */
+
+#titol-audio {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.subtitol {
+  text-align: center;
+  color: var(--secondary-color);
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Filtres d'àudio */
+.filtres-audio {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.filtre-boto {
+  background: var(--card-background);
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.filtre-boto:hover,
+.filtre-boto:focus {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.filtre-boto.active {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: white;
+}
+
+/* Llista d'àudios */
+.llista-audio {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .audio-player {
   width: 100%;
-  max-width: 600px;
-  margin: 0 auto 1.5rem;
-  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   padding: 1.5rem;
   border-radius: var(--border-radius);
@@ -135,15 +192,48 @@ h3 {
 }
 
 .audio-player:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-.audio-player figcaption {
-  font-weight: bold;
+.audio-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   margin-bottom: 1rem;
-  font-size: 1.2rem;
+}
+
+.audio-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  color: var(--highlight-color);
+}
+
+.audio-header figcaption {
+  font-weight: bold;
+  font-size: 1.3rem;
   color: var(--light-text);
+  margin: 0;
+}
+
+.audio-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.instrument {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-weight: 600;
+}
+
+.duracio {
+  font-style: italic;
 }
 
 .audio-player audio {
@@ -151,6 +241,71 @@ h3 {
   outline: none;
   border-radius: 8px;
   display: block;
+  margin-bottom: 1rem;
+}
+
+.audio-descripcio {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 1rem;
+}
+
+.audio-descripcio p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+/* Estils per a la reproducció d'àudio */
+audio::-webkit-media-controls-panel {
+  background-color: var(--light-text);
+}
+
+audio::-webkit-media-controls-play-button {
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+
+/* Responsivitat */
+@media (max-width: 768px) {
+  .filtres-audio {
+    gap: 0.8rem;
+  }
+  
+  .filtre-boto {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .audio-player {
+    padding: 1.2rem;
+  }
+  
+  .audio-header figcaption {
+    font-size: 1.1rem;
+  }
+  
+  .audio-header {
+    gap: 0.8rem;
+  }
+  
+  .audio-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .audio-info {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .audio-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
 }
 
 /* Vídeo */
