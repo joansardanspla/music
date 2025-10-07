@@ -1,56 +1,137 @@
 <!DOCTYPE html>
 <html lang="ca">
-  
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Àudio – Joan Sardans Pla</title>
+  <meta name="description" content="Escolta les gravacions de Joan Sardans Pla. Violí, viola, piano i mandolina en diferents estils musicals.">
+  <title>Àudio – Joan Sardans Pla | Gravacions musicals</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="styles.css">
 </head>
   
 <body>
-
+  <a href="#audio" class="skip-link">Saltar als continguts d'àudio</a>
   
   <nav aria-label="Menú principal">
     <ul>
       <li><a href="index.html">Inici</a></li>
-      <li><a href="audio.html">Àudio</a></li>
+      <li><a href="audio.html" aria-current="page">Àudio</a></li>
       <li><a href="video.html">Vídeo</a></li>
       <li><a href="partitures.html">Partitures</a></li>
       <li><a href="contacte.html">Contacte</a></li>
     </ul>
   </nav>
 
-  
-  <section id="audio" class="container">
-   
+  <main>
+    <section id="audio" class="container" aria-labelledby="titol-audio">
+      <h1 id="titol-audio">Enregistraments d'Àudio</h1>
+      <p class="subtitol">Descobreix una selecció de les meves interpretacions en diferents estils i instruments</p>
+      
+      <div class="filtres-audio">
+        <button class="filtre-boto active" data-categoria="tots">Tots</button>
+        <button class="filtre-boto" data-categoria="violi">Violí</button>
+        <button class="filtre-boto" data-categoria="piano">Piano</button>
+        <button class="filtre-boto" data-categoria="mandolina">Mandolina</button>
+      </div>
 
-    
-<figure class="audio-player">
-  <figcaption>Smells Like Teen Spirit - Kurt Cobain</figcaption>
-  <audio controls>
-    <source src="audios/smells_like_teen_spirit.mp3" type="audio/mpeg">
-    El teu navegador no suporta l'element d'àudio.
-  </audio>
-  </figure>
+      <div class="llista-audio">
+        <figure class="audio-player" data-categoria="violi">
+          <div class="audio-header">
+            <svg class="audio-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+            </svg>
+            <figcaption>Smells Like Teen Spirit - Kurt Cobain</figcaption>
+          </div>
+          <div class="audio-info">
+            <span class="instrument">Violí</span>
+            <span class="duracio">3:45</span>
+          </div>
+          <audio controls>
+            <source src="audios/smells_like_teen_spirit.mp3" type="audio/mpeg">
+            El teu navegador no suporta l'element d'àudio.
+          </audio>
+          <div class="audio-descripcio">
+            <p>Versió per a violí del clàssic del grunge de Nirvana</p>
+          </div>
+        </figure>
 
-    
-<figure class="audio-player">
-  <figcaption>Contrapàs de Prats de Lluçanès</figcaption>
-  <audio controls>
-    <source src="audios/contrapas.mp3" type="audio/mpeg">
-    El teu navegador no suporta l'element d'àudio.
-  </audio>
-  </figure>
+        <figure class="audio-player" data-categoria="violi">
+          <div class="audio-header">
+            <svg class="audio-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+            </svg>
+            <figcaption>Contrapàs de Prats de Lluçanès</figcaption>
+          </div>
+          <div class="audio-info">
+            <span class="instrument">Violí</span>
+            <span class="duracio">2:30</span>
+          </div>
+          <audio controls>
+            <source src="audios/contrapas.mp3" type="audio/mpeg">
+            El teu navegador no suporta l'element d'àudio.
+          </audio>
+          <div class="audio-descripcio">
+            <p>Música tradicional catalana amb arranjaments per a violí</p>
+          </div>
+        </figure>
 
-    
-  </section>
+      
+      </div>
+    </section>
+  </main>
 
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="current-year"></span> Joan Sardans Pla. Tots els drets reservats.</p>
+      <p>
+        <a href="mailto:joansardanspla@protonmail.com">joansardanspla@protonmail.com</a> | 
+        <a href="contacte.html">Contacte</a>
+      </p>
+    </div>
+  </footer>
 
-<footer></footer>
+  <script>
+    // Actualitza l'any actual al footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
 
-  
+    // Filtres d'àudio per instrument
+    document.addEventListener('DOMContentLoaded', function() {
+      const filtres = document.querySelectorAll('.filtre-boto');
+      const audioPlayers = document.querySelectorAll('.audio-player');
+
+      filtres.forEach(filtre => {
+        filtre.addEventListener('click', function() {
+          // Elimina la classe active de tots els filtres
+          filtres.forEach(f => f.classList.remove('active'));
+          // Afegeix la classe active al filtre clicat
+          this.classList.add('active');
+          
+          const categoria = this.getAttribute('data-categoria');
+          
+          // Mostra/amaga els àudios segons la categoria
+          audioPlayers.forEach(player => {
+            if (categoria === 'tots' || player.getAttribute('data-categoria') === categoria) {
+              player.style.display = 'block';
+            } else {
+              player.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Control de reproducció d'àudio (pause others when one plays)
+      const audioElements = document.querySelectorAll('audio');
+      audioElements.forEach(audio => {
+        audio.addEventListener('play', function() {
+          // Pausa els altres àudios quan un comença a reproduir-se
+          audioElements.forEach(otherAudio => {
+            if (otherAudio !== audio && !otherAudio.paused) {
+              otherAudio.pause();
+            }
+          });
+        });
+      });
+    });
+  </script>
 </body>
-  
 </html>
