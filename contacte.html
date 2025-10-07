@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="ca">
-  
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contacte – Joan Sardans Pla</title>
+  <meta name="description" content="Contacta amb Joan Sardans Pla, músic professional de Manresa. Informació de contacte per a concerts, classes i col·laboracions musicals.">
+  <title>Contacte – Joan Sardans Pla | Músic professional de Manresa</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="styles.css">
 </head>
   
 <body>
+  <a href="#contacte" class="skip-link">Saltar al contingut de contacte</a>
   
   <nav aria-label="Menú principal">
     <ul>
@@ -17,18 +18,109 @@
       <li><a href="audio.html">Àudio</a></li>
       <li><a href="video.html">Vídeo</a></li>
       <li><a href="partitures.html">Partitures</a></li>
-      <li><a href="contacte.html">Contacte</a></li>
+      <li><a href="contacte.html" aria-current="page">Contacte</a></li>
     </ul>
   </nav>
 
-   <section id="contacte" class="container">
-  <p>
-  joansardanspla@protonmail.com
-  </p>
-</section>
+  <main>
+    <section id="contacte" class="container" aria-labelledby="titol-contacte">
+      <h1 id="titol-contacte">Contacte</h1>
+      
+      <div class="contacte-info">
+        <div class="contacte-item">
+          <svg class="contacte-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M20,4H4C2.9,4,2,4.9,2,6v12c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V6C22,4.9,21.1,4,20,4z M20,8l-8,5L4,8V6l8,5l8-5V8z"/>
+          </svg>
+          <div>
+            <h2>Correu electrònic</h2>
+            <p>
+              <a href="mailto:joansardanspla@protonmail.com" class="contacte-link">
+                joansardanspla@protonmail.com
+              </a>
+            </p>
+          </div>
+        </div>
+        
+        <div class="contacte-item">
+          <svg class="contacte-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M12,2C8.13,2,5,5.13,5,9c0,5.25,7,13,7,13s7-7.75,7-13C19,5.13,15.87,2,12,2z M12,11.5c-1.38,0-2.5-1.12-2.5-2.5 s1.12-2.5,2.5-2.5s2.5,1.12,2.5,2.5S13.38,11.5,12,11.5z"/>
+          </svg>
+          <div>
+            <h2>Ubicació</h2>
+            <p>Manresa, Barcelona</p>
+          </div>
+        </div>
+        
+        <div class="contacte-item">
+          <svg class="contacte-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M12,1L3,5v6c0,5.55,3.84,10.74,9,12c5.16-1.26,9-6.45,9-12V5L12,1z M19,11c0,1.85-0.51,3.65-1.38,5.21l-1.45-1.45 c1.29-1.58,2.07-3.47,2.14-5.38H19z M12,13c-1.66,0-3-1.34-3-3s1.34-3,3-3s3,1.34,3,3S13.66,13,12,13z"/>
+          </svg>
+          <div>
+            <h2>Disponibilitat</h2>
+            <p>Concerts, classes i col·laboracions</p>
+          </div>
+        </div>
+      </div>
 
-<footer></footer>
-  
+      <div class="formulari-contacte">
+        <h2>Envia'm un missatge</h2>
+        <form id="contacte-form" action="#" method="post">
+          <div class="form-group">
+            <label for="nom">Nom complet *</label>
+            <input type="text" id="nom" name="nom" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Correu electrònic *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="assumpte">Assumpte *</label>
+            <select id="assumpte" name="assumpte" required>
+              <option value="">Selecciona un assumpte</option>
+              <option value="concert">Contractació per a concert</option>
+              <option value="classes">Classes de música</option>
+              <option value="colaboracio">Col·laboració musical</option>
+              <option value="altre">Altres consultes</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="missatge">Missatge *</label>
+            <textarea id="missatge" name="missatge" rows="6" required placeholder="Explica'm en què puc ajudar-te..."></textarea>
+          </div>
+          
+          <button type="submit" class="boto-enviar">Enviar missatge</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="current-year"></span> Joan Sardans Pla. Tots els drets reservats.</p>
+      <p>
+        <a href="mailto:joansardanspla@protonmail.com">joansardanspla@protonmail.com</a> | 
+        <a href="index.html">Tornar a l'inici</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Actualitza l'any actual al footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Validació bàsica del formulari
+    document.getElementById('contacte-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Aquí aniria el codi per enviar el formulari
+      // Per ara, fem una simulació
+      const nom = document.getElementById('nom').value;
+      alert(`Gràcies ${nom}! El teu missatge s'ha enviat correctament. Et respondré aviat.`);
+      this.reset();
+    });
+  </script>
 </body>
-  
 </html>
