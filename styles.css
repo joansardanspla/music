@@ -283,16 +283,95 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Formularis (per a la pàgina de contacte) */
+/* Estils específics per a la pàgina de contacte */
+
+/* Secció de contacte */
+#contacte {
+  max-width: 900px;
+  text-align: left;
+}
+
+#titol-contacte {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: var(--primary-color);
+  border-bottom: 3px solid var(--accent-color);
+  padding-bottom: 1rem;
+}
+
+/* Informació de contacte */
+.contacte-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.contacte-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.contacte-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.contacte-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  color: var(--accent-color);
+}
+
+.contacte-item h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  border: none;
+  padding: 0;
+}
+
+.contacte-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.contacte-link:hover {
+  color: #c0392b;
+  text-decoration: underline;
+}
+
+/* Formulari de contacte */
+.formulari-contacte {
+  background: var(--card-background);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.formulari-contacte h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
 .form-group {
   margin-bottom: 1.5rem;
-  text-align: left;
 }
 
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--primary-color);
 }
 
@@ -300,38 +379,89 @@ footer a:hover {
 .form-group textarea,
 .form-group select {
   width: 100%;
-  padding: 0.8rem;
-  border: 2px solid #ddd;
+  padding: 0.8rem 1rem;
+  border: 2px solid #e1e1e1;
   border-radius: 8px;
   font-size: 1rem;
+  font-family: inherit;
   transition: var(--transition);
+  background-color: #f8f9fa;
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
   border-color: var(--accent-color);
+  background-color: white;
   outline: none;
-  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
 }
 
-button {
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Botó d'enviar */
+.boto-enviar {
   background: linear-gradient(135deg, var(--accent-color), #c0392b);
   color: white;
   border: none;
-  padding: 0.8rem 1.5rem;
+  padding: 1rem 2rem;
   border-radius: 8px;
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
   transition: var(--transition);
+  width: 100%;
+  margin-top: 1rem;
 }
 
-button:hover,
-button:focus {
+.boto-enviar:hover,
+.boto-enviar:focus {
   background: linear-gradient(135deg, #c0392b, var(--accent-color));
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsivitat */
+@media (max-width: 768px) {
+  .contacte-info {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .contacte-item {
+    padding: 1.2rem;
+  }
+  
+  .contacte-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .formulari-contacte {
+    padding: 1.5rem;
+  }
+  
+  #titol-contacte {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contacte-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .contacte-icon {
+    align-self: center;
+  }
+  
+  .formulari-contacte {
+    padding: 1rem;
+  }
 }
 
 /* Responsive */
