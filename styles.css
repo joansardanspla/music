@@ -1,13 +1,13 @@
 /* Variables CSS per a consistència */
 :root {
-  --primary-color: dimgray;
-  --secondary-color: dimgray;
-  --accent-color: #e74c3c;
-  --highlight-color: #f39c12;
-  --text-color: #2c3e50;
-  --light-text: #ecf0f1;
-  --background-color: #f9f9f9;
-  --card-background: #ffffff;
+  --primary-color: goldenrod;
+  --secondary-color: goldenrod;
+  --accent-color: crimson;
+  --highlight-color: gold;
+  --text-color: black;
+  --light-text: gold;
+  --background-color: snow;
+  --card-background: ivory;
   --border-radius: 12px;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
