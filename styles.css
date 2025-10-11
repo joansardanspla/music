@@ -1189,43 +1189,72 @@ footer a:hover {
     margin-bottom: 1.5rem; 
   }
 
-  /* Navegació responsive */
- /* --- Menú horitzontal amb desplaçament en pantalles petites --- */
+ /* Menú responsive: horitzontal amb scroll en pantalles petites */
 @media (max-width: 768px) {
   nav ul {
-    flex-direction: row;
-    justify-content: flex-start;
-    overflow-x: auto;              /* permet desplaçament horitzontal */
-    white-space: nowrap;           /* evita que els elements baixin de línia */
-    -webkit-overflow-scrolling: touch; /* desplaçament suau en mòbil */
-    scrollbar-width: none;         /* amaga la barra en Firefox */
+    display: flex;
+    flex-direction: row;            /* horitzontal */
+    justify-content: flex-start;    /* alinear a l'inici */
+    overflow-x: auto;               /* habilita desplaçament horitzontal */
+    white-space: nowrap;            /* evita que els elements baixin de línia */
+    -webkit-overflow-scrolling: touch; /* scroll suau en iOS */
+    scrollbar-width: none;          /* amaga scrollbar en Firefox */
   }
 
+  /* Amagar scrollbar en Chrome/Safari */
   nav ul::-webkit-scrollbar {
-    display: none; /* amaga la barra en Chrome/Safari */
+    display: none;
   }
 
   nav li {
-    flex: 0 0 auto;                /* cada element manté la seva mida */
-    margin: 0 0.8rem;              /* separació lateral */
+    flex: 0 0 auto;                 /* cada element manté la seva mida */
+    margin: 0 0.8rem;               /* separació lateral */
   }
 
   nav a {
     display: inline-block;
+    width: auto;                     /* no ocupa tota l'amplada */
     padding: 0.6rem 1rem;
+    white-space: nowrap;             /* evita que el text es trenqui */
+  }
+
+  /* Opcional: efecte de scroll suau quan es toca */
+  nav ul {
+    scroll-behavior: smooth;
   }
 }
-
-  
-  nav a {
-    display: block;
-    width: 100%;
-    padding: 0.8rem;
+/* Menú responsive: horitzontal amb scroll en pantalles petites */
+@media (max-width: 768px) {
+  nav ul {
+    display: flex;
+    flex-direction: row;            /* horitzontal */
+    justify-content: flex-start;    /* alinear a l'inici */
+    overflow-x: auto;               /* habilita desplaçament horitzontal */
+    white-space: nowrap;            /* evita que els elements baixin de línia */
+    -webkit-overflow-scrolling: touch; /* scroll suau en iOS */
+    scrollbar-width: none;          /* amaga scrollbar en Firefox */
   }
-  
-  .audio-player,
-  .video-player {
-    margin-bottom: 1rem;
+
+  /* Amagar scrollbar en Chrome/Safari */
+  nav ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  nav li {
+    flex: 0 0 auto;                 /* cada element manté la seva mida */
+    margin: 0 0.8rem;               /* separació lateral */
+  }
+
+  nav a {
+    display: inline-block;
+    width: auto;                     /* no ocupa tota l'amplada */
+    padding: 0.6rem 1rem;
+    white-space: nowrap;             /* evita que el text es trenqui */
+  }
+
+  /* Opcional: efecte de scroll suau quan es toca */
+  nav ul {
+    scroll-behavior: smooth;
   }
 }
 
