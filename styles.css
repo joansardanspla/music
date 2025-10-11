@@ -1,38 +1,252 @@
-/* Variables CSS per a consistència */
+/* ==========================================================================
+   1. VARIABLES I CONFIGURACIÓ GLOBAL
+   ========================================================================== */
+
 :root {
+  /* Colors */
   --primary-color: goldenrod;
   --secondary-color: goldenrod;
   --accent-color: crimson;
   --highlight-color: black;
+
+  /* Colors de Text i Fons */
   --text-color: black;
-  --light-text: black;
+  --light-text: black; /* Utilitzat per text sobre fons fosc (e.g., nav, audio-player) */
   --background-color: snow;
   --card-background: ivory;
+
+  /* Geometria i Efectes */
   --border-radius: 12px;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
 }
 
-/* Reset i estils base */
+
+/* ==========================================================================
+   2. RESET, BASE I TIPOGRAFIA
+   ========================================================================== */
+
+/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Cos principal */
+/* Base del cos */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 18px;
-  color: var(--text-color);
-  background: var(--background-color);
-  line-height: 1.7;
+  /* Layout */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
+  /* Tipografia */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text-color);
+
+  /* Visual */
+  background: var(--background-color);
 }
 
-/* Millores d'accessibilitat */
+/* Capçaleres generals */
+h1, h2, h3 {
+  /* Tipografia */
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+h1 {
+  /* Layout */
+  display: inline-block;
+  
+  /* Tipografia */
+  font-size: 2.2rem;
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  padding-bottom: 0.3rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+/* Enllaços */
+a {
+  color: var(--accent-color);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: #c0392b; /* Valor original */
+}
+
+/* Llistes */
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+
+/* ==========================================================================
+   3. ESTRUCTURA PRINCIPAL (LAYOUT)
+   ========================================================================== */
+
+/* --- 3.1. Contenidors --- */
+
+.container {
+  /* Layout */
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+
+  /* Box Model */
+  padding: 1.5rem;
+
+  /* Visual */
+  background: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Espaiat entre contenidors adjacents */
+.container + .container {
+  margin-top: clamp(1rem, 4vw, 3rem);
+}
+
+/* --- 3.2. Navegació (Nav) --- */
+
+nav {
+  /* Layout */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  /* Box Model */
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+
+  /* Visual */
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  /* Layout */
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+  /* Box Model */
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin: 0 1.2rem;
+}
+
+nav a {
+  /* Layout */
+  display: inline-block;
+  position: relative;
+  
+  /* Box Model */
+  padding: 0.5rem 0.8rem;
+  
+  /* Tipografia */
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--light-text);
+  
+  /* Visual */
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--highlight-color);
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Estat Actiu de Navegació */
+nav a[aria-current="page"] {
+  color: var(--highlight-color);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+nav a[aria-current="page"]::after {
+  /* Layout */
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+
+  /* Geometria */
+  width: 100%;
+  height: 3px;
+
+  /* Visual */
+  background-color: var(--highlight-color);
+  border-radius: 2px;
+}
+
+/* --- 3.3. Peu de Pàgina (Footer) --- */
+
+footer {
+  /* Layout */
+  margin-top: auto;
+  text-align: center;
+  
+  /* Box Model */
+  padding: 1.5rem 0;
+
+  /* Visual */
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--light-text);
+}
+
+/* Excepcions de layout per al contenidor del footer */
+footer .container {
+  background: transparent;
+  box-shadow: none;
+  max-width: 1000px;
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+}
+
+footer a {
+  color: var(--highlight-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* ==========================================================================
+   4. COMPONENTS REUTILITZABLES
+   ========================================================================== */
+
+/* --- 4.1. Accessibilitat --- */
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -46,117 +260,97 @@ body {
 }
 
 .skip-link {
+  /* Layout */
   position: absolute;
   top: -40px;
   left: 0;
-  background: var(--primary-color);
-  color: var(--light-text);
-  padding: 12px;
   z-index: 1000;
+  
+  /* Box Model */
+  padding: 12px;
+  
+  /* Tipografia */
   text-decoration: none;
-  border-radius: 0 0 4px 0;
   font-weight: bold;
+  color: var(--light-text);
+  
+  /* Visual */
+  background: var(--primary-color);
+  border-radius: 0 0 4px 0;
 }
 
 .skip-link:focus {
   top: 0;
 }
 
-/* Contenidors */
-.container {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1.5rem;
-  background: var(--card-background);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-}
+/* --- 4.2. Títols de Secció i Subtítols --- */
 
-.container + .container {
-  margin-top: clamp(1rem, 4vw, 3rem);
-}
-
-/* Capçaleres */
-h1, h2, h3 {
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-  line-height: 1.3;
-}
-
-h1 {
-  font-size: 2.2rem;
-  padding-bottom: 0.5rem;
-  display: inline-block;
-}
-
-h2 {
-  font-size: 1.8rem;
-  padding-bottom: 0.3rem;
-}
-
-h3 {
-  font-size: 1.4rem;
-}
-
-/* Imatges */
-.imatge-section {
-  margin-bottom: 2rem;
-}
-
-.imatge-section img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: var(--border-radius);
-  transition: var(--transition);
-}
-
-.imatge-section img:hover {
-  transform: scale(1.01);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Estils específics per a la pàgina d'àudio */
-
-#titol-audio {
+/* Títols de secció principals (Audio, Vídeos, Partitures) - CONSOLIDAT */
+#titol-audio,
+#titol-videos,
+#titol-partitures,
+#titol-contacte {
   text-align: center;
   margin-bottom: 1rem;
   color: var(--primary-color);
 }
-
-.subtitol {
-  text-align: center;
-  color: var(--secondary-color);
+#titol-contacte { /* Estil únic per contacte */
   margin-bottom: 2.5rem;
-  font-size: 1.1rem;
+  padding-bottom: 1rem;
+}
+
+/* Subtítol comú - CONSOLIDAT */
+.subtitol {
+  /* Layout */
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  
+  /* Box Model */
+  margin-bottom: 2.5rem;
+  
+  /* Tipografia */
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--secondary-color);
 }
 
-/* Filtres d'àudio */
-.filtres-audio {
+/* --- 4.3. Filtres (Botons i Contenidor) --- */
+
+/* Contenidors de filtres - CONSOLIDAT */
+.filtres-audio,
+.filtres-videos,
+.filtres-partitures {
+  /* Layout */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
+  
+  /* Box Model */
   margin-bottom: 2.5rem;
 }
 
+/* Botons de filtre - CONSOLIDAT */
 .filtre-boto {
-  background: var(--card-background);
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
+  /* Box Model */
   padding: 0.6rem 1.2rem;
+  border: 2px solid var(--primary-color);
   border-radius: 25px;
-  cursor: pointer;
+  
+  /* Tipografia */
   font-weight: 600;
+  color: var(--primary-color);
+  
+  /* Visual */
+  background: var(--card-background);
+  cursor: pointer;
   transition: var(--transition);
 }
 
 .filtre-boto:hover,
 .filtre-boto:focus {
+  /* Visual */
   background: var(--primary-color);
   color: white;
   transform: translateY(-2px);
@@ -168,33 +362,92 @@ h3 {
   color: white;
 }
 
-/* Llista d'àudios */
+/* --- 4.4. Targetes (Card Component Base) --- */
+
+.video-card,
+.partitura-card {
+  /* Visual */
+  background: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.video-card:hover,
+.partitura-card:hover {
+  /* Visual */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ==========================================================================
+   5. PÀGINES ESPECÍFIQUES
+   ========================================================================== */
+
+/* --- 5.1. Imatges (Pàgina d'Inici) --- */
+
+.imatge-section {
+  margin-bottom: 2rem;
+}
+
+.imatge-section img {
+  /* Layout */
+  display: block;
+  width: 100%;
+  height: auto;
+
+  /* Visual */
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.imatge-section img:hover {
+  /* Visual */
+  transform: scale(1.01);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* --- 5.2. Àudio --- */
+
 .llista-audio {
+  /* Layout */
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
 .audio-player {
+  /* Layout */
   width: 100%;
   max-width: 700px;
   margin: 0 auto;
   text-align: left;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  
+  /* Box Model */
   padding: 1.5rem;
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
+  box-sizing: border-box; /* Afegit a la teva versió */
+
+  /* Tipografia */
   color: var(--light-text);
+
+  /* Visual */
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   transition: var(--transition);
 }
 
 .audio-player:hover {
+  /* Visual */
   transform: translateY(-5px);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .audio-header {
+  /* Layout */
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -209,6 +462,7 @@ h3 {
 }
 
 .audio-header figcaption {
+  /* Tipografia */
   font-weight: bold;
   font-size: 1.3rem;
   color: var(--light-text);
@@ -216,18 +470,26 @@ h3 {
 }
 
 .audio-info {
+  /* Layout */
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
+
+  /* Tipografia */
   font-size: 0.9rem;
   opacity: 0.9;
 }
 
 .instrument {
-  background: rgba(255, 255, 255, 0.2);
+  /* Box Model */
   padding: 0.3rem 0.8rem;
   border-radius: 15px;
+
+  /* Tipografia */
   font-weight: 600;
+
+  /* Visual */
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .duracio {
@@ -235,26 +497,35 @@ h3 {
 }
 
 .audio-player audio {
+  /* Layout */
   width: 100%;
+  display: block;
+  
+  /* Box Model */
+  margin-bottom: 1rem;
+
+  /* Visual */
   outline: none;
   border-radius: 8px;
-  display: block;
-  margin-bottom: 1rem;
 }
 
 .audio-descripcio {
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  /* Box Model */
   padding-top: 1rem;
+  
+  /* Visual */
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .audio-descripcio p {
+  /* Tipografia */
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.5;
   opacity: 0.9;
 }
 
-/* Estils per a la reproducció d'àudio */
+/* Estils de controls d'àudio específics (WebKit) */
 audio::-webkit-media-controls-panel {
   background-color: var(--accent-color);
 }
@@ -264,131 +535,39 @@ audio::-webkit-media-controls-play-button {
   border-radius: 50%;
 }
 
-/* Responsivitat */
-@media (max-width: 768px) {
-  .filtres-audio {
-    gap: 0.8rem;
-  }
-  
-  .filtre-boto {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-  
-  .audio-player {
-    padding: 1.2rem;
-  }
-  
-  .audio-header figcaption {
-    font-size: 1.1rem;
-  }
-  
-  .audio-header {
-    gap: 0.8rem;
-  }
-  
-  .audio-icon {
-    width: 28px;
-    height: 28px;
-  }
-}
 
-@media (max-width: 480px) {
-  .audio-info {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .audio-header {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.5rem;
-  }
-}
+/* --- 5.3. Vídeos --- */
 
-/* Estils específics per a la pàgina de vídeos */
-
-#titol-videos {
-  text-align: center;
-  margin-bottom: 1rem;
-  color: var(--primary-color);
-}
-
-.subtitol {
-  text-align: center;
-  color: var(--secondary-color);
-  margin-bottom: 2.5rem;
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Filtres de vídeos */
-.filtres-videos {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
-}
-
-.filtre-boto {
-  background: var(--card-background);
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
-  padding: 0.6rem 1.2rem;
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: var(--transition);
-}
-
-.filtre-boto:hover,
-.filtre-boto:focus {
-  background: var(--primary-color);
-  color: white;
-  transform: translateY(-2px);
-}
-
-.filtre-boto.active {
-  background: var(--accent-color);
-  border-color: var(--accent-color);
-  color: white;
-}
-
-/* Galeria de vídeos */
 .galeria-videos {
+  /* Layout */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2.5rem;
+  
+  /* Box Model */
   margin-bottom: 2rem;
 }
 
-.video-card {
-  background: var(--card-background);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  transition: var(--transition);
-}
-
-.video-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
 .video-player {
+  /* Layout */
   width: 100%;
   aspect-ratio: 16 / 9;
   position: relative;
 }
 
 .video-player iframe {
+  /* Layout */
   width: 100%;
   height: 100%;
+
+  /* Visual */
   border: 0;
   border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.video-player iframe:focus { /* Accessibilitat */
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
 }
 
 .video-info {
@@ -396,6 +575,7 @@ audio::-webkit-media-controls-play-button {
 }
 
 .video-info h2 {
+  /* CONSOLIDAT: Mantenim l'estil únic per la mida de font */
   margin-bottom: 1rem;
   color: var(--primary-color);
   font-size: 1.3rem;
@@ -414,8 +594,11 @@ audio::-webkit-media-controls-play-button {
 .video-instrument,
 .video-ubicacio,
 .video-duracio {
+  /* Box Model */
   padding: 0.3rem 0.8rem;
   border-radius: 15px;
+
+  /* Tipografia */
   font-size: 0.8rem;
   font-weight: 600;
 }
@@ -447,18 +630,25 @@ audio::-webkit-media-controls-play-button {
 }
 
 .boto-youtube {
+  /* Layout */
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
   gap: 0.5rem;
+
+  /* Box Model */
   padding: 0.8rem 1.5rem;
   border-radius: 8px;
+
+  /* Tipografia */
   text-decoration: none;
   font-weight: 600;
-  transition: var(--transition);
-  background: #ff0000;
   color: white;
-  width: 100%;
-  justify-content: center;
+
+  /* Visual */
+  background: #ff0000;
+  transition: var(--transition);
 }
 
 .boto-youtube:hover {
@@ -468,10 +658,6 @@ audio::-webkit-media-controls-play-button {
 }
 
 /* Indicador de càrrega per als vídeos */
-.video-player {
-  position: relative;
-}
-
 .video-player::before {
   content: '';
   position: absolute;
@@ -497,57 +683,6 @@ audio::-webkit-media-controls-play-button {
   100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-/* Responsivitat */
-@media (max-width: 768px) {
-  .galeria-videos {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .video-info {
-    padding: 1.2rem;
-  }
-  
-  .video-info h2 {
-    font-size: 1.1rem;
-  }
-  
-  .filtres-videos {
-    gap: 0.8rem;
-  }
-  
-  .filtre-boto {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .video-metadades {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .video-info {
-    padding: 1rem;
-  }
-  
-  .galeria-videos {
-    gap: 1.5rem;
-  }
-  
-  .boto-youtube {
-    padding: 0.7rem 1.2rem;
-    font-size: 0.9rem;
-  }
-}
-
-/* Millores d'accessibilitat per als vídeos */
-.video-player iframe:focus {
-  outline: 3px solid var(--accent-color);
-  outline-offset: 2px;
-}
-
 /* Estils per a la visualització en llista (opcional) */
 .galeria-videos.lista {
   grid-template-columns: 1fr;
@@ -568,86 +703,17 @@ audio::-webkit-media-controls-play-button {
   flex: 1;
 }
 
-@media (max-width: 768px) {
-  .galeria-videos.lista .video-card {
-    flex-direction: column;
-  }
-  
-  .galeria-videos.lista .video-player {
-    width: 100%;
-  }
-}
 
-/* Estils específics per a la pàgina de partitures */
+/* --- 5.4. Partitures --- */
 
-#titol-partitures {
-  text-align: center;
-  margin-bottom: 1rem;
-  color: var(--primary-color);
-}
-
-.subtitol {
-  text-align: center;
-  color: var(--secondary-color);
-  margin-bottom: 2.5rem;
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Filtres de partitures */
-.filtres-partitures {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
-}
-
-.filtre-boto {
-  background: var(--card-background);
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
-  padding: 0.6rem 1.2rem;
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: var(--transition);
-}
-
-.filtre-boto:hover,
-.filtre-boto:focus {
-  background: var(--primary-color);
-  color: white;
-  transform: translateY(-2px);
-}
-
-.filtre-boto.active {
-  background: var(--accent-color);
-  border-color: var(--accent-color);
-  color: white;
-}
-
-/* Galeria de partitures */
 .galeria-partitures {
+  /* Layout */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
+  
+  /* Box Model */
   margin-bottom: 2rem;
-}
-
-.partitura-card {
-  background: var(--card-background);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  transition: var(--transition);
-}
-
-.partitura-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .partitura-imatge-container {
@@ -656,8 +722,11 @@ audio::-webkit-media-controls-play-button {
 }
 
 .partitura-imatge-container img {
+  /* Layout */
   width: 100%;
   height: 250px;
+
+  /* Visual */
   object-fit: cover;
   transition: var(--transition);
 }
@@ -667,15 +736,18 @@ audio::-webkit-media-controls-play-button {
 }
 
 .partitura-overlay {
+  /* Layout */
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  /* Visual */
+  background: rgba(0, 0, 0, 0.7);
   opacity: 0;
   transition: var(--transition);
 }
@@ -685,15 +757,20 @@ audio::-webkit-media-controls-play-button {
 }
 
 .boto-ampliar {
-  background: var(--accent-color);
-  color: white;
+  /* Layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Box Model */
   border: none;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+  /* Visual */
+  background: var(--accent-color);
+  color: white;
   cursor: pointer;
   transition: var(--transition);
 }
@@ -708,6 +785,7 @@ audio::-webkit-media-controls-play-button {
 }
 
 .partitura-info h2 {
+  /* CONSOLIDAT: Mantenim l'estil únic per la mida de font */
   margin-bottom: 1rem;
   color: var(--primary-color);
   font-size: 1.3rem;
@@ -725,8 +803,11 @@ audio::-webkit-media-controls-play-button {
 .partitura-instrument,
 .partitura-dificultat,
 .partitura-genere {
+  /* Box Model */
   padding: 0.3rem 0.8rem;
   border-radius: 15px;
+
+  /* Tipografia */
   font-size: 0.8rem;
   font-weight: 600;
 }
@@ -760,22 +841,29 @@ audio::-webkit-media-controls-play-button {
 
 .boto-descarrega,
 .boto-escoltar {
+  /* Layout */
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 140px;
   gap: 0.5rem;
+
+  /* Box Model */
   padding: 0.7rem 1.2rem;
   border-radius: 8px;
+
+  /* Tipografia */
   text-decoration: none;
   font-weight: 600;
+  color: white;
+
+  /* Visual */
   transition: var(--transition);
-  flex: 1;
-  justify-content: center;
-  min-width: 140px;
 }
 
 .boto-descarrega {
   background: var(--accent-color);
-  color: white;
 }
 
 .boto-descarrega:hover {
@@ -785,7 +873,6 @@ audio::-webkit-media-controls-play-button {
 
 .boto-escoltar {
   background: var(--primary-color);
-  color: white;
 }
 
 .boto-escoltar:hover {
@@ -795,17 +882,20 @@ audio::-webkit-media-controls-play-button {
 
 /* Modal per a visualització ampliada */
 .modal {
+  /* Layout */
   display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.9);
   z-index: 1000;
   align-items: center;
   justify-content: center;
   padding: 2rem;
+
+  /* Visual */
+  background: rgba(0, 0, 0, 0.9);
 }
 
 .modal-contingut {
@@ -818,29 +908,39 @@ audio::-webkit-media-controls-play-button {
 }
 
 .modal-contingut img {
+  /* Layout */
   width: 100%;
   height: auto;
   max-height: 80vh;
+
+  /* Visual */
   object-fit: contain;
 }
 
 .modal-tanca {
+  /* Layout */
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: var(--accent-color);
-  color: white;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Box Model */
   border: none;
   width: 40px;
   height: 40px;
   border-radius: 50%;
+
+  /* Tipografia */
   font-size: 1.5rem;
+  color: white;
+  
+  /* Visual */
+  background: var(--accent-color);
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transition: var(--transition);
-  z-index: 1001;
 }
 
 .modal-tanca:hover {
@@ -848,167 +948,34 @@ audio::-webkit-media-controls-play-button {
   transform: scale(1.1);
 }
 
-/* Responsivitat */
-@media (max-width: 768px) {
-  .galeria-partitures {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .partitura-accions {
-    flex-direction: column;
-  }
-  
-  .boto-descarrega,
-  .boto-escoltar {
-    flex: none;
-  }
-  
-  .filtres-partitures {
-    gap: 0.8rem;
-  }
-  
-  .filtre-boto {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-  
-  .modal-contingut {
-    max-width: 95%;
-    max-height: 95%;
-  }
-}
 
-@media (max-width: 480px) {
-  .partitura-metadades {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .partitura-info {
-    padding: 1rem;
-  }
-  
-  .partitura-info h2 {
-    font-size: 1.1rem;
-  }
-}
+/* --- 5.5. Contacte --- */
 
-/* Menú de navegació */
-nav {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  padding: 1rem 0;
-  margin-bottom: 2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-}
-
-nav li {
-  margin: 0 1.2rem;
-}
-
-nav a {
-  text-decoration: none;
-  color: var(--light-text);
-  font-weight: bold;
-  transition: var(--transition);
-  padding: 0.5rem 0.8rem;
-  display: inline-block;
-  border-radius: 4px;
-  position: relative;
-}
-
-nav a:hover,
-nav a:focus {
-  color: var(--highlight-color);
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
-}
-
-nav a[aria-current="page"] {
-  color: var(--highlight-color);
-  background-color: rgba(255, 255, 255, 0.15);
-}
-
-nav a[aria-current="page"]::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: var(--highlight-color);
-  border-radius: 2px;
-}
-
-/* Peu de pàgina */
-footer {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: var(--light-text);
-  padding: 1.5rem 0;
-  margin-top: auto;
-  text-align: center;
-}
-
-footer .container {
-  background: transparent;
-  box-shadow: none;
-  max-width: 1000px;
-}
-
-footer p {
-  margin-bottom: 0.5rem;
-}
-
-footer a {
-  color: var(--highlight-color);
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* Estils específics per a la pàgina de contacte */
-
-/* Secció de contacte */
 #contacte {
   max-width: 900px;
   text-align: left;
 }
 
-#titol-contacte {
-  text-align: center;
-  margin-bottom: 2.5rem;
-  color: var(--primary-color);
-  padding-bottom: 1rem;
-}
-
-/* Informació de contacte */
 .contacte-info {
+  /* Layout */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  
+  /* Box Model */
   margin-bottom: 3rem;
 }
 
 .contacte-item {
+  /* Layout */
   display: flex;
   align-items: flex-start;
   gap: 1rem;
+  
+  /* Box Model */
   padding: 1.5rem;
+  
+  /* Visual */
   background: var(--card-background);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
@@ -1016,6 +983,7 @@ footer a:hover {
 }
 
 .contacte-item:hover {
+  /* Visual */
   transform: translateY(-5px);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
@@ -1028,6 +996,7 @@ footer a:hover {
 }
 
 .contacte-item h2 {
+  /* CONSOLIDAT: Mantenim l'estil únic per la mida de font */
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
   color: var(--primary-color);
@@ -1049,8 +1018,11 @@ footer a:hover {
 
 /* Formulari de contacte */
 .formulari-contacte {
-  background: var(--card-background);
+  /* Box Model */
   padding: 2rem;
+  
+  /* Visual */
+  background: var(--card-background);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
 }
@@ -1075,14 +1047,22 @@ footer a:hover {
 .form-group input,
 .form-group textarea,
 .form-group select {
+  /* Layout */
   width: 100%;
+  display: block; /* Per assegurar que ocupa tot l'espai */
+
+  /* Box Model */
   padding: 0.8rem 1rem;
   border: 2px solid #e1e1e1;
   border-radius: 8px;
+
+  /* Tipografia */
   font-size: 1rem;
   font-family: inherit;
-  transition: var(--transition);
+
+  /* Visual */
   background-color: #f8f9fa;
+  transition: var(--transition);
 }
 
 .form-group input:focus,
@@ -1101,17 +1081,25 @@ footer a:hover {
 
 /* Botó d'enviar */
 .boto-enviar {
-  background: linear-gradient(135deg, var(--accent-color), #c0392b);
-  color: white;
+  /* Layout */
+  width: 100%;
+  display: block;
+
+  /* Box Model */
   border: none;
   padding: 1rem 2rem;
+  margin-top: 1rem;
   border-radius: 8px;
+
+  /* Tipografia */
   font-size: 1.1rem;
   font-weight: 600;
+  color: white;
+
+  /* Visual */
+  background: linear-gradient(135deg, var(--accent-color), #c0392b);
   cursor: pointer;
   transition: var(--transition);
-  width: 100%;
-  margin-top: 1rem;
 }
 
 .boto-enviar:hover,
@@ -1121,162 +1109,103 @@ footer a:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsivitat per a contacte */
-@media (max-width: 768px) {
-  .contacte-info {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .contacte-item {
-    padding: 1.2rem;
-  }
-  
-  .contacte-icon {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .formulari-contacte {
-    padding: 1.5rem;
-  }
-  
-  #titol-contacte {
-    font-size: 1.8rem;
-  }
-}
 
-@media (max-width: 480px) {
-  .contacte-item {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .contacte-icon {
-    align-self: center;
-  }
-  
-  .formulari-contacte {
-    padding: 1rem;
-  }
-}
+/* ==========================================================================
+   6. RESPONSIVITAT
+   ========================================================================== */
 
-/* Responsive */
-@media (max-width: 768px) {
-  body {
-    font-size: 16px;
-  }
-  
-  .container {
-    padding: 1rem;
-    border-radius: 8px;
-    max-width: 95%;
-  }
-  
-  h1 {
-    font-size: 1.8rem;
-  }
-  
-  h2 {
-    font-size: 1.5rem;
-  }
-  
-  h3 {
-    font-size: 1.2rem;
-  }
-  
-  .imatge-section { 
-    margin-bottom: 1.5rem; 
-  }
+/* --- 6.1. Media Query General (fins a 768px) --- */
 
- /* Menú responsive: horitzontal amb scroll en pantalles petites */
 @media (max-width: 768px) {
+  /* Base */
+  body { font-size: 16px; }
+  .container { padding: 1rem; border-radius: 8px; max-width: 95%; }
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.2rem; }
+  .imatge-section { margin-bottom: 1.5rem; }
+  
+  /* Botons de Filtre */
+  .filtres-audio, .filtres-videos, .filtres-partitures { gap: 0.8rem; }
+  .filtre-boto { padding: 0.5rem 1rem; font-size: 0.9rem; }
+
+  /* Audio */
+  .audio-player { padding: 1.2rem; }
+  .audio-header { gap: 0.8rem; }
+  .audio-header figcaption { font-size: 1.1rem; }
+  .audio-icon { width: 28px; height: 28px; }
+
+  /* Vídeos */
+  .galeria-videos { grid-template-columns: 1fr; gap: 2rem; }
+  .video-info { padding: 1.2rem; }
+  .video-info h2 { font-size: 1.1rem; }
+  .galeria-videos.lista .video-card { flex-direction: column; }
+  .galeria-videos.lista .video-player { width: 100%; }
+
+  /* Partitures */
+  .galeria-partitures { grid-template-columns: 1fr; gap: 1.5rem; }
+  .partitura-accions { flex-direction: column; }
+  .boto-descarrega, .boto-escoltar { flex: none; }
+  .modal-contingut { max-width: 95%; max-height: 95%; }
+
+  /* Contacte */
+  .contacte-info { grid-template-columns: 1fr; gap: 1.5rem; }
+  .contacte-item { padding: 1.2rem; }
+  .contacte-icon { width: 40px; height: 40px; }
+  .formulari-contacte { padding: 1.5rem; }
+  #titol-contacte { font-size: 1.8rem; }
+
+  /* Navegació: Horitzontal amb scroll */
   nav ul {
     display: flex;
-    flex-direction: row;          /* horitzontal */
-    justify-content: flex-start;  /* alinear a l'inici */
-    flex-wrap: nowrap;            /* IMPORTANT: evita que els elements saltin de línia */
-    overflow-x: auto;             /* habilita desplaçament horitzontal */
-    white-space: nowrap;          /* evita que el text es trenqui */
-    -webkit-overflow-scrolling: touch; /* scroll suau en iOS */
-    scrollbar-width: none;        /* amaga scrollbar en Firefox */
-    scroll-behavior: smooth;      /* scroll suau */
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
   }
+  nav ul::-webkit-scrollbar { display: none; }
+  nav li { flex: 0 0 auto; margin: 0 0.8rem; }
+  nav a { display: inline-block; width: auto; padding: 0.6rem 1rem; white-space: nowrap; }
+}
 
-  /* Amagar scrollbar en Chrome/Safari */
-  nav ul::-webkit-scrollbar {
-    display: none;
-  }
+/* --- 6.2. Media Query Mòbil (fins a 480px) --- */
 
-  nav li {
-    flex: 0 0 auto;               /* cada element manté la seva mida */
-    margin: 0 0.8rem;             /* separació lateral */
-  }
+@media (max-width: 480px) {
+  /* Audio */
+  .audio-info { flex-direction: column; gap: 0.5rem; }
+  .audio-header { flex-direction: column; text-align: center; gap: 0.5rem; }
 
-  nav a {
-    display: inline-block;
-    width: auto;                  /* no ocupa tota l'amplada */
-    padding: 0.6rem 1rem;
-    white-space: nowrap;          /* evita que el text es trenqui */
-  }
+  /* Vídeos */
+  .video-metadades { flex-direction: column; align-items: flex-start; }
+  .video-info { padding: 1rem; }
+  .galeria-videos { gap: 1.5rem; }
+  .boto-youtube { padding: 0.7rem 1.2rem; font-size: 0.9rem; }
+
+  /* Partitures */
+  .partitura-metadades { flex-direction: column; align-items: flex-start; }
+  .partitura-info { padding: 1rem; }
+  .partitura-info h2 { font-size: 1.1rem; }
+
+  /* Contacte */
+  #contacte { text-align: center; } /* Centrat del contenidor principal */
+  .contacte-item { flex-direction: column; align-items: center; text-align: center; }
+  .contacte-icon { align-self: center; }
+  .formulari-contacte { padding: 1rem; }
+  .form-group label { text-align: left; } /* Mantenim etiqueta a l'esquerra dins del formulari */
 }
 
 
-/* Animacions addicionals */
+/* ==========================================================================
+   7. ANIMACIONS
+   ========================================================================== */
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-.container {
-  animation: fadeIn 0.5s ease-out;
-}
-
-/* Estils per a enllaços generals */
-a {
-  color: var(--accent-color);
-  transition: var(--transition);
-}
-
-a:hover {
-  color: #c0392b;
-}
-
-/* Estils per a llistes */
-ul, ol {
-  padding-left: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-li {
-  margin-bottom: 0.5rem;
-}
-
-/* Centrat correcte del text i contingut a la pàgina de contacte en mòbils */
-@media (max-width: 480px) {
-  #contacte {
-    text-align: center;
-  }
-
-  .contacte-item {
-    flex-direction: column;
-    align-items: center;  /* centra icones i text */
-    text-align: center;
-  }
-
-  .contacte-item h2,
-  .contacte-item p,
-  .contacte-link {
-    text-align: center;
-  }
-
-  .formulari-contacte {
-    text-align: center;
-  }
-
-  .form-group label {
-    text-align: left; /* mantenim etiquetes alineades si ho prefereixes */
-  }
-}
-
-  
+/* La classe .container ja té l'animació aplicada a la secció 3.1 */
