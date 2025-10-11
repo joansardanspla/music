@@ -1193,12 +1193,14 @@ footer a:hover {
 @media (max-width: 768px) {
   nav ul {
     display: flex;
-    flex-direction: row;            /* horitzontal */
-    justify-content: flex-start;    /* alinear a l'inici */
-    overflow-x: auto;               /* habilita desplaçament horitzontal */
-    white-space: nowrap;            /* evita que els elements baixin de línia */
+    flex-direction: row;          /* horitzontal */
+    justify-content: flex-start;  /* alinear a l'inici */
+    flex-wrap: nowrap;            /* IMPORTANT: evita que els elements saltin de línia */
+    overflow-x: auto;             /* habilita desplaçament horitzontal */
+    white-space: nowrap;          /* evita que el text es trenqui */
     -webkit-overflow-scrolling: touch; /* scroll suau en iOS */
-    scrollbar-width: none;          /* amaga scrollbar en Firefox */
+    scrollbar-width: none;        /* amaga scrollbar en Firefox */
+    scroll-behavior: smooth;      /* scroll suau */
   }
 
   /* Amagar scrollbar en Chrome/Safari */
@@ -1207,56 +1209,18 @@ footer a:hover {
   }
 
   nav li {
-    flex: 0 0 auto;                 /* cada element manté la seva mida */
-    margin: 0 0.8rem;               /* separació lateral */
+    flex: 0 0 auto;               /* cada element manté la seva mida */
+    margin: 0 0.8rem;             /* separació lateral */
   }
 
   nav a {
     display: inline-block;
-    width: auto;                     /* no ocupa tota l'amplada */
+    width: auto;                  /* no ocupa tota l'amplada */
     padding: 0.6rem 1rem;
-    white-space: nowrap;             /* evita que el text es trenqui */
-  }
-
-  /* Opcional: efecte de scroll suau quan es toca */
-  nav ul {
-    scroll-behavior: smooth;
+    white-space: nowrap;          /* evita que el text es trenqui */
   }
 }
-/* Menú responsive: horitzontal amb scroll en pantalles petites */
-@media (max-width: 768px) {
-  nav ul {
-    display: flex;
-    flex-direction: row;            /* horitzontal */
-    justify-content: flex-start;    /* alinear a l'inici */
-    overflow-x: auto;               /* habilita desplaçament horitzontal */
-    white-space: nowrap;            /* evita que els elements baixin de línia */
-    -webkit-overflow-scrolling: touch; /* scroll suau en iOS */
-    scrollbar-width: none;          /* amaga scrollbar en Firefox */
-  }
 
-  /* Amagar scrollbar en Chrome/Safari */
-  nav ul::-webkit-scrollbar {
-    display: none;
-  }
-
-  nav li {
-    flex: 0 0 auto;                 /* cada element manté la seva mida */
-    margin: 0 0.8rem;               /* separació lateral */
-  }
-
-  nav a {
-    display: inline-block;
-    width: auto;                     /* no ocupa tota l'amplada */
-    padding: 0.6rem 1rem;
-    white-space: nowrap;             /* evita que el text es trenqui */
-  }
-
-  /* Opcional: efecte de scroll suau quan es toca */
-  nav ul {
-    scroll-behavior: smooth;
-  }
-}
 
 /* Animacions addicionals */
 @keyframes fadeIn {
