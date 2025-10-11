@@ -86,14 +86,12 @@ h1, h2, h3 {
 
 h1 {
   font-size: 2.2rem;
-  border-bottom: 3px solid var(--accent-color);
   padding-bottom: 0.5rem;
   display: inline-block;
 }
 
 h2 {
   font-size: 1.8rem;
-  border-bottom: 2px solid var(--accent-color);
   padding-bottom: 0.3rem;
 }
 
