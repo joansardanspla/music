@@ -416,7 +416,7 @@ footer a:hover {
   /* Layout */
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .audio-player {
@@ -428,7 +428,7 @@ footer a:hover {
   
   /* Box Model */
   padding: 1.5rem;
-  box-sizing: border-box; /* Afegit a la teva versió */
+  box-sizing: border-box;
 
   /* Tipografia */
   color: var(--light-text);
