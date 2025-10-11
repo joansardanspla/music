@@ -1193,16 +1193,32 @@ footer a:hover {
   }
 
   /* Navegació responsive */
+ /* --- Menú horitzontal amb desplaçament en pantalles petites --- */
+@media (max-width: 768px) {
   nav ul {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow-x: auto;              /* permet desplaçament horitzontal */
+    white-space: nowrap;           /* evita que els elements baixin de línia */
+    -webkit-overflow-scrolling: touch; /* desplaçament suau en mòbil */
+    scrollbar-width: none;         /* amaga la barra en Firefox */
+  }
+
+  nav ul::-webkit-scrollbar {
+    display: none; /* amaga la barra en Chrome/Safari */
   }
 
   nav li {
-    margin: 0.5rem 0;
-    width: 100%;
-    text-align: center;
+    flex: 0 0 auto;                /* cada element manté la seva mida */
+    margin: 0 0.8rem;              /* separació lateral */
   }
+
+  nav a {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+  }
+}
+
   
   nav a {
     display: block;
