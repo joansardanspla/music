@@ -258,7 +258,7 @@ h3 {
 
 /* Estils per a la reproducció d'àudio */
 audio::-webkit-media-controls-panel {
-  background-color: var(--light-text);
+  background-color: var(--accent-color);
 }
 
 audio::-webkit-media-controls-play-button {
