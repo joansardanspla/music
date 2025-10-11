@@ -1251,3 +1251,36 @@ ul, ol {
 li {
   margin-bottom: 0.5rem;
 }
+
+/* Centrat correcte del text i contingut a la pàgina de contacte en mòbils */
+@media (max-width: 480px) {
+  #contacte {
+    text-align: center;
+  }
+
+  .contacte-item {
+    flex-direction: column;
+    align-items: center;  /* centra icones i text */
+    text-align: center;
+  }
+
+  .contacte-item h2,
+  .contacte-item p,
+  .contacte-link {
+    text-align: center;
+  }
+
+  .formulari-contacte {
+    text-align: center;
+  }
+
+  .form-group label {
+    text-align: left; /* mantenim etiquetes alineades si ho prefereixes */
+  }
+}
+
+
+
+
+
+  
