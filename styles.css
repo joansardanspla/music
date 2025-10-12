@@ -1105,8 +1105,6 @@ audio::-webkit-media-controls-play-button {
 
   /* Partitures */
   .galeria-partitures { grid-template-columns: 1fr; gap: 1.5rem; }
-  .partitura-accions { flex-direction: column; }
-  .boto-descarrega, .boto-escoltar { flex: none; }
   .modal-contingut { max-width: 95%; max-height: 95%; }
 
   /* Contacte */
