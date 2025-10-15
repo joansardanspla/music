@@ -5,7 +5,7 @@
   <!-- Pàgina principal -->
   <url>
     <loc>https://joansardanspla.github.io/music/</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -17,16 +17,12 @@
   <!-- Partitures -->
   <url>
     <loc>https://joansardanspla.github.io/music/partitures.html</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://joansardanspla.github.io/music/imatges/abril_74.png</image:loc>
       <image:caption>Partitura Abril 74 - Lluís Llach</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://joansardanspla.github.io/music/imatges/smells_like_teen_spirit.png</image:loc>
-      <image:caption>Partitura Smells Like Teen Spirit - Nirvana</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://joansardanspla.github.io/music/imatges/giant_steps.png</image:loc>
@@ -45,7 +41,7 @@
   <!-- Àudio -->
   <url>
     <loc>https://joansardanspla.github.io/music/audio.html</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -53,7 +49,7 @@
   <!-- Vídeo -->
   <url>
     <loc>https://joansardanspla.github.io/music/video.html</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -61,7 +57,7 @@
   <!-- Contacte -->
   <url>
     <loc>https://joansardanspla.github.io/music/contacte.html</loc>
-    <lastmod>2024-12-19</lastmod>
+    <lastmod>2025-10-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
