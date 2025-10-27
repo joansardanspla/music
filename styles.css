@@ -395,7 +395,7 @@ footer a:hover {
 .llista-audio { 
   display: flex; 
   flex-direction: column; 
-  gap: 2rem; 
+  gap: 3rem; 
 }
 
 .audio-player {
