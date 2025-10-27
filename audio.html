@@ -25,66 +25,67 @@
   <main>
     <section id="audio" class="container" aria-labelledby="titol-audio">
       <h1 id="titol-audio">Enregistraments d'Àudio</h1>
-      <p class="subtitol">Descobreix una selecció de les meves interpretacions en diferents estils i instruments</p>
+      <p class="subtitol">
+        Descobreix una selecció de les meves interpretacions en diferents estils i instruments
+      </p>
       
       <div class="filtres-audio">
         <button class="filtre-boto active" data-categoria="tots">Tots</button>
         <button class="filtre-boto" data-categoria="llach">Llach</button>
         <button class="filtre-boto" data-categoria="serrat">Serrat</button>
-         
       </div>
 
-     
+      <!-- ✳️ Contenidor nou per aplicar el gap correctament -->
+      <div class="llista-audio">
 
-
-         <figure class="audio-player" data-categoria="llach">
+        <figure class="audio-player" data-categoria="llach">
           <div class="audio-header">
             <svg class="audio-icon" viewBox="0 0 24 24" aria-hidden="true">
               <path fill="currentColor" d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
             </svg>
             <figcaption>Abril 74</figcaption>
           </div>
+
           <div class="audio-info">
             <span class="instrument">Llach</span>
-            </div>
+          </div>
+
           <audio controls>
             <source src="audio/abril_74.mp3" type="audio/mpeg">
             El teu navegador no suporta l'element d'àudio.
           </audio>
+
           <div class="audio-descripcio">
             <p>Adaptació d'Abril 74 de Lluís Llach</p>
           </div>
         </figure>
 
-
-
-         <figure class="audio-player" data-categoria="serrat">
+        <figure class="audio-player" data-categoria="serrat">
           <div class="audio-header">
             <svg class="audio-icon" viewBox="0 0 24 24" aria-hidden="true">
               <path fill="currentColor" d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
             </svg>
             <figcaption>Me'n Vaig a Peu</figcaption>
           </div>
+
           <div class="audio-info">
             <span class="instrument">Serrat</span>
           </div>
+
           <audio controls>
             <source src="audio/men_vaig_a_peu.mp3" type="audio/mpeg">
             El teu navegador no suporta l'element d'àudio.
           </audio>
+
           <div class="audio-descripcio">
             <p>Versió de Me'n Vaig a Peu de Joan Manel Serrat</p>
           </div>
         </figure>
-      
-        
-      </div>
+
+      </div> <!-- 🔚 fi de .llista-audio -->
     </section>
   </main>
 
-
-
-  
   <footer>
     <div class="container">
       <p>&copy; <span id="current-year"></span> Joan Sardans Pla. Tots els drets reservats.</p>
@@ -95,9 +96,6 @@
     </div>
   </footer>
 
-
-
-  
   <script>
     // Actualitza l'any actual al footer
     document.getElementById('current-year').textContent = new Date().getFullYear();
@@ -109,14 +107,11 @@
 
       filtres.forEach(filtre => {
         filtre.addEventListener('click', function() {
-          // Elimina la classe active de tots els filtres
           filtres.forEach(f => f.classList.remove('active'));
-          // Afegeix la classe active al filtre clicat
           this.classList.add('active');
           
           const categoria = this.getAttribute('data-categoria');
           
-          // Mostra/amaga els àudios segons la categoria
           audioPlayers.forEach(player => {
             if (categoria === 'tots' || player.getAttribute('data-categoria') === categoria) {
               player.style.display = 'block';
@@ -127,11 +122,10 @@
         });
       });
 
-      // Control de reproducció d'àudio (pause others when one plays)
+      // Pausa altres àudios quan un es reprodueix
       const audioElements = document.querySelectorAll('audio');
       audioElements.forEach(audio => {
         audio.addEventListener('play', function() {
-          // Pausa els altres àudios quan un comença a reproduir-se
           audioElements.forEach(otherAudio => {
             if (otherAudio !== audio && !otherAudio.paused) {
               otherAudio.pause();
