@@ -1,21 +1,14 @@
 /* ==========================================================================
-   00. INTRO / NOTA
-   - CSS únic optimitzat, modular en seccions amb variables reutilitzables.
-   - Millores: patrons `.tag` i `.btn`, estats d'accessibilitat, transicions específiques,
-     temes opcionals, reducció de moviment, i petites optimitzacions de rendiment.
-   ========================================================================== */
-
-/* ==========================================================================
-   01. VARIABLES GLOBALS (Tema per defecte + opcions)
-   ========================================================================== */
+  1. VARIABLES I CONFIGURACIÓ GLOBAL (Amb Tags Modulars)
+  ========================================================================== */
 :root {
-  /* Colors semàntics (canvia fàcilment aquí) */
+  /* Colors (semàntics) */
   --color-primary: goldenrod;
   --color-primary-600: #b8860b;
   --color-secondary: peru;
   --color-accent: crimson;
   --color-accent-700: #c0392b;
-  --color-highlight: #fff;
+  --color-highlight: black;
 
   /* Text i fons */
   --color-text: #000;
@@ -25,44 +18,36 @@
   --color-input-bg: #f8f9fa;
 
   /* Contrastos auxiliars */
-  --muted-border: rgba(0,0,0,0.08);
+  --muted-border: rgba(0,0,0,0.1);
   --muted-overlay: rgba(0,0,0,0.7);
 
   /* Tipografia i mides (responsive) */
-  --font-base: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-base: "Segoe UI", system-ui, -apple-system, sans-serif;
   --font-size-base: clamp(16px, 1.1vw, 18px);
   --line-height-base: 1.7;
   --h1-size: clamp(1.8rem, 3.6vw, 2.2rem);
   --h2-size: clamp(1.4rem, 2.6vw, 1.8rem);
   --h3-size: clamp(1.1rem, 2vw, 1.4rem);
 
-  /* Geometria i espaiat */
+  /* Geometria i efectes */
   --radius: 12px;
   --radius-sm: 8px;
-  --card-padding: clamp(1rem, 2.2vw, 1.5rem);
-  --gap-base: clamp(0.75rem, 1.5vw, 1rem);
-
-  /* Ombres i transicions (específiques) */
-  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 8px 15px rgba(0, 0, 0, 0.12);
-  --transition-fast: 180ms;
-  --transition-medium: 250ms;
-
-  /* Tags colors (ús amb la classe .tag) */
-  --tag-instrument: #3498db;
-  --tag-instrument-bg: rgba(52,152,219,0.08);
-  --tag-location: #9b59b6;
-  --tag-location-bg: rgba(155,89,182,0.08);
-  --tag-duration: #f1c40f;
-  --tag-duration-bg: rgba(241,196,15,0.08);
-  --tag-difficulty: var(--color-accent);
-  --tag-difficulty-bg: rgba(231,76,60,0.08);
-  --tag-genere: #2ecc71;
-  --tag-genere-bg: rgba(46,204,113,0.08);
-
-  /* Accesibilitat i utilitats */
-  --focus-ring: 3px solid rgba(231,76,60,0.18);
-  --focus-ring-strong: 3px solid rgba(255,255,255,0.2);
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 8px 15px rgba(0, 0, 0, 0.15);
+  --transition-fast: transform 0.18s ease, box-shadow 0.18s ease;
+  --transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  
+  /* Variables de tags/metadades */
+  --color-tag-instrument: #3498db;
+  --color-tag-instrument-bg: rgba(52, 152, 219, 0.08);
+  --color-tag-location: #9b59b6;
+  --color-tag-location-bg: rgba(155, 89, 182, 0.08);
+  --color-tag-duration: #f1c40f;
+  --color-tag-duration-bg: rgba(241, 196, 15, 0.08);
+  --color-tag-difficulty: var(--color-accent);
+  --color-tag-difficulty-bg: rgba(231, 76, 60, 0.08);
+  --color-tag-genere: #2ecc71;
+  --color-tag-genere-bg: rgba(46, 204, 113, 0.08);
 }
 
 /* Mode fosc automàtic */
@@ -71,27 +56,16 @@
     --color-background: #0f1112;
     --color-card-bg: #121416;
     --color-text: #e9ecef;
-    --color-input-bg: #17191b;
+    --color-input-bg: #212529;
     --muted-border: rgba(255,255,255,0.06);
     --muted-overlay: rgba(0,0,0,0.6);
     --color-highlight: #fff;
-    --focus-ring: 3px solid rgba(231,76,60,0.14);
   }
 }
 
-/* Tema alt contrast opcional (activa amb data-theme="high-contrast") */
-[data-theme="high-contrast"] {
-  --color-background: #000;
-  --color-card-bg: #000;
-  --color-text: #fff;
-  --color-primary: #ffd400;
-  --color-accent: #ff5b5b;
-  --muted-border: rgba(255,255,255,0.12);
-}
-
 /* ==========================================================================
-   02. RESET BÀSIC I BASE
-   ========================================================================== */
+  2. RESET, BASE I TIPOGRAFIA
+  ========================================================================== */
 *,
 *::before,
 *::after {
@@ -100,35 +74,6 @@
   padding: 0;
 }
 
-/* Millora per sr-only: compatible modern */
-.sr-only {
-  position: absolute !important;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* Accessibilitat: preferència de moviment reduït */
-@media (prefers-reduced-motion: reduce) {
-  :root {
-    --transition-fast: 1ms;
-    --transition-medium: 1ms;
-  }
-  * {
-    animation-duration: 1ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 1ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* HTML i body */
 html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
@@ -147,7 +92,6 @@ body {
   background: var(--color-background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-tap-highlight-color: transparent;
 }
 
 /* Titulars globals */
@@ -155,78 +99,85 @@ h1, h2, h3 {
   line-height: 1.3;
   margin-bottom: 1rem;
   color: var(--color-primary);
-  font-weight: 700;
 }
 
-h1 { font-size: var(--h1-size); display: inline-block; padding-bottom: .5rem; }
-h2 { font-size: var(--h2-size); padding-bottom: .3rem; }
-h3 { font-size: var(--h3-size); margin-top: 2rem; }
+h1 {
+  display: inline-block;
+  font-size: var(--h1-size);
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: var(--h2-size);
+  padding-bottom: 0.3rem;
+}
+
+h3 {
+  font-size: var(--h3-size);
+  margin-top: 2rem;
+}
 
 /* Enllaços */
 a {
   color: var(--color-accent);
   text-decoration: none;
-  transition: color var(--transition-fast) ease;
-}
-a:hover, a:focus-visible { color: var(--color-accent-700); outline: none; }
-
-/* Llistes i elements bàsics */
-ul, ol { padding-left: 1.5rem; margin-bottom: 1.5rem; }
-li { margin-bottom: .5rem; }
-
-/* ==========================================================================
-   03. ACCESSIBILITAT FOCALS (aplicada a botons, enllaços i controls)
-   - focus-visible clar i consistent, focus per teclat sense fer servir outline perces obsolets
-   ========================================================================== */
-:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(231,76,60,0.08);
-  border-radius: calc(var(--radius) - 2px);
+  transition: color 0.2s ease;
 }
 
-/* Aplicar focus clar a controls més petits */
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible,
+a:hover,
 a:focus-visible {
-  outline: var(--focus-ring);
-  outline-offset: 3px;
-  border-radius: 8px;
+  color: var(--color-accent-700);
+  outline: none;
+}
+
+/* Llistes */
+ul, ol { 
+  padding-left: 1.5rem; 
+  margin-bottom: 1.5rem; 
+}
+
+li { 
+  margin-bottom: 0.5rem; 
+}
+
+/* Focus visible global */
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 /* ==========================================================================
-   04. CONTENIDORS I LAYOUT
-   ========================================================================== */
+  3. LAYOUT I CONTENIDORS
+  ========================================================================== */
 .container {
-  max-width: min(1000px, 95%);
+  max-width: min(800px, 95%);
   margin-inline: auto;
   text-align: center;
-  padding: var(--card-padding);
+  padding: 1.5rem;
   background: var(--color-card-bg);
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
-  animation: fadeIn var(--transition-medium) ease-out;
+  animation: fadeIn 0.5s ease-out;
 }
 
-.container + .container {
-  margin-top: clamp(1rem, 4vw, 3rem);
+.container + .container { 
+  margin-top: clamp(1rem, 4vw, 3rem); 
 }
 
-.container:last-of-type {
-  margin-bottom: 2rem;
+.container:last-of-type { 
+  margin-bottom: 2rem; 
 }
 
-/* Navegació superior */
+/* Navegació */
 nav {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
   padding: 1rem 0;
   margin-bottom: 2rem;
-  background-image: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
   border-bottom: 1px solid var(--muted-border);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
 }
 
 nav ul {
@@ -234,26 +185,29 @@ nav ul {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: .6rem;
+  gap: 0.5rem;
   margin: 0;
   padding: 0;
 }
 
-nav li { margin: 0 1.2rem; }
+nav li { 
+  margin: 0 1.2rem; 
+}
 
 nav a {
   display: inline-block;
   position: relative;
-  padding: .5rem .8rem;
+  padding: 0.5rem 0.8rem;
   font-weight: 700;
   color: var(--color-text-light);
   border-radius: var(--radius-sm);
-  transition: transform var(--transition-fast) ease, background-color var(--transition-fast);
+  transition: var(--transition);
 }
 
-nav a:hover, nav a:focus {
+nav a:hover,
+nav a:focus {
   color: var(--color-highlight);
-  background-color: rgba(255,255,255,0.06);
+  background-color: rgba(255,255,255,0.08);
   transform: translateY(-2px);
 }
 
@@ -261,10 +215,14 @@ nav a[aria-current="page"] {
   color: var(--color-highlight);
   background-color: rgba(255,255,255,0.12);
 }
+
 nav a[aria-current="page"]::after {
-  content: "";
+  content: '';
   position: absolute;
-  bottom: -2px; left: 0; width: 100%; height: 3px;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
   background-color: var(--color-highlight);
   border-radius: 2px;
 }
@@ -277,164 +235,185 @@ footer {
   background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
   color: var(--color-text-light);
 }
-footer .container { background: transparent; box-shadow: none; max-width: 1000px; }
-footer a { color: var(--color-highlight); text-decoration: none; transition: color var(--transition-fast); }
-footer a:hover { text-decoration: underline; }
 
-/* ==========================================================================
-   05. COMPONENTS GENERICS: .tag (reutilitzable) i .btn (boto base)
-   ========================================================================== */
-/* Base tag: reutilitzable per metadades/tags */
-.tag {
-  display: inline-block;
-  padding: .25rem .6rem;
-  border-radius: 999px;
-  font-size: .8rem;
-  font-weight: 600;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-/* Variants .tag--* */
-.tag--instrument { background: var(--tag-instrument-bg); color: var(--tag-instrument); }
-.tag--location   { background: var(--tag-location-bg); color: var(--tag-location); }
-.tag--duration   { background: var(--tag-duration-bg); color: var(--tag-duration); }
-.tag--difficulty { background: var(--tag-difficulty-bg); color: var(--tag-difficulty); }
-.tag--genere     { background: var(--tag-genere-bg); color: var(--tag-genere); }
-
-/* Botó base (reutilitzable) */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: .5rem;
-  padding: .6rem 1.1rem;
-  border-radius: var(--radius-sm);
-  font-weight: 700;
-  cursor: pointer;
-  border: 2px solid transparent;
-  text-decoration: none;
-  user-select: none;
-  transition: transform var(--transition-fast) ease, box-shadow var(--transition-fast), background-color var(--transition-fast);
-}
-
-/* Variants de .btn */
-.btn--primary {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-600));
-  color: var(--color-text-light);
-}
-.btn--accent {
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-700));
-  color: var(--color-text-light);
-}
-.btn--ghost {
+footer .container {
   background: transparent;
-  color: var(--color-primary);
-  border-color: var(--muted-border);
-}
-
-/* Youtube button específic */
-.btn--youtube {
-  background: #ff0000;
-  color: #fff;
-}
-.btn--youtube:hover { background: #cc0000; }
-
-/* Estats interactius accessibles */
-.btn:hover, .btn:focus-visible { transform: translateY(-3px); box-shadow: var(--shadow-md); }
-.btn:active { transform: translateY(-1px); box-shadow: 0 4px 8px rgba(0,0,0,0.09); }
-
-/* Disabled */
-[disabled].btn,
-.btn:disabled {
-  opacity: .6;
-  cursor: not-allowed;
-  transform: none;
   box-shadow: none;
+  max-width: 1000px;
+}
+
+footer p { 
+  margin-bottom: 0.5rem; 
+}
+
+footer a {
+  color: var(--color-highlight);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+footer a:hover { 
+  text-decoration: underline; 
 }
 
 /* ==========================================================================
-   06. FILTRES (botons estilitzats com a tags/botons)
-   ========================================================================== */
-.filtres {
+  4. ACCESSIBILITAT
+  ========================================================================== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 8px 16px;
+  background: var(--color-primary);
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-weight: 700;
+  z-index: 1000;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ==========================================================================
+  5. TÍTOLS I SUBTÍTOLS
+  ========================================================================== */
+#titol-audio,
+#titol-videos,
+#titol-partitures,
+#titol-contacte {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+#titol-contacte {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+.subtitol {
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--color-secondary);
+}
+
+/* ==========================================================================
+  6. FILTRES (Botons)
+  ========================================================================== */
+.filtres-audio,
+.filtres-videos,
+.filtres-partitures {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: var(--gap-base);
-  margin-bottom: clamp(1rem, 3vw, 2.5rem);
+  gap: 1rem;
+  margin-bottom: 2.5rem;
 }
 
 .filtre-boto {
-  padding: .55rem 1rem;
+  padding: 0.6rem 1.2rem;
   border: 2px solid var(--color-primary);
-  border-radius: 999px;
+  border-radius: 25px;
   font-weight: 600;
   color: var(--color-primary);
   background: var(--color-card-bg);
   cursor: pointer;
-  transition: transform var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast);
+  transition: var(--transition-fast);
 }
 
 .filtre-boto:hover,
-.filtre-boto:focus-visible { background: var(--color-primary); color: var(--color-text-light); transform: translateY(-2px); }
-.filtre-boto.active { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-text-light); }
+.filtre-boto:focus-visible {
+  background: var(--color-primary);
+  color: var(--color-text-light);
+  transform: translateY(-2px);
+}
+
+.filtre-boto.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-text-light);
+}
 
 /* ==========================================================================
-   07. TARGETES (Cards) - vídeo / partitura / audio reuse
-   ========================================================================== */
-.card {
+  7. TARGETES (Vídeo / Partitura)
+  ========================================================================== */
+.video-card,
+.partitura-card {
   background: var(--color-card-bg);
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
-  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   overflow: hidden;
-  padding: 0;
 }
 
-.card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
-
-/* Card content inner utility */
-.card__body {
-  padding: var(--card-padding);
+.video-card:hover,
+.partitura-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
 }
-
-/* Video / Partitura containers reuse */
-.video-card, .partitura-card { /* es poden afegir classes específiques si calen */ }
 
 /* ==========================================================================
-   08. IMATGES I LAYOUT D'IMATGES
-   ========================================================================== */
-.imatge-section { margin-bottom: clamp(.75rem, 3vw, 2rem); }
+  8. IMATGES (Home)
+  ========================================================================== */
+.imatge-section { 
+  margin-bottom: 2rem; 
+}
 
-.imatge-section img,
-.partitura-imatge-container img {
+.imatge-section img {
   display: block;
   width: 100%;
   height: auto;
   border-radius: var(--radius);
-  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
-  object-fit: cover;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.imatge-section img:hover,
-.partitura-imatge-container img:hover { transform: scale(1.01); box-shadow: var(--shadow-md); }
+.imatge-section img:hover {
+  transform: scale(1.01);
+  box-shadow: var(--shadow-md);
+}
 
 /* ==========================================================================
-   09. ÀUDIO
-   ========================================================================== */
-.llista-audio { display: flex; flex-direction: column; gap: 3rem; }
+  9. ÀUDIO
+  ========================================================================== */
+.llista-audio { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 3rem; 
+}
 
 .audio-player {
   width: 100%;
-  max-width: 780px;
+  max-width: 700px;
   margin: 0 auto;
   text-align: left;
-  padding: var(--card-padding);
+  padding: 1.5rem;
   color: var(--color-text-light);
   background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
-  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+  transition: var(--transition);
+}
+
+.audio-player:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
 }
 
 .audio-header {
@@ -444,11 +423,16 @@ footer a:hover { text-decoration: underline; }
   margin-bottom: 1rem;
 }
 
-.audio-icon { width: 32px; height: 32px; flex-shrink: 0; color: var(--color-highlight); }
+.audio-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  color: var(--color-highlight);
+}
 
 .audio-header figcaption {
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   color: var(--color-text-light);
   margin: 0;
 }
@@ -456,44 +440,50 @@ footer a:hover { text-decoration: underline; }
 .audio-info {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
   margin-bottom: 1rem;
-  font-size: .95rem;
-  opacity: .98;
+  font-size: 0.9rem;
+  opacity: 0.95;
+  gap: 1rem;
 }
 
 .instrument {
-  padding: .3rem .8rem;
+  padding: 0.3rem 0.8rem;
   border-radius: 15px;
   font-weight: 600;
-  background: rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.2);
 }
 
-.duracio { font-style: italic; }
+.duracio { 
+  font-style: italic; 
+}
 
 .audio-player audio {
   width: 100%;
   display: block;
   margin-bottom: 1rem;
-  border-radius: var(--radius-sm);
-  background: var(--color-input-bg);
   outline: none;
+  border-radius: var(--radius-sm);
 }
 
-/* Descripció */
 .audio-descripcio {
   padding-top: 1rem;
-  border-top: 1px solid rgba(255,255,255,0.12);
+  border-top: 1px solid rgba(255,255,255,0.18);
 }
-.audio-descripcio p { margin: 0; font-size: .95rem; line-height: 1.5; }
+
+.audio-descripcio p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.95;
+}
 
 /* ==========================================================================
-   10. VÍDEOS
-   ========================================================================== */
+  10. VÍDEOS
+  ========================================================================== */
 .galeria-videos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
-  gap: clamp(1rem, 3vw, 2.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+  gap: 2.5rem;
   margin-bottom: 2rem;
 }
 
@@ -502,111 +492,349 @@ footer a:hover { text-decoration: underline; }
   aspect-ratio: 16 / 9;
   position: relative;
   background: #000;
-  border-radius: var(--radius);
-  overflow: hidden;
 }
 
 .video-player iframe {
   width: 100%;
   height: 100%;
   border: 0;
+  border-radius: var(--radius) var(--radius) 0 0;
 }
 
-/* Video info reuse */
-.video-info { padding: var(--card-padding); text-align: left; }
-.video-info h2 { margin-bottom: 1rem; color: var(--color-primary); font-size: 1.25rem; line-height: 1.3; }
+.video-player iframe:focus {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
 
-.video-metadades { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; align-items: center; }
+.video-info { 
+  padding: 1.5rem; 
+}
 
-/* Reutilitzar .tag per metadades de vídeo/partitura */
-.video-accions { display: flex; justify-content: center; gap: .6rem; }
-.boto-youtube { width: 100%; max-width: 320px; }
+.video-info h2 {
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
+
+.video-metadades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.video-instrument,
+.video-ubicacio,
+.video-duracio {
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.video-instrument { 
+  background: var(--color-tag-instrument-bg); 
+  color: var(--color-tag-instrument); 
+}
+
+.video-ubicacio { 
+  background: var(--color-tag-location-bg); 
+  color: var(--color-tag-location); 
+}
+
+.video-duracio { 
+  background: var(--color-tag-duration-bg); 
+  color: var(--color-tag-duration); 
+}
+
+.video-descripcio { 
+  color: var(--color-secondary); 
+  margin-bottom: 1.5rem; 
+  line-height: 1.5; 
+}
+
+.video-accions {
+  display: flex;
+  justify-content: center;
+}
+
+.boto-youtube {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  color: white;
+  background: #ff0000;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.boto-youtube:hover {
+  background: #cc0000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
 
 /* ==========================================================================
-   11. PARTITURES I MODAL
-   ========================================================================== */
+  11. PARTITURES
+  ========================================================================== */
 .galeria-partitures {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-  gap: clamp(1.5rem, 4vw, 5rem);
-  margin-bottom: 4rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
-.partitura-imatge-container { position: relative; overflow: hidden; height: 250px; border-radius: var(--radius); }
-.partitura-imatge-container img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-medium); }
+.partitura-imatge-container { 
+  position: relative; 
+  overflow: hidden; 
+}
+
+.partitura-imatge-container img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.partitura-card:hover .partitura-imatge-container img { 
+  transform: scale(1.05); 
+}
 
 .partitura-overlay {
-  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-  background: var(--muted-overlay); opacity: 0; transition: opacity var(--transition-medium);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--muted-overlay);
+  opacity: 0;
+  transition: opacity 0.25s ease;
 }
-.partitura-card:hover .partitura-overlay { opacity: 1; }
+
+.partitura-card:hover .partitura-overlay { 
+  opacity: 1; 
+}
 
 .boto-ampliar {
   border: none;
-  width: 50px; height: 50px; border-radius: 50%;
-  background: var(--color-accent); color: #fff; cursor: pointer;
-  display: inline-flex; align-items: center; justify-content: center;
-  transition: transform var(--transition-fast), background-color var(--transition-fast);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.18s ease, background-color 0.18s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.boto-ampliar:hover, .boto-ampliar:focus-visible { transform: scale(1.08); background: var(--color-accent-700); }
 
-/* Partitura info reuse */
-.partitura-info { padding: var(--card-padding); text-align: left; }
-.partitura-info h2 { margin-bottom: 1rem; color: var(--color-primary); font-size: 1.2rem; }
+.boto-ampliar:hover { 
+  background: var(--color-accent-700); 
+  transform: scale(1.1); 
+}
 
-/* Modal (accessible) */
-.modal { display: none; position: fixed; inset: 0; z-index: 1100; align-items: center; justify-content: center; padding: 2rem; background: rgba(0,0,0,0.8); }
-.modal.is-open { display: flex; }
+.partitura-info { 
+  padding: 1.5rem; 
+}
+
+.partitura-info h2 {
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+  font-size: 1.3rem;
+}
+
+.partitura-metadades { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 0.5rem; 
+  margin-bottom: 1rem; 
+}
+
+.partitura-instrument,
+.partitura-dificultat,
+.partitura-genere {
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.partitura-instrument { 
+  background: var(--color-tag-instrument-bg); 
+  color: var(--color-tag-instrument); 
+}
+
+.partitura-dificultat { 
+  background: var(--color-tag-difficulty-bg); 
+  color: var(--color-tag-difficulty); 
+}
+
+.partitura-genere { 
+  background: var(--color-tag-genere-bg); 
+  color: var(--color-tag-genere); 
+}
+
+.partitura-descripcio { 
+  color: var(--color-secondary); 
+  margin-bottom: 0.5rem; 
+  line-height: 1.5; 
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(0,0,0,0.9);
+  animation: fadeIn 0.3s ease-out;
+}
+
 .modal-contingut {
-  position: relative; max-width: 95%; max-height: 95%; background: var(--color-text-light); border-radius: var(--radius); overflow: hidden;
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
 }
-.modal-contingut img { width: 100%; height: auto; max-height: 80vh; object-fit: contain; }
+
+.modal-contingut img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
 .modal-tanca {
-  position: absolute; top: 1rem; right: 1rem; z-index: 1001;
-  border: none; width: 40px; height: 40px; border-radius: 50%;
-  font-size: 1.2rem; color: #fff; background: var(--color-accent); cursor: pointer;
-  display: inline-flex; align-items: center; justify-content: center; transition: transform var(--transition-fast);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1001;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: white;
+  background: var(--color-accent);
+  cursor: pointer;
+  transition: transform 0.18s ease, background-color 0.18s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.modal-tanca:hover, .modal-tanca:focus-visible { transform: scale(1.08); background: var(--color-accent-700); }
+
+.modal-tanca:hover { 
+  background: var(--color-accent-700); 
+  transform: scale(1.1); 
+}
 
 /* ==========================================================================
-   12. CONTACTE I FORMULARI
-   ========================================================================== */
-#contacte { max-width: 900px; margin-inline: auto; text-align: left; }
+  12. CONTACTE I FORMULARI
+  ========================================================================== */
+#contacte {
+  max-width: 900px;
+  text-align: left;
+  margin-inline: auto;
+}
 
 .contacte-info {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-  gap: clamp(.75rem, 3vw, 2rem);
-  margin-bottom: 2.5rem;
+  gap: 2rem;
+  margin-bottom: 3rem;
 }
 
 .contacte-item {
-  display: flex; align-items: flex-start; gap: 1rem;
-  padding: var(--card-padding); background: var(--color-card-bg); border-radius: var(--radius); box-shadow: var(--shadow-sm);
-  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--color-card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
 }
-.contacte-item:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
 
-.contacte-icon { width: 48px; height: 48px; flex-shrink: 0; color: var(--color-accent); }
+.contacte-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
 
-.contacte-item h2 { font-size: 1.15rem; margin-bottom: .5rem; color: var(--color-primary); }
+.contacte-icon { 
+  width: 48px; 
+  height: 48px; 
+  flex-shrink: 0; 
+  color: var(--color-accent); 
+}
+
+.contacte-item h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+}
+
+.contacte-link {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.contacte-link:hover { 
+  color: var(--color-accent-700); 
+  text-decoration: underline; 
+}
 
 /* Formulari */
 .formulari-contacte {
-  padding: var(--card-padding); background: var(--color-card-bg); border-radius: var(--radius); box-shadow: var(--shadow-sm);
+  padding: 2rem;
+  background: var(--color-card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
 }
-.formulari-contacte h2 { text-align: center; margin-bottom: 1.5rem; color: var(--color-primary); }
 
-.form-group { margin-bottom: 1rem; }
-.form-group label { display: block; margin-bottom: .5rem; font-weight: 700; color: var(--color-primary); }
+.formulari-contacte h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--color-primary);
+}
+
+.form-group { 
+  margin-bottom: 1.5rem; 
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
 
 .form-group input,
 .form-group textarea,
 .form-group select {
-  width: 100%; padding: .8rem 1rem; border-radius: var(--radius-sm);
-  border: 2px solid var(--muted-border); font-size: 1rem; font-family: inherit;
-  background-color: var(--color-input-bg); color: var(--color-text); transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid var(--muted-border);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: var(--color-input-bg);
+  color: var(--color-text);
+  transition: box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
 .form-group input:focus,
@@ -614,100 +842,274 @@ footer a:hover { text-decoration: underline; }
 .form-group select:focus {
   border-color: var(--color-accent);
   background-color: var(--color-card-bg);
-  box-shadow: 0 0 0 6px rgba(231,76,60,0.06);
   outline: none;
+  box-shadow: 0 0 0 4px rgba(231,76,60,0.06);
 }
 
 .form-group input:disabled,
 .form-group textarea:disabled,
 .form-group select:disabled {
-  background-color: #ccc; color: #888; cursor: not-allowed; border-color: var(--muted-border); opacity: .8;
+  background-color: #ccc;
+  color: #888;
+  cursor: not-allowed;
+  border-color: var(--muted-border);
+  opacity: 0.7;
 }
 
-.form-group textarea { resize: vertical; min-height: 120px; }
+.form-group textarea { 
+  resize: vertical; 
+  min-height: 120px; 
+}
 
 .boto-enviar {
-  display: inline-block; width: 100%; border: none; padding: 1rem 2rem; margin-top: 1rem;
-  border-radius: var(--radius-sm); font-size: 1.05rem; font-weight: 700; color: var(--color-text-light);
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-700)); cursor: pointer;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast), opacity var(--transition-fast);
+  width: 100%;
+  border: none;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-700));
+  cursor: pointer;
+  transition: var(--transition);
 }
-.boto-enviar:hover:not(:disabled), .boto-enviar:focus-visible:not(:disabled) { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.12); }
-.boto-enviar:disabled { background: #ccc; cursor: not-allowed; opacity: .6; transform: none; box-shadow: none; }
+
+.boto-enviar:hover:not(:disabled),
+.boto-enviar:focus-visible:not(:disabled) {
+  background: linear-gradient(135deg, var(--color-accent-700), var(--color-accent));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+.boto-enviar:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  opacity: 0.6;
+}
 
 /* ==========================================================================
-   13. RESPONSIVITAT (refinada) 
-   - utilitza clamp per espais i mesures
-   ========================================================================== */
+  13. RESPONSIVITAT
+  ========================================================================== */
 @media (max-width: 768px) {
-  body { font-size: 16px; }
-  .container { padding: clamp(.8rem, 2.5vw, 1rem); border-radius: var(--radius-sm); max-width: 95%; }
-  h1 { font-size: clamp(1.6rem, 5vw, 2rem); }
-  h2 { font-size: 1.5rem; }
-  h3 { font-size: 1.2rem; }
-
-  .filtres { gap: .8rem; }
-  .filtre-boto { padding: .5rem 1rem; font-size: .95rem; }
-  .audio-player { padding: 1.2rem; }
-  .audio-header { gap: .8rem; }
-  .audio-header figcaption { font-size: 1.1rem; }
-  .audio-icon { width: 28px; height: 28px; }
-
-  .galeria-videos { grid-template-columns: 1fr; gap: 2rem; }
-  .video-info { padding: 1.2rem; }
-  .video-info h2 { font-size: 1.1rem; }
-
-  .galeria-partitures { grid-template-columns: 1fr; gap: 1.5rem; }
-  .modal-contingut { max-width: 95%; max-height: 95%; }
-
-  .contacte-info { grid-template-columns: 1fr; gap: 1.5rem; }
-  .contacte-item { padding: 1.2rem; }
-  .contacte-icon { width: 40px; height: 40px; }
-  .formulari-contacte { padding: 1.2rem; }
-  #titol-contacte { font-size: 1.8rem; }
-
-  /* Navegació mòbil: scrollable */
-  nav ul {
-    display: flex; flex-direction: row; justify-content: flex-start; flex-wrap: nowrap;
-    overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none;
-    padding: .5rem 1rem;
+  body { 
+    font-size: 16px; 
   }
-  nav ul::-webkit-scrollbar { display: none; }
-  nav li { flex: 0 0 auto; margin: 0 .8rem; }
-  nav a { padding: .6rem 1rem; white-space: nowrap; }
+  
+  .container { 
+    padding: 1rem; 
+    border-radius: var(--radius-sm); 
+    max-width: 95%; 
+  }
+  
+  h1 { 
+    font-size: clamp(1.6rem, 5vw, 2rem); 
+  }
+  
+  h2 { 
+    font-size: 1.5rem; 
+  }
+  
+  h3 { 
+    font-size: 1.2rem; 
+  }
+
+  .filtres-audio, 
+  .filtres-videos, 
+  .filtres-partitures { 
+    gap: 0.8rem; 
+  }
+  
+  .filtre-boto { 
+    padding: 0.5rem 1rem; 
+    font-size: 0.9rem; 
+  }
+
+  .audio-player { 
+    padding: 1.2rem; 
+  }
+  
+  .audio-header { 
+    gap: 0.8rem; 
+  }
+  
+  .audio-header figcaption { 
+    font-size: 1.1rem; 
+  }
+  
+  .audio-icon { 
+    width: 28px; 
+    height: 28px; 
+  }
+
+  .galeria-videos { 
+    grid-template-columns: 1fr; 
+    gap: 2rem; 
+  }
+  
+  .video-info { 
+    padding: 1.2rem; 
+  }
+  
+  .video-info h2 { 
+    font-size: 1.1rem; 
+  }
+
+  .galeria-partitures { 
+    grid-template-columns: 1fr; 
+    gap: 1.5rem; 
+  }
+  
+  .modal-contingut { 
+    max-width: 95%; 
+    max-height: 95%; 
+  }
+
+  .contacte-info { 
+    grid-template-columns: 1fr; 
+    gap: 1.5rem; 
+  }
+  
+  .contacte-item { 
+    padding: 1.2rem; 
+  }
+  
+  .contacte-icon { 
+    width: 40px; 
+    height: 40px; 
+  }
+  
+  .formulari-contacte { 
+    padding: 1.5rem; 
+  }
+  
+  #titol-contacte { 
+    font-size: 1.8rem; 
+  }
+
+  /* Navegació mòbil */
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    padding: 0.5rem 1rem;
+  }
+  
+  nav ul::-webkit-scrollbar { 
+    display: none; 
+  }
+  
+  nav li { 
+    flex: 0 0 auto; 
+    margin: 0 0.8rem; 
+  }
+  
+  nav a { 
+    padding: 0.6rem 1rem; 
+    white-space: nowrap; 
+  }
 }
 
 @media (max-width: 480px) {
-  .audio-info { flex-direction: column; gap: .5rem; }
-  .audio-header { flex-direction: column; text-align: center; gap: .5rem; }
-  .video-metadades, .partitura-metadades { flex-direction: column; align-items: flex-start; }
-  .video-info, .partitura-info { padding: 1rem; }
-  .boto-youtube { padding: .7rem 1.2rem; font-size: .95rem; }
-  .galeria-videos { gap: 1.25rem; }
-  #contacte { text-align: center; }
-  .contacte-item { flex-direction: column; align-items: center; text-align: center; }
-  .contacte-icon { align-self: center; }
-  .form-group label { text-align: left; }
+  .audio-info { 
+    flex-direction: column; 
+    gap: 0.5rem; 
+  }
+  
+  .audio-header { 
+    flex-direction: column; 
+    text-align: center; 
+    gap: 0.5rem; 
+  }
+
+  .video-metadades { 
+    flex-direction: column; 
+    align-items: flex-start; 
+  }
+  
+  .video-info { 
+    padding: 1rem; 
+  }
+  
+  .galeria-videos { 
+    gap: 1.5rem; 
+  }
+  
+  .boto-youtube { 
+    padding: 0.7rem 1.2rem; 
+    font-size: 0.9rem; 
+  }
+
+  .partitura-metadades { 
+    flex-direction: column; 
+    align-items: flex-start; 
+  }
+  
+  .partitura-info { 
+    padding: 1rem; 
+  }
+  
+  .partitura-info h2 { 
+    font-size: 1.1rem; 
+  }
+
+  #contacte { 
+    text-align: center; 
+  }
+  
+  .contacte-item { 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+  }
+  
+  .contacte-icon { 
+    align-self: center; 
+  }
+  
+  .formulari-contacte { 
+    padding: 1rem; 
+  }
+  
+  .form-group label { 
+    text-align: left; 
+  }
 }
 
 /* ==========================================================================
-   14. ANIMACIONS (amb reducció per prefers-reduced-motion)
-   ========================================================================== */
+  14. ANIMACIONS
+  ========================================================================== */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
 }
 
-/* ==========================================================================
-   15. UTILS I HELPERS (micro-classes)
-   ========================================================================== */
-.text-center { text-align: center; }
-.hidden { display: none !important; }
-.visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
-
-/* ==========================================================================
-   16. NOTES PER A FUTUR MANTENIMENT
-   - Per modularitzar: extreu variables i components a fitxers SCSS
-   - Per temes dinàmics: canvia data-theme al root des de JS
-   - Per millorar layout: considerar Container Queries (@container) on navegadors compatibles
-   ========================================================================== */
+/* Reducció de moviment per accessibilitat */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
