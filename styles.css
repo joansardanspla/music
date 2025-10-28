@@ -587,8 +587,8 @@ footer a:hover {
 .galeria-partitures {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
+  gap: 3rem;
+  margin-bottom: 3rem;
 }
 
 .partitura-imatge-container { 
