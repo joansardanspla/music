@@ -403,10 +403,6 @@ footer a:hover {
   line-height: 1.5; 
 }
 
-.video-accions {
-  display: flex;
-  justify-content: center;
-}
 
 
 /* ==========================================================================
@@ -599,7 +595,6 @@ footer a:hover {
     font-size: 1.2rem; 
   }
 
-  .filtres-audio, 
   .filtres-videos, 
   .filtres-partitures { 
     gap: 0.8rem; 
