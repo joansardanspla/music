@@ -57,8 +57,6 @@
   --spacing-xl: 2.5rem;
 
   /* Colors específics */
-  --color-youtube: #ff0000;
-  --color-youtube-hover: #cc0000;
   --modal-bg: rgba(0,0,0,0.9);
 }
 
@@ -253,7 +251,6 @@ footer a:hover {
 /* ==========================================================================
   6. FILTRES (Botons)
   ========================================================================== */
-.filtres-audio,
 .filtres-videos,
 .filtres-partitures {
   display: flex;
@@ -411,27 +408,6 @@ footer a:hover {
   justify-content: center;
 }
 
-.boto-youtube {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-xs);
-  width: 100%;
-  padding: 0.8rem 1.5rem;
-  border-radius: var(--radius-sm);
-  font-weight: 600;
-  color: white;
-  background: var(--color-youtube);
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-.boto-youtube:hover,
-.boto-youtube:focus-visible {
-  background: var(--color-youtube-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
 
 /* ==========================================================================
   10. PARTITURES
