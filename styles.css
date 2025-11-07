@@ -358,7 +358,7 @@ footer a:hover {
   padding: var(--spacing-md); 
 }
 
-.video-info h2 {
+.video-info h3 {
   margin-bottom: var(--spacing-sm);
   color: var(--color-primary);
   font-size: 1.3rem;
