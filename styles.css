@@ -162,6 +162,7 @@ li {
 .container {
   max-width: min(800px, 95%);
   margin-inline: auto;
+  margin-top: clamp(var(--spacing-md), 3vw, var(--spacing-lg));
   text-align: center;
   padding: var(--spacing-md);
   background: var(--color-card-bg);
