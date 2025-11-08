@@ -409,7 +409,7 @@ footer a:hover {
   ========================================================================== */
 .galeria-partitures {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
   gap: var(--spacing-md);
   margin-bottom: var(--spacing-lg);
 }
@@ -417,7 +417,7 @@ footer a:hover {
 .partitura-imatge-container { 
   position: relative; 
   overflow: hidden; 
-  height: 200px; /* Alçada fixa per a totes les imatges */
+  height: 280px; /* Alçada fixa per a totes les imatges */
 }
 
 .partitura-imatge-container img {
@@ -468,13 +468,13 @@ footer a:hover {
 }
 
 .partitura-info { 
-  padding: var(--spacing-sm); 
+  padding: var(--spacing-md); 
 }
 
 .partitura-info h2 {
   margin-bottom: var(--spacing-xs);
   color: var(--color-primary);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 .partitura-metadades { 
