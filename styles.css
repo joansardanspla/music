@@ -14,13 +14,12 @@
   --color-text: #000;
   --color-text-light: #fff;
   --color-background: snow;
-  --color-card-bg: #f0f0d9; /* ← Més fosc que ivory */
+  --color-card-bg: ivory;
   --color-input-bg: #f8f9fa;
 
   /* Contrastos auxiliars */
   --muted-border: rgba(0,0,0,0.1);
   --muted-overlay: rgba(0,0,0,0.7);
-}
 
   /* Tipografia i mides (responsive) */
   --font-base: "Segoe UI", system-ui, -apple-system, sans-serif;
