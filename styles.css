@@ -474,7 +474,7 @@ footer a:hover {
 .partitura-info h2 {
   margin-bottom: var(--spacing-xs);
   color: var(--color-primary);
-  font-size: 1.1rem;
+  font-size: 1.0rem;
 }
 
 .partitura-metadades { 
