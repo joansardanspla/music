@@ -422,8 +422,8 @@ footer a:hover {
 
 .partitura-imatge-container img {
   width: 100%;
-  height: 250px;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   transition: transform 0.25s ease;
   transform: translateZ(0); /* Optimització GPU */
 }
