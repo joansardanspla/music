@@ -409,57 +409,110 @@ footer a:hover {
   ========================================================================== */
 .galeria-partitures {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); /* Reduït de 350px a 280px */
-  gap: var(--spacing-md); /* Reduït de lg a md */
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: var(--spacing-md);
   margin-bottom: var(--spacing-lg);
 }
 
 .partitura-imatge-container { 
   position: relative; 
   overflow: hidden; 
-  max-height: 300px; /* Afegit: limitar alçada màxima */
+  height: 200px; /* Alçada fixa per a totes les imatges */
 }
 
 .partitura-imatge-container img {
   width: 100%;
-  height: auto;
-  object-fit: cover; /* Canviat de contain a cover per millorar l'aspecte */
+  height: 100%;
+  object-fit: contain; /* Torna a contain per veure la imatge completa */
   transition: transform 0.25s ease;
   transform: translateZ(0);
-  max-height: 250px; /* Afegit: limitar alçada de la imatge */
+}
+
+.partitura-card:hover .partitura-imatge-container img { 
+  transform: scale(1.05); 
+}
+
+.partitura-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--muted-overlay);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.partitura-card:hover .partitura-overlay { 
+  opacity: 1; 
+}
+
+.boto-ampliar {
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--color-accent); /* Assegura el color */
+  color: white;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boto-ampliar:hover,
+.boto-ampliar:focus-visible { 
+  background: var(--color-accent-700); /* Assegura el color hover */
+  transform: scale(1.1); 
 }
 
 .partitura-info { 
-  padding: var(--spacing-sm); /* Reduït de md a sm */
+  padding: var(--spacing-sm); 
 }
 
 .partitura-info h2 {
-  margin-bottom: var(--spacing-xs); /* Reduït de sm a xs */
+  margin-bottom: var(--spacing-xs);
   color: var(--color-primary);
-  font-size: 1.1rem; /* Reduït de 1.3rem a 1.1rem */
+  font-size: 1.1rem;
 }
 
 .partitura-metadades { 
   display: flex; 
   flex-wrap: wrap; 
   gap: var(--spacing-xs); 
-  margin-bottom: var(--spacing-xs); /* Reduït de sm a xs */
+  margin-bottom: var(--spacing-xs);
 }
 
 .partitura-instrument,
 .partitura-dificultat,
 .partitura-genere {
-  padding: 0.2rem 0.6rem; /* Reduït el padding */
-  border-radius: 12px; /* Reduït lleugerament */
-  font-size: 0.75rem; /* Reduït de 0.8rem a 0.75rem */
+  padding: 0.3rem 0.8rem; /* Torna al padding original */
+  border-radius: 15px;
+  font-size: 0.8rem; /* Torna a la mida original */
   font-weight: 600;
+}
+
+.partitura-instrument { 
+  background: var(--color-tag-instrument-bg); 
+  color: var(--color-tag-instrument); 
+}
+
+.partitura-dificultat { 
+  background: var(--color-tag-difficulty-bg); 
+  color: var(--color-tag-difficulty); 
+}
+
+.partitura-genere { 
+  background: var(--color-tag-genere-bg); 
+  color: var(--color-tag-genere); 
 }
 
 .partitura-descripcio { 
   color: var(--color-secondary); 
   margin-bottom: var(--spacing-xs); 
-  line-height: 1.4; /* Reduït lleugerament */
-  font-size: 0.9rem; /* Afegit: reduir mida de font */
+  line-height: 1.5;
+  font-size: 0.9rem;
 }
 
 /* Modal */
