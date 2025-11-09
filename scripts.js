@@ -3,9 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // 1. FUNCIONALITAT GLOBAL
     // ----------------------------------------------------
 
-    // Actualitza l'any actual al footer
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-
 
     // ----------------------------------------------------
     // 2. FUNCIONALITAT DE FILTRES (VÍDEOS i PARTITURES)
