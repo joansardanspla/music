@@ -316,10 +316,11 @@ li {
   ========================================================================== */
 .galeria-videos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
-  gap: var(--spacing-xl);
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); /* ⬅️ Igual que partitures */
+  gap: var(--spacing-md);
   margin-bottom: var(--spacing-lg);
 }
+
 
 .video-player {
   width: 100%;
