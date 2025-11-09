@@ -3,42 +3,42 @@
   ========================================================================== */
 :root {
   /* Colors principals (paleta harmònica) */
-  --color-primary: #8B4513;          /* Marró sienna - més càlid i natural */
-  --color-primary-600: #654321;      /* Marró fosc */
-  --color-primary-300: #A0522D;      /* Marró mitjà */
-  --color-secondary: #D2691E;        /* Taronja chocolate - complementari */
-  --color-secondary-600: #B8860B;    /* Daurat fosc */
-  --color-accent: #CD5C5C;           /* Vermell indi - to càlid */
-  --color-accent-700: #B22222;       /* Vermell foc */
-  --color-highlight: #2F4F4F;        /* Gris pissarra fosc */
+  --color-primary: #8B4513;          /* Marró sienna - més càlid i natural */
+  --color-primary-600: #654321;      /* Marró fosc */
+  --color-primary-300: #A0522D;      /* Marró mitjà */
+  --color-secondary: #D2691E;        /* Taronja chocolate - complementari */
+  --color-secondary-600: #B8860B;    /* Daurat fosc */
+  --color-accent: #CD5C5C;           /* Vermell indi - to càlid */
+  --color-accent-700: #B22222;       /* Vermell foc */
+  --color-highlight: #2F4F4F;        /* Gris pissarra fosc */
   
   /* Colors neutres i de fons */
-  --color-text: #2C2C2C;             /* Gris molt fosc (no negre pur) */
-  --color-text-light: #F8F8F8;       /* Blanc trencat */
-  --color-background: #FDF5E6;       /* Old Lace - fons càlid */
-  --color-card-bg: #FAF0E6;          /* Linen - lleugerament més fosc */
-  --color-input-bg: #FFF8DC;         /* Cornsilk - groc molt suau */
+  --color-text: #2C2C2C;             /* Gris molt fosc (no negre pur) */
+  --color-text-light: #F8F8F8;       /* Blanc trencat */
+  --color-background: #FDF5E6;       /* Old Lace - fons càlid */
+  --color-card-bg: #FAF0E6;          /* Linen - lleugerament més fosc */
+  --color-input-bg: #FFF8DC;         /* Cornsilk - groc molt suau */
 
-  /* ➡️ NOU: Variable per a titulars (per defecte, igual que primary) */
+  /* ➡️ AFEGIT: Variable per a titulars (per defecte, igual que primary) */
   --color-heading: var(--color-primary);
   /* ------------------------------------------------------------------- */
 
   /* Colors de tags/metadades (harmonitzats) */
-  --color-tag-instrument: #4682B4;   /* Acer blau */
+  --color-tag-instrument: #4682B4;   /* Acer blau */
   --color-tag-instrument-bg: rgba(70, 130, 180, 0.1);
-  --color-tag-location: #6A5ACD;     /* Slate blue */
+  --color-tag-location: #6A5ACD;     /* Slate blue */
   --color-tag-location-bg: rgba(106, 90, 205, 0.1);
-  --color-tag-duration: #DAA520;     /* Daurat */
+  --color-tag-duration: #DAA520;     /* Daurat */
   --color-tag-duration-bg: rgba(218, 165, 32, 0.1);
-  --color-tag-difficulty: #DC143C;   /* Carmesí */
+  --color-tag-difficulty: #DC143C;   /* Carmesí */
   --color-tag-difficulty-bg: rgba(220, 20, 60, 0.1);
-  --color-tag-genere: #228B22;       /* Verd bosc */
+  --color-tag-genere: #228B22;       /* Verd bosc */
   --color-tag-genere-bg: rgba(34, 139, 34, 0.1);
 
   /* Colors auxiliars */
-  --muted-border: rgba(139, 69, 19, 0.15);    /* Basat en primary */
-  --muted-overlay: rgba(47, 79, 79, 0.7);     /* Basat en highlight */
-  --modal-bg: rgba(47, 79, 79, 0.9);          /* Basat en highlight */
+  --muted-border: rgba(139, 69, 19, 0.15);    /* Basat en primary */
+  --muted-overlay: rgba(47, 79, 79, 0.7);     /* Basat en highlight */
+  --modal-bg: rgba(47, 79, 79, 0.9);          /* Basat en highlight */
 
   /* Resta de variables es mantenen igual... */
   --font-base: "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -67,16 +67,14 @@
     --color-card-bg: #2D2D2D;
     --color-text: #E8E8E8;
     --color-input-bg: #3A3A3A;
-    --muted-border: rgba(210, 105, 30, 0.2);
+    --muted-border: rgba(210, 105, 30, 0.2);  /* Basat en secondary */
     --muted-overlay: rgba(0, 0, 0, 0.7);
-    --color-highlight: #FFD700; 
-
-    /* ➡️ CORRECCIÓ 1: Redefinim color primary per tenir un color de vora/accent que sigui visible */
-    --color-primary: var(--color-secondary); /* Utilitzem el taronja #D2691E, que és visible */
+    --color-highlight: #FFD700;               /* Daurat per contrast (mantingut) */
     
-    /* ➡️ CORRECCIÓ 2: Definim el color dels titulars amb el Daurat d'alt contrast */
-    --color-heading: var(--color-highlight); 
-    
+    /* ➡️ MODIFICAT: Definim el color dels titulars amb el Daurat d'alt contrast */
+    --color-heading: var(--color-highlight);
+    /* ------------------------------------------------------------------- */
+       
     /* Tags en mode fosc (més suaus) */
     --color-tag-instrument-bg: rgba(70, 130, 180, 0.2);
     --color-tag-location-bg: rgba(106, 90, 205, 0.2);
@@ -121,7 +119,7 @@ body {
 h1, h2, h3 {
   line-height: 1.3;
   margin-bottom: var(--spacing-sm);
-  color: var(--color-heading); /* ⬅️ Titulars en Daurat (#FFD700) en mode fosc */
+  color: var(--color-heading); /* ⬅️ MODIFICAT: Utilitza la variable dinàmica */
 }
 
 h1 {
@@ -154,13 +152,13 @@ a:focus-visible {
 }
 
 /* Llistes */
-ul, ol { 
-  padding-left: var(--spacing-md); 
-  margin-bottom: var(--spacing-md); 
+ul, ol { 
+  padding-left: var(--spacing-md); 
+  margin-bottom: var(--spacing-md); 
 }
 
-li { 
-  margin-bottom: var(--spacing-xs); 
+li { 
+  margin-bottom: var(--spacing-xs); 
 }
 
 /* Focus visible global */
@@ -184,12 +182,12 @@ li { 
   animation: fadeIn 0.5s ease-out;
 }
 
-.container + .container { 
-  margin-top: clamp(var(--spacing-sm), 4vw, var(--spacing-xl)); 
+.container + .container { 
+  margin-top: clamp(var(--spacing-sm), 4vw, var(--spacing-xl)); 
 }
 
-.container:last-of-type { 
-  margin-bottom: var(--spacing-lg); 
+.container:last-of-type { 
+  margin-bottom: var(--spacing-lg); 
 }
 
 
@@ -217,7 +215,7 @@ li { 
 #titol-contacte {
   text-align: center;
   margin-bottom: var(--spacing-sm);
-  color: var(--color-heading); /* ⬅️ Utilitza Daurat en mode fosc */
+  color: var(--color-heading); /* ⬅️ MODIFICAT: Utilitza la variable dinàmica */
 }
 
 #titol-contacte {
@@ -252,7 +250,7 @@ li { 
   border-radius: 25px;
   font-weight: 600;
   color: var(--color-primary);
-  background: var(--color-card-bg); /* MANTÉ fons clar/fosc segons mode */
+  background: var(--color-card-bg);
   cursor: pointer;
   transition: var(--transition-fast);
 }
@@ -288,14 +286,16 @@ li { 
 
 .video-card,
 .partitura-card {
-  /* @extend .card; */
+  /* No es pot utilitzar @extend sense pre-processador com SASS. 
+     Mantenim el codi com està, ja que la funcionalitat és mínima i 
+     la base està a .card */
 }
 
 /* ==========================================================================
   8. IMATGES (Home)
   ========================================================================== */
-.imatge-section { 
-  margin-bottom: var(--spacing-lg); 
+.imatge-section { 
+  margin-bottom: var(--spacing-lg); 
 }
 
 .imatge-section img {
@@ -340,13 +340,13 @@ li { 
   outline-offset: 2px;
 }
 
-.video-info { 
-  padding: var(--spacing-md); 
+.video-info { 
+  padding: var(--spacing-md); 
 }
 
 .video-info h3 {
   margin-bottom: var(--spacing-sm);
-  color: var(--color-heading); /* ⬅️ Utilitza Daurat en mode fosc */
+  color: var(--color-heading); /* ⬅️ MODIFICAT: Utilitza la variable dinàmica */
   font-size: 1.3rem;
   line-height: 1.3;
 }
@@ -368,25 +368,25 @@ li { 
   font-weight: 600;
 }
 
-.video-instrument { 
-  background: var(--color-tag-instrument-bg); 
-  color: var(--color-tag-instrument); 
+.video-instrument { 
+  background: var(--color-tag-instrument-bg); 
+  color: var(--color-tag-instrument); 
 }
 
-.video-ubicacio { 
-  background: var(--color-tag-location-bg); 
-  color: var(--color-tag-location); 
+.video-ubicacio { 
+  background: var(--color-tag-location-bg); 
+  color: var(--color-tag-location); 
 }
 
-.video-duracio { 
-  background: var(--color-tag-duration-bg); 
-  color: var(--color-tag-duration); 
+.video-duracio { 
+  background: var(--color-tag-duration-bg); 
+  color: var(--color-tag-duration); 
 }
 
-.video-descripcio { 
-  color: var(--color-secondary); 
-  margin-bottom: var(--spacing-md); 
-  line-height: 1.5; 
+.video-descripcio { 
+  color: var(--color-secondary); 
+  margin-bottom: var(--spacing-md); 
+  line-height: 1.5; 
 }
 
 
@@ -400,9 +400,9 @@ li { 
   margin-bottom: var(--spacing-lg);
 }
 
-.partitura-imatge-container { 
-  position: relative; 
-  overflow: hidden; 
+.partitura-imatge-container { 
+  position: relative; 
+  overflow: hidden; 
   height: 290px; /* Alçada fixa per a totes les imatges */
 }
 
@@ -414,8 +414,8 @@ li { 
   transform: translateZ(0);
 }
 
-.partitura-card:hover .partitura-imatge-container img { 
-  transform: scale(1.05); 
+.partitura-card:hover .partitura-imatge-container img { 
+  transform: scale(1.05); 
 }
 
 .partitura-overlay {
@@ -429,8 +429,8 @@ li { 
   transition: opacity 0.25s ease;
 }
 
-.partitura-card:hover .partitura-overlay { 
-  opacity: 1; 
+.partitura-card:hover .partitura-overlay { 
+  opacity: 1; 
 }
 
 .boto-ampliar {
@@ -448,25 +448,25 @@ li { 
 }
 
 .boto-ampliar:hover,
-.boto-ampliar:focus-visible { 
+.boto-ampliar:focus-visible { 
   background: var(--color-accent-700); /* Assegura el color hover */
-  transform: scale(1.1); 
+  transform: scale(1.1); 
 }
 
-.partitura-info { 
-  padding: var(--spacing-md); 
+.partitura-info { 
+  padding: var(--spacing-md); 
 }
 
 .partitura-info h2 {
   margin-bottom: var(--spacing-xs);
-  color: var(--color-heading); /* ⬅️ Utilitza Daurat en mode fosc */
+  color: var(--color-heading); /* ⬅️ MODIFICAT: Utilitza la variable dinàmica */
   font-size: 1.0rem;
 }
 
-.partitura-metadades { 
-  display: flex; 
-  flex-wrap: wrap; 
-  gap: var(--spacing-xs); 
+.partitura-metadades { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: var(--spacing-xs); 
   margin-bottom: var(--spacing-xs);
 }
 
@@ -479,24 +479,24 @@ li { 
   font-weight: 600;
 }
 
-.partitura-instrument { 
-  background: var(--color-tag-instrument-bg); 
-  color: var(--color-tag-instrument); 
+.partitura-instrument { 
+  background: var(--color-tag-instrument-bg); 
+  color: var(--color-tag-instrument); 
 }
 
-.partitura-dificultat { 
-  background: var(--color-tag-difficulty-bg); 
-  color: var(--color-tag-difficulty); 
+.partitura-dificultat { 
+  background: var(--color-tag-difficulty-bg); 
+  color: var(--color-tag-difficulty); 
 }
 
-.partitura-genere { 
-  background: var(--color-tag-genere-bg); 
-  color: var(--color-tag-genere); 
+.partitura-genere { 
+  background: var(--color-tag-genere-bg); 
+  color: var(--color-tag-genere); 
 }
 
-.partitura-descripcio { 
-  color: var(--color-secondary); 
-  margin-bottom: var(--spacing-xs); 
+.partitura-descripcio { 
+  color: var(--color-secondary); 
+  margin-bottom: var(--spacing-xs); 
   line-height: 1.5;
   font-size: 0.9rem;
 }
@@ -550,9 +550,9 @@ li { 
 }
 
 .modal-tanca:hover,
-.modal-tanca:focus-visible { 
-  background: var(--color-accent-700); 
-  transform: scale(1.1); 
+.modal-tanca:focus-visible { 
+  background: var(--color-accent-700); 
+  transform: scale(1.1); 
 }
 
 
@@ -569,29 +569,15 @@ li { 
 
 .contacte-item {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  flex-direction: column; /* Canviem a columna per centrar-ho tot */
+  align-items: center;    /* Centrem horitzontalment */
+  text-align: center;     /* Centrem el text */
   gap: var(--spacing-sm);
   padding: var(--spacing-md);
-  /* Utilitza var(--color-card-bg) o un rgba amb color-text per transparència controlada en mode fosc */
-  background: rgba(255, 255, 255, 0.1); 
+  background: rgba(255, 255, 255, 0.1);
   border-radius: var(--radius);
   transition: var(--transition);
 }
-
-@media (prefers-color-scheme: dark) {
-  .contacte-item {
-     /* Fons lleugerament transparent sobre el fons del container fosc */
-    background: rgba(255, 255, 255, 0.05); 
-  }
-
-  .contacte-item:hover {
-     background: rgba(255, 255, 255, 0.1);
-     transform: translateY(-2px);
-  }
-}
-
 
 .contacte-item:hover {
   background: rgba(255, 255, 255, 0.2);
@@ -599,21 +585,21 @@ li { 
 }
 
 .contacte-item i {
-  font-size: 2rem;
-  color: var(--color-primary); /* ⬅️ Utilitza el Primary redefinit (Taronja) en mode fosc */
-  margin-top: 0;
-  width: auto;
+  font-size: 2rem;        /* Mica més gran per millor visibilitat */
+  color: var(--color-primary);
+  margin-top: 0;          /* Eliminem el margin-top anterior */
+  width: auto;            /* Eliminem l'amplada fixa */
 }
 
 .contacte-item div {
   flex: 1;
-  width: 100%;
+  width: 100%;            /* Assegurem que ocupi tot l'amplada */
 }
 
 .contacte-item h3 {
   margin: 0 0 var(--spacing-xs) 0;
   font-size: 1.1rem;
-  color: var(--color-heading); /* ⬅️ Utilitza Daurat en mode fosc */
+  color: var(--color-heading); /* ⬅️ MODIFICAT: Utilitza la variable dinàmica */
 }
 
 .contacte-item p {
@@ -637,59 +623,59 @@ li { 
   11. RESPONSIVITAT
   ========================================================================== */
 @media (max-width: 768px) {
-  body { 
-    font-size: 16px; 
+  body { 
+    font-size: 16px; 
   }
-   
-  .container { 
-    padding: var(--spacing-sm); 
-    border-radius: var(--radius-sm); 
-    max-width: 95%; 
+   
+  .container { 
+    padding: var(--spacing-sm); 
+    border-radius: var(--radius-sm); 
+    max-width: 95%; 
   }
-   
-  h1 { 
-    font-size: clamp(1.6rem, 5vw, 2rem); 
+   
+  h1 { 
+    font-size: clamp(1.6rem, 5vw, 2rem); 
   }
-   
-  h2 { 
-    font-size: 1.5rem; 
+   
+  h2 { 
+    font-size: 1.5rem; 
   }
-   
-  h3 { 
-    font-size: 1.2rem; 
-  }
-
-  .filtres-videos, 
-  .filtres-partitures { 
-    gap: 0.8rem; 
-  }
-   
-  .filtre-boto { 
-    padding: 0.5rem 1rem; 
-    font-size: 0.9rem; 
+   
+  h3 { 
+    font-size: 1.2rem; 
   }
 
-  .galeria-videos { 
-    grid-template-columns: 1fr; 
-    gap: var(--spacing-lg); 
+  .filtres-videos, 
+  .filtres-partitures { 
+    gap: 0.8rem; 
   }
-   
-  .video-info { 
-    padding: var(--spacing-sm); 
-  }
-   
-  .video-info h2 { 
-    font-size: 1.1rem; 
+   
+  .filtre-boto { 
+    padding: 0.5rem 1rem; 
+    font-size: 0.9rem; 
   }
 
-  .galeria-partitures { 
-    grid-template-columns: 1fr; 
-    gap: var(--spacing-md); 
+  .galeria-videos { 
+    grid-template-columns: 1fr; 
+    gap: var(--spacing-lg); 
   }
-   
-  .modal-contingut { 
-    max-width: 95%; 
-    max-height: 95%; 
+   
+  .video-info { 
+    padding: var(--spacing-sm); 
+  }
+   
+  .video-info h2 { 
+    font-size: 1.1rem; 
+  }
+
+  .galeria-partitures { 
+    grid-template-columns: 1fr; 
+    gap: var(--spacing-md); 
+  }
+   
+  .modal-contingut { 
+    max-width: 95%; 
+    max-height: 95%; 
   }
 
   /* Responsivitat per a la secció de contacte - simplificada */
@@ -697,48 +683,48 @@ li { 
     grid-template-columns: 1fr;
     gap: var(--spacing-sm);
   }
-   
+   
   .contacte-item {
     padding: var(--spacing-md); /* Mantenim el padding consistent */
   }
-   
+   
   .contacte-item i {
     font-size: 1.8rem; /* Mica més petit a mòbil però manté proporció */
   }
 }
 
 @media (max-width: 480px) {
-  .video-metadades { 
-    flex-direction: column; 
-    align-items: flex-start; 
+  .video-metadades { 
+    flex-direction: column; 
+    align-items: flex-start; 
   }
-   
-  .video-info { 
-    padding: var(--spacing-sm); 
+   
+  .video-info { 
+    padding: var(--spacing-sm); 
   }
-   
-  .galeria-videos { 
-    gap: var(--spacing-md); 
+   
+  .galeria-videos { 
+    gap: var(--spacing-md); 
   }
 
-  .partitura-metadades { 
-    flex-direction: column; 
-    align-items: flex-start; 
+  .partitura-metadades { 
+    flex-direction: column; 
+    align-items: flex-start; 
   }
-   
-  .partitura-info { 
-    padding: var(--spacing-sm); 
+   
+  .partitura-info { 
+    padding: var(--spacing-sm); 
   }
-   
-  .partitura-info h2 { 
-    font-size: 1.1rem; 
+   
+  .partitura-info h2 { 
+    font-size: 1.1rem; 
   }
 
   /* Contacte a mòbils molt petits - ja està centrat, només ajustem espaiat */
   .contacte-item {
     padding: var(--spacing-sm);
   }
-   
+   
   .contacte-item i {
     font-size: 1.6rem;
   }
@@ -748,13 +734,13 @@ li { 
   12. ANIMACIONS
   ========================================================================== */
 @keyframes fadeIn {
-  from { 
-    opacity: 0; 
-    transform: translateY(20px); 
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
   }
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
   }
 }
 
@@ -768,11 +754,11 @@ li { 
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-   
+   
   html {
     scroll-behavior: auto;
   }
-   
+   
   .card,
   .video-card,
   .partitura-card,
