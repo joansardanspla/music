@@ -2,74 +2,77 @@
   1. VARIABLES I CONFIGURACIÓ GLOBAL (Amb Tags Modulars)
   ========================================================================== */
 :root {
-  /* Colors (semàntics) */
-  --color-primary: goldenrod;
-  --color-primary-600: #b8860b;
-  --color-secondary: peru;
-  --color-accent: crimson;
-  --color-accent-700: #c0392b;
-  --color-highlight: black;
+  /* Colors principals (paleta harmònica) */
+  --color-primary: #8B4513;          /* Marró sienna - més càlid i natural */
+  --color-primary-600: #654321;      /* Marró fosc */
+  --color-primary-300: #A0522D;      /* Marró mitjà */
+  --color-secondary: #D2691E;        /* Taronja chocolate - complementari */
+  --color-secondary-600: #B8860B;    /* Daurat fosc */
+  --color-accent: #CD5C5C;           /* Vermell indi - to càlid */
+  --color-accent-700: #B22222;       /* Vermell foc */
+  --color-highlight: #2F4F4F;        /* Gris pissarra fosc */
+  
+  /* Colors neutres i de fons */
+  --color-text: #2C2C2C;             /* Gris molt fosc (no negre pur) */
+  --color-text-light: #F8F8F8;       /* Blanc trencat */
+  --color-background: #FDF5E6;       /* Old Lace - fons càlid */
+  --color-card-bg: #FAF0E6;          /* Linen - lleugerament més fosc */
+  --color-input-bg: #FFF8DC;         /* Cornsilk - groc molt suau */
 
-  /* Text i fons */
-  --color-text: #000;
-  --color-text-light: #fff;
-  --color-background: #f5f5dc;
-  --color-card-bg: #eee8aa;
-  --color-input-bg: #f8f9fa;
+  /* Colors de tags/metadades (harmonitzats) */
+  --color-tag-instrument: #4682B4;   /* Acer blau */
+  --color-tag-instrument-bg: rgba(70, 130, 180, 0.1);
+  --color-tag-location: #6A5ACD;     /* Slate blue */
+  --color-tag-location-bg: rgba(106, 90, 205, 0.1);
+  --color-tag-duration: #DAA520;     /* Daurat */
+  --color-tag-duration-bg: rgba(218, 165, 32, 0.1);
+  --color-tag-difficulty: #DC143C;   /* Carmesí */
+  --color-tag-difficulty-bg: rgba(220, 20, 60, 0.1);
+  --color-tag-genere: #228B22;       /* Verd bosc */
+  --color-tag-genere-bg: rgba(34, 139, 34, 0.1);
 
-  /* Contrastos auxiliars */
-  --muted-border: rgba(0,0,0,0.1);
-  --muted-overlay: rgba(0,0,0,0.7);
+  /* Colors auxiliars */
+  --muted-border: rgba(139, 69, 19, 0.15);    /* Basat en primary */
+  --muted-overlay: rgba(47, 79, 79, 0.7);     /* Basat en highlight */
+  --modal-bg: rgba(47, 79, 79, 0.9);          /* Basat en highlight */
 
-  /* Tipografia i mides (responsive) */
+  /* Resta de variables es mantenen igual... */
   --font-base: "Segoe UI", system-ui, -apple-system, sans-serif;
   --font-size-base: clamp(16px, 1.1vw, 18px);
   --line-height-base: 1.7;
   --h1-size: clamp(1.8rem, 3.6vw, 2.2rem);
   --h2-size: clamp(1.4rem, 2.6vw, 1.8rem);
   --h3-size: clamp(1.1rem, 2vw, 1.4rem);
-
-  /* Geometria i efectes */
   --radius: 12px;
   --radius-sm: 8px;
-  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 8px 15px rgba(0, 0, 0, 0.15);
+  --shadow-sm: 0 4px 6px rgba(139, 69, 19, 0.1);
+  --shadow-md: 0 8px 15px rgba(139, 69, 19, 0.15);
   --transition-fast: transform 0.18s ease, box-shadow 0.18s ease;
   --transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
-  
-  /* Variables de tags/metadades */
-  --color-tag-instrument: #3498db;
-  --color-tag-instrument-bg: rgba(52, 152, 219, 0.08);
-  --color-tag-location: #9b59b6;
-  --color-tag-location-bg: rgba(155, 89, 182, 0.08);
-  --color-tag-duration: #f1c40f;
-  --color-tag-duration-bg: rgba(241, 196, 15, 0.08);
-  --color-tag-difficulty: var(--color-accent);
-  --color-tag-difficulty-bg: rgba(231, 76, 60, 0.08);
-  --color-tag-genere: #2ecc71;
-  --color-tag-genere-bg: rgba(46, 204, 113, 0.08);
-
-  /* Variables de espaiat */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
   --spacing-lg: 2rem;
   --spacing-xl: 2.5rem;
-
-  /* Colors específics */
-  --modal-bg: rgba(0,0,0,0.9);
 }
 
-/* Mode fosc automàtic */
+/* Mode fosc automàtic (també harmonitzat) */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: #0f1112;
-    --color-card-bg: #121416;
-    --color-text: #f8f9fa;
-    --color-input-bg: #212529;
-    --muted-border: rgba(255,255,255,0.06);
-    --muted-overlay: rgba(0,0,0,0.6);
-    --color-highlight: #fff;
+    --color-background: #1A1A1A;
+    --color-card-bg: #2D2D2D;
+    --color-text: #E8E8E8;
+    --color-input-bg: #3A3A3A;
+    --muted-border: rgba(210, 105, 30, 0.2);  /* Basat en secondary */
+    --muted-overlay: rgba(0, 0, 0, 0.7);
+    --color-highlight: #FFD700;               /* Daurat per contrast */
+    
+    /* Tags en mode fosc (més suaus) */
+    --color-tag-instrument-bg: rgba(70, 130, 180, 0.2);
+    --color-tag-location-bg: rgba(106, 90, 205, 0.2);
+    --color-tag-duration-bg: rgba(218, 165, 32, 0.2);
+    --color-tag-difficulty-bg: rgba(220, 20, 60, 0.2);
+    --color-tag-genere-bg: rgba(34, 139, 34, 0.2);
   }
 }
 
