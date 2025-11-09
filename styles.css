@@ -179,34 +179,6 @@ li {
   margin-bottom: var(--spacing-lg); 
 }
 
-/* Footer */
-footer {
-  margin-top: auto;
-  text-align: center;
-  padding: var(--spacing-md) 0;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  color: var(--color-text-light);
-}
-
-footer .container {
-  background: transparent;
-  box-shadow: none;
-  max-width: 1000px;
-}
-
-footer p { 
-  margin-bottom: var(--spacing-xs); 
-}
-
-footer a {
-  color: var(--color-highlight);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-footer a:hover { 
-  text-decoration: underline; 
-}
 
 /* ==========================================================================
   4. ACCESSIBILITAT
