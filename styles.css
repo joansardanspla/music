@@ -594,37 +594,7 @@ li {
   line-height: 1.4;
 }
 
-.contacte-item a {
-  color: var(--color-accent);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.contacte-item a:hover {
-  color: var(--color-accent-700);
-  text-decoration: underline;
-}
-
-/* Responsivitat per a la secció de contacte */
-@media (max-width: 768px) {
-  .info-contacte {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-sm);
-  }
-  
-  .contacte-item {
-    padding: var(--spacing-sm);
-  }
-  
-  .contacte-item i {
-    font-size: 1.3rem;
-    width: 25px;
-  }
-  
-  .contacte-item h3 {
-    font-size: 1rem;
-  }
-}
+.contacte-item
 
 /* ==========================================================================
   11. RESPONSIVITAT
@@ -684,6 +654,25 @@ li {
     max-width: 95%; 
     max-height: 95%; 
   }
+
+  /* Responsivitat per a la secció de contacte */
+  .info-contacte {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+  
+  .contacte-item {
+    padding: var(--spacing-sm);
+  }
+  
+  .contacte-item i {
+    font-size: 1.3rem;
+    width: 25px;
+  }
+  
+  .contacte-item h3 {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -716,6 +705,17 @@ li {
   
   .partitura-info h2 { 
     font-size: 1.1rem; 
+  }
+
+  /* Responsivitat addicional per a mòbils petits */
+  .contacte-item {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-xs);
+  }
+  
+  .contacte-item i {
+    margin-top: 0;
   }
 }
 
