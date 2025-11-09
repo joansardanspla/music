@@ -559,7 +559,9 @@ li {
 
 .contacte-item {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column; /* Canviem a columna per centrar-ho tot */
+  align-items: center;    /* Centrem horitzontalment */
+  text-align: center;     /* Centrem el text */
   gap: var(--spacing-sm);
   padding: var(--spacing-md);
   background: rgba(255, 255, 255, 0.1);
@@ -573,16 +575,15 @@ li {
 }
 
 .contacte-item i {
-  font-size: 1.5rem;
+  font-size: 2rem;        /* Mica més gran per millor visibilitat */
   color: var(--color-primary);
-  margin-top: 0.2rem;
-  flex-shrink: 0;
-  width: 30px;
-  text-align: center;
+  margin-top: 0;          /* Eliminem el margin-top anterior */
+  width: auto;            /* Eliminem l'amplada fixa */
 }
 
 .contacte-item div {
   flex: 1;
+  width: 100%;            /* Assegurem que ocupi tot l'amplada */
 }
 
 .contacte-item h3 {
@@ -597,7 +598,16 @@ li {
   line-height: 1.4;
 }
 
-.contacte-item
+.contacte-item a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contacte-item a:hover {
+  color: var(--color-accent-700);
+  text-decoration: underline;
+}
 
 /* ==========================================================================
   11. RESPONSIVITAT
@@ -658,23 +668,18 @@ li {
     max-height: 95%; 
   }
 
-  /* Responsivitat per a la secció de contacte */
+  /* Responsivitat per a la secció de contacte - simplificada */
   .info-contacte {
     grid-template-columns: 1fr;
     gap: var(--spacing-sm);
   }
   
   .contacte-item {
-    padding: var(--spacing-sm);
+    padding: var(--spacing-md); /* Mantenim el padding consistent */
   }
   
   .contacte-item i {
-    font-size: 1.3rem;
-    width: 25px;
-  }
-  
-  .contacte-item h3 {
-    font-size: 1rem;
+    font-size: 1.8rem; /* Mica més petit a mòbil però manté proporció */
   }
 }
 
@@ -691,11 +696,6 @@ li {
   .galeria-videos { 
     gap: var(--spacing-md); 
   }
-  
-  .boto-youtube { 
-    padding: 0.7rem 1.2rem; 
-    font-size: 0.9rem; 
-  }
 
   .partitura-metadades { 
     flex-direction: column; 
@@ -710,15 +710,13 @@ li {
     font-size: 1.1rem; 
   }
 
-  /* Responsivitat addicional per a mòbils petits */
+  /* Contacte a mòbils molt petits - ja està centrat, només ajustem espaiat */
   .contacte-item {
-    flex-direction: column;
-    text-align: center;
-    gap: var(--spacing-xs);
+    padding: var(--spacing-sm);
   }
   
   .contacte-item i {
-    margin-top: 0;
+    font-size: 1.6rem;
   }
 }
 
