@@ -542,6 +542,90 @@ li {
   transform: scale(1.1); 
 }
 
+
+/* ==========================================================================
+  13. SECCIÓ DE CONTACTE (NOVA)
+  ========================================================================== */
+
+.info-contacte {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.contacte-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.contacte-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.contacte-item i {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+  width: 30px;
+  text-align: center;
+}
+
+.contacte-item div {
+  flex: 1;
+}
+
+.contacte-item h3 {
+  margin: 0 0 var(--spacing-xs) 0;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
+
+.contacte-item p {
+  margin: 0;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+.contacte-item a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contacte-item a:hover {
+  color: var(--color-accent-700);
+  text-decoration: underline;
+}
+
+/* Responsivitat per a la secció de contacte */
+@media (max-width: 768px) {
+  .info-contacte {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+  
+  .contacte-item {
+    padding: var(--spacing-sm);
+  }
+  
+  .contacte-item i {
+    font-size: 1.3rem;
+    width: 25px;
+  }
+  
+  .contacte-item h3 {
+    font-size: 1rem;
+  }
+}
+
 /* ==========================================================================
   11. RESPONSIVITAT
   ========================================================================== */
