@@ -19,7 +19,7 @@
   --color-card-bg: #FAF0E6;          /* Linen - lleugerament més fosc */
   --color-input-bg: #FFF8DC;         /* Cornsilk - groc molt suau */
 
-  /* ➡️ AFEGIT: Variable per a titulars (per defecte, igual que primary) */
+  /* ➡️ NOU: Variable per a titulars (per defecte, igual que primary) */
   --color-heading: var(--color-primary);
   /* ------------------------------------------------------------------- */
 
@@ -67,14 +67,16 @@
     --color-card-bg: #2D2D2D;
     --color-text: #E8E8E8;
     --color-input-bg: #3A3A3A;
-    --muted-border: rgba(210, 105, 30, 0.2);  /* Basat en secondary */
+    --muted-border: rgba(210, 105, 30, 0.2);
     --muted-overlay: rgba(0, 0, 0, 0.7);
-    --color-highlight: #FFD700;               /* Daurat per contrast (mantingut) */
+    --color-highlight: #FFD700; 
+
+    /* ➡️ CORRECCIÓ 1: Redefinim color primary per tenir un color de vora/accent que sigui visible */
+    --color-primary: var(--color-secondary); /* Utilitzem el taronja #D2691E, que és visible */
     
-    /* ➡️ MODIFICAT: Definim el color dels titulars amb el Daurat d'alt contrast */
-    --color-heading: var(--color-highlight);
-    /* ------------------------------------------------------------------- */
-       
+    /* ➡️ CORRECCIÓ 2: Definim el color dels titulars amb el Daurat d'alt contrast */
+    --color-heading: var(--color-highlight); 
+    
     /* Tags en mode fosc (més suaus) */
     --color-tag-instrument-bg: rgba(70, 130, 180, 0.2);
     --color-tag-location-bg: rgba(106, 90, 205, 0.2);
@@ -119,7 +121,7 @@ body {
 h1, h2, h3 {
   line-height: 1.3;
   margin-bottom: var(--spacing-sm);
-  color: var(--color-heading); /* ⬅️ MODIFICAT: Utilitza la variable dinàmica */
+  color: var(--color-heading); /* ⬅️ Titulars en Daurat (#FFD700) en mode fosc */
 }
 
 h1 {
@@ -215,7 +217,7 @@ li { 
 #titol-contacte {
   text-align: center;
   margin-bottom: var(--spacing-sm);
-  color: var(--color-heading); /* ⬅️ MODIFICAT: Utilitza la variable dinàmica */
+  color: var(--color-heading); /* ⬅️ Utilitza Daurat en mode fosc */
 }
 
 #titol-contacte {
@@ -250,7 +252,7 @@ li { 
   border-radius: 25px;
   font-weight: 600;
   color: var(--color-primary);
-  background: var(--color-card-bg);
+  background: var(--color-card-bg); /* MANTÉ fons clar/fosc segons mode */
   cursor: pointer;
   transition: var(--transition-fast);
 }
@@ -286,9 +288,7 @@ li { 
 
 .video-card,
 .partitura-card {
-  /* No es pot utilitzar @extend sense pre-processador com SASS. 
-     Mantenim el codi com està, ja que la funcionalitat és mínima i 
-     la base està a .card */
+  /* @extend .card; */
 }
 
 /* ==========================================================================
@@ -346,7 +346,7 @@ li { 
 
 .video-info h3 {
   margin-bottom: var(--spacing-sm);
-  color: var(--color-heading); /* ⬅️ MODIFICAT: Utilitza la variable dinàmica */
+  color: var(--color-heading); /* ⬅️ Utilitza Daurat en mode fosc */
   font-size: 1.3rem;
   line-height: 1.3;
 }
@@ -459,7 +459,7 @@ li { 
 
 .partitura-info h2 {
   margin-bottom: var(--spacing-xs);
-  color: var(--color-heading); /* ⬅️ MODIFICAT: Utilitza la variable dinàmica */
+  color: var(--color-heading); /* ⬅️ Utilitza Daurat en mode fosc */
   font-size: 1.0rem;
 }
 
@@ -569,15 +569,29 @@ li { 
 
 .contacte-item {
   display: flex;
-  flex-direction: column; /* Canviem a columna per centrar-ho tot */
-  align-items: center;    /* Centrem horitzontalment */
-  text-align: center;     /* Centrem el text */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: var(--spacing-sm);
   padding: var(--spacing-md);
-  background: rgba(255, 255, 255, 0.1);
+  /* Utilitza var(--color-card-bg) o un rgba amb color-text per transparència controlada en mode fosc */
+  background: rgba(255, 255, 255, 0.1); 
   border-radius: var(--radius);
   transition: var(--transition);
 }
+
+@media (prefers-color-scheme: dark) {
+  .contacte-item {
+     /* Fons lleugerament transparent sobre el fons del container fosc */
+    background: rgba(255, 255, 255, 0.05); 
+  }
+
+  .contacte-item:hover {
+     background: rgba(255, 255, 255, 0.1);
+     transform: translateY(-2px);
+  }
+}
+
 
 .contacte-item:hover {
   background: rgba(255, 255, 255, 0.2);
@@ -585,21 +599,21 @@ li { 
 }
 
 .contacte-item i {
-  font-size: 2rem;        /* Mica més gran per millor visibilitat */
-  color: var(--color-primary);
-  margin-top: 0;          /* Eliminem el margin-top anterior */
-  width: auto;            /* Eliminem l'amplada fixa */
+  font-size: 2rem;
+  color: var(--color-primary); /* ⬅️ Utilitza el Primary redefinit (Taronja) en mode fosc */
+  margin-top: 0;
+  width: auto;
 }
 
 .contacte-item div {
   flex: 1;
-  width: 100%;            /* Assegurem que ocupi tot l'amplada */
+  width: 100%;
 }
 
 .contacte-item h3 {
   margin: 0 0 var(--spacing-xs) 0;
   font-size: 1.1rem;
-  color: var(--color-heading); /* ⬅️ MODIFICAT: Utilitza la variable dinàmica */
+  color: var(--color-heading); /* ⬅️ Utilitza Daurat en mode fosc */
 }
 
 .contacte-item p {
