@@ -359,6 +359,7 @@ li {
   gap: var(--spacing-xs);
   margin-bottom: var(--spacing-sm);
   align-items: center;
+  justify-content: center;
 }
 
 .video-instrument,
@@ -472,6 +473,7 @@ li {
   gap: var(--spacing-xs); 
   margin-bottom: var(--spacing-xs);
   align-items: center; /* ⬅️ AFEGIT */
+  justify-content: center;
 }
 
 .partitura-instrument,
