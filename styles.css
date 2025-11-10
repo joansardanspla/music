@@ -352,6 +352,7 @@ li {
   line-height: 1.3;
 }
 
+
 .video-metadades {
   display: flex;
   flex-wrap: wrap;
@@ -363,10 +364,11 @@ li {
 .video-instrument,
 .video-ubicacio,
 .video-duracio {
-  padding: 0.3rem 0.8rem;
+  padding: 0.4rem 0.8rem; /* ⬅️ MODIFICAT: Canviat de 0.3rem a 0.4rem */
   border-radius: 15px;
-  font-size: 0.8rem;
+  font-size: 0.85rem; /* ⬅️ MODIFICAT: Canviat de 0.8rem a 0.85rem */
   font-weight: 600;
+  line-height: 1.2; /* ⬅️ AFEGIT */
 }
 
 .video-instrument { 
@@ -469,15 +471,17 @@ li {
   flex-wrap: wrap; 
   gap: var(--spacing-xs); 
   margin-bottom: var(--spacing-xs);
+  align-items: center; /* ⬅️ AFEGIT */
 }
 
 .partitura-instrument,
 .partitura-dificultat,
 .partitura-genere {
-  padding: 0.3rem 0.8rem; /* Torna al padding original */
+  padding: 0.4rem 0.8rem; /* ⬅️ MODIFICAT: Canviat de 0.3rem a 0.4rem */
   border-radius: 15px;
-  font-size: 0.8rem; /* Torna a la mida original */
+  font-size: 0.85rem; /* ⬅️ MODIFICAT: Canviat de 0.8rem a 0.85rem */
   font-weight: 600;
+  line-height: 1.2; /* ⬅️ AFEGIT */
 }
 
 .partitura-instrument { 
