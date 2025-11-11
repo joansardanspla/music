@@ -209,19 +209,14 @@ li {
 /* ==========================================================================
   5. TÍTOLS I SUBTÍTOLS
   ========================================================================== */
-#titol-audio,
 #titol-videos,
 #titol-partitures,
 #titol-contacte {
   text-align: center;
   margin-bottom: var(--spacing-sm);
-  color: var(--color-heading); /* ⬅️ MODIFICAT: Utilitza la variable dinàmica */
+  color: var(--color-heading); 
 }
 
-#titol-contacte {
-  margin-bottom: var(--spacing-xl);
-  padding-bottom: var(--spacing-sm);
-}
 
 .subtitol {
   max-width: 600px;
@@ -365,11 +360,11 @@ li {
 .video-instrument,
 .video-ubicacio,
 .video-duracio {
-  padding: 0.4rem 0.8rem; /* ⬅️ MODIFICAT: Canviat de 0.3rem a 0.4rem */
+  padding: 0.4rem 0.8rem; 
   border-radius: 15px;
-  font-size: 0.85rem; /* ⬅️ MODIFICAT: Canviat de 0.8rem a 0.85rem */
+  font-size: 0.85rem; 
   font-weight: 600;
-  line-height: 1.2; /* ⬅️ AFEGIT */
+  line-height: 1.2; 
 }
 
 .video-instrument { 
@@ -407,13 +402,13 @@ li {
 .partitura-imatge-container { 
   position: relative; 
   overflow: hidden; 
-  height: 290px; /* Alçada fixa per a totes les imatges */
+  height: 290px; 
 }
 
 .partitura-imatge-container img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Torna a contain per veure la imatge completa */
+  object-fit: contain; 
   transition: transform 0.25s ease;
   transform: translateZ(0);
 }
@@ -442,7 +437,7 @@ li {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: var(--color-accent); /* Assegura el color */
+  background: var(--color-accent); 
   color: white;
   cursor: pointer;
   transition: var(--transition-fast);
@@ -453,7 +448,7 @@ li {
 
 .boto-ampliar:hover,
 .boto-ampliar:focus-visible { 
-  background: var(--color-accent-700); /* Assegura el color hover */
+  background: var(--color-accent-700); 
   transform: scale(1.1); 
 }
 
@@ -463,7 +458,7 @@ li {
 
 .partitura-info h2 {
   margin-bottom: var(--spacing-xs);
-  color: var(--color-heading); /* ⬅️ MODIFICAT: Utilitza la variable dinàmica */
+  color: var(--color-heading); 
   font-size: 1.0rem;
 }
 
@@ -472,18 +467,18 @@ li {
   flex-wrap: wrap; 
   gap: var(--spacing-xs); 
   margin-bottom: var(--spacing-xs);
-  align-items: center; /* ⬅️ AFEGIT */
+  align-items: center; 
   justify-content: center;
 }
 
 .partitura-instrument,
 .partitura-dificultat,
 .partitura-genere {
-  padding: 0.4rem 0.8rem; /* ⬅️ MODIFICAT: Canviat de 0.3rem a 0.4rem */
+  padding: 0.4rem 0.8rem;
   border-radius: 15px;
-  font-size: 0.85rem; /* ⬅️ MODIFICAT: Canviat de 0.8rem a 0.85rem */
+  font-size: 0.85rem;
   font-weight: 600;
-  line-height: 1.2; /* ⬅️ AFEGIT */
+  line-height: 1.2;
 }
 
 .partitura-instrument { 
