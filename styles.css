@@ -703,7 +703,8 @@ li {
 @media (max-width: 480px) {
   .video-metadades { 
     flex-direction: column; 
-    align-items: flex-start; 
+    align-items: center;
+    justify-content: center;
   }
    
   .video-info { 
@@ -716,7 +717,8 @@ li {
 
   .partitura-metadades { 
     flex-direction: column; 
-    align-items: flex-start; 
+    align-items: center; 
+    justify-content: center;
   }
    
   .partitura-info { 
