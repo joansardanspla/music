@@ -16,14 +16,15 @@
     </image:image>
 
     <video:video>
-      <video:thumbnail_loc>URL_DE_LA_MINIATURA_Hhnzpc3yXGg.jpg</video:thumbnail_loc>
+      <video:thumbnail_loc>https://img.youtube.com/vi/Hhnzpc3yXGg/maxresdefault.jpg</video:thumbnail_loc>
       <video:title>Acompanyant el ball (Violí en Flamenc)</video:title>
-      <video:description>Interpretació en grup de Flamenc on el Joan Sardans Pla acompanya al ball amb el violí.</video:description>
-      <video:content_loc>https://www.youtube.com/watch?v=Hhnzpc3yXGg</video:content_loc>
-      <video:embed_loc>https://www.youtube.com/embed/Hhnzpc3yXGg</video:embed_loc>
-      <video:duration>198</video:duration> <video:family_friendly>yes</video:family_friendly>
+      <video:description>Interpretació en grup de Flamenc on el Joan Sardans Pla acompanya el ball amb el violí.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/Hhnzpc3yXGg</video:player_loc>
+      <video:duration>198</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.youtube.com/user/NOM_DE_CANAL">Joan Sardans Pla</video:uploader>
     </video:video>
     
-    </url>
+  </url>
 
 </urlset>
