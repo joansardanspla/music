@@ -2,7 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- Pàgina principal -->
   <url>
     <loc>https://joansardanspla.github.io/music/</loc>
     <lastmod>2025-10-25</lastmod>
@@ -10,7 +9,7 @@
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://joansardanspla.github.io/music/imatges/jo_verd.jpg</image:loc>
-      <image:caption>Pàgina principal - Joan Sardans Pla</image:caption>
+      <image:caption>Joan Sardans Pla - Músic</image:caption>
     </image:image>
   </url>
 
