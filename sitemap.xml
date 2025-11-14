@@ -9,22 +9,32 @@
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
 
+    <!-- IMATGE PRINCIPAL -->
     <image:image>
       <image:loc>https://joansardanspla.github.io/music/imatges/jo_verd.jpg</image:loc>
-      <image:caption>Joan Sardans Pla - Músic tocant el violí</image:caption>
+      <image:caption>Joan Sardans Pla tocant el violí</image:caption>
       <image:title>Joan Sardans Pla - Músic</image:title>
     </image:image>
 
+    <!-- VIDEO 1 -->
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/Hhnzpc3yXGg/maxresdefault.jpg</video:thumbnail_loc>
       <video:title>Acompanyant el ball (Violí en Flamenc)</video:title>
-      <video:description>Interpretació en grup de Flamenc on el Joan Sardans Pla acompanya el ball amb el violí.</video:description>
+      <video:description>Interpretació de Flamenc on Joan Sardans Pla acompanya el ball amb el violí.</video:description>
       <video:player_loc>https://www.youtube.com/embed/Hhnzpc3yXGg</video:player_loc>
       <video:duration>198</video:duration>
       <video:family_friendly>yes</video:family_friendly>
-      <video:uploader info="https://www.youtube.com/user/NOM_DE_CANAL">Joan Sardans Pla</video:uploader>
+      <video:publication_date>2023-01-01</video:publication_date>
+      <video:live>no</video:live>
+
+      <!-- Etiquetes SEO opcionals -->
+      <video:tag>violí</video:tag>
+      <video:tag>flamenco</video:tag>
+      <video:tag>ball</video:tag>
+
+      <video:uploader>Joan Sardans Pla</video:uploader>
     </video:video>
-    
+
   </url>
 
 </urlset>
