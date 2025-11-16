@@ -2,7 +2,6 @@
   1. VARIABLES I CONFIGURACIÓ GLOBAL
   ========================================================================== */
 :root {
-  /* Colors principals (paleta harmònica) */
   --color-primary: #8B4513;
   --color-primary-600: #654321;
   --color-primary-300: #A0522D;
@@ -11,18 +10,15 @@
   --color-accent: #CD5C5C;
   --color-accent-700: #B22222;
   --color-highlight: #2F4F4F;
-  
-  /* Colors neutres i de fons */
+
   --color-text: #2C2C2C;
   --color-text-light: #F8F8F8;
   --color-background: #FDF5E6;
   --color-card-bg: #FAF0E6;
   --color-input-bg: #FFF8DC;
 
-  /* Variable per a titulars */
   --color-heading: var(--color-primary);
 
-  /* Colors de tags/metadades */
   --color-tag-instrument: #4682B4;
   --color-tag-instrument-bg: rgba(70, 130, 180, 0.1);
   --color-tag-location: #6A5ACD;
@@ -34,26 +30,24 @@
   --color-tag-genere: #228B22;
   --color-tag-genere-bg: rgba(34, 139, 34, 0.1);
 
-  /* Colors auxiliars */
   --muted-border: rgba(139, 69, 19, 0.15);
   --muted-overlay: rgba(47, 79, 79, 0.7);
   --modal-bg: rgba(47, 79, 79, 0.9);
 
-  /* Tipografia */
   --font-base: "Segoe UI", system-ui, -apple-system, sans-serif;
   --font-size-base: clamp(16px, 1.1vw, 18px);
   --line-height-base: 1.7;
   --h1-size: clamp(1.8rem, 3.6vw, 2.2rem);
   --h2-size: clamp(1.4rem, 2.6vw, 1.8rem);
   --h3-size: clamp(1.1rem, 2vw, 1.4rem);
-  
-  /* Espaiat i mides */
+
   --radius: 12px;
   --radius-sm: 8px;
   --shadow-sm: 0 4px 6px rgba(139, 69, 19, 0.1);
   --shadow-md: 0 8px 15px rgba(139, 69, 19, 0.15);
   --transition-fast: transform 0.18s ease, box-shadow 0.18s ease;
   --transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
@@ -61,7 +55,7 @@
   --spacing-xl: 2.5rem;
 }
 
-/* Mode fosc automàtic */
+/* Mode fosc */
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: #1A1A1A;
@@ -72,8 +66,7 @@
     --muted-overlay: rgba(0, 0, 0, 0.7);
     --color-highlight: #FFD700;
     --color-heading: var(--color-highlight);
-    
-    /* Tags en mode fosc */
+
     --color-tag-instrument-bg: rgba(70, 130, 180, 0.2);
     --color-tag-location-bg: rgba(106, 90, 205, 0.2);
     --color-tag-duration-bg: rgba(218, 165, 32, 0.2);
@@ -83,7 +76,7 @@
 }
 
 /* ==========================================================================
-  2. RESET I BASE
+  2. RESET
   ========================================================================== */
 *,
 *::before,
@@ -109,8 +102,6 @@ body {
   line-height: var(--line-height-base);
   color: var(--color-text);
   background: var(--color-background);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ==========================================================================
@@ -122,101 +113,45 @@ h1, h2, h3 {
   color: var(--color-heading);
 }
 
-h1 {
-  display: inline-block;
-  font-size: var(--h1-size);
-  padding-bottom: var(--spacing-xs);
-}
-
-h2 {
-  font-size: var(--h2-size);
-  padding-bottom: 0.3rem;
-}
-
-h3 {
-  font-size: var(--h3-size);
-  margin-top: var(--spacing-lg);
-}
+h1 { font-size: var(--h1-size); display: inline-block; padding-bottom: var(--spacing-xs); }
+h2 { font-size: var(--h2-size); padding-bottom: .3rem; }
+h3 { font-size: var(--h3-size); margin-top: var(--spacing-lg); }
 
 a {
   color: var(--color-accent);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color .2s ease;
 }
+a:hover, a:focus-visible { color: var(--color-accent-700); }
 
-a:hover,
-a:focus-visible {
-  color: var(--color-accent-700);
-  outline: none;
-}
-
-ul, ol { 
-  padding-left: var(--spacing-md); 
-  margin-bottom: var(--spacing-md); 
-}
-
-li { 
-  margin-bottom: var(--spacing-xs); 
-}
-
-:focus-visible {
-  outline: 3px solid var(--color-accent);
-  outline-offset: 2px;
-}
+ul, ol { padding-left: var(--spacing-md); margin-bottom: var(--spacing-md); }
+li { margin-bottom: var(--spacing-xs); }
 
 /* ==========================================================================
   4. LAYOUT I CONTENIDORS
   ========================================================================== */
-/* ==========================================================================
-  4. LAYOUT I CONTENIDORS - MILLORA PER PANTALLES GRANS
-  ========================================================================== */
 .container {
-  max-width: min(1200px, 95%); /* Augmentat de 800px a 1200px */
+  max-width: min(1200px, 95%);
   margin-inline: auto;
   margin-top: clamp(var(--spacing-md), 3vw, var(--spacing-lg));
+  padding: var(--spacing-lg);
   text-align: center;
-  padding: var(--spacing-lg); /* Més padding en pantalles grans */
   background: var(--color-card-bg);
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
-  animation: fadeIn 0.5s ease-out;
+  animation: fadeIn .5s ease-out;
 }
 
-/* Contenidor extra ample per pantalles molt grans */
-@media (min-width: 1400px) {
-  .container {
-    max-width: min(1400px, 95%);
-    padding: var(--spacing-xl);
-  }
-}
-
-/* Contenidor més estret per pantalles mitjanes */
-@media (max-width: 1200px) {
-  .container {
-    max-width: min(1000px, 95%);
-  }
-}
-.container + .container { 
-  margin-top: clamp(var(--spacing-sm), 4vw, var(--spacing-xl)); 
-}
-
-.container:last-of-type { 
-  margin-bottom: var(--spacing-lg); 
-}
+.container + .container { margin-top: clamp(var(--spacing-sm), 4vw, var(--spacing-xl)); }
+.container:last-of-type { margin-bottom: var(--spacing-lg); }
 
 /* ==========================================================================
   5. ACCESSIBILITAT
   ========================================================================== */
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
+  position: absolute; width: 1px; height: 1px;
+  margin: -1px; overflow: hidden;
   clip: rect(0,0,0,0);
-  white-space: nowrap;
-  border: 0;
 }
 
 /* ==========================================================================
@@ -227,13 +162,11 @@ li {
 #titol-contacte {
   text-align: center;
   margin-bottom: var(--spacing-sm);
-  color: var(--color-heading);
 }
 
 .subtitol {
   max-width: 600px;
-  margin-inline: auto;
-  margin-bottom: var(--spacing-xl);
+  margin: 0 auto var(--spacing-xl);
   text-align: center;
   font-size: 1.1rem;
   color: var(--color-secondary);
@@ -252,7 +185,7 @@ li {
 }
 
 .filtre-boto {
-  padding: 0.6rem 1.2rem;
+  padding: .6rem 1.2rem;
   border: 2px solid var(--color-primary);
   border-radius: 25px;
   font-weight: 600;
@@ -291,77 +224,67 @@ li {
   box-shadow: var(--shadow-md);
 }
 
-.video-card,
-.partitura-card {
-  /* Base comuna per a totes les targetes */
+/* Tag unificat reusable */
+.tag {
+  padding: .4rem .8rem;
+  border-radius: 15px;
+  font-size: .85rem;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 /* ==========================================================================
   9. IMATGE PRINCIPAL
   ========================================================================== */
-.imatge-section { 
-  margin-bottom: var(--spacing-lg); 
-}
+.imatge-section { margin-bottom: var(--spacing-lg); }
 
 .imatge-section img {
-  display: block;
   width: 100%;
   height: auto;
   border-radius: var(--radius);
   transition: var(--transition);
 }
-
 .imatge-section img:hover {
   transform: scale(1.01);
   box-shadow: var(--shadow-md);
 }
 
 /* ==========================================================================
-  10. GALERIA DE VÍDEOS (MILLORA: 3 COLUMNES A PANTALLES GRANS)
+  10. GALERIA DE VÍDEOS
   ========================================================================== */
 .galeria-videos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(330px,1fr));
   gap: var(--spacing-md);
   margin-bottom: var(--spacing-lg);
 }
 
-/* NOVA MILLORA: 3 columnes a pantalles grans */
 @media (min-width: 1200px) {
   .galeria-videos {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3,1fr);
     gap: var(--spacing-lg);
   }
 }
 
 .video-player {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  position: relative;
+  aspect-ratio: 16/9;
   background: #000;
 }
 
 .video-player iframe {
   width: 100%;
   height: 100%;
-  border: 0;
   border-radius: var(--radius) var(--radius) 0 0;
+  border: 0;
 }
 
-.video-player iframe:focus {
-  outline: 3px solid var(--color-accent);
-  outline-offset: 2px;
-}
-
-.video-info { 
-  padding: var(--spacing-md); 
-}
+.video-info { padding: var(--spacing-md); }
 
 .video-info h3 {
   margin-bottom: var(--spacing-sm);
   color: var(--color-heading);
   font-size: 1.3rem;
-  line-height: 1.3;
 }
 
 .video-metadades {
@@ -369,426 +292,232 @@ li {
   flex-wrap: wrap;
   gap: var(--spacing-xs);
   margin-bottom: var(--spacing-sm);
-  align-items: center;
   justify-content: center;
 }
 
-.video-instrument,
-.video-ubicacio,
-.video-duracio {
-  padding: 0.4rem 0.8rem;
-  border-radius: 15px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  line-height: 1.2;
-}
+/* tags vídeo */
+.video-instrument    { composes: tag; background: var(--color-tag-instrument-bg); color: var(--color-tag-instrument); }
+.video-ubicacio      { composes: tag; background: var(--color-tag-location-bg); color: var(--color-tag-location); }
+.video-duracio       { composes: tag; background: var(--color-tag-duration-bg); color: var(--color-tag-duration); }
 
-.video-instrument { 
-  background: var(--color-tag-instrument-bg); 
-  color: var(--color-tag-instrument); 
-}
-
-.video-ubicacio { 
-  background: var(--color-tag-location-bg); 
-  color: var(--color-tag-location); 
-}
-
-.video-duracio { 
-  background: var(--color-tag-duration-bg); 
-  color: var(--color-tag-duration); 
-}
-
-.video-descripcio { 
-  color: var(--color-secondary); 
-  margin-bottom: var(--spacing-md); 
-  line-height: 1.5; 
+.video-descripcio {
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.5;
 }
 
 /* ==========================================================================
-  11. GALERIA DE PARTITURES (MILLORA: 3 COLUMNES A PANTALLES GRANS)
+  11. GALERIA DE PARTITURES
   ========================================================================== */
 .galeria-partitures {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(330px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(330px,100%),1fr));
   gap: var(--spacing-md);
   margin-bottom: var(--spacing-lg);
 }
 
-/* NOVA MILLORA: 3 columnes a pantalles grans */
 @media (min-width: 1200px) {
   .galeria-partitures {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3,1fr);
     gap: var(--spacing-lg);
   }
 }
 
-.partitura-imatge-container { 
-  position: relative; 
-  overflow: hidden; 
-  height: 290px; 
+.partitura-imatge-container {
+  position: relative;
+  overflow: hidden;
+  height: 290px;
 }
 
 .partitura-imatge-container img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: transform 0.25s ease;
-  transform: translateZ(0);
+  transition: transform .25s ease;
 }
 
-.partitura-card:hover .partitura-imatge-container img { 
-  transform: scale(1.05); 
+.partitura-card:hover .partitura-imatge-container img {
+  transform: scale(1.05);
 }
 
 .partitura-overlay {
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   background: var(--muted-overlay);
   opacity: 0;
-  transition: opacity 0.25s ease;
+  transition: opacity .25s ease;
 }
 
-.partitura-card:hover .partitura-overlay { 
-  opacity: 1; 
-}
+.partitura-card:hover .partitura-overlay { opacity: 1; }
 
 .boto-ampliar {
-  border: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  width:50px; height:50px;
+  border-radius:50%;
   background: var(--color-accent);
-  color: white;
-  cursor: pointer;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  cursor:pointer;
+  border:0;
   transition: var(--transition-fast);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
+.boto-ampliar:hover { background: var(--color-accent-700); transform: scale(1.1); }
 
-.boto-ampliar:hover,
-.boto-ampliar:focus-visible { 
-  background: var(--color-accent-700); 
-  transform: scale(1.1); 
-}
-
-.partitura-info { 
-  padding: var(--spacing-md); 
-}
+.partitura-info { padding:var(--spacing-md); }
 
 .partitura-info h3 {
   margin-bottom: var(--spacing-xs);
-  color: var(--color-heading);
-  font-size: 1.3rem;
+  font-size:1.3rem;
 }
 
-.partitura-metadades { 
-  display: flex; 
-  flex-wrap: wrap; 
-  gap: var(--spacing-xs); 
+/* tags partitures */
+.partitura-metadades {
+  display:flex; flex-wrap:wrap;
+  gap:var(--spacing-xs);
+  margin-bottom:var(--spacing-xs);
+  justify-content:center;
+}
+
+.partitura-instrument  { composes: tag; background: var(--color-tag-instrument-bg);  color: var(--color-tag-instrument); }
+.partitura-dificultat  { composes: tag; background: var(--color-tag-difficulty-bg);  color: var(--color-tag-difficulty); }
+.partitura-genere      { composes: tag; background: var(--color-tag-genere-bg);      color: var(--color-tag-genere); }
+
+.partitura-descripcio {
+  color: var(--color-secondary);
   margin-bottom: var(--spacing-xs);
-  align-items: center; 
-  justify-content: center;
-}
-
-.partitura-instrument,
-.partitura-dificultat,
-.partitura-genere {
-  padding: 0.4rem 0.8rem;
-  border-radius: 15px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.partitura-instrument { 
-  background: var(--color-tag-instrument-bg); 
-  color: var(--color-tag-instrument); 
-}
-
-.partitura-dificultat { 
-  background: var(--color-tag-difficulty-bg); 
-  color: var(--color-tag-difficulty); 
-}
-
-.partitura-genere { 
-  background: var(--color-tag-genere-bg); 
-  color: var(--color-tag-genere); 
-}
-
-.partitura-descripcio { 
-  color: var(--color-secondary); 
-  margin-bottom: var(--spacing-xs); 
-  line-height: 1.5;
-  font-size: 0.9rem;
+  line-height:1.5;
+  font-size:.9rem;
 }
 
 /* ==========================================================================
   12. MODAL
   ========================================================================== */
 .modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  align-items: center;
-  justify-content: center;
-  padding: var(--spacing-lg);
-  background: var(--modal-bg);
-  animation: fadeIn 0.3s ease-out;
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  justify-content:center;
+  align-items:center;
+  background:var(--modal-bg);
+  padding:var(--spacing-lg);
 }
 
 .modal-contingut {
   position: relative;
-  max-width: 90%;
-  max-height: 90%;
-  background: #fff;
-  border-radius: var(--radius);
-  overflow: hidden;
+  max-width:90%;
+  max-height:90%;
+  background:#fff;
+  border-radius:var(--radius);
+  overflow:hidden;
 }
 
 .modal-contingut img {
-  width: 100%;
-  height: auto;
-  max-height: 80vh;
-  object-fit: contain;
+  width:100%;
+  max-height:80vh;
+  object-fit:contain;
 }
 
 .modal-tanca {
-  position: absolute;
-  top: var(--spacing-sm);
-  right: var(--spacing-sm);
-  z-index: 1001;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  color: white;
-  background: var(--color-accent);
-  cursor: pointer;
-  transition: var(--transition-fast);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position:absolute;
+  top:var(--spacing-sm);
+  right:var(--spacing-sm);
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  font-size:1.5rem;
+  background:var(--color-accent);
+  color:white;
+  border:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  cursor:pointer;
+  transition:var(--transition-fast);
 }
 
-.modal-tanca:hover,
-.modal-tanca:focus-visible { 
-  background: var(--color-accent-700); 
-  transform: scale(1.1); 
+.modal-tanca:hover {
+  background:var(--color-accent-700);
+  transform:scale(1.1);
 }
 
 /* ==========================================================================
-  13. SECCIÓ DE CONTACTE
+  13. CONTACTE
   ========================================================================== */
 .info-contacte {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--spacing-md);
-  margin-top: var(--spacing-lg);
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:var(--spacing-md);
+  margin-top:var(--spacing-lg);
 }
 
 .contacte-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: var(--spacing-sm);
-  padding: var(--spacing-md);
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius);
-  transition: var(--transition);
+  display:flex; flex-direction:column;
+  align-items:center;
+  text-align:center;
+  padding:var(--spacing-md);
+  background:rgba(255,255,255,0.1);
+  border-radius:var(--radius);
+  transition:var(--transition);
 }
 
 .contacte-item:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
+  background:rgba(255,255,255,0.2);
+  transform:translateY(-2px);
 }
 
 .contacte-item i {
-  font-size: 2rem;
-  color: var(--color-primary);
-  margin-top: 0;
-  width: auto;
-}
-
-.contacte-item div {
-  flex: 1;
-  width: 100%;
-}
-
-.contacte-item h3 {
-  margin: 0 0 var(--spacing-xs) 0;
-  font-size: 1.1rem;
-  color: var(--color-heading);
-}
-
-.contacte-item p {
-  margin: 0;
-  color: var(--color-text);
-  line-height: 1.4;
-}
-
-.contacte-item a {
-  color: var(--color-accent);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.contacte-item a:hover {
-  color: var(--color-accent-700);
-  text-decoration: underline;
+  font-size:2rem;
+  color:var(--color-primary);
 }
 
 /* ==========================================================================
   14. RESPONSIVITAT
   ========================================================================== */
-@media (max-width: 768px) {
-  body { 
-    font-size: 16px; 
-  }
-   
-  .container { 
-    padding: var(--spacing-sm); 
-    border-radius: var(--radius-sm); 
-    max-width: 95%; 
-  }
-   
-  h1 { 
-    font-size: clamp(1.6rem, 5vw, 2rem); 
-  }
-   
-  h2 { 
-    font-size: 1.5rem; 
-  }
-   
-  h3 { 
-    font-size: 1.2rem; 
+@media (max-width:768px) {
+  body { font-size:16px; }
+
+  .container {
+    padding:var(--spacing-sm);
+    border-radius:var(--radius-sm);
   }
 
-  .filtres-videos, 
-  .filtres-partitures { 
-    gap: 0.8rem; 
-  }
-   
-  .filtre-boto { 
-    padding: 0.5rem 1rem; 
-    font-size: 0.9rem; 
-  }
+  h2 { font-size:1.5rem; }
+  h3 { font-size:1.2rem; }
 
-  .galeria-videos { 
-    grid-template-columns: 1fr; 
-    gap: var(--spacing-lg); 
-  }
-   
-  .video-info { 
-    padding: var(--spacing-sm); 
-  }
-   
-  .video-info h3 { 
-    font-size: 1.1rem; 
-  }
-
-  .galeria-partitures { 
-    grid-template-columns: 1fr; 
-    gap: var(--spacing-md); 
-  }
-   
-  .modal-contingut { 
-    max-width: 95%; 
-    max-height: 95%; 
-  }
-
-  .info-contacte {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-sm);
-  }
-   
-  .contacte-item {
-    padding: var(--spacing-md);
-  }
-   
-  .contacte-item i {
-    font-size: 1.8rem;
+  .galeria-videos,
+  .galeria-partitures {
+    grid-template-columns:1fr;
   }
 }
 
-@media (max-width: 480px) {
-  .video-metadades { 
-    flex-direction: column; 
-    align-items: center;
-    justify-content: center;
-  }
-   
-  .video-info { 
-    padding: var(--spacing-sm); 
-  }
-   
-  .galeria-videos { 
-    gap: var(--spacing-md); 
+@media (max-width:480px) {
+  .video-metadades,
+  .partitura-metadades {
+    flex-direction:column;
   }
 
-  .partitura-metadades { 
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center;
-  }
-   
-  .partitura-info { 
-    padding: var(--spacing-sm); 
-  }
-   
-  .partitura-info h3 { 
-    font-size: 1.1rem; 
-  }
-
-  .contacte-item {
-    padding: var(--spacing-sm);
-  }
-   
-  .contacte-item i {
-    font-size: 1.6rem;
-  }
+  .contacte-item i { font-size:1.6rem; }
 }
 
 /* ==========================================================================
   15. ANIMACIONS
   ========================================================================== */
 @keyframes fadeIn {
-  from { 
-    opacity: 0; 
-    transform: translateY(20px); 
-  }
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
-  }
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
 }
 
-/* Reducció de moviment per accessibilitat */
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion:reduce) {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-   
-  html {
-    scroll-behavior: auto;
-  }
-   
-  .card,
-  .video-card,
-  .partitura-card,
-  .imatge-section img {
-    transition: none !important;
-    transform: none !important;
+    animation-duration:.01ms!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
   }
 }
