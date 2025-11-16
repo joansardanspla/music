@@ -571,9 +571,9 @@ li {
 
 .contacte-item {
   display: flex;
-  flex-direction: column; /* Canviem a columna per centrar-ho tot */
-  align-items: center;    /* Centrem horitzontalment */
-  text-align: center;     /* Centrem el text */
+  flex-direction: column; 
+  align-items: center;    
+  text-align: center;    
   gap: var(--spacing-sm);
   padding: var(--spacing-md);
   background: rgba(255, 255, 255, 0.1);
@@ -587,21 +587,21 @@ li {
 }
 
 .contacte-item i {
-  font-size: 2rem;        /* Mica més gran per millor visibilitat */
+  font-size: 2rem;       
   color: var(--color-primary);
-  margin-top: 0;          /* Eliminem el margin-top anterior */
-  width: auto;            /* Eliminem l'amplada fixa */
+  margin-top: 0;         
+  width: auto;   
 }
 
 .contacte-item div {
   flex: 1;
-  width: 100%;            /* Assegurem que ocupi tot l'amplada */
+  width: 100%;         
 }
 
 .contacte-item h3 {
   margin: 0 0 var(--spacing-xs) 0;
   font-size: 1.1rem;
-  color: var(--color-heading); /* ⬅️ MODIFICAT: Utilitza la variable dinàmica */
+  color: var(--color-heading); 
 }
 
 .contacte-item p {
