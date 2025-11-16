@@ -167,18 +167,35 @@ li {
 /* ==========================================================================
   4. LAYOUT I CONTENIDORS
   ========================================================================== */
+/* ==========================================================================
+  4. LAYOUT I CONTENIDORS - MILLORA PER PANTALLES GRANS
+  ========================================================================== */
 .container {
-  max-width: min(800px, 95%);
+  max-width: min(1200px, 95%); /* Augmentat de 800px a 1200px */
   margin-inline: auto;
   margin-top: clamp(var(--spacing-md), 3vw, var(--spacing-lg));
   text-align: center;
-  padding: var(--spacing-md);
+  padding: var(--spacing-lg); /* Més padding en pantalles grans */
   background: var(--color-card-bg);
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
   animation: fadeIn 0.5s ease-out;
 }
 
+/* Contenidor extra ample per pantalles molt grans */
+@media (min-width: 1400px) {
+  .container {
+    max-width: min(1400px, 95%);
+    padding: var(--spacing-xl);
+  }
+}
+
+/* Contenidor més estret per pantalles mitjanes */
+@media (max-width: 1200px) {
+  .container {
+    max-width: min(1000px, 95%);
+  }
+}
 .container + .container { 
   margin-top: clamp(var(--spacing-sm), 4vw, var(--spacing-xl)); 
 }
