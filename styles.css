@@ -295,10 +295,35 @@ li { margin-bottom: var(--spacing-xs); }
   justify-content: center;
 }
 
-/* tags vídeo */
-.video-instrument    { composes: tag; background: var(--color-tag-instrument-bg); color: var(--color-tag-instrument); }
-.video-ubicacio      { composes: tag; background: var(--color-tag-location-bg); color: var(--color-tag-location); }
-.video-duracio       { composes: tag; background: var(--color-tag-duration-bg); color: var(--color-tag-duration); }
+.video-instrument {
+  padding: .4rem .8rem;
+  border-radius: 15px;
+  font-size: .85rem;
+  font-weight: 600;
+  line-height: 1.2;
+  background: var(--color-tag-instrument-bg);
+  color: var(--color-tag-instrument);
+}
+
+.video-ubicacio {
+  padding: .4rem .8rem;
+  border-radius: 15px;
+  font-size: .85rem;
+  font-weight: 600;
+  line-height: 1.2;
+  background: var(--color-tag-location-bg);
+  color: var(--color-tag-location);
+}
+
+.video-duracio {
+  padding: .4rem .8rem;
+  border-radius: 15px;
+  font-size: .85rem;
+  font-weight: 600;
+  line-height: 1.2;
+  background: var(--color-tag-duration-bg);
+  color: var(--color-tag-duration);
+}
 
 .video-descripcio {
   color: var(--color-secondary);
@@ -382,9 +407,35 @@ li { margin-bottom: var(--spacing-xs); }
   justify-content:center;
 }
 
-.partitura-instrument  { composes: tag; background: var(--color-tag-instrument-bg);  color: var(--color-tag-instrument); }
-.partitura-dificultat  { composes: tag; background: var(--color-tag-difficulty-bg);  color: var(--color-tag-difficulty); }
-.partitura-genere      { composes: tag; background: var(--color-tag-genere-bg);      color: var(--color-tag-genere); }
+.partitura-instrument {
+  padding: .4rem .8rem;
+  border-radius: 15px;
+  font-size: .85rem;
+  font-weight: 600;
+  line-height: 1.2;
+  background: var(--color-tag-instrument-bg);
+  color: var(--color-tag-instrument);
+}
+
+.partitura-dificultat {
+  padding: .4rem .8rem;
+  border-radius: 15px;
+  font-size: .85rem;
+  font-weight: 600;
+  line-height: 1.2;
+  background: var(--color-tag-difficulty-bg);
+  color: var(--color-tag-difficulty);
+}
+
+.partitura-genere {
+  padding: .4rem .8rem;
+  border-radius: 15px;
+  font-size: .85rem;
+  font-weight: 600;
+  line-height: 1.2;
+  background: var(--color-tag-genere-bg);
+  color: var(--color-tag-genere);
+}
 
 .partitura-descripcio {
   color: var(--color-secondary);
