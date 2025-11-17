@@ -5,8 +5,8 @@
 
   <url>
     <loc>https://joansardanspla.github.io/music</loc>
-    <lastmod>2025-11-13</lastmod>
-    <changefreq>daily</changefreq>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
 
     <!-- IMATGE PRINCIPAL -->
@@ -22,7 +22,7 @@
       <video:title>Acompanyant el ball (Violí en Flamenc)</video:title>
       <video:description>Interpretació de Flamenc on Joan Sardans Pla acompanya el ball amb el violí.</video:description>
       <video:player_loc>https://www.youtube.com/embed/Hhnzpc3yXGg</video:player_loc>
-      <video:duration>198</video:duration>
+      <video:duration>06:06</video:duration>
       <video:family_friendly>yes</video:family_friendly>
       <video:publication_date>2023-01-01</video:publication_date>
       <video:live>no</video:live>
