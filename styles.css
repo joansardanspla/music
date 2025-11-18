@@ -45,9 +45,9 @@
   --radius-sm: 8px;
   --shadow-sm: 0 4px 6px rgba(139, 69, 19, 0.1);
   --shadow-md: 0 8px 15px rgba(139, 69, 19, 0.15);
-  /* TRANSICIONS AJUSTADES: S'eliminen els 'transform' dels valors */
+  /* TRANSICIONS AJUSTADES: Només s'inclouen propietats de color, ombra i fons */
   --transition-fast: box-shadow 0.18s ease; 
-  --transition: background-color 0.25s ease, color 0.25s ease;
+  --transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
@@ -200,8 +200,7 @@ li { margin-bottom: var(--spacing-xs); }
 .filtre-boto:focus-visible {
   background: var(--color-primary);
   color: var(--color-text-light);
-  /* MOVIMENT MANTINGUT, tal com s'ha demanat */
-  transform: translateY(-2px); 
+  /* MOVIMENT DEL BOTÓ DE FILTRE ELIMINAT */
 }
 
 .filtre-boto.active {
@@ -222,7 +221,7 @@ li { margin-bottom: var(--spacing-xs); }
 }
 
 .card:hover {
-  /* MOVIMENT ELIMINAT: transform: translateY(-5px); */
+  /* MOVIMENT ELIMINAT */
   box-shadow: var(--shadow-md);
 }
 
@@ -247,7 +246,7 @@ li { margin-bottom: var(--spacing-xs); }
   transition: var(--transition);
 }
 .imatge-section img:hover {
-  /* ZOOM ELIMINAT: transform: scale(1.01); */
+  /* ZOOM ELIMINAT */
   box-shadow: var(--shadow-md);
 }
 
@@ -364,7 +363,7 @@ li { margin-bottom: var(--spacing-xs); }
 }
 
 .partitura-card:hover .partitura-imatge-container img {
-  /* ZOOM ELIMINAT: transform: scale(1.05); */
+  /* ZOOM ELIMINAT */
 }
 
 .partitura-overlay {
@@ -394,7 +393,7 @@ li { margin-bottom: var(--spacing-xs); }
 }
 .boto-ampliar:hover { 
   background: var(--color-accent-700); 
-  /* ZOOM ELIMINAT: transform: scale(1.1); */
+  /* ZOOM ELIMINAT */
 }
 
 .partitura-info { padding:var(--spacing-md); }
@@ -498,7 +497,7 @@ li { margin-bottom: var(--spacing-xs); }
 
 .modal-tanca:hover {
   background:var(--color-accent-700);
-  /* ZOOM ELIMINAT: transform:scale(1.1); */
+  /* ZOOM ELIMINAT */
 }
 
 /* ==========================================================================
@@ -523,7 +522,7 @@ li { margin-bottom: var(--spacing-xs); }
 
 .contacte-item:hover {
   background:rgba(255,255,255,0.2);
-  /* MOVIMENT ELIMINAT: transform:translateY(-2px); */
+  /* MOVIMENT ELIMINAT */
 }
 
 .contacte-item i {
@@ -564,7 +563,7 @@ li { margin-bottom: var(--spacing-xs); }
  15. ANIMACIONS
  ========================================================================== */
 
-/* ANIMACIÓ FADEIN ELIMINADA totalment */
+/* S'elimina l'animació @keyframes fadeIn */
 
 @media (prefers-reduced-motion:reduce) {
   *,
