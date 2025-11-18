@@ -332,10 +332,9 @@ li { margin-bottom: var(--spacing-xs); }
   justify-content:center;
   align-items:center;
   background: var(--muted-overlay);
-  opacity: 0;
+  opacity: 1;
 }
 
-.partitura-card:hover .partitura-overlay { opacity: 1; }
 
 .boto-ampliar {
   width:50px; height:50px;
@@ -347,7 +346,7 @@ li { margin-bottom: var(--spacing-xs); }
   align-items:center;
   cursor:pointer;
   border:0;
-  transition: var(--transition-fast);
+  transition:none;
 }
 .boto-ampliar:hover { 
   background: var(--color-accent-700); 
