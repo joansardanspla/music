@@ -225,8 +225,7 @@ li { margin-bottom: var(--spacing-xs); }
 
 @media (min-width: 1200px) {
   .galeria-videos {
-    grid-template-columns: repeat(3,1fr);
-    gap: var(--spacing-lg);
+     gap: var(--spacing-lg);
   }
 }
 
