@@ -320,7 +320,6 @@ li { margin-bottom: var(--spacing-xs); }
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: transform .25s ease;
 }
 
 .partitura-card:hover .partitura-imatge-container img {
@@ -334,7 +333,6 @@ li { margin-bottom: var(--spacing-xs); }
   align-items:center;
   background: var(--muted-overlay);
   opacity: 0;
-  transition: opacity .25s ease;
 }
 
 .partitura-card:hover .partitura-overlay { opacity: 1; }
@@ -353,7 +351,6 @@ li { margin-bottom: var(--spacing-xs); }
 }
 .boto-ampliar:hover { 
   background: var(--color-accent-700); 
-  /* ZOOM ELIMINAT */
 }
 
 .partitura-info { padding:var(--spacing-md); }
