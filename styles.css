@@ -172,13 +172,9 @@ li { margin-bottom: var(--spacing-xs); }
   color: var(--color-secondary);
 }
 
-/* ==========================================================================
- 7. FILTRES
- ========================================================================== */
-/* SECCIÓ DE FILTRES ELIMINADA (filtres-videos, filtres-partitures, filtre-boto) */
 
 /* ==========================================================================
- 8. TARGETES BASE
+ 7. TARGETES BASE
  ========================================================================== */
 .card {
   background: var(--color-card-bg);
@@ -189,11 +185,9 @@ li { margin-bottom: var(--spacing-xs); }
 }
 
 .card:hover {
-  /* MOVIMENT ELIMINAT */
-  box-shadow: var(--shadow-md);
+   box-shadow: var(--shadow-md);
 }
 
-/* Tag unificat reusable */
 .tag {
   padding: .4rem .8rem;
   border-radius: 15px;
@@ -203,7 +197,7 @@ li { margin-bottom: var(--spacing-xs); }
 }
 
 /* ==========================================================================
- 9. IMATGE PRINCIPAL
+ 8. IMATGE PRINCIPAL
  ========================================================================== */
 .imatge-section { margin-bottom: var(--spacing-lg); }
 
@@ -214,12 +208,11 @@ li { margin-bottom: var(--spacing-xs); }
   transition: var(--transition);
 }
 .imatge-section img:hover {
-  /* ZOOM ELIMINAT */
-  box-shadow: var(--shadow-md);
+   box-shadow: var(--shadow-md);
 }
 
 /* ==========================================================================
- 10. GALERIA DE VÍDEOS
+ 9. GALERIA DE VÍDEOS
  ========================================================================== */
 .galeria-videos {
   display: grid;
@@ -301,7 +294,7 @@ li { margin-bottom: var(--spacing-xs); }
 }
 
 /* ==========================================================================
- 11. GALERIA DE PARTITURES
+ 10. GALERIA DE PARTITURES
  ========================================================================== */
 .galeria-partitures {
   display: grid;
@@ -331,7 +324,6 @@ li { margin-bottom: var(--spacing-xs); }
 }
 
 .partitura-card:hover .partitura-imatge-container img {
-  /* ZOOM ELIMINAT */
 }
 
 .partitura-overlay {
@@ -371,7 +363,6 @@ li { margin-bottom: var(--spacing-xs); }
   font-size:1.3rem;
 }
 
-/* tags partitures */
 .partitura-metadades {
   display:flex; flex-wrap:wrap;
   gap:var(--spacing-xs);
@@ -417,7 +408,7 @@ li { margin-bottom: var(--spacing-xs); }
 }
 
 /* ==========================================================================
- 12. MODAL
+ 11. MODAL
  ========================================================================== */
 .modal {
   display:none;
@@ -465,11 +456,10 @@ li { margin-bottom: var(--spacing-xs); }
 
 .modal-tanca:hover {
   background:var(--color-accent-700);
-  /* ZOOM ELIMINAT */
 }
 
 /* ==========================================================================
- 13. CONTACTE
+ 12. CONTACTE
  ========================================================================== */
 .info-contacte {
   display:grid;
@@ -499,7 +489,7 @@ li { margin-bottom: var(--spacing-xs); }
 }
 
 /* ==========================================================================
- 14. RESPONSIVITAT
+ 13. RESPONSIVITAT
  ========================================================================== */
 @media (max-width:768px) {
   body { font-size:16px; }
@@ -528,10 +518,9 @@ li { margin-bottom: var(--spacing-xs); }
 }
 
 /* ==========================================================================
- 15. ANIMACIONS
+ 14. ANIMACIONS
  ========================================================================== */
 
-/* S'elimina l'animació @keyframes fadeIn */
 
 @media (prefers-reduced-motion:reduce) {
   *,
