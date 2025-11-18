@@ -350,9 +350,6 @@ li { margin-bottom: var(--spacing-xs); }
   transition:none;
   pointer-events: auto;
 }
-.boto-ampliar:hover { 
-  background: var(--color-accent-700); 
-}
 
 .partitura-info { padding:var(--spacing-md); }
 
