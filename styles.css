@@ -426,7 +426,7 @@ li { margin-bottom: var(--spacing-xs); }
   position: relative;
   max-width:90%;
   max-height:90%;
-  background:#fff;
+  background:var(--color-card-bg);
   border-radius:var(--radius);
   overflow:hidden;
 }
