@@ -7,8 +7,8 @@
   --color-primary-300: #A0522D;
   --color-secondary: #D2691E;
   --color-secondary-600: #B8860B;
-  --color-accent: #CD5C5C;
-  --color-accent-700: #B22222;
+  --color-accent: #FF0000;
+  --color-accent-700: #CC0000;
   --color-highlight: #2F4F4F;
 
   --color-text: #2C2C2C;
@@ -67,6 +67,9 @@
     --muted-overlay: rgba(0, 0, 0, 0.7);
     --color-highlight: #FFD700;
     --color-heading: var(--color-highlight);
+
+    --color-accent: #FF3333;
+    --color-accent-700: #FF0000;
 
     --color-tag-instrument-bg: rgba(70, 130, 180, 0.2);
     --color-tag-location-bg: rgba(106, 90, 205, 0.2);
