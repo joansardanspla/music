@@ -227,12 +227,6 @@ li { margin-bottom: var(--spacing-xs); }
   max-width: 1200px;
 }
 
-@media (min-width: 1200px) {
-  .galeria-videos,
-  .galeria-partitures {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 
 .video-player {
   width: 100%;
@@ -318,12 +312,6 @@ li { margin-bottom: var(--spacing-xs); }
   max-width: 1200px;
 }
 
-@media (min-width: 1200px) {
-  .galeria-videos,
-  .galeria-partitures {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 
 .partitura-imatge-container {
   position: relative;
