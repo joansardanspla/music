@@ -2,37 +2,46 @@
  1. VARIABLES I CONFIGURACIÓ GLOBAL
  ========================================================================== */
 :root {
-  --color-primary: #8B4513;
-  --color-primary-600: #654321;
-  --color-primary-300: #A0522D;
-  --color-secondary: #D2691E;
-  --color-secondary-600: #B8860B;
-  --color-accent: #FF0000;
-  --color-accent-700: #CC0000;
-  --color-highlight: #2F4F4F;
+  /* PALETA PRINCIPAL DEL FAVICON */
+  --color-primary: #EEC12A;        /* groc daurat principal */
+  --color-primary-600: #C99E1F;    /* una mica més fosc */
+  --color-primary-300: #F5D76A;    /* una mica més clar */
 
-  --color-text: #2C2C2C;
-  --color-text-light: #F8F8F8;
-  --color-background: #FDF5E6;
-  --color-card-bg: #FAF0E6;
-  --color-input-bg: #FFF8DC;
+  --color-secondary: #0A3A22;      /* verd fosc del fons */
+  --color-secondary-600: #062818;  
+  --color-accent: #EEC12A;         /* igual que primari, coherència */
+  --color-accent-700: #C99E1F;
+
+  --color-highlight: #F5D76A;      /* groc clar per ressaltar */
+
+  /* TEXT I FONS */
+  --color-text: #0F0F0F;
+  --color-text-light: #F5F5F5;
+  --color-background: #0A3A22;     /* fons verd fosc */
+  --color-card-bg: #0F4A2D;        /* targetes verd una mica més clar */
+  --color-input-bg: #115C37;       /* camps lleugerament més clars */
 
   --color-heading: var(--color-primary);
 
-  --color-tag-instrument: #4682B4;
-  --color-tag-instrument-bg: rgba(70, 130, 180, 0.1);
-  --color-tag-location: #6A5ACD;
-  --color-tag-location-bg: rgba(106, 90, 205, 0.1);
-  --color-tag-duration: #DAA520;
-  --color-tag-duration-bg: rgba(218, 165, 32, 0.1);
-  --color-tag-difficulty: #DC143C;
-  --color-tag-difficulty-bg: rgba(220, 20, 60, 0.1);
-  --color-tag-genere: #228B22;
-  --color-tag-genere-bg: rgba(34, 139, 34, 0.1);
+  /* COLORS DE TAGS (ajustats perquè encaixin amb la nova paleta) */
+  --color-tag-instrument: #EEC12A;
+  --color-tag-instrument-bg: rgba(238, 193, 42, 0.1);
 
-  --muted-border: rgba(139, 69, 19, 0.15);
-  --muted-overlay: rgba(47, 79, 79, 0.7);
-  --modal-bg: rgba(47, 79, 79, 0.9);
+  --color-tag-location: #0FA95B;
+  --color-tag-location-bg: rgba(15, 169, 91, 0.1);
+
+  --color-tag-duration: #C99E1F;
+  --color-tag-duration-bg: rgba(201, 158, 31, 0.1);
+
+  --color-tag-difficulty: #E87A40;
+  --color-tag-difficulty-bg: rgba(232, 122, 64, 0.1);
+
+  --color-tag-genere: #1FA968;
+  --color-tag-genere-bg: rgba(31, 169, 104, 0.1);
+
+  --muted-border: rgba(238, 193, 42, 0.25);
+  --muted-overlay: rgba(0, 0, 0, 0.7);
+  --modal-bg: rgba(0, 0, 0, 0.8);
 
   --font-base: "Segoe UI", system-ui, -apple-system, sans-serif;
   --font-size-base: clamp(16px, 1.1vw, 18px);
@@ -43,10 +52,10 @@
 
   --radius: 12px;
   --radius-sm: 8px;
-  --shadow-sm: 0 4px 6px rgba(139, 69, 19, 0.1);
-  --shadow-md: 0 8px 15px rgba(139, 69, 19, 0.15);
-  /* TRANSICIONS AJUSTADES: Només s'inclouen propietats de color, ombra i fons */
-  --transition-fast: box-shadow 0.18s ease; 
+  --shadow-sm: 0 4px 6px rgba(238, 193, 42, 0.1);
+  --shadow-md: 0 8px 15px rgba(238, 193, 42, 0.15);
+
+  --transition-fast: box-shadow 0.18s ease;
   --transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 
   --spacing-xs: 0.5rem;
@@ -56,28 +65,31 @@
   --spacing-xl: 2.5rem;
 }
 
-/* Mode fosc */
+/* MODE FOSC */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: #1A1A1A;
-    --color-card-bg: #2D2D2D;
-    --color-text: #E8E8E8;
-    --color-input-bg: #3A3A3A;
-    --muted-border: rgba(210, 105, 30, 0.2);
+    --color-background: #062818;
+    --color-card-bg: #0C3A23;
+    --color-text: #EAEAEA;
+    --color-input-bg: #144D31;
+
+    --muted-border: rgba(238, 193, 42, 0.2);
     --muted-overlay: rgba(0, 0, 0, 0.7);
-    --color-highlight: #FFD700;
+
+    --color-highlight: #F5D76A;
     --color-heading: var(--color-highlight);
 
-    --color-accent: #FF3333;
-    --color-accent-700: #FF0000;
+    --color-accent: #F5D76A;
+    --color-accent-700: #EEC12A;
 
-    --color-tag-instrument-bg: rgba(70, 130, 180, 0.2);
-    --color-tag-location-bg: rgba(106, 90, 205, 0.2);
-    --color-tag-duration-bg: rgba(218, 165, 32, 0.2);
-    --color-tag-difficulty-bg: rgba(220, 20, 60, 0.2);
-    --color-tag-genere-bg: rgba(34, 139, 34, 0.2);
+    --color-tag-instrument-bg: rgba(238, 193, 42, 0.2);
+    --color-tag-location-bg: rgba(15, 169, 91, 0.2);
+    --color-tag-duration-bg: rgba(201, 158, 31, 0.2);
+    --color-tag-difficulty-bg: rgba(232, 122, 64, 0.2);
+    --color-tag-genere-bg: rgba(31, 169, 104, 0.2);
   }
 }
+
 
 /* ==========================================================================
  2. RESET
