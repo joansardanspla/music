@@ -551,6 +551,12 @@ footer h2 {
   .galeria-partitures {
     grid-template-columns:minmax(250px, 1fr); /* Una sola columna, mantenint un mínim d'amplada */
   }
+ 
+ .partitura-card {
+    width: 100%; /* La targeta ha d'ocupar el 100% de la columna */
+    max-width: 400px; /* Opcional: limita l'amplada en tauletes grans per a que no es vegi excessivament gran */
+    margin-inline: auto; /* Centra la targeta si hem limitat el max-width */
+  }
 }
 
 @media (max-width:480px) {
@@ -558,6 +564,14 @@ footer h2 {
   .partitura-metadades {
     flex-direction:column;
   }
+
+ .partitura-card {
+    width: 100%; /* La targeta ha d'ocupar el 100% de la columna */
+    max-width: 400px; /* Opcional: limita l'amplada en tauletes grans per a que no es vegi excessivament gran */
+    margin-inline: auto; /* Centra la targeta si hem limitat el max-width */
+  }
+
+ .contacte-item i { font-size:1.6rem; }
 }
 
 /* ==========================================================================
