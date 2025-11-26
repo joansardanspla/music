@@ -3,23 +3,23 @@
  ========================================================================== */
 :root {
   /* PALETA PRINCIPAL DEL FAVICON */
-  --color-primary: #EEC12A;          /* groc daurat principal (Violí) */
-  --color-primary-600: #C99E1F;      /* una mica més fosc */
-  --color-primary-300: #F5D76A;      /* una mica més clar */
+  --color-primary: #EEC12A; /* groc daurat principal (Violí) */
+  --color-primary-600: #C99E1F; /* una mica més fosc */
+  --color-primary-300: #F5D76A; /* una mica més clar */
 
-  --color-secondary: #0A3A22;        /* verd fosc del fons */
-  --color-secondary-600: #062818;    
+  --color-secondary: #0A3A22; /* verd fosc del fons */
+  --color-secondary-600: #062818;
   --color-accent: var(--color-primary); /* igual que primari, coherència */
   --color-accent-700: var(--color-primary-600);
 
   --color-highlight: var(--color-primary-300); /* groc clar per ressaltar */
 
   /* TEXT I FONS */
-  --color-text: #0F0F0F;             /* Text fosc (poc contrast amb el fons verd, ideal per a elements sobre fons blancs/clars si n'hi hagués) */
-  --color-text-light: #F5F5F5;      /* Text clar (per usar sobre fons foscos) */
+  --color-text: #0F0F0F; /* Text fosc (per usar sobre fons clars) */
+  --color-text-light: #F5F5F5; /* Text clar (per usar sobre fons foscos) */
   --color-background: var(--color-secondary); /* fons verd fosc */
-  --color-card-bg: #0F4A2D;          /* targetes verd una mica més clar */
-  --color-input-bg: #115C37;         /* camps lleugerament més clars */
+  --color-card-bg: #0F4A2D; /* targetes verd una mica més clar */
+  --color-input-bg: #115C37; /* camps lleugerament més clars */
 
   --color-heading: var(--color-primary);
 
@@ -71,12 +71,12 @@
 
 /* --- */
 
-/* 🌙 MODE FOSC */
+/* 🌙 MODE FOSC (PREFERIT) */
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: var(--color-secondary-600); /* Verd encara més fosc */
     --color-card-bg: #0C3A23;
-    --color-text: #EAEAEA;
+    --color-text: #EAEAEA; /* Text clar utilitzat per al cos */
     --color-input-bg: #144D31;
 
     --muted-border: rgba(238, 193, 42, 0.2);
@@ -91,23 +91,24 @@
     /* COLORS DE TAGS (UNIFICATS I AMB MÉS OPACITAT) */
     --color-tag-base: var(--color-highlight); /* Utilitzar el color més clar pel text/icona */
     --color-tag-base-bg: rgba(238, 193, 42, 0.2); /* 20% opacitat de Primari */
-    
+
     --color-tag-instrument: var(--color-tag-base);
     --color-tag-instrument-bg: var(--color-tag-base-bg);
-    
+
     --color-tag-location: var(--color-tag-base);
     --color-tag-location-bg: var(--color-tag-base-bg);
-    
+
     --color-tag-duration: var(--color-tag-base);
     --color-tag-duration-bg: var(--color-tag-base-bg);
-    
+
     --color-tag-difficulty: var(--color-tag-base);
     --color-tag-difficulty-bg: var(--color-tag-base-bg);
-    
+
     --color-tag-genere: var(--color-tag-base);
     --color-tag-genere-bg: var(--color-tag-base-bg);
   }
 }
+
 /* ==========================================================================
  2. RESET
  ========================================================================== */
@@ -133,7 +134,7 @@ body {
   font-family: var(--font-base);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
-  color: var(--color-text);
+  color: var(--color-text); /* S'aplicarà el color clar en Mode Fosc */
   background: var(--color-background);
 }
 
@@ -160,6 +161,8 @@ a:hover, a:focus-visible { color: var(--color-accent-700); }
 ul, ol { padding-left: var(--spacing-md); margin-bottom: var(--spacing-md); }
 li { margin-bottom: var(--spacing-xs); }
 
+p { margin-bottom: 1em; } /* Afegit per a la biografia */
+
 /* ==========================================================================
  4. LAYOUT I CONTENIDORS
  ========================================================================== */
@@ -177,6 +180,37 @@ li { margin-bottom: var(--spacing-xs); }
 .container + .container { margin-top: clamp(var(--spacing-sm), 4vw, var(--spacing-xl)); }
 .container:last-of-type { margin-bottom: var(--spacing-lg); }
 
+/* --- CAPÇALERA (HEADER) --- */
+header[role="banner"] {
+  background: var(--color-secondary-600); /* Fons molt fosc per a la capçalera */
+  padding: var(--spacing-lg) 0;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  margin-top: 0; /* Elimina el margin-top del .container base */
+  border-radius: 0;
+}
+
+header h1 {
+  color: var(--color-text-light); /* Text clar per al títol */
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* --- MAIN I SECCIONS --- */
+main {
+  flex-grow: 1;
+}
+
+section.container {
+  text-align: left; /* Retorna l'alineació de text a l'esquerra per defecte a les seccions */
+}
+
+/* --- SECCIÓ BIOGRAFIA: Adaptació del color de text per al contingut de paràgrafs --- */
+#biografia.container {
+  color: var(--color-text); /* Assegura que el text clar s'apliqui, segons la configuració del body/dark mode */
+  text-align: justify; /* Alineació de text justificada per a paràgrafs llargs */
+}
+
 /* ==========================================================================
  5. ACCESSIBILITAT
  ========================================================================== */
@@ -191,7 +225,8 @@ li { margin-bottom: var(--spacing-xs); }
  ========================================================================== */
 #titol-videos,
 #titol-partitures,
-#titol-contacte {
+#titol-contacte,
+#titol-biografia { /* Afegit el títol de la biografia */
   text-align: center;
   margin-bottom: var(--spacing-sm);
 }
@@ -229,27 +264,50 @@ li { margin-bottom: var(--spacing-xs); }
 }
 
 /* ==========================================================================
- 8. IMATGE PRINCIPAL
+ 8. IMATGE PRINCIPAL (GALERIA)
  ========================================================================== */
-.imatge-section { margin-bottom: var(--spacing-lg); }
+
+/* Nota: La secció de galeria al HTML no té el padding de .container i no conté text, només la figure. */
+#galeria.container {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: var(--spacing-lg);
+  background: transparent; /* Fa que el fons del contenidor sigui transparent si la imatge ja cobreix l'amplada */
+  box-shadow: none;
+  border-radius: 0;
+  max-width: 100%; /* Permet que la imatge ocupi tota l'amplada si cal */
+}
+
+#galeria figure {
+  margin: 0;
+  text-align: center;
+  line-height: 0; /* Elimina espais blancs sota la imatge */
+}
 
 .imatge-section img {
   width: 100%;
   height: auto;
-  border-radius: var(--radius);
+  border-radius: 0; /* La imatge va sense border-radius per a ocupar l'amplada completa */
   transition: var(--transition);
+  display: block;
+  max-height: 70vh; /* Controla l'altura per a pantalles grans */
+  object-fit: cover;
 }
 .imatge-section img:hover {
-   box-shadow: var(--shadow-md);
+   box-shadow: none; /* Sense ombra per la imatge de la portada */
 }
+
 
 /* ==========================================================================
  9. GALERIA DE VÍDEOS
  ========================================================================== */
 .galeria-videos {
  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  /* El teu CSS original utilitza flex, que és correcte, però l'estructura de les card és més adient per a GRID */
+  /* Adaptació a un grid més robust per a la responsivitat */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
   gap: var(--spacing-md);
   margin-bottom: var(--spacing-lg);
   margin-inline: auto;
@@ -271,8 +329,9 @@ li { margin-bottom: var(--spacing-xs); }
 }
 
 .video-card {
-  width: 330px;
+  /* width: 330px; ja no necessari amb grid */
   max-width: 100%;
+  width: 100%; /* El card pren l'amplada de la columna del grid */
   flex-shrink: 1;
 }
 
@@ -282,59 +341,23 @@ li { margin-bottom: var(--spacing-xs); }
   margin-bottom: var(--spacing-sm);
   color: var(--color-heading);
   font-size: 1.3rem;
+  text-align: center; /* Centrat si no hi ha metadades */
 }
 
-.video-metadades {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-xs);
-  margin-bottom: var(--spacing-sm);
-  justify-content: center;
+/* Les classes de metadades no són utilitzades al teu HTML, però les mantinc: */
+.video-metadades, .video-instrument, .video-ubicacio, .video-duracio, .video-descripcio {
+  display: none; /* Amagat si no s'utilitza en l'HTML actual */
 }
 
-.video-instrument {
-  padding: .4rem .8rem;
-  border-radius: 15px;
-  font-size: .85rem;
-  font-weight: 600;
-  line-height: 1.2;
-  background: var(--color-tag-instrument-bg);
-  color: var(--color-tag-instrument);
-}
-
-.video-ubicacio {
-  padding: .4rem .8rem;
-  border-radius: 15px;
-  font-size: .85rem;
-  font-weight: 600;
-  line-height: 1.2;
-  background: var(--color-tag-location-bg);
-  color: var(--color-tag-location);
-}
-
-.video-duracio {
-  padding: .4rem .8rem;
-  border-radius: 15px;
-  font-size: .85rem;
-  font-weight: 600;
-  line-height: 1.2;
-  background: var(--color-tag-duration-bg);
-  color: var(--color-tag-duration);
-}
-
-.video-descripcio {
-  color: var(--color-secondary);
-  margin-bottom: var(--spacing-md);
-  line-height: 1.5;
-}
 
 /* ==========================================================================
  10. GALERIA DE PARTITURES
  ========================================================================== */
 .galeria-partitures {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  /* Adaptació a un grid més robust per a la responsivitat */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-items: center;
   gap: var(--spacing-md);
   margin-bottom: var(--spacing-lg);
   margin-inline: auto;
@@ -346,17 +369,24 @@ li { margin-bottom: var(--spacing-xs); }
   position: relative;
   overflow: hidden;
   height: 290px;
+  cursor: pointer; /* Afegit cursor per indicar interactiu */
 }
 
 .partitura-imatge-container img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transition: transform 0.3s ease; /* Afegit efecte hover a la imatge */
+}
+
+.partitura-imatge-container:hover img {
+    transform: scale(1.05);
 }
 
 .partitura-card {
-  width: 330px;
+  /* width: 330px; ja no necessari amb grid */
   max-width: 100%;
+  width: 100%; /* El card pren l'amplada de la columna del grid */
   flex-shrink: 1;
 }
 
@@ -366,24 +396,33 @@ li { margin-bottom: var(--spacing-xs); }
   display:flex;
   justify-content:center;
   align-items:center;
-  background: transparent;
-  opacity: 1;
+  background: var(--muted-overlay); /* Utilitza overlay fosc per destacar el botó */
+  opacity: 0; /* Amagat per defecte */
+  transition: opacity 0.3s ease;
   pointer-events: none;
 }
 
+.partitura-imatge-container:hover .partitura-overlay {
+    opacity: 1; /* Mostrar al hover */
+    pointer-events: auto; /* Permet interactuar amb el botó */
+}
 
 .boto-ampliar {
   width:50px; height:50px;
   border-radius:50%;
   background: var(--color-accent);
-  color:white;
+  color:var(--color-text-light); /* Color clar per a l'icona */
   display:flex;
   justify-content:center;
   align-items:center;
   cursor:pointer;
   border:0;
-  transition:none;
+  transition: background-color 0.2s ease; /* Transició afegida */
   pointer-events: auto;
+}
+
+.boto-ampliar:hover {
+    background: var(--color-accent-700);
 }
 
 .partitura-info { padding:var(--spacing-md); }
@@ -393,49 +432,11 @@ li { margin-bottom: var(--spacing-xs); }
   font-size:1.3rem;
 }
 
-.partitura-metadades {
-  display:flex; flex-wrap:wrap;
-  gap:var(--spacing-xs);
-  margin-bottom:var(--spacing-xs);
-  justify-content:center;
+/* Classes de metadades no utilitzades al teu HTML, però les mantinc: */
+.partitura-metadades, .partitura-instrument, .partitura-dificultat, .partitura-genere, .partitura-descripcio {
+  display: none;
 }
 
-.partitura-instrument {
-  padding: .4rem .8rem;
-  border-radius: 15px;
-  font-size: .85rem;
-  font-weight: 600;
-  line-height: 1.2;
-  background: var(--color-tag-instrument-bg);
-  color: var(--color-tag-instrument);
-}
-
-.partitura-dificultat {
-  padding: .4rem .8rem;
-  border-radius: 15px;
-  font-size: .85rem;
-  font-weight: 600;
-  line-height: 1.2;
-  background: var(--color-tag-difficulty-bg);
-  color: var(--color-tag-difficulty);
-}
-
-.partitura-genere {
-  padding: .4rem .8rem;
-  border-radius: 15px;
-  font-size: .85rem;
-  font-weight: 600;
-  line-height: 1.2;
-  background: var(--color-tag-genere-bg);
-  color: var(--color-tag-genere);
-}
-
-.partitura-descripcio {
-  color: var(--color-secondary);
-  margin-bottom: var(--spacing-xs);
-  line-height:1.5;
-  font-size:.9rem;
-}
 
 /* ==========================================================================
  11. MODAL
@@ -475,7 +476,7 @@ li { margin-bottom: var(--spacing-xs); }
   border-radius:50%;
   font-size:1.5rem;
   background:var(--color-accent);
-  color:white;
+  color:var(--color-text-light);
   border:0;
   display:flex;
   justify-content:center;
@@ -489,33 +490,49 @@ li { margin-bottom: var(--spacing-xs); }
 }
 
 /* ==========================================================================
- 12. CONTACTE
+ 12. CONTACTE I PEU DE PÀGINA (FOOTER)
  ========================================================================== */
+footer {
+  background: var(--color-secondary-600); /* Fons fosc similar al header */
+  color: var(--color-text-light); /* Text clar per al footer */
+  padding: var(--spacing-lg) 0;
+  margin-top: var(--spacing-xl);
+}
+
+footer h2 {
+    color: var(--color-text-light); /* Títol de contacte en color clar */
+    text-align: center;
+}
+
+.footer-contingut {
+    /* Centrar contingut del footer si no hi ha més elements */
+    text-align: center;
+}
+
 .info-contacte {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  display:flex; /* Simplificat a flexbox per a l'element simple de contacte */
+  justify-content: center;
+  align-items: center;
   gap:var(--spacing-md);
-  margin-top:var(--spacing-lg);
+  margin-top:var(--spacing-md);
 }
 
 .contacte-item {
   display:flex; flex-direction:column;
   align-items:center;
   text-align:center;
-  padding:var(--spacing-md);
-  background:rgba(255,255,255,0.1);
+  padding:0; /* Sense padding excessiu */
+  background: none; /* Sense fons de targeta */
   border-radius:var(--radius);
   transition:var(--transition);
 }
 
 .contacte-item:hover {
-  background:rgba(255,255,255,0.2);
-  /* MOVIMENT ELIMINAT */
+  background: none;
 }
 
-.contacte-item i {
-  font-size:2rem;
-  color:var(--color-primary);
+.contacte-item p a {
+    color: var(--color-highlight); /* Enllaç de contacte destacat */
 }
 
 /* ==========================================================================
@@ -534,7 +551,7 @@ li { margin-bottom: var(--spacing-xs); }
 
   .galeria-videos,
   .galeria-partitures {
-    grid-template-columns:1fr;
+    grid-template-columns:minmax(250px, 1fr); /* Una sola columna, mantenint un mínim d'amplada */
   }
 }
 
@@ -543,15 +560,11 @@ li { margin-bottom: var(--spacing-xs); }
   .partitura-metadades {
     flex-direction:column;
   }
-
-  .contacte-item i { font-size:1.6rem; }
 }
 
 /* ==========================================================================
  14. ANIMACIONS
  ========================================================================== */
-
-
 @media (prefers-reduced-motion:reduce) {
   *,
   *::before,
