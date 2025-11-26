@@ -302,9 +302,6 @@ section.container {
  9. GALERIA DE VÍDEOS
  ========================================================================== */
 .galeria-videos {
- display: flex;
-  /* El teu CSS original utilitza flex, que és correcte, però l'estructura de les card és més adient per a GRID */
-  /* Adaptació a un grid més robust per a la responsivitat */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-items: center;
@@ -344,17 +341,11 @@ section.container {
   text-align: center; /* Centrat si no hi ha metadades */
 }
 
-/* Les classes de metadades no són utilitzades al teu HTML, però les mantinc: */
-.video-metadades, .video-instrument, .video-ubicacio, .video-duracio, .video-descripcio {
-  display: none; /* Amagat si no s'utilitza en l'HTML actual */
-}
-
 
 /* ==========================================================================
  10. GALERIA DE PARTITURES
  ========================================================================== */
 .galeria-partitures {
-  /* Adaptació a un grid més robust per a la responsivitat */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   justify-items: center;
@@ -410,13 +401,12 @@ section.container {
   width:50px; height:50px;
   border-radius:50%;
   background: var(--color-accent);
-  color:var(--color-text-light); /* Color clar per a l'icona */
+  color:var(--color-text-light);
   display:flex;
   justify-content:center;
   align-items:center;
   cursor:pointer;
   border:0;
-  transition: background-color 0.2s ease; /* Transició afegida */
   pointer-events: auto;
 }
 
