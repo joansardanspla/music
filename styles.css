@@ -12,7 +12,7 @@
   --color-bg-input: #115C37;     /* camps */
 
   /* 📝 TEXT */
-  --color-text-dark: #0F0F0F;    /* text fosc (només en superfícies clares) */
+  --color-text-dark: #0F0F0F;    /* text fosc en superfícies clares */
   --color-text-light: #F5F5F5;   /* text clar (per fons foscos) */
 
   /* TÍTOLS */
@@ -27,12 +27,21 @@
   --color-overlay: rgba(0, 0, 0, 0.7);
   --color-modal-bg: rgba(0, 0, 0, 0.8);
 
+  /* ACCENTS (corregits) */
+  --color-accent: var(--color-primary);
+  --color-accent-700: var(--color-primary-dark);
+
+  --color-secondary: var(--color-primary-light);
+  --muted-overlay: rgba(0, 0, 0, 0.4);
+
+  --modal-bg: var(--color-modal-bg);
+
   /* TIPOGRAFIA */
   --font-base: "Segoe UI", system-ui, -apple-system, sans-serif;
   --font-size-base: clamp(16px, 1.1vw, 18px);
   --line-height-base: 1.7;
 
-  /* TITOL SIZES */
+  /* TITLES */
   --h1-size: clamp(1.8rem, 3.6vw, 2.2rem);
   --h2-size: clamp(1.4rem, 2.6vw, 1.8rem);
   --h3-size: clamp(1.1rem, 2vw, 1.4rem);
@@ -54,7 +63,6 @@
   --spacing-lg: 2rem;
   --spacing-xl: 2.5rem;
 }
-
 
 /* ==========================================================================
  2. RESET
@@ -108,7 +116,7 @@ a:hover, a:focus-visible { color: var(--color-accent-700); }
 ul, ol { padding-left: var(--spacing-md); margin-bottom: var(--spacing-md); }
 li { margin-bottom: var(--spacing-xs); }
 
-p { margin-bottom: 1em; } /* Afegit per a la biografia */
+p { margin-bottom: 1em; }
 
 /* ==========================================================================
  4. LAYOUT I CONTENIDORS
@@ -119,7 +127,7 @@ p { margin-bottom: 1em; } /* Afegit per a la biografia */
   margin-top: clamp(var(--spacing-md), 3vw, var(--spacing-lg));
   padding: var(--spacing-lg);
   text-align: center;
-  background: var(--color-card-bg);
+  background: var(--color-bg-card);
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
 }
@@ -127,30 +135,25 @@ p { margin-bottom: 1em; } /* Afegit per a la biografia */
 .container + .container { margin-top: clamp(var(--spacing-sm), 4vw, var(--spacing-xl)); }
 .container:last-of-type { margin-bottom: var(--spacing-lg); }
 
-/* --- CAPÇALERA (HEADER) --- */
+/* --- HEADER --- */
 header[role="banner"] {
-  background: #062818; /* Fons molt fosc per a la capçalera */
+  background: #062818;
   padding: var(--spacing-lg) 0;
   text-align: center;
   box-shadow: var(--shadow-md);
-  margin-top: 0; /* Elimina el margin-top del .container base */
+  margin-top: 0;
   border-radius: 0;
 }
 
 header h1 {
-  color: var(--color-text-light); /* Text clar per al títol */
+  color: var(--color-text-light);
   padding-bottom: 0;
   margin-bottom: 0;
 }
 
-/* --- MAIN I SECCIONS --- */
-main {
-  flex-grow: 1;
-}
-
-section.container {
-  text-align: left;
-}
+/* --- MAIN --- */
+main { flex-grow: 1; }
+section.container { text-align: left; }
 
 #biografia.container {
   color: var(--color-text-light);
@@ -172,7 +175,7 @@ section.container {
 #titol-videos,
 #titol-partitures,
 #titol-contacte,
-#titol-biografia { /* Afegit el títol de la biografia */
+#titol-biografia {
   text-align: center;
   margin-bottom: var(--spacing-sm);
 }
@@ -185,9 +188,8 @@ section.container {
   color: var(--color-secondary);
 }
 
-
 /* ==========================================================================
- 7. TARGETES BASE
+ 7. TARGETES
  ========================================================================== */
 .card {
   background: var(--color-bg-card);
@@ -197,9 +199,7 @@ section.container {
   overflow: hidden;
 }
 
-.card:hover {
-   box-shadow: var(--shadow-md);
-}
+.card:hover { box-shadow: var(--shadow-md); }
 
 .tag {
   padding: .4rem .8rem;
@@ -207,45 +207,41 @@ section.container {
   font-size: .85rem;
   font-weight: 600;
   line-height: 1.2;
+  color: var(--color-tag-text);
+  background: var(--color-tag-bg);
 }
 
 /* ==========================================================================
- 8. IMATGE PRINCIPAL (GALERIA)
+ 8. IMATGE PRINCIPAL
  ========================================================================== */
-
-/* Nota: La secció de galeria al HTML no té el padding de .container i no conté text, només la figure. */
 #galeria.container {
   padding: 0;
   margin-top: 0;
   margin-bottom: var(--spacing-lg);
-  background: transparent; /* Fa que el fons del contenidor sigui transparent si la imatge ja cobreix l'amplada */
+  background: transparent;
   box-shadow: none;
   border-radius: 0;
-  max-width: 100%; /* Permet que la imatge ocupi tota l'amplada si cal */
+  max-width: 100%;
 }
 
 #galeria figure {
   margin: 0;
   text-align: center;
-  line-height: 0; /* Elimina espais blancs sota la imatge */
+  line-height: 0;
 }
 
 .imatge-section img {
   width: 100%;
   height: auto;
-  border-radius: 0; /* La imatge va sense border-radius per a ocupar l'amplada completa */
+  border-radius: 0;
   transition: var(--transition);
   display: block;
-  max-height: 70vh; /* Controla l'altura per a pantalles grans */
+  max-height: 70vh;
   object-fit: cover;
 }
-.imatge-section img:hover {
-   box-shadow: none; /* Sense ombra per la imatge de la portada */
-}
-
 
 /* ==========================================================================
- 9. GALERIA DE VÍDEOS
+ 9. VÍDEOS
  ========================================================================== */
 .galeria-videos {
   display: grid;
@@ -253,10 +249,9 @@ section.container {
   justify-items: center;
   gap: var(--spacing-md);
   margin-bottom: var(--spacing-lg);
-  margin-inline: auto;
   max-width: 1200px;
+  margin-inline: auto;
 }
-
 
 .video-player {
   width: 100%;
@@ -272,24 +267,24 @@ section.container {
 }
 
 .video-card {
-  /* width: 330px; ja no necessari amb grid */
+  width: 100%;
   max-width: 100%;
-  width: 100%; /* El card pren l'amplada de la columna del grid */
   flex-shrink: 1;
 }
 
-.video-info { padding: var(--spacing-md); }
+.video-info {
+  padding: var(--spacing-md);
+}
 
 .video-info h3 {
   margin-bottom: var(--spacing-sm);
   color: var(--color-heading);
   font-size: 1.3rem;
-  text-align: center; /* Centrat si no hi ha metadades */
+  text-align: center;
 }
 
-
 /* ==========================================================================
- 10. GALERIA DE PARTITURES
+ 10. PARTITURES
  ========================================================================== */
 .galeria-partitures {
   display: grid;
@@ -297,10 +292,9 @@ section.container {
   justify-items: center;
   gap: var(--spacing-md);
   margin-bottom: var(--spacing-lg);
-  margin-inline: auto;
   max-width: 1200px;
+  margin-inline: auto;
 }
-
 
 .partitura-imatge-container {
   position: relative;
@@ -317,13 +311,7 @@ section.container {
 }
 
 .partitura-imatge-container:hover img {
-    transform: scale(1.05);
-}
-
-.partitura-card {
-  max-width: 100%;
-  width: 100%;
-  flex-shrink: 1;
+  transform: scale(1.05);
 }
 
 .partitura-overlay {
@@ -333,18 +321,19 @@ section.container {
   justify-content:center;
   align-items:center;
   background: var(--muted-overlay); 
-  opacity: 0; /* Amagat per defecte */
+  opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
 }
 
 .partitura-imatge-container:hover .partitura-overlay {
-    opacity: 1; /* Mostrar al hover */
-    pointer-events: auto; /* Permet interactuar amb el botó */
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .boto-ampliar {
-  width:50px; height:50px;
+  width:50px;
+  height:50px;
   border-radius:50%;
   background: var(--color-accent);
   color:var(--color-text-light);
@@ -353,16 +342,20 @@ section.container {
   align-items:center;
   cursor:pointer;
   border:0;
-  pointer-events: auto;
 }
 
 .boto-ampliar:hover {
-    background: var(--color-accent-700);
+  background: var(--color-accent-700);
+}
+
+.partitura-card {
+  width: 100%;
+  max-width: 100%;
 }
 
 .partitura-info { 
-   padding:var(--spacing-md);
-   text-align: center;
+  padding:var(--spacing-md);
+  text-align: center;
 }
 
 .partitura-info h3 {
@@ -370,7 +363,6 @@ section.container {
   font-size:1.3rem;
   margin-top: 0;
 }
-
 
 /* ==========================================================================
  11. MODAL
@@ -390,7 +382,7 @@ section.container {
   position: relative;
   max-width:90%;
   max-height:90%;
-  background:var(--color-card-bg);
+  background:var(--color-bg-card);
   border-radius:var(--radius);
   overflow:hidden;
 }
@@ -424,27 +416,26 @@ section.container {
 }
 
 /* ==========================================================================
- 12. CONTACTE I PEU DE PÀGINA (FOOTER)
+ 12. CONTACTE I FOOTER
  ========================================================================== */
 footer {
-  background: #062818; /* Fons fosc similar al header */
-  color: var(--color-text-light); /* Text clar per al footer */
+  background: #062818;
+  color: var(--color-text-light);
   padding: var(--spacing-lg) 0;
   margin-top: var(--spacing-xl);
 }
 
 footer h2 {
-    color: var(--color-text-light); /* Títol de contacte en color clar */
-    text-align: center;
+  color: var(--color-text-light);
+  text-align: center;
 }
 
 .footer-contingut {
-    /* Centrar contingut del footer si no hi ha més elements */
-    text-align: center;
+  text-align: center;
 }
 
 .info-contacte {
-  display:flex; /* Simplificat a flexbox per a l'element simple de contacte */
+  display:flex;
   justify-content: center;
   align-items: center;
   gap:var(--spacing-md);
@@ -452,21 +443,17 @@ footer h2 {
 }
 
 .contacte-item {
-  display:flex; flex-direction:column;
+  display:flex;
+  flex-direction:column;
   align-items:center;
   text-align:center;
-  padding:0; /* Sense padding excessiu */
-  background: none; /* Sense fons de targeta */
+  background: none;
   border-radius:var(--radius);
   transition:var(--transition);
 }
 
-.contacte-item:hover {
-  background: none;
-}
-
 .contacte-item p a {
-    color: var(--color-highlight); /* Enllaç de contacte destacat */
+  color: var(--color-primary-light);
 }
 
 /* ==========================================================================
@@ -485,13 +472,13 @@ footer h2 {
 
   .galeria-videos,
   .galeria-partitures {
-    grid-template-columns:minmax(250px, 1fr); /* Una sola columna, mantenint un mínim d'amplada */
+    grid-template-columns:minmax(250px, 1fr);
   }
- 
- .partitura-card {
-    width: 100%; /* La targeta ha d'ocupar el 100% de la columna */
-    max-width: 400px; /* Opcional: limita l'amplada en tauletes grans per a que no es vegi excessivament gran */
-    margin-inline: auto; /* Centra la targeta si hem limitat el max-width */
+
+  .partitura-card {
+    width: 100%;
+    max-width: 400px;
+    margin-inline: auto;
   }
 }
 
@@ -501,13 +488,11 @@ footer h2 {
     flex-direction:column;
   }
 
- .partitura-card {
-    width: 100%; /* La targeta ha d'ocupar el 100% de la columna */
-    max-width: 400px; /* Opcional: limita l'amplada en tauletes grans per a que no es vegi excessivament gran */
-    margin-inline: auto; /* Centra la targeta si hem limitat el max-width */
+  .partitura-card {
+    width: 100%;
+    max-width: 400px;
+    margin-inline: auto;
   }
-
- .contacte-item i { font-size:1.6rem; }
 }
 
 /* ==========================================================================
