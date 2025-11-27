@@ -69,45 +69,7 @@
   --spacing-xl: 2.5rem;
 }
 
-/* --- */
 
-/* 🌙 MODE FOSC (PREFERIT) */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--color-secondary-600); /* Verd encara més fosc */
-    --color-card-bg: #0C3A23;
-    --color-text: #EAEAEA; /* Text clar utilitzat per al cos */
-    --color-input-bg: #144D31;
-
-    --muted-border: rgba(238, 193, 42, 0.2);
-    --muted-overlay: rgba(0, 0, 0, 0.7);
-
-    --color-highlight: var(--color-primary-300); /* Utilitza el groc més clar */
-    --color-heading: var(--color-highlight);
-
-    --color-accent: var(--color-highlight);
-    --color-accent-700: var(--color-primary);
-
-    /* COLORS DE TAGS (UNIFICATS I AMB MÉS OPACITAT) */
-    --color-tag-base: var(--color-highlight); /* Utilitzar el color més clar pel text/icona */
-    --color-tag-base-bg: rgba(238, 193, 42, 0.2); /* 20% opacitat de Primari */
-
-    --color-tag-instrument: var(--color-tag-base);
-    --color-tag-instrument-bg: var(--color-tag-base-bg);
-
-    --color-tag-location: var(--color-tag-base);
-    --color-tag-location-bg: var(--color-tag-base-bg);
-
-    --color-tag-duration: var(--color-tag-base);
-    --color-tag-duration-bg: var(--color-tag-base-bg);
-
-    --color-tag-difficulty: var(--color-tag-base);
-    --color-tag-difficulty-bg: var(--color-tag-base-bg);
-
-    --color-tag-genere: var(--color-tag-base);
-    --color-tag-genere-bg: var(--color-tag-base-bg);
-  }
-}
 
 /* ==========================================================================
  2. RESET
@@ -202,13 +164,12 @@ main {
 }
 
 section.container {
-  text-align: left; /* Retorna l'alineació de text a l'esquerra per defecte a les seccions */
+  text-align: left;
 }
 
-/* --- SECCIÓ BIOGRAFIA: Adaptació del color de text per al contingut de paràgrafs --- */
 #biografia.container {
-  color: var(--color-text); /* Assegura que el text clar s'apliqui, segons la configuració del body/dark mode */
-  text-align: justify; /* Alineació de text justificada per a paràgrafs llargs */
+  color: var(--color-text-light);
+  text-align: justify;
 }
 
 /* ==========================================================================
