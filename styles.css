@@ -176,12 +176,12 @@ section.container { text-align: left; }
 #titol-contacte,
 #titol-biografia {
   text-align: center;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
 }
 
 .subtitol {
   max-width: 600px;
-  margin: 0 auto var(--spacing-xl);
+  margin: 0 auto var(--spacing-md);
   text-align: center;
   font-size: 1.1rem;
   color: var(--color-secondary);
