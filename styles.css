@@ -146,12 +146,11 @@ header[role="banner"] {
 }
 
 header h1 {
-  color: var(--color-text-light);
+  color: var(--color-heading);
   padding-bottom: 0;
   margin-bottom: 0;
 }
 
-/* --- MAIN --- */
 main { flex-grow: 1; }
 section.container { text-align: left; }
 
@@ -426,7 +425,7 @@ footer {
 }
 
 footer h2 {
-  color: var(--color-text-light);
+  color: var(--color-heading);
   text-align: center;
 }
 
