@@ -43,7 +43,7 @@
 
   /* TITLES */
   --h1-size: clamp(1.8rem, 3.6vw, 2.2rem);
-  --h2-size: clamp(1.4rem, 2.6vw, 1.8rem);
+  --h2-size: clamp(1.6rem, 3vw, 2.2rem);
   --h3-size: clamp(1.1rem, 2vw, 1.4rem);
 
   /* RADIUS + OMBRES */
@@ -278,7 +278,7 @@ section.container { text-align: left; }
 .video-info h3 {
   margin-bottom: var(--spacing-xs);
   color: var(--color-heading);
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   text-align: center;
 }
 
@@ -359,7 +359,7 @@ section.container { text-align: left; }
 
 .partitura-info h3 {
   margin-bottom: var(--spacing-xs);
-  font-size:1.3rem;
+  font-size:1.5rem;
   margin-top: 0;
 }
 
@@ -439,6 +439,10 @@ footer h2 {
   align-items: center;
   gap:var(--spacing-md);
   margin-top:var(--spacing-md);
+}
+
+footer address {
+  font-style: normal;
 }
 
 .contacte-item {
