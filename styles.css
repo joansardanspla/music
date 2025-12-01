@@ -11,7 +11,10 @@
   --color-bg: #7A0000;               /* vermell fosc — fons general */
   --color-bg-card: #8A0000;          /* vermell intens — targetes */
   --color-bg-input: #9C0000;         /* vermell clar — camps */
-
+    /* FONS ESPECÍFICS */
+  --color-header-bg: #650000;  /* vermell profund */
+  --color-footer-bg: #650000;  /* mateix to per coherència */
+}
   /* TEXT */
   --color-text-dark: #2A2A2A;
   --color-text-light: #FFF4E0;       /* blanc trencat càlid */
@@ -136,7 +139,7 @@ p { margin-bottom: 1em; }
 
 /* --- HEADER --- */
 header[role="banner"] {
-  background: #650000;
+  background: var(--color-header-bg);
   padding: var(--spacing-lg) 0;
   text-align: center;
   box-shadow: var(--shadow-md);
@@ -417,7 +420,7 @@ section.container { text-align: left; }
  12. CONTACTE I FOOTER
  ========================================================================== */
 footer {
-  background: #650000;
+  background: var(--color-footer-bg);
   color: var(--color-text-light);
   padding: var(--spacing-lg) 0;
   margin-top: var(--spacing-xl);
