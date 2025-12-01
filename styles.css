@@ -7,34 +7,37 @@
   --color-primary-dark: #C99E1F;     /* daurat fosc */
   --color-primary-light: #F5D76A;    /* daurat clar */
 
-  /* FONS */
-  --color-bg: #7A0000;               /* vermell fosc — fons general */
-  --color-bg-card: #8A0000;          /* vermell intens — targetes */
-  --color-bg-input: #9C0000;         /* vermell clar — camps */
-    /* FONS ESPECÍFICS */
+  /* FONS GENERALS */
+  --color-bg: #7A0000;               /* vermell fosc (fons general) */
+  --color-bg-card: #8A0000;          /* targetes amb vermell profund */
+  --color-bg-input: #9C0000;         /* camps de formulari */
+ 
+   /* FONS ESPECÍFICS */
   --color-header-bg: #650000;  /* vermell profund */
   --color-footer-bg: #650000;  /* mateix to per coherència */
-}
-  /* TEXT */
-  --color-text-dark: #2A2A2A;
-  --color-text-light: #FFF4E0;       /* blanc trencat càlid */
+ 
+  /* 📝 TEXT */
+  --color-text-dark: #1A1A1A;        /* per superfícies clares */
+  --color-text-light: #FFF5E1;       /* text clar sobre vermell */
+
+  /* TÍTOLS */
   --color-heading: var(--color-primary);
 
   /* TAGS */
   --color-tag-text: var(--color-primary);
   --color-tag-bg: rgba(238, 193, 42, 0.12);
 
-  /* BORDES / SEPARADORS / OMBRES */
+  /* OMBRES I SEPARADORS */
   --color-border-muted: rgba(238, 193, 42, 0.25);
   --color-overlay: rgba(0, 0, 0, 0.7);
-  --color-modal-bg: rgba(0, 0, 0, 0.85);
+  --color-modal-bg: rgba(0, 0, 0, 0.8);
 
   /* ACCENTS */
   --color-accent: var(--color-primary);
   --color-accent-700: var(--color-primary-dark);
   --color-secondary: var(--color-primary-light);
 
-  --muted-overlay: rgba(0, 0, 0, 0.45);
+  --muted-overlay: rgba(0, 0, 0, 0.4);
   --modal-bg: var(--color-modal-bg);
 
   /* TIPOGRAFIA */
@@ -51,10 +54,10 @@
   --radius: 12px;
   --radius-sm: 8px;
   --shadow-sm: 0 4px 6px rgba(238, 193, 42, 0.10);
-  --shadow-md: 0 8px 15px rgba(238, 193, 42, 0.20);
+  --shadow-md: 0 8px 15px rgba(238, 193, 42, 0.18);
 
-  /* TRANSICIONS — lleuger daurat */
-  --transition-fast: box-shadow 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+  /* TRANSICIONS */
+  --transition-fast: box-shadow 0.18s ease;
   --transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 
   /* ESPAIS */
@@ -64,6 +67,7 @@
   --spacing-lg: 2rem;
   --spacing-xl: 2.5rem;
 }
+
 
 
 /* ==========================================================================
