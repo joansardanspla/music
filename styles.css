@@ -2,38 +2,36 @@
  1. VARIABLES I CONFIGURACIÓ GLOBAL
  ========================================================================== */
 :root {
-  /* 🎨 PALETA PRINCIPAL */
-  --color-primary: #EEC12A;      /* groc daurat */
-  --color-primary-dark: #C99E1F; /* groc més fosc */
-  --color-primary-light: #F5D76A;/* groc més clar */
+  /* 🎨 PALETA PRINCIPAL — VERMELL + DAURAT */
+  --color-primary: #EEC12A;          /* daurat */
+  --color-primary-dark: #C99E1F;     /* daurat fosc */
+  --color-primary-light: #F5D76A;    /* daurat clar */
 
-  --color-bg: #0A3A22;           /* verd fosc (fons general) */
-  --color-bg-card: #0F4A2D;      /* targetes */
-  --color-bg-input: #115C37;     /* camps */
+  /* FONS */
+  --color-bg: #7A0000;               /* vermell fosc — fons general */
+  --color-bg-card: #8A0000;          /* vermell intens — targetes */
+  --color-bg-input: #9C0000;         /* vermell clar — camps */
 
-  /* 📝 TEXT */
-  --color-text-dark: #0F0F0F;    /* text fosc en superfícies clares */
-  --color-text-light: #F5F5F5;   /* text clar (per fons foscos) */
-
-  /* TÍTOLS */
+  /* TEXT */
+  --color-text-dark: #2A2A2A;
+  --color-text-light: #FFF4E0;       /* blanc trencat càlid */
   --color-heading: var(--color-primary);
 
-  /* TAGS (unificats i minimalistes) */
+  /* TAGS */
   --color-tag-text: var(--color-primary);
   --color-tag-bg: rgba(238, 193, 42, 0.12);
 
-  /* ELEMENTS SEPARADORS / OMBRES */
+  /* BORDES / SEPARADORS / OMBRES */
   --color-border-muted: rgba(238, 193, 42, 0.25);
   --color-overlay: rgba(0, 0, 0, 0.7);
-  --color-modal-bg: rgba(0, 0, 0, 0.8);
+  --color-modal-bg: rgba(0, 0, 0, 0.85);
 
-  /* ACCENTS (corregits) */
+  /* ACCENTS */
   --color-accent: var(--color-primary);
   --color-accent-700: var(--color-primary-dark);
-
   --color-secondary: var(--color-primary-light);
-  --muted-overlay: rgba(0, 0, 0, 0.4);
 
+  --muted-overlay: rgba(0, 0, 0, 0.45);
   --modal-bg: var(--color-modal-bg);
 
   /* TIPOGRAFIA */
@@ -49,11 +47,11 @@
   /* RADIUS + OMBRES */
   --radius: 12px;
   --radius-sm: 8px;
-  --shadow-sm: 0 4px 6px rgba(238, 193, 42, 0.1);
-  --shadow-md: 0 8px 15px rgba(238, 193, 42, 0.15);
+  --shadow-sm: 0 4px 6px rgba(238, 193, 42, 0.10);
+  --shadow-md: 0 8px 15px rgba(238, 193, 42, 0.20);
 
-  /* TRANSICIONS */
-  --transition-fast: box-shadow 0.18s ease;
+  /* TRANSICIONS — lleuger daurat */
+  --transition-fast: box-shadow 0.18s ease, background-color 0.18s ease, color 0.18s ease;
   --transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 
   /* ESPAIS */
@@ -63,6 +61,7 @@
   --spacing-lg: 2rem;
   --spacing-xl: 2.5rem;
 }
+
 
 /* ==========================================================================
  2. RESET
