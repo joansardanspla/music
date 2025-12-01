@@ -136,7 +136,7 @@ p { margin-bottom: 1em; }
 
 /* --- HEADER --- */
 header[role="banner"] {
-  background: #062818;
+  background: #650000;
   padding: var(--spacing-lg) 0;
   text-align: center;
   box-shadow: var(--shadow-md);
@@ -417,7 +417,7 @@ section.container { text-align: left; }
  12. CONTACTE I FOOTER
  ========================================================================== */
 footer {
-  background: #062818;
+  background: #650000;
   color: var(--color-text-light);
   padding: var(--spacing-lg) 0;
   margin-top: var(--spacing-xl);
