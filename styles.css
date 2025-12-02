@@ -13,14 +13,12 @@
   /* FONS GENERALS – derivats del gris fosc del favicon */
   --color-bg: #2E2E2E;              /* gris fosc general */
   --color-bg-card: #3A3A3A;         /* targetes gris mitjà */
-  --color-bg-input: #444444;        /* camps formulari més clars */
 
   /* FONS ESPECÍFICS */
   --color-header-bg: #252525;       /* negre-suau */
   --color-footer-bg: #252525;       /* coherent amb header */
 
   /* 📝 TEXT */
-  --color-text-dark: #0D0D0D;       /* per superfícies clares */
   --color-text-light: #F2F2F2;      /* text clar sobre gris/negres */
 
   /* TÍTOLS */
